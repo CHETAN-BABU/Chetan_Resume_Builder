@@ -1,0 +1,162 @@
+[
+  {
+    "folder": "backup/historical/2026-08-12/001-dawn-meats-graduate-business-intelligence-developer-f3667928c8",
+    "status": "historical_prepared",
+    "source_sha256": "b96c1e934860014907bf3f34b7f6a53903031861668aa397522e46b8efd8a33b",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/2026-08-12/002-upmc-ireland-business-intelligence-developer-ehr-ac17d5a129",
+    "status": "historical_prepared",
+    "source_sha256": "f01c7b4dd6d24ef61f62c0e0931a25f928fa74429fc4549c021d635bf6ff2659",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/2026-08-12/003-smartbox-group-gtm-data-performance-analyst-0bb9d5eb32",
+    "status": "historical_prepared",
+    "source_sha256": "40ee860caef3a4d8dc7e171b434dbf2a20b19233974a898605a783ddd522f000",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/2026-08-12/004-tuath-housing-data-analyst-housing-management-1e172826fe",
+    "status": "historical_prepared",
+    "source_sha256": "f97e85b6e3acf2a554e7f4c5b556185b90f3682716aa1921af64dcae865babad",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/2026-08-12/005-occu-business-intelligence-analyst-96b2d7d409",
+    "status": "historical_prepared",
+    "source_sha256": "02815a33d71a70a8d3ef8d12f80696414bee62336bfa4e55b10d1ee6fd4fd092",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/2026-08-12/006-stripe-graduate-software-engineer-c9d77f1f6a",
+    "status": "historical_prepared",
+    "source_sha256": "ae0f6f02da3c5de7cae2046492d0610b3e15af9d78fdbf564fb995cff83b6167",
+    "prior_qa_status": "AUTOMATED_PASS_MANUAL_PENDING",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/daily-job-search/2026-09-05/001-aib-data-analyst-f3f24f302d",
+    "status": "historical_prepared",
+    "source_sha256": "17a196ce25343ef233e59943e0d76d0caf206515415ca1489e2af999b2b66a26",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/daily-job-search/2026-09-05/002-canada-life-data-analytics-94b877b3b0",
+    "status": "historical_prepared",
+    "source_sha256": "0f6593e63927f9cf147ef470e2dbcc08a7377f8b338b1e39f4bbb61ab7f90cc5",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/daily-job-search/2026-09-05/003-cartrawler-customer-insights-dcbf46c6fc",
+    "status": "historical_prepared",
+    "source_sha256": "64b9854a9dd27e43b32f405fb8cfe1f4e0f94fb8aa69a8809c19c2434d0ac53c",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/daily-job-search/2026-09-05/004-bank-of-ireland-graduate-data-f42c32d987",
+    "status": "historical_prepared",
+    "source_sha256": "133895c6bbd751656eb20abafbff8a78066c3433bd2e47eec580c8edfb0e8678",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/daily-job-search/2026-09-05/005-ey-ai-data-graduate-fadf134d59",
+    "status": "historical_prepared",
+    "source_sha256": "c0acd633351a75adaa020b163c3269f8785173afdc5060843df7cc7c9d37c4e9",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/daily-job-search/2026-09-05/006-carraig-donn-business-performance-c2e0e3e025",
+    "status": "historical_prepared",
+    "source_sha256": "e81839d8664f5f7439b545d48198fb9d478061c0a3b94dff14e715475e22f3b7",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/daily-job-search/2026-09-05/007-fedex-data-insights-9b38bd2fa0",
+    "status": "historical_prepared",
+    "source_sha256": "aacb28b03acd8c8f3d5fa8efd633aff112e408357d71eb2b4cc13ae81e9c3fb6",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/daily-job-search/2026-09-05/008-kepak-operations-data-f8665e4727",
+    "status": "historical_prepared",
+    "source_sha256": "3a0dfd2fa95c14f7308133cb1dbe337847b13ef1815493e108a892a8f16bfc2c",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/daily-job-search/2026-09-05/009-analytic-partners-marketing-science-134eda95cf",
+    "status": "historical_prepared",
+    "source_sha256": "e803f3ec8f633bd6afb7c7c2912853e29be4ac638015d1da52005e8f01793493",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/daily-job-search/2026-09-06/001-capventis-graduate-consultant-e748aa8999",
+    "status": "historical_prepared",
+    "source_sha256": "d4d8efbb2709e0411b5a00ca8fbd7b905235a7fd5ed4a2dbe55170b76453811e",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/daily-job-search/2026-09-06/002-one-recruitment-junior-data-9e28659918",
+    "status": "historical_prepared",
+    "source_sha256": "b83d5d7ba6e9fbbcecbf3eff30697a5fc8ca3a4a8cd1f7ef6c7b6978b65d0411",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/daily-job-search/2026-09-08/001-aib-junior-quantitative-risk-b209a1e2d9",
+    "status": "historical_prepared",
+    "source_sha256": "dc95c4f47e2d83cc1250d270a0a002356ba7a82273aae14b9d0923c8abc546a7",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/daily-job-search/2026-09-08/002-fanatics-data-scientist-i-8e34490011",
+    "status": "historical_prepared",
+    "source_sha256": "4267c07dc732b3010cdad617114c438942187338d72d8627bca60f68b994b31e",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  },
+  {
+    "folder": "backup/historical/Arup-Data-Scientist-Work-Placement",
+    "status": "historical_prepared",
+    "source_sha256": "1f236daddec76dbf0c41de17b8327437a370f3307994cdbb883b6699ea34ea3c",
+    "prior_qa_status": "PASS",
+    "current_revision_validated": false,
+    "application_submitted": "not established"
+  }
+]

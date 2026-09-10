@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+*.pyc
+*.aux
+*.log
+*.synctex.gz
+dashboard/.env
+data/*.db*
+output/
+data/dashboard.log
+data/dashboard.pid

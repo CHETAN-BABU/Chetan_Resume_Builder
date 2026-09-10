@@ -1,0 +1,298 @@
+schema_version: 2
+candidate_revision: 2026-09-09.1
+candidate:
+  full_name: Chetan Babu M
+  preferred_name: Chetan
+  email: chetanbabu07@gmail.com
+  phone_as_supplied: +353-0892401738
+  alternate_phone_as_supplied: +91 7358572027 (WhatsApp only)
+  phone_needs_format_confirmation: true
+  phone_external_resume_policy: include_exactly_as_supplied
+  location: Ireland
+  alternate_location_as_supplied: Chennai, India
+  location_conflict_policy: keep Ireland until Chetan confirms which location is current
+  timezone: Europe/Dublin
+  linkedin: https://linkedin.com/in/chetan-babu
+  portfolio_url: ''
+  github: ''
+  visa_statement_as_supplied: Valid till 31 Dec 2026
+  immigration_permission_as_confirmed: Stamp 1G
+  immigration_permission_confirmed_on: '2026-09-05'
+  future_sponsorship_requirement: not_confirmed
+  immigration_note: User confirmed Stamp 1G in conversation; prior expiry date has
+    not been reconfirmed. Do not infer renewal, duration, or future sponsorship.
+  visa_external_resume_policy: omit_unless_form_requires; do not infer work rights
+  current_status: MSc Data Science candidate at Munster Technological University
+  most_recent_role: Associate Analyst — Data Analyst / BI Developer at Infocepts Technologies
+    (ended Jan 2025)
+  dated_professional_experience: Feb 2023–Jan 2025 (approximately two years)
+  education_summary: MSc in Data Science, Munster Technological University (Sep 2025–Sep
+    2026); B.Tech in Computer Science (AI and ML), SRM Institute of Science and Technology
+    (Jun 2019–May 2023), reported CGPA 9.4/10
+  phone: +353-0892401738
+  disclosure_instruction: User requested all supplied information remain visible on
+    2026-09-09. Phone format is supplied verbatim, not independently corrected.
+professional_identity:
+  primary: Data Analyst / BI Analyst / BI Developer
+  academic: MSc Data Science candidate with academic machine-learning, multivariate-analysis,
+    clustering, explainability, and retrieval-application evidence
+  summary: Analytics and BI professional with enterprise dashboard, reporting, migration,
+    reconciliation, and stakeholder-facing delivery experience, plus an audited portfolio
+    spanning fraud modelling, manufacturing analytics, multivariate analysis, clustering,
+    Power BI, and retrieval applications.
+identity_guardrails:
+  never_position_as:
+  - Experienced or production AI Engineer
+  - Experienced or production Generative AI Engineer
+  - Experienced or production Machine Learning Engineer
+  - Software Engineer
+  - Production MLOps Engineer
+  do_not_imply:
+  - Professional Data Scientist employment
+  - Professional AI engineering experience from the bachelor's specialization
+  - Professional AI/MLOps experience from candidate projects
+  - Sole ownership of team-delivered AstraZeneca projects
+  data_science_rule: Target junior or graduate Data Scientist and entry-level GenAI
+    application roles only when candidate projects are accepted as evidence; label
+    project work separately from professional BI experience.
+target_roles:
+  primary:
+  - Data Analyst
+  - BI Analyst
+  - Business Intelligence Analyst
+  - BI Developer
+  - Power BI Developer
+  - Reporting Analyst
+  secondary:
+  - Insights Analyst
+  - Analytics Consultant
+  - Junior Data Scientist
+  - Graduate Data Scientist
+  - Entry-level GenAI Application Developer
+  - Fraud Analytics Analyst
+  - Risk Analytics Analyst
+  - Advanced Analytics Analyst
+  - Decision Scientist (junior/graduate)
+  excluded:
+  - AI/Generative AI/ML Engineer roles requiring professional production experience
+  - Software Engineer
+  - Full Stack Engineer
+  - DevOps Engineer
+  - MLOps Engineer
+  - Hardware Engineer
+  - Data Engineer roles dominated by production pipeline or platform ownership
+role_tracks:
+- name: Data Analyst / BI Analyst
+  evidence: Professional
+  signals:
+  - SQL
+  - Power BI
+  - Tableau
+  - dashboard
+  - reporting
+  - requirements
+  - stakeholder
+  - insights
+- name: BI / Power BI Developer
+  evidence: Professional
+  signals:
+  - Power BI
+  - Power Query
+  - M Query
+  - data modeling
+  - UAT
+  - BAT
+  - deployment
+  - Snowflake
+  - Redshift
+- name: Junior / Graduate Data Scientist
+  evidence: Academic/candidate projects plus transferable professional analytics
+  signals:
+  - Python
+  - R
+  - statistics
+  - classification
+  - data mining
+  - PCA
+  - scikit-learn
+  - time series
+  - ARIMA
+  - XGBoost
+  - LightGBM
+  - Random Forest
+  - SMOTE
+  - SHAP
+  - DBSCAN
+- name: Entry-level GenAI Application Developer
+  evidence: Conditional candidate-project evidence only
+  signals:
+  - Python
+  - RAG
+  - FAISS
+  - TF-IDF
+  - OpenAI API
+  - Streamlit
+  - LangChain
+  - LangGraph
+  - ChromaDB
+  - MMR
+  - source attribution
+narrative:
+  headline: Data Analyst and BI Developer with enterprise reporting experience and
+    an MSc Data Science foundation
+  career_story: Progressed from structured BI training into client-facing dashboard
+    and reporting delivery for Hindustan Unilever, NielsenIQ, and AstraZeneca; now
+    extending that foundation through an MSc in Data Science in Ireland.
+  proof_points:
+  - Learned NielsenIQ's in-house BI platform within two weeks and delivered 300+ reports
+    over six months
+  - Built a reusable finance dashboard POC reported to reduce dashboard-development
+    effort by 50%
+  - Contributed to migrating 160 Power BI reports from Redshift to Snowflake within
+    three months
+  - Co-developed a five-source finance reconciliation dashboard with drill-through
+    analysis
+  - Delivered Power BI enhancements, testing, and production promotion for Hindustan
+    Unilever
+claim_policy:
+  safe_when_attributed_to_user_context:
+  - 300+ NielsenIQ reports in six months
+  - Two-week cross-skilling period
+  - 160 Power BI reports migrated within three months
+  - Five reconciliation data sources
+  - Six-person manual reconciliation process
+  - 50% reported effort reduction for the NielsenIQ template POC
+  require_confirmation_before_external_use:
+  - The CEO dashboard directly secured a three-year, USD 5 million contract
+  - Chetan independently owned the reconciliation dashboard
+  - Chetan led the Redshift-to-Snowflake migration
+  - 100+ reports were delivered in one month
+  - The exact award name and wording
+  - Visa extension or unrestricted work-authorization claims
+  - RAG 90%+ relevance or any unverified project score
+  - Docker, Kubernetes, and GitHub Actions implementation until a repository or artifact
+    is reviewed
+  - January 2025 versus July 2025 employment end-date conflict
+  - Ireland versus Chennai location and preferred phone conflict
+  never_invent:
+  - Project performance metrics
+  - Publications or conference awards
+  - LLM, RAG, GenAI, MLOps, or autonomous-agent scope beyond registered candidate
+    projects
+  - Professional machine-learning deployment experience
+  client_name_disclosure: approved_by_user_2026-09-09
+  external_client_labels:
+    AstraZeneca: AstraZeneca
+    NielsenIQ: NielsenIQ
+    Hindustan Unilever: Hindustan Unilever
+location_preferences:
+  country: Ireland
+  preferred:
+  - Dublin
+  - Cork
+  - Limerick
+  - Remote within Ireland
+  arrangements:
+  - On-site
+  - Hybrid
+  - Remote
+competition_strategy:
+  prefer:
+  - Analytics and BI roles in pharmaceutical, FMCG, healthcare, finance, insurance,
+    manufacturing, and operations teams
+  - Roles that value Power BI, SQL, stakeholder-facing reporting, and end-to-end BI
+    delivery
+  - Junior or graduate data-science and entry-level GenAI application roles that accept
+    candidate projects
+  avoid:
+  - AI/ML/GenAI roles requiring professional production engineering or platform ownership
+  - Senior, lead, principal, manager, or director roles requiring unsupported tenure
+  - Roles with no meaningful analytics, reporting, BI, or applied data-science scope
+project_selection:
+  registry: context/evidence.yml
+  exactly_one_selected_project: true
+  allow_only_resume_ready_projects: true
+  current_problem_sources:
+  - Verified job-description snapshot
+  - Target employer official website
+  - Target employer official newsroom or filing
+  - Target employer engineering or product documentation
+  ranking_weights:
+    problem_similarity: 35
+    required_skill_evidence: 30
+    evidence_strength: 20
+    domain_and_stakeholder_similarity: 10
+    recency: 5
+  safeguards:
+  - Company research ranks real projects; it never creates candidate experience.
+  - Keep the original project identity, evidence type, ownership, and completion status.
+  - Do not imply the project was built for the target employer.
+  - If no project is a strong analogue, disclose the gap and select the closest honest
+    evidence.
+ten_company_request:
+  trigger_examples:
+  - give me 10 companies
+  - find 10 matching companies
+  - make 10 tailored resumes
+  default_scope: End-to-end discovery, verification, ranking, tailoring, compilation,
+    visual QA, and delivery; not list-only.
+  target_release_count: 10
+  discovery_rule: Continue replacing rejected, duplicate, expired, or inaccessible
+    leads until ten distinct eligible live JDs are secured or the honest market search
+    is exhausted.
+  deliverables:
+  - Ranked table of company, role, location, posting URL, fit decision, supported
+    requirement coverage, and key gap
+  - Ten isolated two-page tailored resume artifact folders when ten eligible JDs are
+    available
+  - Direct paths to every released resume PDF and job folder
+  application_rule: Never submit an application or send outreach without explicit
+    authorization.
+resume_contract:
+  template: templates/resume-base.tex
+  paper: A4
+  layout: single_column
+  required_pages: 2
+  minimum_body_font_pt: 10
+  required_sections:
+  - Professional Summary
+  - Core Skills
+  - Professional Experience
+  - Selected Project
+  - Education
+  - Certifications
+  - Technical Skills
+  prohibited_filler:
+  - References available upon request
+  - Generic objective statements
+  - Unsupported extracurriculars
+  - Duplicate notable-outcomes section
+  diagnostics:
+    job_fit_score: Opportunity decision only
+    supported_requirement_coverage: Required/preferred JD requirements backed by evidence
+      IDs
+    artifact_qa: Binary hard gates; never averaged into a score
+  release_command: python3 scripts/validate_resume.py <resume.tex> --compile --output
+    <resume.pdf> --render-dir <resume-preview> --qa-json <qa.json>
+batch_contract:
+  maximum_jobs: 10
+  isolated_job_folders: true
+  retry_limit: 3
+  required_artifacts:
+  - job-description.md
+  - evaluation.md
+  - company-research.md
+  - evidence-map.yml
+  - resume.tex
+  - resume.pdf
+  - resume-preview/page-01.png
+  - resume-preview/page-02.png
+  - qa.json
+  cross_batch_invariants:
+  - identity
+  - contact details
+  - employment titles and dates
+  - education status and dates
+  - metrics and attribution
+  discovery_replacement_policy: Rejected/expired/duplicate leads do not consume the
+    requested release count; continue searching for replacements where possible.

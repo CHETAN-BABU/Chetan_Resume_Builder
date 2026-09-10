@@ -1,0 +1,2 @@
+# Markdown source notes intentionally preserve hard line breaks and spacing.
+*.md whitespace=-blank-at-eol,-blank-at-eof

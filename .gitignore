@@ -1,0 +1,17 @@
+.DS_Store
+backup/
+.venv/
+.runtime/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.log
+*.pid
+*.db
+*.db-*
+*.sqlite*
+*.aux
+*.synctex.gz
+career-dashboard/output/
+.env
+.env.*

@@ -1,0 +1,177 @@
+% Evidence-grounded two-page base resume for Chetan Babu M.
+% Candidate claims are governed by context/evidence.yml.
+
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[top=0.52in,bottom=0.52in,left=0.62in,right=0.62in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{lmodern}
+
+\hypersetup{
+  pdfauthor={Chetan Babu M},
+  pdftitle={Chetan Babu M - Data Analyst and BI Developer Resume},
+  pdfsubject={Evidence-grounded professional resume},
+  pdfkeywords={Data Analyst, BI Analyst, BI Developer, Power BI, SQL, Data Science}
+}
+
+\renewcommand{\baselinestretch}{1.04}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.25em,itemsep=5.5pt,topsep=4pt,parsep=0pt,partopsep=0pt}
+\pagestyle{empty}
+\raggedright
+\urlstyle{same}
+
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing*{\section}{0pt}{11pt}{6pt}
+
+\newcommand{\roleheading}[4]{%
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}\vspace{3pt}
+}
+\newcommand{\clientheading}[1]{\textbf{#1}\vspace{1pt}}
+\newenvironment{resumeitems}{\begin{itemize}}{\end{itemize}}
+
+% EVIDENCE: EXP-INFOCEPTS-001 EXP-INFOCEPTS-002 EDU-MSC-001 SKILL-BI-001 SKILL-SQL-001 SKILL-DELIVERY-001 PROJ-NIQ-REPORTING PROJ-AZ-MIGRATION
+\newcommand{\ResumeSummary}{Data Analyst and BI Developer with approximately two years of enterprise reporting experience across Power BI, SQL, Power Query/M, dashboard delivery, testing, and stakeholder requirements. Delivered 300+ reports during a six-month FMCG engagement and contributed to migrating 160 Power BI reports from Redshift to Snowflake within three months. PL-300 certified and currently completing an MSc programme in Data Science in Ireland.}
+
+% EVIDENCE: SKILL-BI-001 SKILL-SQL-001 SKILL-PLATFORM-001 SKILL-DELIVERY-001 SKILL-ACADEMIC-001
+\newcommand{\CoreSkills}{Power BI; SQL; Power Query/M; data modelling; dashboard and report development; requirements and BRD gathering; data validation; Power BI Service; stakeholder communication; Redshift; Snowflake; Python}
+
+% Exactly one registered project may be rendered.
+% EVIDENCE: PROJ-AZ-RECON
+\newcommand{\SelectedProjectID}{PROJ-AZ-RECON}
+% EVIDENCE: PROJ-AZ-RECON
+\newcommand{\SelectedProjectTitle}{Finance Access Reconciliation Dashboard}
+% EVIDENCE: PROJ-AZ-RECON
+\newcommand{\SelectedProjectContext}{Professional team project for AstraZeneca \textbar{} Power BI, Excel, SharePoint, Power BI Service}
+% EVIDENCE: PROJ-AZ-RECON
+\newcommand{\SelectedProjectBulletOne}{Access tracking was spread across five sources, including Excel and SharePoint; the prior reconciliation process was reported to require six people for one hour each day.}
+% EVIDENCE: PROJ-AZ-RECON
+\newcommand{\SelectedProjectBulletTwo}{Co-developed a Power BI reconciliation view and added drill-through analysis so users could trace access requests and discrepancies to source records.}
+% EVIDENCE: PROJ-AZ-RECON
+\newcommand{\SelectedProjectBulletThree}{The dashboard was tested and promoted through Power BI Service; the template was subsequently reported to be reused in additional verticals.}
+
+\begin{document}
+
+\begin{center}
+  % EVIDENCE: IDENTITY-001
+  {\LARGE\bfseries Chetan Babu M}\\[3pt]
+  % EVIDENCE: LOCATION-001 CONTACT-EMAIL-001 CONTACT-LINKEDIN-001 CONTACT-PHONE-001
+  Ireland \textbar{} \href{mailto:chetanbabu07@gmail.com}{chetanbabu07@gmail.com} \textbar{} \href{https://linkedin.com/in/chetan-babu}{linkedin.com/in/chetan-babu}\\[2pt]
+  % EVIDENCE: CONTACT-PHONE-001
+  +353-0892401738
+\end{center}
+
+\section{Professional Summary}
+\ResumeSummary
+
+\section{Core Skills}
+\CoreSkills
+
+\section{Professional Experience}
+
+% EVIDENCE: EXP-INFOCEPTS-001
+\roleheading{Associate Analyst}{Sep 2023 -- Jan 2025}{Infocepts Technologies Pvt. Ltd. -- Data Analyst / BI Developer}{India}
+
+% EVIDENCE: PROJ-NIQ-REPORTING
+\clientheading{NielsenIQ -- reporting engagement}
+\begin{resumeitems}
+  % EVIDENCE: PROJ-NIQ-REPORTING
+  \item Learned the client's proprietary BI platform within two weeks, gathered BRDs, and clarified reporting requirements directly with stakeholders.
+  % EVIDENCE: PROJ-NIQ-REPORTING
+  \item Delivered 300+ reports across a six-month engagement while translating business requirements into consistent report outputs.
+  % EVIDENCE: PROJ-NIQ-POC
+  \item Built a reusable finance dashboard proof of concept from a client wireframe; the template was reported to reduce development effort by 50\% and save about three days per person for each new dashboard.
+\end{resumeitems}
+
+% EVIDENCE: PROJ-AZ-MIGRATION PROJ-AZ-EXEC PROJ-AZ-RECON WORK-AZ-OTHER-001
+\clientheading{AstraZeneca -- pharmaceutical client}
+\begin{resumeitems}
+  % EVIDENCE: PROJ-AZ-MIGRATION
+  \item Contributed to migrating 160 Power BI reports within three months, updating Power Query/M logic, report queries, and data connections from Redshift to Snowflake.
+  % EVIDENCE: PROJ-AZ-EXEC
+  \item Collaborated in a three-person team to model, build, publish, demonstrate, and hand over an executive Power BI dashboard within one month.
+  % EVIDENCE: PROJ-AZ-RECON
+  \item Co-developed a five-source finance reconciliation dashboard with drill-through analysis for tracing access requests and discrepancies to source records.
+  % EVIDENCE: WORK-AZ-OTHER-001
+  \item Implemented Power BI member access, automated incremental refresh with Power Automate, and performed dashboard and query testing.
+\end{resumeitems}
+
+% EVIDENCE: WORK-HUL-001
+\clientheading{Hindustan Unilever -- Power BI enhancement engagement}
+\begin{resumeitems}
+  % EVIDENCE: WORK-HUL-001
+  \item Implemented requested Power BI dashboard enhancements, performed testing and validation, and supported promotion of updated dashboards to production.
+\end{resumeitems}
+
+% EVIDENCE: EXP-INFOCEPTS-002
+\roleheading{Assistant Associate Analyst}{Feb 2023 -- Aug 2023}{Data Analyst / BI Developer training role -- Infocepts Technologies Pvt. Ltd.}{India}
+\begin{resumeitems}
+  % EVIDENCE: TRAINING-001
+  \item Completed structured training in SQL, Python, Power BI, MicroStrategy, AWS/S3 fundamentals, cloud data warehousing, data modelling, ETL, testing, deployment, and the BI lifecycle.
+  % EVIDENCE: TRAINING-002
+  \item Progressed to Associate Analyst after the training period.
+\end{resumeitems}
+
+\newpage
+
+\section{Selected Project}
+% SELECTED_PROJECT_BLOCK_START
+\textbf{\SelectedProjectTitle}\\
+\textit{\SelectedProjectContext}
+\begin{resumeitems}
+  % EVIDENCE: PROJ-AZ-RECON
+  \item \SelectedProjectBulletOne
+  % EVIDENCE: PROJ-AZ-RECON
+  \item \SelectedProjectBulletTwo
+  % EVIDENCE: PROJ-AZ-RECON
+  \item \SelectedProjectBulletThree
+\end{resumeitems}
+% SELECTED_PROJECT_BLOCK_END
+
+\section{Education}
+
+% EVIDENCE: EDU-MSC-001
+\roleheading{Munster Technological University}{Sep 2025 -- Sep 2026}{MSc programme in Data Science -- In Progress}{Ireland}
+\begin{resumeitems}
+  % EVIDENCE: COURSEWORK-MSC-001 COURSEWORK-MSC-002
+  \item Coursework includes Statistics for Data Science, Python, R, SQL, MongoDB/JSON, time-series analysis, Applied Machine Learning, Data Mining, and Data Analytics; Semester 1 result reported as 2:1.
+  % EVIDENCE: PROJ-MSC-FRAUD
+  \item Capstone work compares five fraud classifiers using feature engineering, training-only SMOTE, leakage-safe cross-validation, GridSearchCV, threshold optimisation, and SHAP; the report documents limited discrimination and no production readiness.
+  % EVIDENCE: PROJ-SECOM-FAULT-DETECTION PROJ-FAANG-PCA PROJ-CLUSTERING-DBSCAN
+  \item Additional academic work covers imbalanced semiconductor fault analysis, PCA and Factor Analysis of financial indicators, and manual prototype/DBSCAN clustering experiments.
+\end{resumeitems}
+
+% EVIDENCE: EDU-BTECH-001
+\roleheading{SRM Institute of Science and Technology}{Jun 2019 -- May 2023}{Bachelor of Technology -- Computer Science (AI and ML), CGPA: 9.4/10}{India}
+
+\section{Certifications}
+\begin{resumeitems}
+  % EVIDENCE: CERT-PL300-001
+  \item Microsoft Certified: PL-300 Power BI Data Analyst Associate
+  % EVIDENCE: CERT-NEXLA-001 CERT-DATAIKU-001
+  \item Nexla Certified Foundations \textbar{} Dataiku Core Designer
+  % EVIDENCE: CERT-HACKERRANK-001 CERT-INFOCEPTS-001
+  \item HackerRank SQL (Hard) \textbar{} Infocepts Data Analytics Internship Certificate
+\end{resumeitems}
+
+\section{Technical Skills}
+% EVIDENCE: SKILL-BI-001
+\textbf{Business Intelligence:} Power BI, Tableau, MicroStrategy, Power Query/M, data modelling, dashboard development, testing, deployment\\[2pt]
+% EVIDENCE: SKILL-SQL-001 SKILL-PLATFORM-001
+\textbf{Data and Platforms:} SQL, Redshift, Snowflake, AWS/S3 fundamentals, Power Automate, Nexla, Dataiku\\[2pt]
+% EVIDENCE: SKILL-ACADEMIC-001 SKILL-ML-TOOLING-001
+\textbf{Academic Data Science:} Python, R, pandas, NumPy, scikit-learn, LightGBM, XGBoost, SHAP, PCA, Factor Analysis, DBSCAN, SMOTE, time series, ARIMA\\[2pt]
+% EVIDENCE: SKILL-DELIVERY-001
+\textbf{Delivery:} requirements and BRD gathering, stakeholder communication, report development, validation, release, and handover\\[2pt]
+% EVIDENCE: LANG-001
+\textbf{Languages:} English (Fluent), Tamil (Fluent), Telugu (Native)
+
+\end{document}

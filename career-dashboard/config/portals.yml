@@ -1,0 +1,194 @@
+# Ireland-first job discovery configuration for Chetan Babu M
+# The scanner must still verify every specific posting before use.
+# Last updated: 2026-07-25
+
+tracked_companies:
+  # Pharmaceutical, healthcare, and medtech
+  - name: "Optum"
+    careers_url: "https://www.optum.com/en/careers.html"
+    sector: "healthcare"
+    enabled: true
+  - name: "Medtronic"
+    careers_url: "https://www.medtronic.com/ie-en/about/careers.html"
+    sector: "medtech"
+    enabled: true
+  - name: "Boston Scientific"
+    careers_url: "https://www.bostonscientific.com/en-IE/careers.html"
+    sector: "medtech"
+    enabled: true
+  - name: "Kerry Group"
+    careers_url: "https://www.kerrygroup.com/careers"
+    sector: "fmcg"
+    enabled: true
+
+  # Consulting and analytics delivery
+  - name: "Version 1"
+    careers_url: "https://version1.com/careers"
+    sector: "consulting"
+    enabled: true
+  - name: "Accenture Ireland"
+    careers_url: "https://www.accenture.com/ie-en/careers"
+    sector: "consulting"
+    enabled: true
+  - name: "Deloitte Ireland"
+    careers_url: "https://www.deloitte.com/ie/en/careers.html"
+    sector: "consulting"
+    enabled: true
+  - name: "EY Ireland"
+    careers_url: "https://www.ey.com/en_ie/careers"
+    sector: "consulting"
+    enabled: true
+  - name: "PwC Ireland"
+    careers_url: "https://www.pwc.ie/careers.html"
+    sector: "consulting"
+    enabled: true
+
+  # Finance, insurance, and data-led operations
+  - name: "Fenergo"
+    careers_url: "https://www.fenergo.com/careers/"
+    sector: "financial-services"
+    enabled: true
+  - name: "Mastercard"
+    careers_url: "https://www.mastercard.com/careers"
+    sector: "financial-services"
+    enabled: true
+  - name: "PayPal"
+    careers_url: "https://careers.pypl.com/"
+    sector: "financial-services"
+    enabled: true
+  - name: "Wayflyer"
+    careers_url: "https://www.wayflyer.com/careers"
+    sector: "financial-services"
+    enabled: true
+
+  # Enterprise technology companies that may hire internal analysts/BI staff
+  - name: "Workday"
+    careers_url: "https://www.workday.com/en-us/company/careers.html"
+    sector: "enterprise-technology"
+    enabled: true
+  - name: "Salesforce"
+    careers_url: "https://salesforce.wd12.myworkdayjobs.com/"
+    sector: "enterprise-technology"
+    enabled: true
+  - name: "ServiceNow"
+    careers_url: "https://www.servicenow.com/careers.html"
+    sector: "enterprise-technology"
+    enabled: true
+  - name: "HubSpot"
+    careers_url: "https://www.hubspot.com/careers"
+    sector: "enterprise-technology"
+    enabled: true
+  - name: "Microsoft"
+    careers_url: "https://careers.microsoft.com/"
+    sector: "enterprise-technology"
+    enabled: true
+
+  # Data-science research sources: apply strict junior/graduate eligibility checks
+  - name: "CeADAR"
+    careers_url: "https://www.ceadar.ie/careers/"
+    sector: "data-research"
+    enabled: true
+  - name: "ADAPT Centre"
+    careers_url: "https://www.adaptcentre.ie/careers/"
+    sector: "data-research"
+    enabled: true
+  - name: "Insight Centre"
+    careers_url: "https://www.insight-centre.org/careers/"
+    sector: "data-research"
+    enabled: true
+
+search_queries:
+  - name: "Data Analyst Ireland"
+    query: '"Data Analyst" Ireland'
+    track: "analytics"
+    enabled: true
+  - name: "BI Analyst Ireland"
+    query: '"BI Analyst" OR "Business Intelligence Analyst" Ireland'
+    track: "analytics"
+    enabled: true
+  - name: "Power BI Ireland"
+    query: '"Power BI Developer" OR "BI Developer" OR "Reporting Analyst" Ireland'
+    track: "bi-delivery"
+    enabled: true
+  - name: "Insights and Reporting Ireland"
+    query: '"Insights Analyst" OR "Reporting Analyst" Ireland SQL'
+    track: "analytics"
+    enabled: true
+  - name: "Graduate Data Scientist Ireland"
+    query: '"Graduate Data Scientist" OR "Junior Data Scientist" Ireland'
+    track: "applied-data-science"
+    enabled: true
+  - name: "Entry-level GenAI Applications Ireland"
+    query: '("GenAI Application Developer" OR "AI Application Developer" OR "RAG Developer") Ireland junior'
+    track: "genai-project"
+    enabled: true
+  - name: "Ireland Analytics ATS"
+    query: '("Data Analyst" OR "BI Analyst" OR "Power BI") Ireland (site:boards.greenhouse.io OR site:jobs.lever.co OR site:jobs.ashbyhq.com)'
+    track: "analytics"
+    enabled: true
+
+title_filter:
+  eligible_phrases:
+    - "Data Analyst"
+    - "BI Analyst"
+    - "Business Intelligence Analyst"
+    - "Analytics Analyst"
+    - "Insights Analyst"
+    - "Reporting Analyst"
+    - "BI Developer"
+    - "Business Intelligence Developer"
+    - "Power BI Developer"
+    - "Junior Data Scientist"
+    - "Graduate Data Scientist"
+    - "Data Scientist"
+  conditional_phrases:
+    - "Business Analyst"
+    - "Commercial Analyst"
+    - "Operations Analyst"
+    - "Finance Analyst"
+    - "GenAI Application Developer"
+    - "AI Application Developer"
+  conditional_description_signals:
+    - "Power BI"
+    - "SQL"
+    - "Tableau"
+    - "dashboard"
+    - "reporting"
+    - "data visualization"
+    - "business intelligence"
+    - "RAG"
+    - "FAISS"
+    - "Streamlit"
+    - "candidate projects"
+  excluded_phrases:
+    - "AI Engineer"
+    - "Artificial Intelligence Engineer"
+    - "Machine Learning Engineer"
+    - "ML Engineer"
+    - "MLOps"
+    - "Software Engineer"
+    - "Full Stack"
+    - "Full-Stack"
+    - "DevOps"
+    - "Data Engineer"
+    - "Analytics Engineer"
+    - "Hardware"
+    - "Embedded"
+    - "Principal"
+    - "Director"
+    - "Vice President"
+    - "VP"
+  seniority_preferred:
+    - "Junior"
+    - "Graduate"
+    - "Associate"
+    - "Entry Level"
+  seniority_manual_review:
+    - "Senior"
+    - "Lead"
+    - "Manager"
+
+role_gate:
+  data_scientist: "Accept only junior, graduate, or clearly entry-level roles that permit academic project evidence."
+  business_analyst: "Accept only when the description has substantial data, BI, dashboard, SQL, or reporting duties."
+  engineer_titles: "Reject. Do not infer fit from Python, SQL, data, analytics, or cloud keyword overlap."

@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-06",
+  "notes": "Historical delivered batch imported during the 10 September cleanup. Original packs are in backup/historical. Recheck the posting and current resume before applying. Submission status is not established.",
+  "created_at": "2026-09-10T22:20:44+00:00",
+  "jobs": [
+    {
+      "id": "dc9d3339a6de326c",
+      "company": "Capventis",
+      "title": "Graduate Consultant - analytics preference",
+      "location": "Ireland / UK advertised; request Dublin analytics placement",
+      "url": "https://www.capventis.com/about-us/join-us/graduate-consultant-position",
+      "description": "# Graduate Consultant - analytics preference - Capventis\n\nSource: https://www.capventis.com/about-us/join-us/graduate-consultant-position\nChecked: 2026-09-06\nLocation: Ireland / UK advertised; request Dublin analytics placement\nPosted: No reliable publication date; standing employer listing; deadline: Not stated\n\n## Verification\nCurrent employer careers index links this specific graduate role for Ireland/UK. Full JD and embedded CV/cover-letter application form verified on 2026-09-06. No application submitted.\n\n## Concise JD snapshot\nGraduate consultants help clients turn business needs into technology and analytics solutions.\n\n- required: Relevant technical or business degree\n- required: Clear communication\n- required: Numeracy and problem solving\n- required: Learning initiative and teamwork\n- required: Customer-facing professionalism\n- required: Commercial awareness\n- preferred: Data visualisation\n- preferred: Experience platforms, CRM or web technologies\n- preferred: Office suite and project management\n\nRequirements are paraphrased. Candidate support is assessed separately in evidence-map.yml.",
+      "status": "saved",
+      "created_at": "2026-09-10T22:20:44+00:00",
+      "updated_at": "2026-09-10T22:20:44+00:00",
+      "notes": "Imported historical posting from 2026-09-06. Previously delivered pack: backup/historical/daily-job-search/2026-09-06/001-capventis-graduate-consultant-e748aa8999. Posting must be reverified; old resume is not approved against the current profile. No application was recorded.",
+      "application_date": null,
+      "selected_project_id": null,
+      "folder": null,
+      "verification": "not_verified"
+    },
+    {
+      "id": "ad59414982bccfd7",
+      "company": "One Recruitment",
+      "title": "Junior Data Analyst",
+      "location": "Dublin, Ireland; confirm office working arrangement",
+      "url": "https://www.careers-page.com/one-recruitment/job/Y686863V",
+      "description": "# Junior Data Analyst - One Recruitment\n\nSource: https://www.careers-page.com/one-recruitment/job/Y686863V\nChecked: 2026-09-06\nLocation: Dublin, Ireland; confirm office working arrangement\nPosted: Not stated on employer-linked ATS; deadline: Not stated\n\n## Verification\nFull Manatal posting explicitly states Dublin. Linked application form loaded name, email, phone, CV and Apply controls on 2026-09-06. Advert describes its own field-sales operations; confirm contracting employer with recruiter. No information entered.\n\n## Concise JD snapshot\nField-sales teams need consistent performance dashboards and investigation of data discrepancies.\n\n- required: Previous analyst experience\n- required: Advanced Excel methods\n- required: Reports and dashboards\n- required: Numerical reasoning and accuracy\n- required: Explain findings and communicate\n- required: Organisation and delivery\n- preferred: Power BI or Tableau\n- preferred: SQL\n- preferred: Sales domain and commercial KPIs\n\nRequirements are paraphrased. Candidate support is assessed separately in evidence-map.yml.",
+      "status": "saved",
+      "created_at": "2026-09-10T22:20:44+00:00",
+      "updated_at": "2026-09-10T22:20:44+00:00",
+      "notes": "Imported historical posting from 2026-09-06. Previously delivered pack: backup/historical/daily-job-search/2026-09-06/002-one-recruitment-junior-data-9e28659918. Posting must be reverified; old resume is not approved against the current profile. No application was recorded.",
+      "application_date": null,
+      "selected_project_id": null,
+      "folder": null,
+      "verification": "not_verified"
+    }
+  ]
+}

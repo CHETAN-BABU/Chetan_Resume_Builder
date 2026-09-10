@@ -1,0 +1,64 @@
+candidate_revision: "2026-09-09.1"
+job_id: "001-company-role-short-hash"
+role_eligible: true
+job_snapshot_sha256: "replace_with_64_character_sha256_of_the_saved_job_description"
+supported_requirement_coverage: 0
+
+requirements:
+  - id: "R01"
+    priority: "required"
+    text: "Power BI dashboard development"
+    evidence_ids:
+      - "PROJ-AZ-RECON"
+      - "PROJ-AZ-EXEC"
+    strength: "strong"
+  - id: "R02"
+    priority: "preferred"
+    text: "Example requirement"
+    evidence_ids: []
+    strength: "gap"
+
+company_problem:
+  statement: "Replace with a factual, sourced JD or employer problem signal."
+  source_url: "https://example.invalid/replace-with-authoritative-source"
+  published_or_accessed: "YYYY-MM-DD"
+  evidence_class: "explicit"
+  confidence: "high"
+
+selected_project_id: "PROJ-AZ-RECON"
+selected_project_reason: "Replace with the problem/skill/evidence ranking rationale."
+
+resume_claim_ids:
+  - "IDENTITY-001"
+  - "CONTACT-EMAIL-001"
+  - "CONTACT-LINKEDIN-001"
+  - "LOCATION-001"
+  - "EXP-INFOCEPTS-001"
+  - "EXP-INFOCEPTS-002"
+  - "EDU-MSC-001"
+  - "EDU-BTECH-001"
+  - "COURSEWORK-MSC-001"
+  - "COURSEWORK-MSC-002"
+  - "CERT-PL300-001"
+  - "CERT-NEXLA-001"
+  - "CERT-DATAIKU-001"
+  - "CERT-HACKERRANK-001"
+  - "CERT-INFOCEPTS-001"
+  - "LANG-001"
+  - "WORK-HUL-001"
+  - "WORK-AZ-OTHER-001"
+  - "TRAINING-001"
+  - "TRAINING-002"
+  - "SKILL-BI-001"
+  - "SKILL-SQL-001"
+  - "SKILL-PLATFORM-001"
+  - "SKILL-ACADEMIC-001"
+  - "SKILL-DELIVERY-001"
+  - "PROJ-AZ-EXEC"
+  - "PROJ-AZ-MIGRATION"
+  - "PROJ-AZ-RECON"
+  - "PROJ-NIQ-POC"
+  - "PROJ-NIQ-REPORTING"
+  - "PROJ-MSC-FRAUD"
+
+held_claims_used: []
