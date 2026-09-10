@@ -15,3 +15,5 @@ __pycache__/
 career-dashboard/output/
 .env
 .env.*
+.Rhistory
+.RData
