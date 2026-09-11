@@ -12,6 +12,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
+sys.path.insert(0,str(ROOT))
 from career import Workspace, safe_child
 from tracking import today
 
@@ -32,8 +33,10 @@ class NotesInput(BaseModel):
 
 def create_app(root=ROOT):
     root=Path(root).resolve(); workspace=Workspace(root)
-    app=FastAPI(title='Chetan Career Workspace',version='1.0.0')
+    app=FastAPI(title='Chetan Career Workspace',version='2.0.0')
     app.state.workspace=workspace
+    from dashboard.api_v2 import attach
+    service=attach(app,workspace)
     locks={}; locks_guard=threading.Lock()
     def job_lock(job_id):
         with locks_guard: return locks.setdefault(job_id,threading.Lock())
@@ -53,9 +56,11 @@ def create_app(root=ROOT):
     @app.exception_handler(ValueError)
     async def bad_input(request,exc): return JSONResponse({'detail':str(exc)},status_code=400)
     @app.get('/')
-    def home(): return FileResponse(ROOT/'dashboard/static/index.html')
+    def home():
+        built=ROOT/'frontend/dist/index.html'
+        return FileResponse(built if built.exists() else ROOT/'dashboard/static/index.html')
     @app.get('/api/health')
-    def health(): return {'app':'chetan-career-workspace','root':str(root)}
+    def health(): return {'app':'chetan-career-workspace','version':'2.0.0','root':str(root)}
     @app.get('/api/overview')
     def overview():
         evidence=workspace.evidence(); jobs=workspace.jobs()
@@ -90,6 +95,7 @@ def create_app(root=ROOT):
     def update_job(job_id: str,data: StatusInput): return workspace.update_job(job_id,**data.model_dump())
     @app.post('/api/jobs/{job_id}/prepare')
     def prepare(job_id: str,data: PrepareInput):
+        if service.profile_dirty(): raise ValueError('Profile edits are saved. Reconcile the resume evidence registry before preparing a new draft so outdated facts cannot be used.')
         with job_lock(job_id): return workspace.prepare(job_id,data.project_id)
     @app.post('/api/jobs/{job_id}/preview')
     def preview(job_id: str):
@@ -107,5 +113,6 @@ def create_app(root=ROOT):
         except ValueError: raise HTTPException(404,'File not found')
         if not path.is_file() or path.suffix not in {'.pdf','.png','.tex','.md','.yml','.json'}: raise HTTPException(404,'File not found')
         return FileResponse(path,media_type='application/pdf' if path.suffix=='.pdf' else None)
+    if (ROOT/'frontend/dist/assets').exists(): app.mount('/assets',StaticFiles(directory=ROOT/'frontend/dist/assets'),name='assets')
     app.mount('/static',StaticFiles(directory=ROOT/'dashboard/static'),name='static')
     return app

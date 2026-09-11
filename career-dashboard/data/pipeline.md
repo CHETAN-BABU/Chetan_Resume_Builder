@@ -4,7 +4,8 @@ Generated from data/career.db. Do not edit this projection directly.
 
 | Company | Role | Location | Status | Posting |
 |---|---|---|---|---|
-| FedEx | Business Analyst - Data, Insights & Workforce Management | Dublin among five European locations; hybrid; 40 hours weekly | saved | https://careers.fedex.com/pt-pt/business-analyst-data-insights-workforce-management-global-trade-services/job/CCB8DC461DBCC02343B25C1C70329131__pt-pt |
+| Arup | Data Scientist Work Placement | Dublin, Ireland | applied | https://jobs.arup.com/jobs/data-scientist-work-placement-34369 |
+| FedEx | Business Analyst - Data, Insights & Workforce Management | Dublin among five European locations; hybrid; 40 hours weekly | prepared | https://careers.fedex.com/pt-pt/business-analyst-data-insights-workforce-management-global-trade-services/job/CCB8DC461DBCC02343B25C1C70329131__pt-pt |
 | AIB | Data Analyst - Group Internal Audit | Dublin, Cork, Galway or Waterford; hybrid | saved | https://jobs.aib.ie/aib/job/Dublin-Data-Analyst-Group-Internal-Audit-IE/1371348757 |
 | Bank of Ireland | Data, Technology and Change Graduate Programme 2027 | Dublin; hybrid; 2027 programme | saved | https://careers.bankofireland.com/jobs/data-technology-and-change-graduate-programme-2027-dublin-ireland |
 | Fanatics Betting & Gaming | Data Scientist I | Dublin, Ireland; working arrangement not stated | saved | https://job-boards.greenhouse.io/fanaticsfbg/jobs/4356668009 |

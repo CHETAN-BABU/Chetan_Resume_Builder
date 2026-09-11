@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Start the local dashboard; no Node.js or API key is needed."""
+"""Start the local dashboard; the React client is built locally when its sources change."""
 import argparse
 import importlib.util
 import sys
@@ -20,6 +20,9 @@ def main():
     if not 1024<=args.port<=65535: parser.error('Choose a port from 1024 to 65535')
     if importlib.util.find_spec('uvicorn') is None:
         raise SystemExit('Install dependencies first: python3 -m pip install -r requirements.txt')
+    sys.path.insert(0,str(ROOT/'scripts'))
+    from build_frontend import build
+    build()
     import uvicorn
     from dashboard.app import create_app
     url=f'http://127.0.0.1:{args.port}'

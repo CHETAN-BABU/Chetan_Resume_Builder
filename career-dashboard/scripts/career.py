@@ -16,6 +16,8 @@ import yaml
 from tracking import Tracking
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.append(str(ROOT))
+from services.postings import canonical_url, posting_key
 STATUSES = {'saved', 'prepared', 'applied', 'interview', 'offer', 'rejected', 'withdrawn'}
 
 def now():
@@ -41,10 +43,7 @@ def safe_child(root, value):
     return path
 
 def job_url(value):
-    parsed = urlsplit(value.strip())
-    if parsed.scheme not in ('https', 'http') or not parsed.hostname or parsed.username or parsed.password:
-        raise ValueError('Use a complete public http(s) job URL without credentials')
-    return urlunsplit((parsed.scheme.lower(), parsed.netloc.lower(), parsed.path.rstrip('/') or '/', parsed.query, ''))
+    return canonical_url(value)
 
 def tex_escape(text):
     return ''.join({'\\':r'\textbackslash{}','&':r'\&','%':r'\%','$':r'\$','#':r'\#','_':r'\_','{':r'\{','}':r'\}','~':r'\textasciitilde{}','^':r'\textasciicircum{}','|':r'\textbar{}'}.get(c,c) for c in text)
@@ -67,6 +66,9 @@ class Workspace(Tracking):
                 application_date TEXT, selected_project_id TEXT, folder TEXT,
                 verification TEXT NOT NULL DEFAULT 'not_verified')''')
             self.init_tracking(db)
+            db.execute('CREATE TABLE IF NOT EXISTS posting_identities(identity TEXT PRIMARY KEY,job_id TEXT NOT NULL REFERENCES jobs(id))')
+            for row in db.execute('SELECT id,url FROM jobs').fetchall():
+                db.execute('INSERT OR IGNORE INTO posting_identities VALUES(?,?)',(posting_key(row['url']),row['id']))
     def connect(self):
         db = sqlite3.connect(self.db_path, timeout=15)
         db.row_factory = sqlite3.Row
@@ -84,7 +86,7 @@ class Workspace(Tracking):
             row = db.execute('SELECT * FROM jobs WHERE id=?',(job_id,)).fetchone()
         if row is None: raise ValueError('Opportunity not found')
         return dict(row)
-    def add_job(self, company, title, location, url, description):
+    def add_job(self, company, title, location, url, description, requisition_id=""):
         values = [str(v).strip() for v in (company,title,location,url,description)]
         if not all(values): raise ValueError('Complete all job fields')
         company,title,location,url,description=values
@@ -93,7 +95,12 @@ class Workspace(Tracking):
         job_id = hashlib.sha256(url.encode()).hexdigest()[:16]
         try:
             with self.connect() as db:
+                db.execute('BEGIN IMMEDIATE')
+                identities={posting_key(url),posting_key(url,company,requisition_id)}
+                if any(db.execute('SELECT 1 FROM posting_identities WHERE identity=?',(key,)).fetchone() for key in identities):
+                    raise ValueError('This posting is already saved')
                 db.execute('INSERT INTO jobs(id,company,title,location,url,description,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?)',(job_id,company,title,location,url,description,now(),now()))
+                for key in identities: db.execute('INSERT INTO posting_identities VALUES(?,?)',(key,job_id))
                 self.record_event(db, 'job_saved', job_id, company=company, title=title, url=url)
         except sqlite3.IntegrityError:
             raise ValueError('This posting is already saved') from None
@@ -102,7 +109,9 @@ class Workspace(Tracking):
     def update_job(self, job_id, status, notes=None, application_date=None):
         old=self.get_job(job_id)
         if status not in STATUSES: raise ValueError('Unknown application status')
-        if status=='applied' and not (application_date or old['application_date']):
+        with self.connect() as db:
+            has_evidence=bool(db.execute("SELECT 1 FROM sqlite_master WHERE name='application_evidence'").fetchone()) and bool(db.execute('SELECT 1 FROM application_evidence WHERE job_id=?',(job_id,)).fetchone())
+        if status=='applied' and not (application_date or old['application_date'] or has_evidence):
             raise ValueError('Record the actual application date; preparing a resume is not an application')
         notes = old['notes'] if notes is None else notes
         if application_date:

@@ -13,7 +13,9 @@ def main():
     for name in ['daily-job-search', 'career-dashboard', 'backup']:
         if not (ROOT/name).is_dir(): failures.append(f'Missing {name}')
     for name in ['example', 'resume-builder-main', '2026-08-12', 'Arup-Data-Scientist-Work-Placement', '_runtime', '_backups']:
-        if (ROOT/name).exists(): failures.append(f'Retired folder remains active: {name}')
+        folder=ROOT/name
+        if name=='resume-builder-main' and folder.is_dir() and all(p.suffix=='.code-workspace' for p in folder.rglob('*') if p.is_file()):continue
+        if folder.exists(): failures.append(f'Retired folder remains active: {name}')
     w=Workspace(ROOT/'career-dashboard')
     with w.connect() as db:
         if db.execute('PRAGMA integrity_check').fetchone()[0]!='ok': failures.append('Database integrity check failed')

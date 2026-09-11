@@ -1,5 +1,66 @@
 [
   {
+    "id": 53,
+    "occurred_at": "2026-09-11T00:11:31+00:00",
+    "action": "agent_completed",
+    "job_id": null,
+    "details": {
+      "run_id": "1b1c3540039345b7b9b93c9b2ffc49f3",
+      "kind": "email"
+    }
+  },
+  {
+    "id": 52,
+    "occurred_at": "2026-09-11T00:11:31+00:00",
+    "action": "email_synced",
+    "job_id": null,
+    "details": {
+      "new_messages": 34
+    }
+  },
+  {
+    "id": 51,
+    "occurred_at": "2026-09-11T00:06:34+00:00",
+    "action": "email_status_confirmed",
+    "job_id": "ba636cae44ecca0a",
+    "details": {
+      "message_id": "1a083640fafc3415",
+      "status": "applied",
+      "submission_date": null
+    }
+  },
+  {
+    "id": 50,
+    "occurred_at": "2026-09-11T00:06:34+00:00",
+    "action": "email_synced",
+    "job_id": null,
+    "details": {
+      "new_messages": 1
+    }
+  },
+  {
+    "id": 49,
+    "occurred_at": "2026-09-11T00:06:34+00:00",
+    "action": "job_saved",
+    "job_id": "ba636cae44ecca0a",
+    "details": {
+      "company": "Arup",
+      "title": "Data Scientist Work Placement",
+      "url": "https://jobs.arup.com/jobs/data-scientist-work-placement-34369"
+    }
+  },
+  {
+    "id": 48,
+    "occurred_at": "2026-09-10T22:39:14+00:00",
+    "action": "draft_prepared",
+    "job_id": "0d6532dcb60da0d9",
+    "details": {
+      "folder": "output/applications/0d6532dcb60da0d9-bacmbzwj",
+      "project_id": "PROJ-EU-COMPLIANCE-RAG",
+      "review_required": true
+    }
+  },
+  {
     "id": 47,
     "occurred_at": "2026-09-10T22:22:53+00:00",
     "action": "search_notes_updated",

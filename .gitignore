@@ -17,3 +17,7 @@ career-dashboard/output/
 .env.*
 .Rhistory
 .RData
+
+node_modules/
+career-dashboard/frontend/dist/
+*.tsbuildinfo

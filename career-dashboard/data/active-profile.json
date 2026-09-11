@@ -1,0 +1,2235 @@
+[
+  {
+    "id": "CERT-DATAIKU-001",
+    "kind": "certification",
+    "title": "Dataiku Core Designer",
+    "summary": "Dataiku Core Designer",
+    "data": {
+      "id": "CERT-DATAIKU-001",
+      "status": "confirmed",
+      "category": "certification",
+      "approved_external_use": "name only; credential ID/link not supplied",
+      "source_refs": [
+        "context/sources/career.md > Certifications reported by Chetan"
+      ],
+      "value": "Dataiku Core Designer"
+    },
+    "source": "context/evidence.yml > CERT-DATAIKU-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "CERT-HACKERRANK-001",
+    "kind": "certification",
+    "title": "HackerRank SQL (Hard)",
+    "summary": "HackerRank SQL (Hard)",
+    "data": {
+      "id": "CERT-HACKERRANK-001",
+      "status": "confirmed",
+      "category": "certification",
+      "approved_external_use": "name only; credential ID/link not supplied",
+      "source_refs": [
+        "context/sources/career.md > Certifications reported by Chetan"
+      ],
+      "value": "HackerRank SQL (Hard)"
+    },
+    "source": "context/evidence.yml > CERT-HACKERRANK-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "CERT-INFOCEPTS-001",
+    "kind": "certification",
+    "title": "Infocepts Data Analytics Internship Certificate",
+    "summary": "Infocepts Data Analytics Internship Certificate",
+    "data": {
+      "id": "CERT-INFOCEPTS-001",
+      "status": "confirmed",
+      "category": "certification",
+      "approved_external_use": "certificate name only; do not add award or excellence wording",
+      "source_refs": [
+        "context/sources/career.md > Certifications reported by Chetan"
+      ],
+      "value": "Infocepts Data Analytics Internship Certificate"
+    },
+    "source": "context/evidence.yml > CERT-INFOCEPTS-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "CERT-PL300-001",
+    "kind": "certification",
+    "title": "Microsoft Certified: PL-300 Power BI Data Analyst Associate",
+    "summary": "Microsoft Certified: PL-300 Power BI Data Analyst Associate",
+    "data": {
+      "id": "CERT-PL300-001",
+      "status": "confirmed",
+      "category": "certification",
+      "approved_external_use": "name only; credential ID/link not supplied",
+      "source_refs": [
+        "context/sources/career.md > Certifications reported by Chetan"
+      ],
+      "value": "Microsoft Certified: PL-300 Power BI Data Analyst Associate"
+    },
+    "source": "context/evidence.yml > CERT-PL300-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "CERT-NEXLA-001",
+    "kind": "certification",
+    "title": "Nexla Certified Foundations",
+    "summary": "Nexla Certified Foundations",
+    "data": {
+      "id": "CERT-NEXLA-001",
+      "status": "confirmed",
+      "category": "certification",
+      "approved_external_use": "name only; credential ID/link not supplied",
+      "source_refs": [
+        "context/sources/career.md > Certifications reported by Chetan"
+      ],
+      "value": "Nexla Certified Foundations"
+    },
+    "source": "context/evidence.yml > CERT-NEXLA-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "EDU-MSC-001",
+    "kind": "education",
+    "title": "Munster Technological University",
+    "summary": "Sep 2025-Sep 2026 · In progress",
+    "data": {
+      "id": "EDU-MSC-001",
+      "status": "conditional",
+      "category": "education",
+      "approved_external_use": "use 'MSc programme in Data Science, in progress' until exact award title is confirmed",
+      "source_refs": [
+        "context/sources/career.md > MSc in Data Science"
+      ],
+      "institution": "Munster Technological University",
+      "dates": "Sep 2025-Sep 2026",
+      "status_text": "In progress",
+      "reported_result": "Semester 1: 2:1"
+    },
+    "source": "context/evidence.yml > EDU-MSC-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "EDU-BTECH-001",
+    "kind": "education",
+    "title": "SRM Institute of Science and Technology",
+    "summary": "Jun 2019-May 2023 · Bachelor of Technology in Computer Science (AI and ML)",
+    "data": {
+      "id": "EDU-BTECH-001",
+      "status": "user_reported",
+      "category": "education",
+      "approved_external_use": "Use as candidate-supplied education; do not infer an honours classification.",
+      "source_refs": [
+        "context/sources/career.md > B.Tech in Computer Science"
+      ],
+      "institution": "SRM Institute of Science and Technology",
+      "degree_as_supplied": "Bachelor of Technology in Computer Science (AI and ML)",
+      "dates": "Jun 2019-May 2023",
+      "cgpa_as_supplied": "9.4/10"
+    },
+    "source": "context/evidence.yml > EDU-BTECH-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "EXP-INFOCEPTS-002",
+    "kind": "experience",
+    "title": "Assistant Associate Analyst",
+    "summary": "Infocepts Technologies Pvt. Ltd. · Feb 2023-Aug 2023",
+    "data": {
+      "id": "EXP-INFOCEPTS-002",
+      "status": "conditional",
+      "category": "employment",
+      "approved_external_use": "use the supplied title; describe as a training role until classification is confirmed",
+      "source_refs": [
+        "context/sources/career.md > Infocepts Technologies Pvt. Ltd. - Assistant Associate Analyst"
+      ],
+      "employer": "Infocepts Technologies Pvt. Ltd.",
+      "title": "Assistant Associate Analyst",
+      "functional_title": "Data Analyst / BI Developer training role",
+      "dates": "Feb 2023-Aug 2023",
+      "location": "India"
+    },
+    "source": "context/evidence.yml > EXP-INFOCEPTS-002",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "EXP-INFOCEPTS-001",
+    "kind": "experience",
+    "title": "Associate Analyst",
+    "summary": "Infocepts Technologies Pvt. Ltd. · Sep 2023-Jan 2025",
+    "data": {
+      "id": "EXP-INFOCEPTS-001",
+      "status": "confirmed",
+      "category": "employment",
+      "approved_external_use": "always",
+      "source_refs": [
+        "context/sources/career.md > Infocepts Technologies Pvt. Ltd. - Associate Analyst"
+      ],
+      "employer": "Infocepts Technologies Pvt. Ltd.",
+      "title": "Associate Analyst",
+      "functional_title": "Data Analyst / BI Developer",
+      "dates": "Sep 2023-Jan 2025",
+      "location": "India"
+    },
+    "source": "context/evidence.yml > EXP-INFOCEPTS-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "CONTACT-PHONE-001",
+    "kind": "fact",
+    "title": "+353-0892401738",
+    "summary": "+353-0892401738",
+    "data": {
+      "id": "CONTACT-PHONE-001",
+      "status": "user_reported",
+      "category": "contact",
+      "approved_external_use": "Include the supplied Irish number verbatim per user instruction on 2026-09-09; international format has not been independently confirmed.",
+      "source_refs": [
+        "config/profile.yml > candidate",
+        "User instruction in conversation, 2026-09-09: keep all information; no need to hide"
+      ],
+      "value_as_supplied": "+353-0892401738",
+      "value": "+353-0892401738"
+    },
+    "source": "context/evidence.yml > CONTACT-PHONE-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "CERT-PL300-RENEWAL-001",
+    "kind": "fact",
+    "title": "CERT-PL300-RENEWAL-001",
+    "summary": "Renewed through March 2027",
+    "data": {
+      "id": "CERT-PL300-RENEWAL-001",
+      "status": "hold",
+      "category": "certification_validity",
+      "approved_external_use": "Use the March 2027 renewal date only after a credential record or link is supplied.",
+      "source_refs": [
+        "context/sources/career.md > Certifications reported by Chetan"
+      ],
+      "value_as_supplied": "Renewed through March 2027"
+    },
+    "source": "context/evidence.yml > CERT-PL300-RENEWAL-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "COURSEWORK-MSC-001",
+    "kind": "fact",
+    "title": "COURSEWORK-MSC-001",
+    "summary": "",
+    "data": {
+      "id": "COURSEWORK-MSC-001",
+      "status": "confirmed",
+      "category": "academic_coursework",
+      "approved_external_use": "Label as MSc coursework.",
+      "source_refs": [
+        "context/sources/career.md > MSc in Data Science > Semester 1"
+      ],
+      "approved_facts": [
+        "Reported Semester 1 result: 2:1.",
+        "Coursework includes Statistics for Data Science, Python, R, DBMS, SQL, MongoDB/JSON, Data Science Principles, and time-series analysis with ARIMA."
+      ]
+    },
+    "source": "context/evidence.yml > COURSEWORK-MSC-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "COURSEWORK-MSC-002",
+    "kind": "fact",
+    "title": "COURSEWORK-MSC-002",
+    "summary": "",
+    "data": {
+      "id": "COURSEWORK-MSC-002",
+      "status": "confirmed",
+      "category": "academic_coursework",
+      "approved_external_use": "Label as MSc coursework.",
+      "source_refs": [
+        "context/sources/career.md > MSc in Data Science > Semester 2"
+      ],
+      "approved_facts": [
+        "Semester 2 work includes Applied Machine Learning, Data Mining, and Data Analytics."
+      ]
+    },
+    "source": "context/evidence.yml > COURSEWORK-MSC-002",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "IDENTITY-001",
+    "kind": "fact",
+    "title": "Chetan Babu M",
+    "summary": "Chetan Babu M",
+    "data": {
+      "id": "IDENTITY-001",
+      "status": "confirmed",
+      "category": "identity",
+      "approved_external_use": "always",
+      "source_refs": [
+        "config/profile.yml > candidate"
+      ],
+      "value": "Chetan Babu M"
+    },
+    "source": "context/evidence.yml > IDENTITY-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "HOLD-AWARD-001",
+    "kind": "fact",
+    "title": "HOLD-AWARD-001",
+    "summary": "Innovation award/recognition for the finance dashboard POC",
+    "data": {
+      "id": "HOLD-AWARD-001",
+      "status": "hold",
+      "category": "award",
+      "approved_external_use": "never until exact title and issuer are confirmed",
+      "source_refs": [
+        "context/PROFILE-NOTES.md > Claim ledger > Hold for confirmation"
+      ],
+      "value_as_supplied": "Innovation award/recognition for the finance dashboard POC"
+    },
+    "source": "context/evidence.yml > HOLD-AWARD-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "HOLD-AZ-AUTOMATION-METRIC-001",
+    "kind": "fact",
+    "title": "HOLD-AZ-AUTOMATION-METRIC-001",
+    "summary": "40% manual-effort reduction and 15+ hours saved weekly",
+    "data": {
+      "id": "HOLD-AZ-AUTOMATION-METRIC-001",
+      "status": "hold",
+      "category": "professional_metric",
+      "approved_external_use": "never until reconciled with the earlier source and measurement is supplied",
+      "source_refs": [
+        "context/sources/career.md > Missing facts"
+      ],
+      "value_as_supplied": "40% manual-effort reduction and 15+ hours saved weekly"
+    },
+    "source": "context/evidence.yml > HOLD-AZ-AUTOMATION-METRIC-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "HOLD-CONTRACT-001",
+    "kind": "fact",
+    "title": "HOLD-CONTRACT-001",
+    "summary": "Executive dashboard caused or secured a three-year USD 5 million contract",
+    "data": {
+      "id": "HOLD-CONTRACT-001",
+      "status": "hold",
+      "category": "metric",
+      "approved_external_use": "never until explicitly confirmed",
+      "source_refs": [
+        "context/PROFILE-NOTES.md > Claim ledger > Hold for confirmation"
+      ],
+      "value_as_supplied": "Executive dashboard caused or secured a three-year USD 5 million contract"
+    },
+    "source": "context/evidence.yml > HOLD-CONTRACT-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "HOLD-NIQ-MONTHLY-001",
+    "kind": "fact",
+    "title": "HOLD-NIQ-MONTHLY-001",
+    "summary": "100+ reports in one month and a team delivery record",
+    "data": {
+      "id": "HOLD-NIQ-MONTHLY-001",
+      "status": "hold",
+      "category": "professional_metric",
+      "approved_external_use": "never until reconciled with the confirmed six-month delivery total",
+      "source_refs": [
+        "context/sources/career.md > Quantified claims"
+      ],
+      "value_as_supplied": "100+ reports in one month and a team delivery record"
+    },
+    "source": "context/evidence.yml > HOLD-NIQ-MONTHLY-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "HOLD-RAG-EVAL-001",
+    "kind": "fact",
+    "title": "HOLD-RAG-EVAL-001",
+    "summary": "90%+ answer relevance",
+    "data": {
+      "id": "HOLD-RAG-EVAL-001",
+      "status": "hold",
+      "category": "project_metric",
+      "approved_external_use": "never until the evaluator, formula, dataset/domain, sample size, run date, and baseline are supplied",
+      "source_refs": [
+        "context/sources/career.md > Retrieval-Augmented Document Q&A Prototype"
+      ],
+      "value_as_supplied": "90%+ answer relevance"
+    },
+    "source": "context/evidence.yml > HOLD-RAG-EVAL-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "LOCATION-001",
+    "kind": "fact",
+    "title": "Ireland",
+    "summary": "Ireland",
+    "data": {
+      "id": "LOCATION-001",
+      "status": "confirmed",
+      "category": "location",
+      "approved_external_use": "always",
+      "source_refs": [
+        "config/profile.yml > candidate"
+      ],
+      "value": "Ireland"
+    },
+    "source": "context/evidence.yml > LOCATION-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "LANG-001",
+    "kind": "fact",
+    "title": "LANG-001",
+    "summary": "",
+    "data": {
+      "id": "LANG-001",
+      "status": "confirmed",
+      "category": "languages",
+      "approved_external_use": "always",
+      "source_refs": [
+        "context/PROFILE-NOTES.md > Contact and status",
+        "context/sources/career.md > Languages supplied"
+      ],
+      "approved_facts": [
+        "English (Fluent)",
+        "Tamil (Fluent)",
+        "Telugu (Native)"
+      ]
+    },
+    "source": "context/evidence.yml > LANG-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "WORKAUTH-STAMP-001",
+    "kind": "fact",
+    "title": "Stamp 1G",
+    "summary": "Stamp 1G",
+    "data": {
+      "id": "WORKAUTH-STAMP-001",
+      "status": "user_reported",
+      "category": "work_authorization",
+      "approved_external_use": "May state Stamp 1G if a form asks. Omit from external resumes by default; do not infer expiry, renewal, unrestricted rights or future sponsorship.",
+      "source_refs": [
+        "User confirmation in Codex conversation, 2026-09-05",
+        "config/profile.yml > candidate > immigration_permission_as_confirmed"
+      ],
+      "value": "Stamp 1G",
+      "confirmed_on": "2026-09-05"
+    },
+    "source": "context/evidence.yml > WORKAUTH-STAMP-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "TRAINING-001",
+    "kind": "fact",
+    "title": "TRAINING-001",
+    "summary": "",
+    "data": {
+      "id": "TRAINING-001",
+      "status": "confirmed",
+      "category": "professional_training",
+      "approved_external_use": "Describe as structured training; exact employment/internship classification remains unresolved.",
+      "source_refs": [
+        "context/sources/career.md > Assistant Associate Analyst"
+      ],
+      "approved_facts": [
+        "Completed structured training in SQL, Python, Power BI, MicroStrategy, AWS/S3 fundamentals, cloud data warehousing, data modeling, ETL, testing, deployment, and the BI lifecycle.",
+        "Gained exposure to requirements, development, validation, release, and production-support practices."
+      ]
+    },
+    "source": "context/evidence.yml > TRAINING-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "TRAINING-002",
+    "kind": "fact",
+    "title": "TRAINING-002",
+    "summary": "",
+    "data": {
+      "id": "TRAINING-002",
+      "status": "confirmed",
+      "category": "career_progression",
+      "approved_external_use": "always",
+      "source_refs": [
+        "context/sources/career.md > Assistant Associate Analyst"
+      ],
+      "approved_facts": [
+        "Progressed to Associate Analyst after the training period."
+      ]
+    },
+    "source": "context/evidence.yml > TRAINING-002",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "WORK-AZ-OTHER-001",
+    "kind": "fact",
+    "title": "WORK-AZ-OTHER-001",
+    "summary": "",
+    "data": {
+      "id": "WORK-AZ-OTHER-001",
+      "status": "confirmed",
+      "category": "professional_experience",
+      "approved_external_use": "Use only when relevant; do not imply sole ownership.",
+      "source_refs": [
+        "context/sources/career.md > Other supplied Power BI work"
+      ],
+      "approved_facts": [
+        "Implemented Power BI member access for app/workspace management.",
+        "Automated incremental refresh using Power Automate.",
+        "Conducted dashboard and query testing."
+      ]
+    },
+    "source": "context/evidence.yml > WORK-AZ-OTHER-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "WORK-HUL-001",
+    "kind": "fact",
+    "title": "WORK-HUL-001",
+    "summary": "",
+    "data": {
+      "id": "WORK-HUL-001",
+      "status": "confirmed",
+      "category": "professional_experience",
+      "approved_external_use": "Client name may be included per user authorisation on 2026-09-09; preserve scope and team attribution.",
+      "source_refs": [
+        "context/sources/career.md > Hindustan Unilever - Power BI Developer"
+      ],
+      "approved_facts": [
+        "Implemented requested enhancements to existing Power BI dashboards.",
+        "Performed testing and validation.",
+        "Supported promotion of the updated dashboards to production."
+      ]
+    },
+    "source": "context/evidence.yml > WORK-HUL-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "WORKAUTH-001",
+    "kind": "fact",
+    "title": "WORKAUTH-001",
+    "summary": "Visa valid until 31 December 2026",
+    "data": {
+      "id": "WORKAUTH-001",
+      "status": "conditional",
+      "category": "work_authorization",
+      "approved_external_use": "date may be stated only when a form requires it; do not infer work rights",
+      "source_refs": [
+        "config/profile.yml > candidate"
+      ],
+      "value_as_supplied": "Visa valid until 31 December 2026"
+    },
+    "source": "context/evidence.yml > WORKAUTH-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "CONTACT-EMAIL-001",
+    "kind": "fact",
+    "title": "chetanbabu07@gmail.com",
+    "summary": "chetanbabu07@gmail.com",
+    "data": {
+      "id": "CONTACT-EMAIL-001",
+      "status": "confirmed",
+      "category": "contact",
+      "approved_external_use": "always",
+      "source_refs": [
+        "config/profile.yml > candidate"
+      ],
+      "value": "chetanbabu07@gmail.com"
+    },
+    "source": "context/evidence.yml > CONTACT-EMAIL-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "CONTACT-LINKEDIN-001",
+    "kind": "fact",
+    "title": "https://linkedin.com/in/chetan-babu",
+    "summary": "https://linkedin.com/in/chetan-babu",
+    "data": {
+      "id": "CONTACT-LINKEDIN-001",
+      "status": "confirmed",
+      "category": "contact",
+      "approved_external_use": "always",
+      "source_refs": [
+        "config/profile.yml > candidate"
+      ],
+      "value": "https://linkedin.com/in/chetan-babu"
+    },
+    "source": "context/evidence.yml > CONTACT-LINKEDIN-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:alternate_location_as_supplied",
+    "kind": "personal",
+    "title": "Alternate location as supplied",
+    "summary": "Chennai, India",
+    "data": {
+      "field": "alternate_location_as_supplied",
+      "value": "Chennai, India"
+    },
+    "source": "config/profile.yml > candidate > alternate_location_as_supplied",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:alternate_phone_as_supplied",
+    "kind": "personal",
+    "title": "Alternate phone as supplied",
+    "summary": "+91 7358572027 (WhatsApp only)",
+    "data": {
+      "field": "alternate_phone_as_supplied",
+      "value": "+91 7358572027 (WhatsApp only)"
+    },
+    "source": "config/profile.yml > candidate > alternate_phone_as_supplied",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:current_status",
+    "kind": "personal",
+    "title": "Current status",
+    "summary": "MSc Data Science candidate at Munster Technological University",
+    "data": {
+      "field": "current_status",
+      "value": "MSc Data Science candidate at Munster Technological University"
+    },
+    "source": "config/profile.yml > candidate > current_status",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:dated_professional_experience",
+    "kind": "personal",
+    "title": "Dated professional experience",
+    "summary": "Feb 2023–Jan 2025 (approximately two years)",
+    "data": {
+      "field": "dated_professional_experience",
+      "value": "Feb 2023–Jan 2025 (approximately two years)"
+    },
+    "source": "config/profile.yml > candidate > dated_professional_experience",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:disclosure_instruction",
+    "kind": "personal",
+    "title": "Disclosure instruction",
+    "summary": "User requested all supplied information remain visible on 2026-09-09. Phone format is supplied verbatim, not independently corrected.",
+    "data": {
+      "field": "disclosure_instruction",
+      "value": "User requested all supplied information remain visible on 2026-09-09. Phone format is supplied verbatim, not independently corrected."
+    },
+    "source": "config/profile.yml > candidate > disclosure_instruction",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:education_summary",
+    "kind": "personal",
+    "title": "Education summary",
+    "summary": "MSc in Data Science, Munster Technological University (Sep 2025–Sep 2026); B.Tech in Computer Science (AI and ML), SRM Institute of Science and Technology (Jun 2019–May 2023), reported CGPA 9.4/10",
+    "data": {
+      "field": "education_summary",
+      "value": "MSc in Data Science, Munster Technological University (Sep 2025–Sep 2026); B.Tech in Computer Science (AI and ML), SRM Institute of Science and Technology (Jun 2019–May 2023), reported CGPA 9.4/10"
+    },
+    "source": "config/profile.yml > candidate > education_summary",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:email",
+    "kind": "personal",
+    "title": "Email",
+    "summary": "chetanbabu07@gmail.com",
+    "data": {
+      "field": "email",
+      "value": "chetanbabu07@gmail.com"
+    },
+    "source": "config/profile.yml > candidate > email",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:full_name",
+    "kind": "personal",
+    "title": "Full name",
+    "summary": "Chetan Babu M",
+    "data": {
+      "field": "full_name",
+      "value": "Chetan Babu M"
+    },
+    "source": "config/profile.yml > candidate > full_name",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:future_sponsorship_requirement",
+    "kind": "personal",
+    "title": "Future sponsorship requirement",
+    "summary": "not_confirmed",
+    "data": {
+      "field": "future_sponsorship_requirement",
+      "value": "not_confirmed"
+    },
+    "source": "config/profile.yml > candidate > future_sponsorship_requirement",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:github",
+    "kind": "personal",
+    "title": "Github",
+    "summary": "",
+    "data": {
+      "field": "github",
+      "value": ""
+    },
+    "source": "config/profile.yml > candidate > github",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:immigration_note",
+    "kind": "personal",
+    "title": "Immigration note",
+    "summary": "User confirmed Stamp 1G in conversation; prior expiry date has not been reconfirmed. Do not infer renewal, duration, or future sponsorship.",
+    "data": {
+      "field": "immigration_note",
+      "value": "User confirmed Stamp 1G in conversation; prior expiry date has not been reconfirmed. Do not infer renewal, duration, or future sponsorship."
+    },
+    "source": "config/profile.yml > candidate > immigration_note",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:immigration_permission_as_confirmed",
+    "kind": "personal",
+    "title": "Immigration permission as confirmed",
+    "summary": "Stamp 1G",
+    "data": {
+      "field": "immigration_permission_as_confirmed",
+      "value": "Stamp 1G"
+    },
+    "source": "config/profile.yml > candidate > immigration_permission_as_confirmed",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:immigration_permission_confirmed_on",
+    "kind": "personal",
+    "title": "Immigration permission confirmed on",
+    "summary": "2026-09-05",
+    "data": {
+      "field": "immigration_permission_confirmed_on",
+      "value": "2026-09-05"
+    },
+    "source": "config/profile.yml > candidate > immigration_permission_confirmed_on",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:linkedin",
+    "kind": "personal",
+    "title": "Linkedin",
+    "summary": "https://linkedin.com/in/chetan-babu",
+    "data": {
+      "field": "linkedin",
+      "value": "https://linkedin.com/in/chetan-babu"
+    },
+    "source": "config/profile.yml > candidate > linkedin",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:location",
+    "kind": "personal",
+    "title": "Location",
+    "summary": "Ireland",
+    "data": {
+      "field": "location",
+      "value": "Ireland"
+    },
+    "source": "config/profile.yml > candidate > location",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:location_conflict_policy",
+    "kind": "personal",
+    "title": "Location conflict policy",
+    "summary": "keep Ireland until Chetan confirms which location is current",
+    "data": {
+      "field": "location_conflict_policy",
+      "value": "keep Ireland until Chetan confirms which location is current"
+    },
+    "source": "config/profile.yml > candidate > location_conflict_policy",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:most_recent_role",
+    "kind": "personal",
+    "title": "Most recent role",
+    "summary": "Associate Analyst — Data Analyst / BI Developer at Infocepts Technologies (ended Jan 2025)",
+    "data": {
+      "field": "most_recent_role",
+      "value": "Associate Analyst — Data Analyst / BI Developer at Infocepts Technologies (ended Jan 2025)"
+    },
+    "source": "config/profile.yml > candidate > most_recent_role",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:phone",
+    "kind": "personal",
+    "title": "Phone",
+    "summary": "+353-0892401738",
+    "data": {
+      "field": "phone",
+      "value": "+353-0892401738"
+    },
+    "source": "config/profile.yml > candidate > phone",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:phone_as_supplied",
+    "kind": "personal",
+    "title": "Phone as supplied",
+    "summary": "+353-0892401738",
+    "data": {
+      "field": "phone_as_supplied",
+      "value": "+353-0892401738"
+    },
+    "source": "config/profile.yml > candidate > phone_as_supplied",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:phone_external_resume_policy",
+    "kind": "personal",
+    "title": "Phone external resume policy",
+    "summary": "include_exactly_as_supplied",
+    "data": {
+      "field": "phone_external_resume_policy",
+      "value": "include_exactly_as_supplied"
+    },
+    "source": "config/profile.yml > candidate > phone_external_resume_policy",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:phone_needs_format_confirmation",
+    "kind": "personal",
+    "title": "Phone needs format confirmation",
+    "summary": "True",
+    "data": {
+      "field": "phone_needs_format_confirmation",
+      "value": true
+    },
+    "source": "config/profile.yml > candidate > phone_needs_format_confirmation",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:portfolio_url",
+    "kind": "personal",
+    "title": "Portfolio url",
+    "summary": "",
+    "data": {
+      "field": "portfolio_url",
+      "value": ""
+    },
+    "source": "config/profile.yml > candidate > portfolio_url",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:preferred_name",
+    "kind": "personal",
+    "title": "Preferred name",
+    "summary": "Chetan",
+    "data": {
+      "field": "preferred_name",
+      "value": "Chetan"
+    },
+    "source": "config/profile.yml > candidate > preferred_name",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:timezone",
+    "kind": "personal",
+    "title": "Timezone",
+    "summary": "Europe/Dublin",
+    "data": {
+      "field": "timezone",
+      "value": "Europe/Dublin"
+    },
+    "source": "config/profile.yml > candidate > timezone",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:visa_external_resume_policy",
+    "kind": "personal",
+    "title": "Visa external resume policy",
+    "summary": "omit_unless_form_requires; do not infer work rights",
+    "data": {
+      "field": "visa_external_resume_policy",
+      "value": "omit_unless_form_requires; do not infer work rights"
+    },
+    "source": "config/profile.yml > candidate > visa_external_resume_policy",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:visa_statement_as_supplied",
+    "kind": "personal",
+    "title": "Visa statement as supplied",
+    "summary": "Valid till 31 Dec 2026",
+    "data": {
+      "field": "visa_statement_as_supplied",
+      "value": "Valid till 31 Dec 2026"
+    },
+    "source": "config/profile.yml > candidate > visa_statement_as_supplied",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "PROJ-BLOGBOARD",
+    "kind": "project",
+    "title": "BlogBoard Multi-Agent Article Generator",
+    "summary": "Built a typed LangGraph workflow routing tutorial and news generators through validation and revision stages with in-memory checkpointing and CLI execution modes.\nIntegrated Groq, Tavily and Guardian search, Cloudflare R2/S3-compatible storage, Pydantic configuration, Opik prompt fallback, and optional Sentry monitoring.\nProcessed an Excel schedule of 305 topics while documenting README/code drift and avoiding unsupported claims about production scheduling, traffic, or article quality.",
+    "data": {
+      "id": "PROJ-BLOGBOARD",
+      "canonical_name": "BlogBoard Multi-Agent Article Generator",
+      "external_name": "BlogBoard Multi-Agent Article Generator",
+      "evidence_type": "candidate_project",
+      "status": "conditional",
+      "ownership": "Audited candidate repository; individual/team status not supplied",
+      "date_context": "Audited 12 August 2026; original project dates not supplied",
+      "source_refs": [
+        "context/sources/portfolio-audit.md > BlogBoard Multi-Agent Article Generator"
+      ],
+      "approved_external_use": "Use only for relevant entry-level applied-AI or GenAI application roles; do not imply production autonomy, publishing success, or measured content quality.",
+      "problem_patterns": [
+        "agent orchestration",
+        "content workflow",
+        "validation and revision",
+        "tool-integrated generation",
+        "state-machine workflow"
+      ],
+      "role_tracks": [
+        "Entry-level GenAI Application Developer",
+        "Junior Data Scientist"
+      ],
+      "technologies": [
+        "Python",
+        "LangGraph",
+        "Groq",
+        "Tavily",
+        "Cloudflare R2",
+        "Pydantic",
+        "Opik",
+        "Sentry"
+      ],
+      "approved_facts": [
+        "Built a typed LangGraph state machine routing tutorial/news generator agents through a validator and revision loop with in-memory checkpointing.",
+        "Integrated Groq, Tavily, Guardian search, Cloudflare R2/S3-compatible storage, Pydantic settings, Opik prompt fallback, and optional Sentry monitoring.",
+        "Used an Excel schedule containing 305 entries and supported CLI dry-run, date, and news modes.",
+        "Repository documentation and code paths have some drift; production scheduling, GitHub Actions success, traffic, and article-quality metrics are not established."
+      ],
+      "resume_content": {
+        "title": "BlogBoard Multi-Agent Article Generator",
+        "context": "Candidate project | Python, LangGraph, Groq, search tools, Cloudflare R2",
+        "bullets": [
+          "Built a typed LangGraph workflow routing tutorial and news generators through validation and revision stages with in-memory checkpointing and CLI execution modes.",
+          "Integrated Groq, Tavily and Guardian search, Cloudflare R2/S3-compatible storage, Pydantic configuration, Opik prompt fallback, and optional Sentry monitoring.",
+          "Processed an Excel schedule of 305 topics while documenting README/code drift and avoiding unsupported claims about production scheduling, traffic, or article quality."
+        ]
+      },
+      "prohibited": [
+        "Autonomous production publishing or successful production scheduling",
+        "Article-quality, traffic, reliability, or adoption metrics",
+        "Successful GitHub Actions deployment without evidence",
+        "Professional AI engineering experience"
+      ]
+    },
+    "source": "context/evidence.yml > PROJ-BLOGBOARD",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "PROJ-EU-COMPLIANCE-RAG",
+    "kind": "project",
+    "title": "EU Compliance RAG Assistant",
+    "summary": "Built a privacy-conscious RAG assistant over GDPR, DORA, and the EU AI Act with multi-PDF and official-source ingestion, persistent Chroma embeddings, and configurable local Ollama or Gemini models.\nImplemented overlapping chunking, maximum marginal relevance retrieval, page/source citations, query decomposition, article extraction, and compliance-checklist export.\nDocumented that heuristic confidence is not calibrated probability and that no factual-accuracy benchmark or production-usage evidence is available.",
+    "data": {
+      "id": "PROJ-EU-COMPLIANCE-RAG",
+      "canonical_name": "EU Compliance RAG Assistant",
+      "external_name": "EU Compliance RAG Assistant",
+      "evidence_type": "candidate_project",
+      "status": "conditional",
+      "ownership": "Audited candidate project; individual/team status not supplied",
+      "date_context": "Audited 12 August 2026; original project dates not supplied",
+      "source_refs": [
+        "context/sources/portfolio-audit.md > Project 5 - EU Compliance RAG Assistant"
+      ],
+      "approved_external_use": "Use for relevant entry-level GenAI, knowledge-retrieval, compliance-data, or applied-AI roles; do not imply legal correctness, production deployment, or professional AI experience.",
+      "problem_patterns": [
+        "regulatory document search",
+        "retrieval augmented generation",
+        "source attribution",
+        "privacy-conscious local inference",
+        "EU compliance",
+        "question decomposition"
+      ],
+      "role_tracks": [
+        "Entry-level GenAI Application Developer",
+        "Junior Data Scientist",
+        "Graduate Data Scientist",
+        "Fraud Analytics Analyst",
+        "Risk Analytics Analyst"
+      ],
+      "technologies": [
+        "Python",
+        "Streamlit",
+        "LangChain",
+        "ChromaDB",
+        "Ollama",
+        "Gemini",
+        "Hugging Face embeddings",
+        "MMR retrieval"
+      ],
+      "approved_facts": [
+        "Built a Streamlit assistant over official GDPR, EU AI Act, and DORA sources with multi-PDF upload and official EUR-Lex ingestion.",
+        "Implemented 1,200-character chunks with 180-character overlap, persistent Chroma storage, and MMR retrieval configured with k=6 and fetch_k=20.",
+        "Supported local Ollama models or Gemini with a Hugging Face embedding fallback, page/source citations, query decomposition, heuristic confidence, self-evaluation, and checklist export.",
+        "No retrieval benchmark, factual-accuracy evaluation, automated tests, deployed usage metrics, or calibrated confidence measure was found."
+      ],
+      "resume_content": {
+        "title": "EU Compliance RAG Assistant",
+        "context": "Candidate project | Python, Streamlit, LangChain, ChromaDB, Ollama/Gemini, MMR",
+        "bullets": [
+          "Built a privacy-conscious RAG assistant over GDPR, DORA, and the EU AI Act with multi-PDF and official-source ingestion, persistent Chroma embeddings, and configurable local Ollama or Gemini models.",
+          "Implemented overlapping chunking, maximum marginal relevance retrieval, page/source citations, query decomposition, article extraction, and compliance-checklist export.",
+          "Documented that heuristic confidence is not calibrated probability and that no factual-accuracy benchmark or production-usage evidence is available."
+        ]
+      },
+      "prohibited": [
+        "Legal advice, legal correctness, or guaranteed compliance",
+        "Production deployment, scale, or user/adoption metrics",
+        "Calibrated confidence or validated factual accuracy",
+        "Professional AI engineering experience"
+      ]
+    },
+    "source": "context/evidence.yml > PROJ-EU-COMPLIANCE-RAG",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "PROJ-AZ-EXEC",
+    "kind": "project",
+    "title": "Executive Power BI Dashboard",
+    "summary": "Collaborated in a three-person team to model, build, publish, demonstrate, and hand over an executive Power BI dashboard within one month.\nParticipated in the executive demonstration and stakeholder handover.",
+    "data": {
+      "id": "PROJ-AZ-EXEC",
+      "canonical_name": "Executive Power BI Dashboard",
+      "external_name": "Executive Power BI Dashboard - Pharmaceutical Client",
+      "date_context": "Within the Sep 2023-Jan 2025 Associate Analyst period; one-month delivery window",
+      "source_refs": [
+        "context/sources/career.md > Executive/CEO dashboard"
+      ],
+      "evidence_type": "professional",
+      "status": "confirmed",
+      "ownership": "One contributor in a three-person team",
+      "approved_external_use": "Client name may be included per user authorisation on 2026-09-09; preserve scope and team attribution.",
+      "problem_patterns": [
+        "executive reporting",
+        "stakeholder presentation",
+        "rapid dashboard delivery"
+      ],
+      "role_tracks": [
+        "Data Analyst",
+        "BI Analyst",
+        "BI Developer",
+        "Power BI Developer",
+        "Insights Analyst"
+      ],
+      "technologies": [
+        "Power BI",
+        "data modeling"
+      ],
+      "approved_facts": [
+        "Collaborated in a three-person team to model, build, publish, demonstrate, and hand over an executive Power BI dashboard within one month.",
+        "Participated in the executive demonstration and stakeholder handover."
+      ],
+      "resume_content": {
+        "title": "Executive Power BI Dashboard",
+        "context": "Professional three-person team project for AstraZeneca | Power BI, data modelling",
+        "bullets": [
+          "Collaborated in a three-person team to model, build, publish, demonstrate, and hand over an executive Power BI dashboard within one month.",
+          "Participated in the executive demonstration and stakeholder handover."
+        ]
+      },
+      "prohibited": [
+        "The dashboard secured a USD 5 million contract",
+        "Sole ownership",
+        "Unconfirmed internal appreciation or award"
+      ]
+    },
+    "source": "context/evidence.yml > PROJ-AZ-EXEC",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "PROJ-AZ-RECON",
+    "kind": "project",
+    "title": "Finance Access Reconciliation Dashboard",
+    "summary": "Access tracking was spread across five sources, including Excel and SharePoint; the prior reconciliation process was reported to require six people for one hour each day.\nCo-developed a Power BI reconciliation view and added drill-through analysis so users could trace access requests and discrepancies to source records.\nThe dashboard was tested and promoted through Power BI Service; the template was subsequently reported to be reused in additional verticals.",
+    "data": {
+      "id": "PROJ-AZ-RECON",
+      "canonical_name": "Finance Access Reconciliation Dashboard",
+      "external_name": "Finance Access Reconciliation Dashboard - Pharmaceutical Client",
+      "date_context": "Within the Sep 2023-Jan 2025 Associate Analyst period; exact project dates not supplied",
+      "source_refs": [
+        "context/sources/career.md > Finance reconciliation dashboard"
+      ],
+      "evidence_type": "professional",
+      "status": "user_reported",
+      "ownership": "Co-developed as a team project",
+      "approved_external_use": "Client name may be included per user authorisation on 2026-09-09; preserve scope and team attribution.",
+      "problem_patterns": [
+        "manual reconciliation",
+        "data quality",
+        "multi-source reporting",
+        "traceability",
+        "access governance",
+        "finance operations"
+      ],
+      "role_tracks": [
+        "Data Analyst",
+        "BI Analyst",
+        "BI Developer",
+        "Power BI Developer",
+        "Reporting Analyst"
+      ],
+      "technologies": [
+        "Power BI",
+        "Excel",
+        "SharePoint",
+        "drill-through analysis",
+        "Power BI Service"
+      ],
+      "approved_facts": [
+        "Co-developed a Power BI dashboard consolidating five access-tracking sources, including Excel and SharePoint.",
+        "Added drill-through analysis so users could trace access requests and discrepancies to source records.",
+        "The previous process was reported to require six people for one hour each day.",
+        "Supported testing and promotion through Power BI Service; Chetan reports reuse in additional verticals."
+      ],
+      "resume_content": {
+        "title": "Finance Access Reconciliation Dashboard",
+        "context": "Professional team project for AstraZeneca | Power BI, Excel, SharePoint, Power BI Service",
+        "bullets": [
+          "Access tracking was spread across five sources, including Excel and SharePoint; the prior reconciliation process was reported to require six people for one hour each day.",
+          "Co-developed a Power BI reconciliation view and added drill-through analysis so users could trace access requests and discrepancies to source records.",
+          "The dashboard was tested and promoted through Power BI Service; the template was subsequently reported to be reused in additional verticals."
+        ]
+      },
+      "prohibited": [
+        "Sole ownership",
+        "Unqualified claim that all manual work was eliminated",
+        "Invented accuracy, adoption, cost, or time-saved metrics"
+      ]
+    },
+    "source": "context/evidence.yml > PROJ-AZ-RECON",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "PROJ-NIQ-REPORTING",
+    "kind": "project",
+    "title": "High-Volume Client Reporting Delivery",
+    "summary": "Learned the client's proprietary BI platform within two weeks.\nGathered BRDs and clarified reporting requirements directly with client stakeholders.\nDelivered 300+ reports across a six-month engagement.",
+    "data": {
+      "id": "PROJ-NIQ-REPORTING",
+      "canonical_name": "High-Volume Client Reporting Delivery",
+      "external_name": "Client Reporting Delivery - FMCG Client",
+      "date_context": "Within the Sep 2023-Jan 2025 Associate Analyst period; about six months",
+      "source_refs": [
+        "context/sources/career.md > NielsenIQ - BI Report Developer"
+      ],
+      "evidence_type": "professional",
+      "status": "confirmed",
+      "ownership": "Chetan delivered reports within a client engagement; sole/team status not otherwise specified",
+      "approved_external_use": "Client name may be included per user authorisation on 2026-09-09; preserve scope and team attribution.",
+      "problem_patterns": [
+        "requirements translation",
+        "high-volume reporting",
+        "client communication",
+        "rapid platform learning"
+      ],
+      "role_tracks": [
+        "Data Analyst",
+        "BI Analyst",
+        "Reporting Analyst",
+        "Insights Analyst"
+      ],
+      "technologies": [
+        "Proprietary BI platform",
+        "BRD",
+        "report development"
+      ],
+      "approved_facts": [
+        "Learned the client's proprietary BI platform within two weeks.",
+        "Gathered BRDs and clarified requirements directly with client stakeholders.",
+        "Delivered 300+ reports across a six-month engagement."
+      ],
+      "resume_content": {
+        "title": "High-Volume Client Reporting Delivery",
+        "context": "Professional FMCG reporting engagement | Proprietary BI platform, BRDs, stakeholder requirements",
+        "bullets": [
+          "Learned the client's proprietary BI platform within two weeks.",
+          "Gathered BRDs and clarified reporting requirements directly with client stakeholders.",
+          "Delivered 300+ reports across a six-month engagement."
+        ]
+      },
+      "prohibited": [
+        "100+ reports in one month",
+        "Unsupported quality or defect metrics"
+      ]
+    },
+    "source": "context/evidence.yml > PROJ-NIQ-REPORTING",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "PROJ-KPMG-FORAGE",
+    "kind": "project",
+    "title": "KPMG Data Analytics Virtual Experience",
+    "summary": "Completed a four-week data analytics virtual experience through Forage; this was not KPMG employment.\nCleaned and prepared the supplied source data.\nCreated a Tableau dashboard to communicate findings.",
+    "data": {
+      "id": "PROJ-KPMG-FORAGE",
+      "canonical_name": "KPMG Data Analytics Virtual Experience",
+      "external_name": "KPMG Data Analytics Virtual Experience - Forage",
+      "evidence_type": "virtual_experience",
+      "status": "conditional",
+      "ownership": "Completed by Chetan as a four-week virtual experience; collaboration status not supplied; not KPMG employment",
+      "date_context": "During B.Tech; exact dates not supplied",
+      "source_refs": [
+        "context/sources/career.md > KPMG Data Analytics Virtual Experience - Forage"
+      ],
+      "approved_external_use": "Use when Tableau or early-career data preparation is materially relevant.",
+      "problem_patterns": [
+        "data cleaning",
+        "data preparation",
+        "Tableau reporting",
+        "visual communication"
+      ],
+      "role_tracks": [
+        "Data Analyst",
+        "BI Analyst",
+        "Reporting Analyst"
+      ],
+      "technologies": [
+        "Tableau",
+        "data cleaning"
+      ],
+      "approved_facts": [
+        "Cleaned and prepared source data.",
+        "Created a Tableau dashboard to communicate findings.",
+        "Completed as a four-week Forage virtual experience during B.Tech."
+      ],
+      "resume_content": {
+        "title": "KPMG Data Analytics Virtual Experience",
+        "context": "Four-week Forage virtual experience during B.Tech | Data preparation, Tableau",
+        "bullets": [
+          "Completed a four-week data analytics virtual experience through Forage; this was not KPMG employment.",
+          "Cleaned and prepared the supplied source data.",
+          "Created a Tableau dashboard to communicate findings."
+        ]
+      },
+      "prohibited": [
+        "KPMG employment",
+        "Invented dataset, audience, insight, metric, or business impact"
+      ]
+    },
+    "source": "context/evidence.yml > PROJ-KPMG-FORAGE",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "PROJ-MSC-FRAUD",
+    "kind": "project",
+    "title": "Medical Insurance Claim Fraud Detection",
+    "summary": "Developed an end-to-end fraud-classification workflow over 10,000 synthetic medical claims, comparing five classifiers with feature engineering, training-only SMOTE, GridSearchCV, and stratified 60:20:20 validation.\nTuned LightGBM and selected a 0.25 decision threshold, increasing fraud recall from approximately 26% to 60.3% on an independent 2,000-claim test set while documenting the precision and false-positive trade-off.\nApplied permutation importance and SHAP for global and claim-level explanations; reported F1, ROC-AUC, and PR-AUC and documented that the low-signal model is not production-ready.",
+    "data": {
+      "id": "PROJ-MSC-FRAUD",
+      "canonical_name": "Machine Learning-Based Medical Insurance Fraud Prediction",
+      "external_name": "Medical Insurance Claim Fraud Detection - MSc Capstone",
+      "evidence_type": "academic",
+      "status": "conditional",
+      "ownership": "MSc capstone; individual/team status not explicitly supplied",
+      "date_context": "Within the Sep 2025-Sep 2026 MSc period; submission month/year and final grade not supplied",
+      "source_refs": [
+        "context/sources/career.md > Thesis - in progress",
+        "context/sources/masters-projects.md > CAPSTONE PROJECT - Machine Learning-Based Medical Insurance Claim Fraud Detection",
+        "context/sources/portfolio-audit.md > Project 1 - Main MSc capstone"
+      ],
+      "approved_external_use": "Only for junior/graduate data-science or directly relevant analytics roles.",
+      "problem_patterns": [
+        "fraud analytics",
+        "insurance risk",
+        "healthcare analytics",
+        "classification",
+        "imbalanced learning",
+        "explainable AI",
+        "threshold optimization"
+      ],
+      "role_tracks": [
+        "Junior Data Scientist",
+        "Graduate Data Scientist",
+        "Data Analyst"
+      ],
+      "technologies": [
+        "Random Forest",
+        "XGBoost",
+        "LightGBM",
+        "Logistic Regression",
+        "Gradient Boosting",
+        "SMOTE",
+        "GridSearchCV",
+        "SHAP",
+        "PCA"
+      ],
+      "approved_facts": [
+        "Built a supervised-learning workflow over a public synthetic dataset of 10,000 medical insurance claims, with an independent 2,000-record test set.",
+        "Engineered Claim Discrepancy and Delay Rate, compared five classifiers, and used a stratified 60:20:20 split with training-only SMOTE and a leakage-safe cross-validation pipeline.",
+        "Tuned LightGBM with GridSearchCV and selected a 0.25 probability threshold on validation data to improve fraud recall while explicitly accepting more false positives.",
+        "At the selected threshold, the independent test results were 60.3% fraud recall, 16.3% precision, 25.6% F1, 0.535 ROC-AUC, and 0.173 PR-AUC; the analysis concludes that discrimination is limited and not production-ready.",
+        "Applied permutation importance and SHAP for global and claim-level interpretation.",
+        "The MSc award remains in progress; final submission date and grade are not supplied."
+      ],
+      "resume_content": {
+        "title": "Medical Insurance Claim Fraud Detection",
+        "context": "MSc capstone | Python, scikit-learn, LightGBM, SMOTE, GridSearchCV, SHAP",
+        "bullets": [
+          "Developed an end-to-end fraud-classification workflow over 10,000 synthetic medical claims, comparing five classifiers with feature engineering, training-only SMOTE, GridSearchCV, and stratified 60:20:20 validation.",
+          "Tuned LightGBM and selected a 0.25 decision threshold, increasing fraud recall from approximately 26% to 60.3% on an independent 2,000-claim test set while documenting the precision and false-positive trade-off.",
+          "Applied permutation importance and SHAP for global and claim-level explanations; reported F1, ROC-AUC, and PR-AUC and documented that the low-signal model is not production-ready."
+        ]
+      },
+      "prohibited": [
+        "Deployment or production impact",
+        "Highly accurate, production-ready, or reliable fraud detection",
+        "Omitting the low precision and limited-discrimination caveat when discussing results",
+        "Final MSc grade or submission date",
+        "Professional data-science experience"
+      ]
+    },
+    "source": "context/evidence.yml > PROJ-MSC-FRAUD",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "PROJ-FAANG-PCA",
+    "kind": "project",
+    "title": "PCA of FAANG Market Indicators",
+    "summary": "Reduced 16 collinear technical indicators across 14,964 FAANG observations to four interpretable components explaining 90.6% of sample variance with reconstruction MSE 0.069.\nPrevented future-information leakage by excluding the next-day close field and validated PCA suitability using correlation structure, Bartlett's test, and KMO 0.839.\nCompared PCA with Factor Analysis and 80/90/95% sensitivity tests while documenting non-stationarity, temporal-dependence, and outlier limitations.",
+    "data": {
+      "id": "PROJ-FAANG-PCA",
+      "canonical_name": "PCA of FAANG Market Indicators",
+      "external_name": "PCA of FAANG Market Indicators",
+      "evidence_type": "academic",
+      "status": "conditional",
+      "ownership": "MSc Multivariate Modelling project; individual/team status not supplied",
+      "date_context": "MSc academic work; exact dates and data-source URL not supplied",
+      "source_refs": [
+        "context/sources/career.md > PCA of FAANG Market Indicators",
+        "context/sources/masters-projects.md > Principal Component Analysis of FAANG Stock Price Data",
+        "context/sources/portfolio-audit.md > Project 3 - FAANG Multivariate Modelling"
+      ],
+      "approved_external_use": "Use for relevant junior data-science, analytics, or financial-data roles; do not imply trading performance or investment expertise.",
+      "problem_patterns": [
+        "dimensionality reduction",
+        "multivariate analysis",
+        "financial data",
+        "correlated indicators",
+        "data visualization"
+      ],
+      "role_tracks": [
+        "Junior Data Scientist",
+        "Graduate Data Scientist",
+        "Data Analyst"
+      ],
+      "technologies": [
+        "Python",
+        "pandas",
+        "scikit-learn",
+        "PCA",
+        "factor analysis"
+      ],
+      "approved_facts": [
+        "Prepared 14,964 stock-level observations and 16 technical indicators using missing-value checks, standardization, correlation analysis, and factorability diagnostics.",
+        "Excluded Next_Day_Close to prevent future-information leakage and removed Date and Ticker before unsupervised modelling.",
+        "Bartlett's test was significant at p < 0.001 and KMO was 0.839.",
+        "Four principal components explained 90.6% of sample variance with reconstruction MSE 0.069.",
+        "Compared PCA with factor analysis and varied retained-variance thresholds; component themes are interpretations of loadings, not predictive or causal findings."
+      ],
+      "resume_content": {
+        "title": "PCA of FAANG Market Indicators",
+        "context": "MSc multivariate-modelling project | Python, scikit-learn, PCA, Factor Analysis",
+        "bullets": [
+          "Reduced 16 collinear technical indicators across 14,964 FAANG observations to four interpretable components explaining 90.6% of sample variance with reconstruction MSE 0.069.",
+          "Prevented future-information leakage by excluding the next-day close field and validated PCA suitability using correlation structure, Bartlett's test, and KMO 0.839.",
+          "Compared PCA with Factor Analysis and 80/90/95% sensitivity tests while documenting non-stationarity, temporal-dependence, and outlier limitations."
+        ]
+      },
+      "prohibited": [
+        "Price or return prediction",
+        "Investment advice, trading performance, or production use",
+        "90.6% accuracy",
+        "Causal market factors or independently verified robustness"
+      ]
+    },
+    "source": "context/evidence.yml > PROJ-FAANG-PCA",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "PROJ-POWERBI-PORTFOLIO",
+    "kind": "project",
+    "title": "Power BI Analytics Portfolio",
+    "summary": "Built an interactive e-commerce dashboard over 51,290 orders and 1,173 returns, surfacing sales, profit, quantity, shipping, category, market, and geographic KPIs.\nAnalysed 516 cricket innings/match records from 2008-2022 and visualised career totals, opponent comparisons, and year trends through interactive filters.\nFocused on readable KPI communication and decision-oriented filtering without claiming undocumented DAX, star-schema, deployment, or business-impact work.",
+    "data": {
+      "id": "PROJ-POWERBI-PORTFOLIO",
+      "canonical_name": "Power BI Business and Sports Analytics Portfolio",
+      "external_name": "Power BI Analytics Portfolio",
+      "evidence_type": "candidate_project",
+      "status": "conditional",
+      "ownership": "Audited candidate portfolio; individual/team status not supplied",
+      "date_context": "Audited 12 August 2026; original project dates not supplied",
+      "source_refs": [
+        "context/sources/portfolio-audit.md > Project 6 - Power BI Business and Sports Analytics Portfolio"
+      ],
+      "approved_external_use": "Use for Data Analyst, BI Analyst, Power BI, and reporting roles; describe visible dashboard scope only and do not infer undocumented modelling or DAX implementation.",
+      "problem_patterns": [
+        "Power BI dashboarding",
+        "KPI reporting",
+        "e-commerce analytics",
+        "interactive filtering",
+        "geographic analysis",
+        "time-series visualization"
+      ],
+      "role_tracks": [
+        "Data Analyst",
+        "BI Analyst",
+        "BI Developer",
+        "Power BI Developer",
+        "Reporting Analyst",
+        "Insights Analyst"
+      ],
+      "technologies": [
+        "Power BI Desktop",
+        "Excel/CSV",
+        "KPI cards",
+        "filters and slicers"
+      ],
+      "approved_facts": [
+        "Built an e-commerce Power BI dashboard over a workbook containing 51,290 orders, 1,173 returns, and regional people mapping.",
+        "Created KPI cards and category, market, ship-mode, country, and state breakdowns with interactive slicers.",
+        "Built a second Power BI dashboard over 516 Virat Kohli innings/match records from 2008-2022 with career, opponent, and year trends.",
+        "The local artifacts do not establish specific Power Query transformations, DAX measures, star-schema design, deployment, or business use."
+      ],
+      "resume_content": {
+        "title": "Power BI Analytics Portfolio",
+        "context": "Candidate portfolio | Power BI Desktop, Excel/CSV, KPI design, interactive slicers",
+        "bullets": [
+          "Built an interactive e-commerce dashboard over 51,290 orders and 1,173 returns, surfacing sales, profit, quantity, shipping, category, market, and geographic KPIs.",
+          "Analysed 516 cricket innings/match records from 2008-2022 and visualised career totals, opponent comparisons, and year trends through interactive filters.",
+          "Focused on readable KPI communication and decision-oriented filtering without claiming undocumented DAX, star-schema, deployment, or business-impact work."
+        ]
+      },
+      "prohibited": [
+        "Undocumented DAX, Power Query, data model, star schema, or refresh implementation",
+        "Production deployment, stakeholder adoption, or business impact",
+        "Professional project attribution"
+      ]
+    },
+    "source": "context/evidence.yml > PROJ-POWERBI-PORTFOLIO",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "PROJ-AZ-MIGRATION",
+    "kind": "project",
+    "title": "Power BI Redshift-to-Snowflake Report Migration",
+    "summary": "Contributed to a team migration of 160 Power BI reports within a three-month delivery window.\nUpdated Power Query/M logic, report queries, and data connections from Redshift to Snowflake.",
+    "data": {
+      "id": "PROJ-AZ-MIGRATION",
+      "canonical_name": "Power BI Redshift-to-Snowflake Report Migration",
+      "external_name": "Power BI Report Migration - Pharmaceutical Client",
+      "date_context": "Within the Sep 2023-Jan 2025 Associate Analyst period; three-month delivery window",
+      "source_refs": [
+        "context/sources/career.md > Redshift-to-Snowflake migration"
+      ],
+      "evidence_type": "professional",
+      "status": "confirmed",
+      "ownership": "Contributor within a delivery team",
+      "approved_external_use": "Client name may be included per user authorisation on 2026-09-09; preserve scope and team attribution.",
+      "problem_patterns": [
+        "BI modernization",
+        "warehouse migration",
+        "report migration",
+        "data connection remediation",
+        "Power Query transformation"
+      ],
+      "role_tracks": [
+        "BI Developer",
+        "Power BI Developer",
+        "BI Analyst",
+        "Reporting Analyst"
+      ],
+      "technologies": [
+        "Power BI",
+        "Power Query/M",
+        "Amazon Redshift",
+        "Snowflake"
+      ],
+      "approved_facts": [
+        "Contributed to migrating 160 Power BI reports within a three-month delivery window.",
+        "Updated Power Query/M logic, report queries, and data connections from Redshift to Snowflake."
+      ],
+      "resume_content": {
+        "title": "Power BI Redshift-to-Snowflake Report Migration",
+        "context": "Professional team contribution for AstraZeneca | Power BI, Power Query/M, Redshift, Snowflake",
+        "bullets": [
+          "Contributed to a team migration of 160 Power BI reports within a three-month delivery window.",
+          "Updated Power Query/M logic, report queries, and data connections from Redshift to Snowflake."
+        ]
+      },
+      "prohibited": [
+        "Led the migration",
+        "Migrated production data pipelines",
+        "Zero-defect or zero-discrepancy claims"
+      ]
+    },
+    "source": "context/evidence.yml > PROJ-AZ-MIGRATION",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "PROJ-CLUSTERING-DBSCAN",
+    "kind": "project",
+    "title": "Prototype Adjustment and DBSCAN Clustering",
+    "summary": "Implemented prototype-adjustment clustering, DBSCAN, and silhouette scoring from first principles and evaluated them on compact Gaussian and non-convex noisy datasets.\nCompared three learning rates across 200 epochs, diagnosing slow convergence and overshooting; 0.05 provided the strongest speed/stability balance.\nAchieved silhouette 0.814 with DBSCAN on Gaussian data and documented how epsilon selection fragmented the non-convex ring rather than overstating the result.",
+    "data": {
+      "id": "PROJ-CLUSTERING-DBSCAN",
+      "canonical_name": "Prototype Adjustment and DBSCAN Clustering",
+      "external_name": "Prototype Adjustment and DBSCAN Clustering",
+      "evidence_type": "academic",
+      "status": "conditional",
+      "ownership": "MSc Applied Machine Learning project; individual/team status not supplied",
+      "date_context": "Within the Sep 2025-Sep 2026 MSc period; exact project date not supplied",
+      "source_refs": [
+        "context/sources/masters-projects.md > Clustering Analysis Using Prototype Adjustment and DBSCAN",
+        "context/sources/portfolio-audit.md > Project 4 - Applied Clustering"
+      ],
+      "approved_external_use": "Use for junior/graduate data-science roles requiring clustering or algorithm implementation; do not imply production use.",
+      "problem_patterns": [
+        "unsupervised learning",
+        "clustering",
+        "non-convex data",
+        "noise detection",
+        "algorithm implementation",
+        "hyperparameter sensitivity"
+      ],
+      "role_tracks": [
+        "Junior Data Scientist",
+        "Graduate Data Scientist",
+        "Advanced Analytics Analyst"
+      ],
+      "technologies": [
+        "Python",
+        "NumPy",
+        "Matplotlib",
+        "DBSCAN",
+        "Euclidean distance",
+        "silhouette analysis"
+      ],
+      "approved_facts": [
+        "Implemented prototype-adjustment clustering, DBSCAN, and silhouette scoring manually on two reproducible synthetic datasets of 120 points each.",
+        "Compared learning rates 0.01, 0.05, and 0.20 across 200 epochs and found 0.05 provided the best speed/stability balance.",
+        "On Gaussian data, the prototype method achieved silhouette 0.808 and DBSCAN achieved 0.814 with three clusters and two noise points at epsilon 1.25.",
+        "On the non-convex dataset, the selected DBSCAN epsilon fragmented the ring and produced one cluster and 15 noise points; the limitation was documented."
+      ],
+      "resume_content": {
+        "title": "Prototype Adjustment and DBSCAN Clustering",
+        "context": "MSc Applied Machine Learning project | Python, NumPy, DBSCAN, silhouette analysis",
+        "bullets": [
+          "Implemented prototype-adjustment clustering, DBSCAN, and silhouette scoring from first principles and evaluated them on compact Gaussian and non-convex noisy datasets.",
+          "Compared three learning rates across 200 epochs, diagnosing slow convergence and overshooting; 0.05 provided the strongest speed/stability balance.",
+          "Achieved silhouette 0.814 with DBSCAN on Gaussian data and documented how epsilon selection fragmented the non-convex ring rather than overstating the result."
+        ]
+      },
+      "prohibited": [
+        "Production clustering system or business impact",
+        "Claim that DBSCAN successfully recovered the non-convex ring",
+        "Generalisation beyond the two synthetic datasets"
+      ]
+    },
+    "source": "context/evidence.yml > PROJ-CLUSTERING-DBSCAN",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "PROJ-RAG-CHATBOT",
+    "kind": "project",
+    "title": "Retrieval-Augmented Document Q&A Prototype",
+    "summary": "Built a Python ingestion and chunking workflow for PDF, TXT, and Markdown inputs while retaining source metadata for retrieved passages.\nCombined FAISS embedding retrieval with TF-IDF keyword retrieval, then supplied retrieved context to an OpenAI chat model through structured prompts.\nAdded a Streamlit interface with displayed source references and evaluated relevance, context, faithfulness, and latency without claiming a verified score.",
+    "data": {
+      "id": "PROJ-RAG-CHATBOT",
+      "canonical_name": "Retrieval-Augmented Document Q&A Prototype",
+      "external_name": "Retrieval-Augmented Document Q&A Prototype",
+      "evidence_type": "candidate_project",
+      "status": "conditional",
+      "ownership": "Candidate-supplied project; individual/team status not supplied",
+      "date_context": "Dates and course/personal classification not supplied",
+      "source_refs": [
+        "context/sources/career.md > Retrieval-Augmented Document Q&A Prototype"
+      ],
+      "approved_external_use": "Use only for relevant entry-level data-science or GenAI application roles; do not imply professional, production, or MLOps experience.",
+      "problem_patterns": [
+        "document search",
+        "knowledge retrieval",
+        "source attribution",
+        "hybrid retrieval",
+        "question answering"
+      ],
+      "role_tracks": [
+        "Junior Data Scientist",
+        "Graduate Data Scientist",
+        "Entry-level GenAI Application Developer"
+      ],
+      "technologies": [
+        "Python",
+        "OpenAI API",
+        "FAISS",
+        "TF-IDF",
+        "Streamlit"
+      ],
+      "approved_facts": [
+        "Built a Python ingestion and chunking workflow for PDF, TXT, and Markdown inputs while retaining source metadata.",
+        "Combined FAISS embedding retrieval with TF-IDF keyword retrieval and supplied retrieved context to an OpenAI chat model through structured prompts.",
+        "Added a Streamlit interface with displayed source references and evaluated relevance, context, faithfulness, and latency without publishing an approved score."
+      ],
+      "resume_content": {
+        "title": "Retrieval-Augmented Document Q&A Prototype",
+        "context": "Data science project | Python, OpenAI API, FAISS, TF-IDF, Streamlit",
+        "bullets": [
+          "Built a Python ingestion and chunking workflow for PDF, TXT, and Markdown inputs while retaining source metadata for retrieved passages.",
+          "Combined FAISS embedding retrieval with TF-IDF keyword retrieval, then supplied retrieved context to an OpenAI chat model through structured prompts.",
+          "Added a Streamlit interface with displayed source references and evaluated relevance, context, faithfulness, and latency without claiming a verified score."
+        ]
+      },
+      "prohibited": [
+        "Professional or production AI/MLOps experience",
+        "90%+ relevance until evaluation evidence is supplied",
+        "Hallucination-resistant, fully traceable, scalable, or deployed claims",
+        "Chain-of-thought disclosure",
+        "Docker, Kubernetes, or GitHub Actions until an artifact is reviewed"
+      ]
+    },
+    "source": "context/evidence.yml > PROJ-RAG-CHATBOT",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "PROJ-NIQ-POC",
+    "kind": "project",
+    "title": "Reusable Finance Dashboard Proof of Concept",
+    "summary": "Built a reusable finance dashboard proof of concept from an initial client wireframe.\nThe template was reported to reduce dashboard-development effort by 50%.\nThe reported saving was about three days per person for each new dashboard.",
+    "data": {
+      "id": "PROJ-NIQ-POC",
+      "canonical_name": "Reusable Finance Dashboard Proof of Concept",
+      "external_name": "Reusable Finance Dashboard POC - FMCG Client",
+      "date_context": "Within the Sep 2023-Jan 2025 Associate Analyst period; exact POC date not supplied",
+      "source_refs": [
+        "context/sources/career.md > NielsenIQ - BI Report Developer"
+      ],
+      "evidence_type": "professional",
+      "status": "user_reported",
+      "ownership": "Built by Chetan from a client wireframe",
+      "approved_external_use": "Client name may be included per user authorisation on 2026-09-09; preserve scope and team attribution.",
+      "problem_patterns": [
+        "reusable reporting",
+        "dashboard standardization",
+        "finance reporting",
+        "delivery efficiency"
+      ],
+      "role_tracks": [
+        "Data Analyst",
+        "BI Analyst",
+        "BI Developer",
+        "Reporting Analyst",
+        "Insights Analyst"
+      ],
+      "technologies": [
+        "Proprietary BI platform",
+        "dashboard design"
+      ],
+      "approved_facts": [
+        "Built a reusable finance dashboard proof of concept from an initial wireframe.",
+        "Chetan reports that the template reduced dashboard-development effort by 50%, saving about three days per person for each new dashboard."
+      ],
+      "resume_content": {
+        "title": "Reusable Finance Dashboard Proof of Concept",
+        "context": "Professional project for NielsenIQ | Proprietary BI platform, finance reporting",
+        "bullets": [
+          "Built a reusable finance dashboard proof of concept from an initial client wireframe.",
+          "The template was reported to reduce dashboard-development effort by 50%.",
+          "The reported saving was about three days per person for each new dashboard."
+        ]
+      },
+      "prohibited": [
+        "Exact award title",
+        "Claiming the reported efficiency estimate as independently measured",
+        "Naming the client without permission"
+      ]
+    },
+    "source": "context/evidence.yml > PROJ-NIQ-POC",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "PROJ-SECOM-FAULT-DETECTION",
+    "kind": "project",
+    "title": "SECOM Semiconductor Fault-Detection Analysis",
+    "summary": "Analysed 1,567 semiconductor-production samples with approximately 590 sensor features, building a preprocessing, outlier, PCA, clustering, and classification workflow for a roughly 14:1 imbalanced problem.\nReduced the cleaned feature set to 446 variables and retained 162 principal components at 95% variance; tested whether K-Means aligned with pass/fail labels.\nCompared k-NN, Decision Tree, and SVM before and after SMOTE; Decision Tree achieved the best tested failure-class F1 of 0.1795, with results limited to one 80:20 split.",
+    "data": {
+      "id": "PROJ-SECOM-FAULT-DETECTION",
+      "canonical_name": "SECOM Semiconductor Fault-Detection Analysis",
+      "external_name": "SECOM Semiconductor Fault-Detection Analysis",
+      "evidence_type": "academic",
+      "status": "conditional",
+      "ownership": "MSc academic project; individual/team status not supplied",
+      "date_context": "MSc Data Mining and Statistical Modelling work; exact dates not supplied",
+      "source_refs": [
+        "context/sources/career.md > SECOM Semiconductor Fault-Detection Analysis",
+        "context/sources/masters-projects.md > Data Mining and Machine Learning for Semiconductor Fault Detection",
+        "context/sources/portfolio-audit.md > Project 2 - Semiconductor Manufacturing Fault Detection"
+      ],
+      "approved_external_use": "Use for relevant junior data-science or manufacturing-analytics roles; do not imply industry deployment.",
+      "problem_patterns": [
+        "manufacturing quality",
+        "fault detection",
+        "class imbalance",
+        "feature reduction",
+        "classification"
+      ],
+      "role_tracks": [
+        "Junior Data Scientist",
+        "Graduate Data Scientist",
+        "Data Analyst"
+      ],
+      "technologies": [
+        "Python",
+        "pandas",
+        "scikit-learn",
+        "PCA",
+        "SMOTE",
+        "K-Means",
+        "k-NN",
+        "Decision Tree",
+        "SVM"
+      ],
+      "approved_facts": [
+        "Prepared the SECOM dataset using median imputation, removal of high-missing and zero-variance features, standardization, and exploratory outlier analysis.",
+        "Applied PCA and evaluated k-NN, decision-tree, and SVM classifiers; used K-Means for exploratory clustering and SMOTE to investigate class imbalance.",
+        "Analysed 1,567 observations with approximately 590 sensor features and a 1,463:104 pass/fail distribution.",
+        "Reduced the cleaned feature set to 446 variables and retained 162 principal components at a 95% variance threshold.",
+        "Decision Tree with SMOTE produced the best tested failure-class F1 of 0.1795; the study used one 80:20 split with no systematic hyperparameter search, so robust generalisation is not claimed."
+      ],
+      "resume_content": {
+        "title": "SECOM Semiconductor Fault-Detection Analysis",
+        "context": "MSc data-mining project | Python, pandas, scikit-learn, PCA, SMOTE",
+        "bullets": [
+          "Analysed 1,567 semiconductor-production samples with approximately 590 sensor features, building a preprocessing, outlier, PCA, clustering, and classification workflow for a roughly 14:1 imbalanced problem.",
+          "Reduced the cleaned feature set to 446 variables and retained 162 principal components at 95% variance; tested whether K-Means aligned with pass/fail labels.",
+          "Compared k-NN, Decision Tree, and SVM before and after SMOTE; Decision Tree achieved the best tested failure-class F1 of 0.1795, with results limited to one 80:20 split."
+        ]
+      },
+      "prohibited": [
+        "Production or real-time semiconductor fault detection",
+        "95% model accuracy",
+        "Reliable failure prediction or business impact",
+        "Robust generalisation, cross-validated performance, or systematic tuning"
+      ]
+    },
+    "source": "context/evidence.yml > PROJ-SECOM-FAULT-DETECTION",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-ACADEMIC-001",
+    "kind": "skill",
+    "title": "SKILL-ACADEMIC-001",
+    "summary": "",
+    "data": {
+      "id": "SKILL-ACADEMIC-001",
+      "status": "confirmed",
+      "category": "skill",
+      "approved_external_use": "Label as academic.",
+      "source_refs": [
+        "context/sources/career.md > Skills evidence > Academic"
+      ],
+      "approved_facts": [
+        "Python, R, statistics, data mining",
+        "SQL, MongoDB, JSON",
+        "Time series, ARIMA, classification, Random Forest, XGBoost"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-ACADEMIC-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-AGENTIC-001",
+    "kind": "skill",
+    "title": "SKILL-AGENTIC-001",
+    "summary": "",
+    "data": {
+      "id": "SKILL-AGENTIC-001",
+      "status": "conditional",
+      "category": "skill",
+      "approved_external_use": "Use only with PROJ-BLOGBOARD in relevant entry-level applied-AI roles; describe repository implementation, not production autonomy or measured content quality.",
+      "source_refs": [
+        "context/sources/portfolio-audit.md > BlogBoard Multi-Agent Article Generator"
+      ],
+      "approved_facts": [
+        "LangGraph typed state workflow, generator routing, validation, and revision loop",
+        "Groq, Tavily, Guardian search, Cloudflare R2/S3-compatible storage, Pydantic, Opik, and optional Sentry integration"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-AGENTIC-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-BI-001",
+    "kind": "skill",
+    "title": "SKILL-BI-001",
+    "summary": "",
+    "data": {
+      "id": "SKILL-BI-001",
+      "status": "confirmed",
+      "category": "skill",
+      "approved_external_use": "Professional evidence.",
+      "source_refs": [
+        "context/sources/career.md > Skills evidence > Professional"
+      ],
+      "approved_facts": [
+        "Power BI, Tableau, MicroStrategy",
+        "Power Query/M, data modeling, reporting, dashboard development, testing, deployment"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-BI-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-BI-PORTFOLIO-001",
+    "kind": "skill",
+    "title": "SKILL-BI-PORTFOLIO-001",
+    "summary": "",
+    "data": {
+      "id": "SKILL-BI-PORTFOLIO-001",
+      "status": "conditional",
+      "category": "skill",
+      "approved_external_use": "Use only as candidate-project evidence with PROJ-POWERBI-PORTFOLIO; do not infer undocumented DAX, star-schema, or Power Query implementation.",
+      "source_refs": [
+        "context/sources/portfolio-audit.md > Project 6 - Power BI Business and Sports Analytics Portfolio"
+      ],
+      "approved_facts": [
+        "Power BI Desktop, Excel/CSV, KPI cards, interactive slicers, geographic/category breakdowns, and time-trend visualisation"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-BI-PORTFOLIO-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-CLUSTERING-001",
+    "kind": "skill",
+    "title": "SKILL-CLUSTERING-001",
+    "summary": "",
+    "data": {
+      "id": "SKILL-CLUSTERING-001",
+      "status": "conditional",
+      "category": "skill",
+      "approved_external_use": "Use only as academic project evidence with PROJ-CLUSTERING-DBSCAN.",
+      "source_refs": [
+        "context/sources/masters-projects.md > Clustering Analysis Using Prototype Adjustment and DBSCAN",
+        "context/sources/portfolio-audit.md > Project 4 - Applied Clustering"
+      ],
+      "approved_facts": [
+        "Prototype-adjustment clustering, DBSCAN, Euclidean distance, nearest-neighbour epsilon analysis, SSE, and silhouette analysis",
+        "Manual algorithm and silhouette-score implementation on reproducible synthetic datasets"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-CLUSTERING-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-DELIVERY-001",
+    "kind": "skill",
+    "title": "SKILL-DELIVERY-001",
+    "summary": "",
+    "data": {
+      "id": "SKILL-DELIVERY-001",
+      "status": "confirmed",
+      "category": "skill",
+      "approved_external_use": "Professional evidence.",
+      "source_refs": [
+        "context/sources/career.md > Skills evidence > Professional"
+      ],
+      "approved_facts": [
+        "Requirements/BRD gathering, stakeholder communication, testing, deployment, and handover"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-DELIVERY-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-DEVOPS-PROJECT-001",
+    "kind": "skill",
+    "title": "SKILL-DEVOPS-PROJECT-001",
+    "summary": "",
+    "data": {
+      "id": "SKILL-DEVOPS-PROJECT-001",
+      "status": "hold",
+      "category": "skill",
+      "approved_external_use": "Do not use externally until a repository or artifact confirms the implementation; never label as professional MLOps.",
+      "source_refs": [
+        "context/sources/career.md > Retrieval-Augmented Document Q&A Prototype"
+      ],
+      "approved_facts": [
+        "Docker containerization",
+        "Kubernetes manifests",
+        "GitHub Actions build, test, and deployment workflows"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-DEVOPS-PROJECT-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-GENAI-001",
+    "kind": "skill",
+    "title": "SKILL-GENAI-001",
+    "summary": "",
+    "data": {
+      "id": "SKILL-GENAI-001",
+      "status": "conditional",
+      "category": "skill",
+      "approved_external_use": "Use only with PROJ-RAG-CHATBOT in relevant entry-level roles; label as project evidence, not professional AI experience.",
+      "source_refs": [
+        "context/sources/career.md > Retrieval-Augmented Document Q&A Prototype"
+      ],
+      "approved_facts": [
+        "Python document ingestion and chunking",
+        "FAISS embedding retrieval and TF-IDF keyword retrieval",
+        "OpenAI API structured prompting, Streamlit interface, and displayed source references"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-GENAI-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-GENAI-LOCAL-001",
+    "kind": "skill",
+    "title": "SKILL-GENAI-LOCAL-001",
+    "summary": "",
+    "data": {
+      "id": "SKILL-GENAI-LOCAL-001",
+      "status": "conditional",
+      "category": "skill",
+      "approved_external_use": "Use only with PROJ-EU-COMPLIANCE-RAG in relevant entry-level roles; label as project evidence and do not imply legal correctness or production operation.",
+      "source_refs": [
+        "context/sources/portfolio-audit.md > Project 5 - EU Compliance RAG Assistant"
+      ],
+      "approved_facts": [
+        "LangChain, ChromaDB, maximum marginal relevance retrieval, Ollama, Gemini, Hugging Face embeddings",
+        "Streamlit, PDF/web ingestion, page/source citations, query decomposition, and compliance-checklist generation"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-GENAI-LOCAL-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-ML-TOOLING-001",
+    "kind": "skill",
+    "title": "SKILL-ML-TOOLING-001",
+    "summary": "",
+    "data": {
+      "id": "SKILL-ML-TOOLING-001",
+      "status": "conditional",
+      "category": "skill",
+      "approved_external_use": "Use only as candidate-project evidence; do not imply professional or production ML experience.",
+      "source_refs": [
+        "context/sources/career.md > Additional projects supplied 27 July 2026"
+      ],
+      "approved_facts": [
+        "pandas, NumPy, scikit-learn, matplotlib, seaborn",
+        "PCA, feature preprocessing, K-Means, k-NN, decision trees, SVM, SMOTE"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-ML-TOOLING-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-PLATFORM-001",
+    "kind": "skill",
+    "title": "SKILL-PLATFORM-001",
+    "summary": "",
+    "data": {
+      "id": "SKILL-PLATFORM-001",
+      "status": "confirmed",
+      "category": "skill",
+      "approved_external_use": "Distinguish professional use from training/fundamentals where applicable.",
+      "source_refs": [
+        "context/sources/career.md > Skills evidence > Professional"
+      ],
+      "approved_facts": [
+        "Redshift, Snowflake",
+        "AWS/S3 fundamentals",
+        "Power Automate, Nexla, Dataiku"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-PLATFORM-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-SQL-001",
+    "kind": "skill",
+    "title": "SKILL-SQL-001",
+    "summary": "",
+    "data": {
+      "id": "SKILL-SQL-001",
+      "status": "conditional",
+      "category": "skill",
+      "approved_external_use": "Use general SQL; MySQL, SQL Server, and PostgreSQL variants remain draft-only until confirmed.",
+      "source_refs": [
+        "context/sources/career.md > Skills evidence > Professional"
+      ],
+      "approved_facts": [
+        "SQL"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-SQL-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  }
+]
