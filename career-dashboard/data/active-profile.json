@@ -247,53 +247,6 @@
     "updated_at": "2026-09-10T23:39:00+00:00"
   },
   {
-    "id": "COURSEWORK-MSC-001",
-    "kind": "fact",
-    "title": "COURSEWORK-MSC-001",
-    "summary": "",
-    "data": {
-      "id": "COURSEWORK-MSC-001",
-      "status": "confirmed",
-      "category": "academic_coursework",
-      "approved_external_use": "Label as MSc coursework.",
-      "source_refs": [
-        "context/sources/career.md > MSc in Data Science > Semester 1"
-      ],
-      "approved_facts": [
-        "Reported Semester 1 result: 2:1.",
-        "Coursework includes Statistics for Data Science, Python, R, DBMS, SQL, MongoDB/JSON, Data Science Principles, and time-series analysis with ARIMA."
-      ]
-    },
-    "source": "context/evidence.yml > COURSEWORK-MSC-001",
-    "revision": 1,
-    "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
-  },
-  {
-    "id": "COURSEWORK-MSC-002",
-    "kind": "fact",
-    "title": "COURSEWORK-MSC-002",
-    "summary": "",
-    "data": {
-      "id": "COURSEWORK-MSC-002",
-      "status": "confirmed",
-      "category": "academic_coursework",
-      "approved_external_use": "Label as MSc coursework.",
-      "source_refs": [
-        "context/sources/career.md > MSc in Data Science > Semester 2"
-      ],
-      "approved_facts": [
-        "Semester 2 work includes Applied Machine Learning, Data Mining, and Data Analytics."
-      ]
-    },
-    "source": "context/evidence.yml > COURSEWORK-MSC-002",
-    "revision": 1,
-    "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
-  },
-  {
     "id": "IDENTITY-001",
     "kind": "fact",
     "title": "Chetan Babu M",
@@ -309,6 +262,56 @@
       "value": "Chetan Babu M"
     },
     "source": "context/evidence.yml > IDENTITY-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "TRAINING-001",
+    "kind": "fact",
+    "title": "Completed structured training in SQL, Python, Power BI, MicroStrategy, AWS/S3 fundamentals, cloud data warehousing, data modeling, ETL, testing, deplo",
+    "summary": "Completed structured training in SQL, Python, Power BI, MicroStrategy, AWS/S3 fundamentals, cloud data warehousing, data modeling, ETL, testing, deployment, and the BI lifecycle.\nGained exposure to requirements, development, validation, release, and production-support practices.",
+    "data": {
+      "id": "TRAINING-001",
+      "status": "confirmed",
+      "category": "professional_training",
+      "approved_external_use": "Describe as structured training; exact employment/internship classification remains unresolved.",
+      "source_refs": [
+        "context/sources/career.md > Assistant Associate Analyst"
+      ],
+      "approved_facts": [
+        "Completed structured training in SQL, Python, Power BI, MicroStrategy, AWS/S3 fundamentals, cloud data warehousing, data modeling, ETL, testing, deployment, and the BI lifecycle.",
+        "Gained exposure to requirements, development, validation, release, and production-support practices."
+      ]
+    },
+    "source": "context/evidence.yml > TRAINING-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "LANG-001",
+    "kind": "fact",
+    "title": "English (Fluent)",
+    "summary": "English (Fluent)\nTamil (Fluent)\nTelugu (Native)",
+    "data": {
+      "id": "LANG-001",
+      "status": "confirmed",
+      "category": "languages",
+      "approved_external_use": "always",
+      "source_refs": [
+        "context/PROFILE-NOTES.md > Contact and status",
+        "context/sources/career.md > Languages supplied"
+      ],
+      "approved_facts": [
+        "English (Fluent)",
+        "Tamil (Fluent)",
+        "Telugu (Native)"
+      ]
+    },
+    "source": "context/evidence.yml > LANG-001",
     "revision": 1,
     "deleted": 0,
     "review_state": "registered",
@@ -420,127 +423,10 @@
     "updated_at": "2026-09-10T23:39:00+00:00"
   },
   {
-    "id": "LOCATION-001",
-    "kind": "fact",
-    "title": "Ireland",
-    "summary": "Ireland",
-    "data": {
-      "id": "LOCATION-001",
-      "status": "confirmed",
-      "category": "location",
-      "approved_external_use": "always",
-      "source_refs": [
-        "config/profile.yml > candidate"
-      ],
-      "value": "Ireland"
-    },
-    "source": "context/evidence.yml > LOCATION-001",
-    "revision": 1,
-    "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
-  },
-  {
-    "id": "LANG-001",
-    "kind": "fact",
-    "title": "LANG-001",
-    "summary": "",
-    "data": {
-      "id": "LANG-001",
-      "status": "confirmed",
-      "category": "languages",
-      "approved_external_use": "always",
-      "source_refs": [
-        "context/PROFILE-NOTES.md > Contact and status",
-        "context/sources/career.md > Languages supplied"
-      ],
-      "approved_facts": [
-        "English (Fluent)",
-        "Tamil (Fluent)",
-        "Telugu (Native)"
-      ]
-    },
-    "source": "context/evidence.yml > LANG-001",
-    "revision": 1,
-    "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
-  },
-  {
-    "id": "WORKAUTH-STAMP-001",
-    "kind": "fact",
-    "title": "Stamp 1G",
-    "summary": "Stamp 1G",
-    "data": {
-      "id": "WORKAUTH-STAMP-001",
-      "status": "user_reported",
-      "category": "work_authorization",
-      "approved_external_use": "May state Stamp 1G if a form asks. Omit from external resumes by default; do not infer expiry, renewal, unrestricted rights or future sponsorship.",
-      "source_refs": [
-        "User confirmation in Codex conversation, 2026-09-05",
-        "config/profile.yml > candidate > immigration_permission_as_confirmed"
-      ],
-      "value": "Stamp 1G",
-      "confirmed_on": "2026-09-05"
-    },
-    "source": "context/evidence.yml > WORKAUTH-STAMP-001",
-    "revision": 1,
-    "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
-  },
-  {
-    "id": "TRAINING-001",
-    "kind": "fact",
-    "title": "TRAINING-001",
-    "summary": "",
-    "data": {
-      "id": "TRAINING-001",
-      "status": "confirmed",
-      "category": "professional_training",
-      "approved_external_use": "Describe as structured training; exact employment/internship classification remains unresolved.",
-      "source_refs": [
-        "context/sources/career.md > Assistant Associate Analyst"
-      ],
-      "approved_facts": [
-        "Completed structured training in SQL, Python, Power BI, MicroStrategy, AWS/S3 fundamentals, cloud data warehousing, data modeling, ETL, testing, deployment, and the BI lifecycle.",
-        "Gained exposure to requirements, development, validation, release, and production-support practices."
-      ]
-    },
-    "source": "context/evidence.yml > TRAINING-001",
-    "revision": 1,
-    "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
-  },
-  {
-    "id": "TRAINING-002",
-    "kind": "fact",
-    "title": "TRAINING-002",
-    "summary": "",
-    "data": {
-      "id": "TRAINING-002",
-      "status": "confirmed",
-      "category": "career_progression",
-      "approved_external_use": "always",
-      "source_refs": [
-        "context/sources/career.md > Assistant Associate Analyst"
-      ],
-      "approved_facts": [
-        "Progressed to Associate Analyst after the training period."
-      ]
-    },
-    "source": "context/evidence.yml > TRAINING-002",
-    "revision": 1,
-    "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
-  },
-  {
     "id": "WORK-AZ-OTHER-001",
     "kind": "fact",
-    "title": "WORK-AZ-OTHER-001",
-    "summary": "",
+    "title": "Implemented Power BI member access for app/workspace management.",
+    "summary": "Implemented Power BI member access for app/workspace management.\nAutomated incremental refresh using Power Automate.\nConducted dashboard and query testing.",
     "data": {
       "id": "WORK-AZ-OTHER-001",
       "status": "confirmed",
@@ -564,8 +450,8 @@
   {
     "id": "WORK-HUL-001",
     "kind": "fact",
-    "title": "WORK-HUL-001",
-    "summary": "",
+    "title": "Implemented requested enhancements to existing Power BI dashboards.",
+    "summary": "Implemented requested enhancements to existing Power BI dashboards.\nPerformed testing and validation.\nSupported promotion of the updated dashboards to production.",
     "data": {
       "id": "WORK-HUL-001",
       "status": "confirmed",
@@ -581,6 +467,120 @@
       ]
     },
     "source": "context/evidence.yml > WORK-HUL-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "LOCATION-001",
+    "kind": "fact",
+    "title": "Ireland",
+    "summary": "Ireland",
+    "data": {
+      "id": "LOCATION-001",
+      "status": "confirmed",
+      "category": "location",
+      "approved_external_use": "always",
+      "source_refs": [
+        "config/profile.yml > candidate"
+      ],
+      "value": "Ireland"
+    },
+    "source": "context/evidence.yml > LOCATION-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "TRAINING-002",
+    "kind": "fact",
+    "title": "Progressed to Associate Analyst after the training period.",
+    "summary": "Progressed to Associate Analyst after the training period.",
+    "data": {
+      "id": "TRAINING-002",
+      "status": "confirmed",
+      "category": "career_progression",
+      "approved_external_use": "always",
+      "source_refs": [
+        "context/sources/career.md > Assistant Associate Analyst"
+      ],
+      "approved_facts": [
+        "Progressed to Associate Analyst after the training period."
+      ]
+    },
+    "source": "context/evidence.yml > TRAINING-002",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "COURSEWORK-MSC-001",
+    "kind": "fact",
+    "title": "Reported Semester 1 result: 2:1.",
+    "summary": "Reported Semester 1 result: 2:1.\nCoursework includes Statistics for Data Science, Python, R, DBMS, SQL, MongoDB/JSON, Data Science Principles, and time-series analysis with ARIMA.",
+    "data": {
+      "id": "COURSEWORK-MSC-001",
+      "status": "confirmed",
+      "category": "academic_coursework",
+      "approved_external_use": "Label as MSc coursework.",
+      "source_refs": [
+        "context/sources/career.md > MSc in Data Science > Semester 1"
+      ],
+      "approved_facts": [
+        "Reported Semester 1 result: 2:1.",
+        "Coursework includes Statistics for Data Science, Python, R, DBMS, SQL, MongoDB/JSON, Data Science Principles, and time-series analysis with ARIMA."
+      ]
+    },
+    "source": "context/evidence.yml > COURSEWORK-MSC-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "COURSEWORK-MSC-002",
+    "kind": "fact",
+    "title": "Semester 2 work includes Applied Machine Learning, Data Mining, and Data Analytics.",
+    "summary": "Semester 2 work includes Applied Machine Learning, Data Mining, and Data Analytics.",
+    "data": {
+      "id": "COURSEWORK-MSC-002",
+      "status": "confirmed",
+      "category": "academic_coursework",
+      "approved_external_use": "Label as MSc coursework.",
+      "source_refs": [
+        "context/sources/career.md > MSc in Data Science > Semester 2"
+      ],
+      "approved_facts": [
+        "Semester 2 work includes Applied Machine Learning, Data Mining, and Data Analytics."
+      ]
+    },
+    "source": "context/evidence.yml > COURSEWORK-MSC-002",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "WORKAUTH-STAMP-001",
+    "kind": "fact",
+    "title": "Stamp 1G",
+    "summary": "Stamp 1G",
+    "data": {
+      "id": "WORKAUTH-STAMP-001",
+      "status": "user_reported",
+      "category": "work_authorization",
+      "approved_external_use": "May state Stamp 1G if a form asks. Omit from external resumes by default; do not infer expiry, renewal, unrestricted rights or future sponsorship.",
+      "source_refs": [
+        "User confirmation in Codex conversation, 2026-09-05",
+        "config/profile.yml > candidate > immigration_permission_as_confirmed"
+      ],
+      "value": "Stamp 1G",
+      "confirmed_on": "2026-09-05"
+    },
+    "source": "context/evidence.yml > WORKAUTH-STAMP-001",
     "revision": 1,
     "deleted": 0,
     "review_state": "registered",
@@ -890,6 +890,34 @@
     "updated_at": "2026-09-10T23:39:00+00:00"
   },
   {
+    "id": "personal:location_preferences",
+    "kind": "personal",
+    "title": "Location preferences",
+    "summary": "{\n  \"country\": \"Ireland\",\n  \"preferred\": [\n    \"Dublin\",\n    \"Cork\",\n    \"Limerick\",\n    \"Remote within Ireland\"\n  ],\n  \"arrangements\": [\n    \"On-site\",\n    \"Hybrid\",\n    \"Remote\"\n  ]\n}",
+    "data": {
+      "field": "location_preferences",
+      "value": {
+        "country": "Ireland",
+        "preferred": [
+          "Dublin",
+          "Cork",
+          "Limerick",
+          "Remote within Ireland"
+        ],
+        "arrangements": [
+          "On-site",
+          "Hybrid",
+          "Remote"
+        ]
+      }
+    },
+    "source": "config/profile.yml > location_preferences",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-11T14:09:21+00:00"
+  },
+  {
     "id": "personal:most_recent_role",
     "kind": "personal",
     "title": "Most recent role",
@@ -993,6 +1021,50 @@
     "deleted": 0,
     "review_state": "registered",
     "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "personal:target_roles",
+    "kind": "personal",
+    "title": "Target roles",
+    "summary": "{\n  \"primary\": [\n    \"Data Analyst\",\n    \"BI Analyst\",\n    \"Business Intelligence Analyst\",\n    \"BI Developer\",\n    \"Power BI Developer\",\n    \"Reporting Analyst\"\n  ],\n  \"secondary\": [\n    \"Insights Analyst\",\n    \"Analytics Consultant\",\n    \"Junior Data Scientist\",\n    \"Graduate Data Scientist\",\n    \"Entry-level GenAI Application Developer\",\n    \"Fraud Analytics Analyst\",\n    \"Risk Analytics Analyst\",\n    \"Advanced Analytics Analyst\",\n    \"Decision Scientist (junior/graduate)\"\n  ],\n  \"excluded\": [\n    \"AI/Generative AI/ML Engineer roles requiring professional production experience\",\n    \"Software Engineer\",\n    \"Full Stack Engineer\",\n    \"DevOps Engineer\",\n    \"MLOps Engineer\",\n    \"Hardware Engineer\",\n    \"Data Engineer roles dominated by production pipeline or platform ownership\"\n  ]\n}",
+    "data": {
+      "field": "target_roles",
+      "value": {
+        "primary": [
+          "Data Analyst",
+          "BI Analyst",
+          "Business Intelligence Analyst",
+          "BI Developer",
+          "Power BI Developer",
+          "Reporting Analyst"
+        ],
+        "secondary": [
+          "Insights Analyst",
+          "Analytics Consultant",
+          "Junior Data Scientist",
+          "Graduate Data Scientist",
+          "Entry-level GenAI Application Developer",
+          "Fraud Analytics Analyst",
+          "Risk Analytics Analyst",
+          "Advanced Analytics Analyst",
+          "Decision Scientist (junior/graduate)"
+        ],
+        "excluded": [
+          "AI/Generative AI/ML Engineer roles requiring professional production experience",
+          "Software Engineer",
+          "Full Stack Engineer",
+          "DevOps Engineer",
+          "MLOps Engineer",
+          "Hardware Engineer",
+          "Data Engineer roles dominated by production pipeline or platform ownership"
+        ]
+      }
+    },
+    "source": "config/profile.yml > target_roles",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-11T14:09:21+00:00"
   },
   {
     "id": "personal:timezone",
@@ -1943,154 +2015,10 @@
     "updated_at": "2026-09-10T23:39:00+00:00"
   },
   {
-    "id": "SKILL-ACADEMIC-001",
-    "kind": "skill",
-    "title": "SKILL-ACADEMIC-001",
-    "summary": "",
-    "data": {
-      "id": "SKILL-ACADEMIC-001",
-      "status": "confirmed",
-      "category": "skill",
-      "approved_external_use": "Label as academic.",
-      "source_refs": [
-        "context/sources/career.md > Skills evidence > Academic"
-      ],
-      "approved_facts": [
-        "Python, R, statistics, data mining",
-        "SQL, MongoDB, JSON",
-        "Time series, ARIMA, classification, Random Forest, XGBoost"
-      ]
-    },
-    "source": "context/evidence.yml > SKILL-ACADEMIC-001",
-    "revision": 1,
-    "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
-  },
-  {
-    "id": "SKILL-AGENTIC-001",
-    "kind": "skill",
-    "title": "SKILL-AGENTIC-001",
-    "summary": "",
-    "data": {
-      "id": "SKILL-AGENTIC-001",
-      "status": "conditional",
-      "category": "skill",
-      "approved_external_use": "Use only with PROJ-BLOGBOARD in relevant entry-level applied-AI roles; describe repository implementation, not production autonomy or measured content quality.",
-      "source_refs": [
-        "context/sources/portfolio-audit.md > BlogBoard Multi-Agent Article Generator"
-      ],
-      "approved_facts": [
-        "LangGraph typed state workflow, generator routing, validation, and revision loop",
-        "Groq, Tavily, Guardian search, Cloudflare R2/S3-compatible storage, Pydantic, Opik, and optional Sentry integration"
-      ]
-    },
-    "source": "context/evidence.yml > SKILL-AGENTIC-001",
-    "revision": 1,
-    "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
-  },
-  {
-    "id": "SKILL-BI-001",
-    "kind": "skill",
-    "title": "SKILL-BI-001",
-    "summary": "",
-    "data": {
-      "id": "SKILL-BI-001",
-      "status": "confirmed",
-      "category": "skill",
-      "approved_external_use": "Professional evidence.",
-      "source_refs": [
-        "context/sources/career.md > Skills evidence > Professional"
-      ],
-      "approved_facts": [
-        "Power BI, Tableau, MicroStrategy",
-        "Power Query/M, data modeling, reporting, dashboard development, testing, deployment"
-      ]
-    },
-    "source": "context/evidence.yml > SKILL-BI-001",
-    "revision": 1,
-    "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
-  },
-  {
-    "id": "SKILL-BI-PORTFOLIO-001",
-    "kind": "skill",
-    "title": "SKILL-BI-PORTFOLIO-001",
-    "summary": "",
-    "data": {
-      "id": "SKILL-BI-PORTFOLIO-001",
-      "status": "conditional",
-      "category": "skill",
-      "approved_external_use": "Use only as candidate-project evidence with PROJ-POWERBI-PORTFOLIO; do not infer undocumented DAX, star-schema, or Power Query implementation.",
-      "source_refs": [
-        "context/sources/portfolio-audit.md > Project 6 - Power BI Business and Sports Analytics Portfolio"
-      ],
-      "approved_facts": [
-        "Power BI Desktop, Excel/CSV, KPI cards, interactive slicers, geographic/category breakdowns, and time-trend visualisation"
-      ]
-    },
-    "source": "context/evidence.yml > SKILL-BI-PORTFOLIO-001",
-    "revision": 1,
-    "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
-  },
-  {
-    "id": "SKILL-CLUSTERING-001",
-    "kind": "skill",
-    "title": "SKILL-CLUSTERING-001",
-    "summary": "",
-    "data": {
-      "id": "SKILL-CLUSTERING-001",
-      "status": "conditional",
-      "category": "skill",
-      "approved_external_use": "Use only as academic project evidence with PROJ-CLUSTERING-DBSCAN.",
-      "source_refs": [
-        "context/sources/masters-projects.md > Clustering Analysis Using Prototype Adjustment and DBSCAN",
-        "context/sources/portfolio-audit.md > Project 4 - Applied Clustering"
-      ],
-      "approved_facts": [
-        "Prototype-adjustment clustering, DBSCAN, Euclidean distance, nearest-neighbour epsilon analysis, SSE, and silhouette analysis",
-        "Manual algorithm and silhouette-score implementation on reproducible synthetic datasets"
-      ]
-    },
-    "source": "context/evidence.yml > SKILL-CLUSTERING-001",
-    "revision": 1,
-    "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
-  },
-  {
-    "id": "SKILL-DELIVERY-001",
-    "kind": "skill",
-    "title": "SKILL-DELIVERY-001",
-    "summary": "",
-    "data": {
-      "id": "SKILL-DELIVERY-001",
-      "status": "confirmed",
-      "category": "skill",
-      "approved_external_use": "Professional evidence.",
-      "source_refs": [
-        "context/sources/career.md > Skills evidence > Professional"
-      ],
-      "approved_facts": [
-        "Requirements/BRD gathering, stakeholder communication, testing, deployment, and handover"
-      ]
-    },
-    "source": "context/evidence.yml > SKILL-DELIVERY-001",
-    "revision": 1,
-    "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
-  },
-  {
     "id": "SKILL-DEVOPS-PROJECT-001",
     "kind": "skill",
-    "title": "SKILL-DEVOPS-PROJECT-001",
-    "summary": "",
+    "title": "Docker containerization",
+    "summary": "Docker containerization\nKubernetes manifests\nGitHub Actions build, test, and deployment workflows",
     "data": {
       "id": "SKILL-DEVOPS-PROJECT-001",
       "status": "hold",
@@ -2112,10 +2040,130 @@
     "updated_at": "2026-09-10T23:39:00+00:00"
   },
   {
+    "id": "SKILL-GENAI-LOCAL-001",
+    "kind": "skill",
+    "title": "LangChain, ChromaDB, maximum marginal relevance retrieval, Ollama, Gemini, Hugging Face embeddings",
+    "summary": "LangChain, ChromaDB, maximum marginal relevance retrieval, Ollama, Gemini, Hugging Face embeddings\nStreamlit, PDF/web ingestion, page/source citations, query decomposition, and compliance-checklist generation",
+    "data": {
+      "id": "SKILL-GENAI-LOCAL-001",
+      "status": "conditional",
+      "category": "skill",
+      "approved_external_use": "Use only with PROJ-EU-COMPLIANCE-RAG in relevant entry-level roles; label as project evidence and do not imply legal correctness or production operation.",
+      "source_refs": [
+        "context/sources/portfolio-audit.md > Project 5 - EU Compliance RAG Assistant"
+      ],
+      "approved_facts": [
+        "LangChain, ChromaDB, maximum marginal relevance retrieval, Ollama, Gemini, Hugging Face embeddings",
+        "Streamlit, PDF/web ingestion, page/source citations, query decomposition, and compliance-checklist generation"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-GENAI-LOCAL-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-AGENTIC-001",
+    "kind": "skill",
+    "title": "LangGraph typed state workflow, generator routing, validation, and revision loop",
+    "summary": "LangGraph typed state workflow, generator routing, validation, and revision loop\nGroq, Tavily, Guardian search, Cloudflare R2/S3-compatible storage, Pydantic, Opik, and optional Sentry integration",
+    "data": {
+      "id": "SKILL-AGENTIC-001",
+      "status": "conditional",
+      "category": "skill",
+      "approved_external_use": "Use only with PROJ-BLOGBOARD in relevant entry-level applied-AI roles; describe repository implementation, not production autonomy or measured content quality.",
+      "source_refs": [
+        "context/sources/portfolio-audit.md > BlogBoard Multi-Agent Article Generator"
+      ],
+      "approved_facts": [
+        "LangGraph typed state workflow, generator routing, validation, and revision loop",
+        "Groq, Tavily, Guardian search, Cloudflare R2/S3-compatible storage, Pydantic, Opik, and optional Sentry integration"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-AGENTIC-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-BI-PORTFOLIO-001",
+    "kind": "skill",
+    "title": "Power BI Desktop, Excel/CSV, KPI cards, interactive slicers, geographic/category breakdowns, and time-trend visualisation",
+    "summary": "Power BI Desktop, Excel/CSV, KPI cards, interactive slicers, geographic/category breakdowns, and time-trend visualisation",
+    "data": {
+      "id": "SKILL-BI-PORTFOLIO-001",
+      "status": "conditional",
+      "category": "skill",
+      "approved_external_use": "Use only as candidate-project evidence with PROJ-POWERBI-PORTFOLIO; do not infer undocumented DAX, star-schema, or Power Query implementation.",
+      "source_refs": [
+        "context/sources/portfolio-audit.md > Project 6 - Power BI Business and Sports Analytics Portfolio"
+      ],
+      "approved_facts": [
+        "Power BI Desktop, Excel/CSV, KPI cards, interactive slicers, geographic/category breakdowns, and time-trend visualisation"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-BI-PORTFOLIO-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-BI-001",
+    "kind": "skill",
+    "title": "Power BI, Tableau, MicroStrategy",
+    "summary": "Power BI, Tableau, MicroStrategy\nPower Query/M, data modeling, reporting, dashboard development, testing, deployment",
+    "data": {
+      "id": "SKILL-BI-001",
+      "status": "confirmed",
+      "category": "skill",
+      "approved_external_use": "Professional evidence.",
+      "source_refs": [
+        "context/sources/career.md > Skills evidence > Professional"
+      ],
+      "approved_facts": [
+        "Power BI, Tableau, MicroStrategy",
+        "Power Query/M, data modeling, reporting, dashboard development, testing, deployment"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-BI-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-CLUSTERING-001",
+    "kind": "skill",
+    "title": "Prototype-adjustment clustering, DBSCAN, Euclidean distance, nearest-neighbour epsilon analysis, SSE, and silhouette analysis",
+    "summary": "Prototype-adjustment clustering, DBSCAN, Euclidean distance, nearest-neighbour epsilon analysis, SSE, and silhouette analysis\nManual algorithm and silhouette-score implementation on reproducible synthetic datasets",
+    "data": {
+      "id": "SKILL-CLUSTERING-001",
+      "status": "conditional",
+      "category": "skill",
+      "approved_external_use": "Use only as academic project evidence with PROJ-CLUSTERING-DBSCAN.",
+      "source_refs": [
+        "context/sources/masters-projects.md > Clustering Analysis Using Prototype Adjustment and DBSCAN",
+        "context/sources/portfolio-audit.md > Project 4 - Applied Clustering"
+      ],
+      "approved_facts": [
+        "Prototype-adjustment clustering, DBSCAN, Euclidean distance, nearest-neighbour epsilon analysis, SSE, and silhouette analysis",
+        "Manual algorithm and silhouette-score implementation on reproducible synthetic datasets"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-CLUSTERING-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
     "id": "SKILL-GENAI-001",
     "kind": "skill",
-    "title": "SKILL-GENAI-001",
-    "summary": "",
+    "title": "Python document ingestion and chunking",
+    "summary": "Python document ingestion and chunking\nFAISS embedding retrieval and TF-IDF keyword retrieval\nOpenAI API structured prompting, Streamlit interface, and displayed source references",
     "data": {
       "id": "SKILL-GENAI-001",
       "status": "conditional",
@@ -2137,48 +2185,25 @@
     "updated_at": "2026-09-10T23:39:00+00:00"
   },
   {
-    "id": "SKILL-GENAI-LOCAL-001",
+    "id": "SKILL-ACADEMIC-001",
     "kind": "skill",
-    "title": "SKILL-GENAI-LOCAL-001",
-    "summary": "",
+    "title": "Python, R, statistics, data mining",
+    "summary": "Python, R, statistics, data mining\nSQL, MongoDB, JSON\nTime series, ARIMA, classification, Random Forest, XGBoost",
     "data": {
-      "id": "SKILL-GENAI-LOCAL-001",
-      "status": "conditional",
+      "id": "SKILL-ACADEMIC-001",
+      "status": "confirmed",
       "category": "skill",
-      "approved_external_use": "Use only with PROJ-EU-COMPLIANCE-RAG in relevant entry-level roles; label as project evidence and do not imply legal correctness or production operation.",
+      "approved_external_use": "Label as academic.",
       "source_refs": [
-        "context/sources/portfolio-audit.md > Project 5 - EU Compliance RAG Assistant"
+        "context/sources/career.md > Skills evidence > Academic"
       ],
       "approved_facts": [
-        "LangChain, ChromaDB, maximum marginal relevance retrieval, Ollama, Gemini, Hugging Face embeddings",
-        "Streamlit, PDF/web ingestion, page/source citations, query decomposition, and compliance-checklist generation"
+        "Python, R, statistics, data mining",
+        "SQL, MongoDB, JSON",
+        "Time series, ARIMA, classification, Random Forest, XGBoost"
       ]
     },
-    "source": "context/evidence.yml > SKILL-GENAI-LOCAL-001",
-    "revision": 1,
-    "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
-  },
-  {
-    "id": "SKILL-ML-TOOLING-001",
-    "kind": "skill",
-    "title": "SKILL-ML-TOOLING-001",
-    "summary": "",
-    "data": {
-      "id": "SKILL-ML-TOOLING-001",
-      "status": "conditional",
-      "category": "skill",
-      "approved_external_use": "Use only as candidate-project evidence; do not imply professional or production ML experience.",
-      "source_refs": [
-        "context/sources/career.md > Additional projects supplied 27 July 2026"
-      ],
-      "approved_facts": [
-        "pandas, NumPy, scikit-learn, matplotlib, seaborn",
-        "PCA, feature preprocessing, K-Means, k-NN, decision trees, SVM, SMOTE"
-      ]
-    },
-    "source": "context/evidence.yml > SKILL-ML-TOOLING-001",
+    "source": "context/evidence.yml > SKILL-ACADEMIC-001",
     "revision": 1,
     "deleted": 0,
     "review_state": "registered",
@@ -2187,8 +2212,8 @@
   {
     "id": "SKILL-PLATFORM-001",
     "kind": "skill",
-    "title": "SKILL-PLATFORM-001",
-    "summary": "",
+    "title": "Redshift, Snowflake",
+    "summary": "Redshift, Snowflake\nAWS/S3 fundamentals\nPower Automate, Nexla, Dataiku",
     "data": {
       "id": "SKILL-PLATFORM-001",
       "status": "confirmed",
@@ -2210,10 +2235,33 @@
     "updated_at": "2026-09-10T23:39:00+00:00"
   },
   {
+    "id": "SKILL-DELIVERY-001",
+    "kind": "skill",
+    "title": "Requirements/BRD gathering, stakeholder communication, testing, deployment, and handover",
+    "summary": "Requirements/BRD gathering, stakeholder communication, testing, deployment, and handover",
+    "data": {
+      "id": "SKILL-DELIVERY-001",
+      "status": "confirmed",
+      "category": "skill",
+      "approved_external_use": "Professional evidence.",
+      "source_refs": [
+        "context/sources/career.md > Skills evidence > Professional"
+      ],
+      "approved_facts": [
+        "Requirements/BRD gathering, stakeholder communication, testing, deployment, and handover"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-DELIVERY-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
     "id": "SKILL-SQL-001",
     "kind": "skill",
-    "title": "SKILL-SQL-001",
-    "summary": "",
+    "title": "SQL",
+    "summary": "SQL",
     "data": {
       "id": "SKILL-SQL-001",
       "status": "conditional",
@@ -2227,6 +2275,30 @@
       ]
     },
     "source": "context/evidence.yml > SKILL-SQL-001",
+    "revision": 1,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-10T23:39:00+00:00"
+  },
+  {
+    "id": "SKILL-ML-TOOLING-001",
+    "kind": "skill",
+    "title": "pandas, NumPy, scikit-learn, matplotlib, seaborn",
+    "summary": "pandas, NumPy, scikit-learn, matplotlib, seaborn\nPCA, feature preprocessing, K-Means, k-NN, decision trees, SVM, SMOTE",
+    "data": {
+      "id": "SKILL-ML-TOOLING-001",
+      "status": "conditional",
+      "category": "skill",
+      "approved_external_use": "Use only as candidate-project evidence; do not imply professional or production ML experience.",
+      "source_refs": [
+        "context/sources/career.md > Additional projects supplied 27 July 2026"
+      ],
+      "approved_facts": [
+        "pandas, NumPy, scikit-learn, matplotlib, seaborn",
+        "PCA, feature preprocessing, K-Means, k-NN, decision trees, SVM, SMOTE"
+      ]
+    },
+    "source": "context/evidence.yml > SKILL-ML-TOOLING-001",
     "revision": 1,
     "deleted": 0,
     "review_state": "registered",

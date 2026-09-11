@@ -1,29 +1,28 @@
-# Chetan's job search and career dashboard
+# Chetan’s career workspace
 
-Double-click **Start Dashboard.command** to open your personal dashboard.
+Double-click **Start Dashboard.command** to open the single local application at
+http://127.0.0.1:8000. Use **Resume.code-workspace** to open this root in VS Code.
 
-You have two working areas:
+The application has exactly four tabs:
 
-| Folder | Purpose |
+| Tab | What it does |
 |---|---|
-| `daily-job-search/` | Daily search brief, dated run summaries and previously delivered URLs |
-| `career-dashboard/` | Personal dashboard, application database, profile evidence and resume versions |
-| `backup/` | Original snapshot, retired code and historical resume packs |
+| Dashboard | Application progress, linked Gmail evidence, activity and company/hiring reviews |
+| Daily Search | Unique saved postings, dated history, weekly target and missed-work carryover |
+| Resume Studio | Existing resume library, registered-project drafts, preview and validation |
+| Profile | Editable knowledge, original sources, agent inputs and workflow inventory |
 
-Use **Daily search** to organize the day's opportunities. Use **Opportunities**
-to record actual application dates, interviews, offers and notes. Use **Resume
-studio** to prepare and inspect resume versions, and **Your profile** to record
-new information for review. **Activity** retains changes for you and this chat.
+Tell this chat “I applied to [company and role] on [date]”, “Update my project”,
+or “Find suitable jobs”. The chat, dashboard and daily schedule use the same
+SQLite database. Email confirmations keep receipt time separate from actual
+submission dates. Preparing a resume never counts as applying.
 
-Tell this chat things like “I applied to [company and role] on 10 September”,
-“Update my project with this result”, or “Find today's matching jobs”. The AI
-reads and updates the same local records used by the dashboard. Resume drafts
-still need evidence review and both-page visual checks before release.
+`career-dashboard/` contains the React frontend, Python API/services, evidence,
+SQLite state and versioned resume artifacts. `daily-job-search/` contains the
+existing schedule’s brief, history and dated run projections. `backup/` preserves
+retired code, original sources, historical packs and recovery snapshots.
 
-`WORKSPACE-STATE.md` records current handover notes. `AGENTS.md` tells future AI
-sessions how to maintain the workspace. No application is inferred from a PDF.
-
-Run **Check Workspace.command** to run the regression suite and integrity checks.
-See `career-dashboard/README.md` for manual commands and resume validation.
-For recovery, see `backup/README.md`. Local Git tracks source and text records;
-the database, generated files and runtime are protected separately by backups.
+Run **Check Workspace.command** for backend/frontend tests, the production build
+and integrity checks. Read **WORKSPACE-STATE.md** for current handover notes and
+**career-dashboard/README.md** for architecture and commands. Local Git tracks
+source and readable state; the database and artifacts have separate backups.

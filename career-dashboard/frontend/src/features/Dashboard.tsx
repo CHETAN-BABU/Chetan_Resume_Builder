@@ -146,6 +146,12 @@ export default function Dashboard({
               <Settings2 size={18} />
             </button>
           </div>
+          {data.mail.connection.coverage && (
+            <details>
+              <summary>Sync coverage</summary>
+              <p>{data.mail.connection.coverage}</p>
+            </details>
+          )}
           {running && (
             <small className="muted">
               This may take a few minutes. You can keep working.
@@ -239,7 +245,13 @@ export default function Dashboard({
         )}
       </section>
       {data.runs
-        .filter((r) => r.state === "failed")
+        .filter(
+          (r, i, runs) =>
+            r.state === "failed" &&
+            runs.findIndex(
+              (x) => x.kind === r.kind && x.job_id === r.job_id,
+            ) === i,
+        )
         .slice(0, 1)
         .map((r) => (
           <Running key={r.id} run={r} />

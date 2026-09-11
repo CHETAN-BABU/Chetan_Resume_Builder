@@ -48,6 +48,7 @@ export default function JobDetail({
       );
       setResult(r);
       await refresh();
+      setDetail(await api("/jobs/" + job.id));
       notify(
         kind === "prepare"
           ? "Draft prepared. Tailoring and review are still required."
@@ -338,15 +339,21 @@ export default function JobDetail({
           </div>
           {job.folder && (
             <p>
-              <a
-                href={fileUrl(
-                  job.folder.replace(/^output\//, "") + "/resume.pdf",
-                )}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open current PDF ↗
-              </a>
+              {detail?.artifacts?.some((p: string) =>
+                p.endsWith("/resume.pdf"),
+              ) ? (
+                <a
+                  href={fileUrl(
+                    job.folder.replace(/^output\//, "") + "/resume.pdf",
+                  )}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open current PDF ↗
+                </a>
+              ) : (
+                <span>Compile preview to create the PDF.</span>
+              )}
               <br />
               <small>{job.folder}</small>
             </p>

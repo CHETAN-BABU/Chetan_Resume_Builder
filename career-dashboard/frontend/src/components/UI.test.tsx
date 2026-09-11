@@ -39,3 +39,16 @@ describe("Agent report safety", () => {
     expect(html).toContain("<h3>Skills</h3>");
   });
 });
+
+it("renders hiring comparisons as safe tables", () => {
+  const html = renderToStaticMarkup(
+    <RichText
+      text={
+        "| Skill | Evidence |\n|---|---|\n| SQL | <script>unsafe</script> |"
+      }
+    />,
+  );
+  expect(html).toContain("<table>");
+  expect(html).toContain("<th>Skill</th>");
+  expect(html).not.toContain("<script>");
+});

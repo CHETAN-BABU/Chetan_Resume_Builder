@@ -14,27 +14,35 @@ python3 -m venv .venv
 .venv/bin/python dashboard/run.py
 ```
 
-Use `--port 8001` if port 8000 is occupied, or `--no-browser` to start without opening a browser. The app needs Python 3.9+, and does not require Node.js, an API key, a cloud account or a hosted site. Tectonic is required for PDF compilation. This Mac uses Swift/PDFKit to inspect and render PDFs; other platforms need pypdf and Poppler (`pdftoppm`).
+Use `--port 8001` if port 8000 is occupied, or `--no-browser` to start without opening a browser. The app needs Python 3.9+, and uses Node.js + pnpm to build the React client. The launcher detects the bundled Codex runtime on this Mac. Codex sign-in is required for research/discovery; connected Gmail is required for email sync. No separate API key or hosted site is needed. Tectonic is required for PDF compilation. This Mac uses Swift/PDFKit to inspect and render PDFs; other platforms need pypdf and Poppler (`pdftoppm`).
 
-## What is ready
+## Four tabs
 
-- Overview of your profile, approved project bank, current opportunities and historical packs.
-- Opportunity capture from a full pasted JD, persistent statuses, notes and actual application dates.
-- Complete profile and claim explorer, including conditional and held information; editable update notes.
-- Draft preparation selecting exactly one registered project, two-page PDF preview and full validation diagnostics.
-- Existing job-verification, resume-tailoring, interview and batch workflows, with paths updated for this workspace.
-- A compiled, visually reviewed two-page base resume in `output/base/`.
+- **Dashboard**: saved jobs, status/notes/date editing, linked Gmail evidence and activity. Sync Gmail reads job-related mail; exact unique saved company/role matches can update automatically, while ambiguous messages wait for review. Receipt dates and explicitly stated submission dates remain distinct.
+- **Daily Search**: editable weekly targets, chosen workdays, partial-week prorating, missed-target carryover across weeks, bounded live job discovery (up to three new jobs per pass) and persistent deduplication by posting/requisition. The default is 30 applications per week over Monday–Saturday.
+- **Resume Studio**: preserved PDF library and existing per-job draft, compile and validation tools. Further customization awaits your brief. Edited profile facts pause new drafts until the canonical registry is reconciled, so old facts cannot silently reappear.
+- **Profile**: editable personal details, skills, experience, education, certifications, projects and facts; original sources; agent inputs and workflow inventory. Removal is soft and preserves its audit history.
 
-The dashboard's draft preparation uses exact registered project wording and retains the base summary. Complete JD tailoring, employer research, live-posting checks and evidence review through the documented agent workflow. A saved posting is not automatically verified. A generated PDF is not automatically a reviewed release.
+Open a saved job to run company research, an independent hiring-manager benchmark,
+and a separate active-profile comparison. Each is a fresh Codex process. The hiring
+worker receives only the JD and public research, with no candidate profile, notes,
+mail or prior conversation. Sources, limits, stages and previous reports are saved.
+Gmail exposes only explicitly allowed read tools; no mail is sent or modified.
+Workers require Codex access and may fail when upstream services or usage are unavailable.
+Errors remain visible and can be retried; partial research is retained.
 
-## Your daily workflow
+## Daily workflow
 
-1. Open **Opportunities**. Use a career-page starting point or your preferred job-search tool; save a specific posting and its full JD.
-2. Open the opportunity. Inspect the role concerns and select a relevant project.
-3. Choose **Prepare new draft**, then **Compile preview**. Each preparation creates a new version, preserving previous edits.
-4. In the generated folder, complete the evaluation, company research and `evidence-map.yml`; tailor the resume to the JD. Follow [the tailoring workflow](workflows/TAILORING.md).
-5. Choose **Run full checks**. Resolve every failure, inspect both rendered pages, then record the visual review using the release command below.
-6. Submit the application yourself. Record **Applied** and the actual submission date in the dashboard.
+1. Open **Daily Search**, review today's remaining target and run **Find suitable jobs**.
+2. Open a saved posting. Review its full JD, run **Company & hiring review**, and examine the separate profile comparison.
+3. Use **Resume tools** for the existing registered-project draft workflow. Finish genuine tailoring, evidence mapping and visual review before release.
+4. Apply yourself, then record the actual application date or sync Gmail for confirmation.
+5. Review unmatched email evidence and your carried-forward target. Update **Profile** whenever your evidence changes.
+
+The app serves one built React client and one API on `http://127.0.0.1:8000`.
+The existing 09:00 Dublin schedule uses the same files and planner. Optional periodic
+Gmail sync runs only while the dashboard server is running; configure it in Dashboard.
+For development, run `pnpm dev` inside `frontend/` alongside the local API server.
 
 The profile includes client names and your Irish phone exactly as supplied, per your latest instruction. Earlier dates, alternate contact details and unresolved claims are retained in the full profile. See [the remaining questions](context/QUESTIONS-FOR-YOU.md).
 
@@ -45,7 +53,9 @@ context/          registry, readable profile, confirmation queue, original sourc
 config/           identity, disclosure, role targets, saved career-page references
 templates/        resume-base.tex and batch/evidence-map examples
 scripts/          career operations, PDF validation and batch commands
-dashboard/        local FastAPI application and browser interface
+frontend/         React + TypeScript screens and component tests
+dashboard/        FastAPI routes serving the same local app
+services/         goals, profile, posting identity, Gmail evidence and Codex workers
 workflows/        discovery, tailoring, review and interview guidance
 data/             career.db, tracking projections and historical-pack index
 output/           base PDF and isolated application versions
@@ -90,3 +100,25 @@ See [cleanup and verification](docs/CLEANUP-REPORT.md) and [the source map](docs
 
 
 The **Daily search** screen and `../daily-job-search/search.py` use this same database. **Activity** keeps job, status, draft, profile-note and search-run changes. `scripts/career.py activity` reads that history; `scripts/career.py notes --file NOTES.md` saves reviewed-input notes from this chat. `scripts/career.py export` refreshes all text projections.
+
+## Chat continuity and checks
+
+Use `scripts/workspace.py summary`, `goals`, `profile`, `mail`, or `runs` to inspect
+the same live SQLite data shown in the app. `save-profile --file ENTRY.json --id ID`
+uses optimistic revisions; omit the ID to add an entry. `remove-profile --id ID`
+preserves audit history. `confirm-mail --id MESSAGE_ID --job-id JOB_ID` links
+verified evidence. `run --kind research --job-id JOB_ID`, `run --kind email` and
+`run --kind discovery` invoke the same workers as the UI. `export` refreshes the
+readable projections. Never edit generated JSON/Markdown instead of SQLite.
+
+From the root, `Check Workspace.command` runs backend regression tests, profile
+and layout integrity checks, the React production build and component tests.
+Frontend dependencies are locked in `frontend/pnpm-lock.yaml`; the approved
+esbuild build script is listed in `frontend/pnpm-workspace.yaml`.
+
+Agent isolation and tool settings follow the [official Codex configuration
+reference](https://developers.openai.com/codex/config-reference/). Gmail's connector
+is disabled by default except for the explicit read-tool allowlist; unrelated apps,
+mail mutation tools, filesystem shell tools and hiring-stage web search are disabled.
+The first unbounded live discovery attempt timed out; bounded passes now cap queries
+and return verified findings or honest shortages. Upstream availability still varies.

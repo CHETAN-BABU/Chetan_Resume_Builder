@@ -21,7 +21,7 @@ This disclosure preference does not establish an MSc award, a different employme
 
 ## Layout and state
 
-`context/` contains candidate evidence; `config/` policy and targets; `templates/` rendering templates; `scripts/` executable machinery; `workflows/` agent playbooks; `dashboard/` the local UI; `data/career.db` active opportunities and statuses; `output/` generated artifacts; `docs/` provenance and verification.
+`context/` contains candidate evidence; `config/` policy and targets; `templates/` rendering templates; `scripts/` executable machinery; `workflows/` agent playbooks; `frontend/` the React UI; `dashboard/` the FastAPI API; `services/` the application services; `data/career.db` active opportunities and statuses; `output/` generated artifacts; `docs/` provenance and verification.
 
 `data/historical-packs.json` indexes earlier prepared packs under ../backup/historical/. No applications were inferred from those files. The Markdown trackers in `data/` are read-only projections; the dashboard database is the active status store. Keep user-recorded application dates; never age an application into a rejection or ghosted state automatically.
 
@@ -55,3 +55,16 @@ Use a disposable workspace in tests. Run `python3 -m pytest tests -q` and `pytho
 
 
 Root AGENTS.md and WORKSPACE-STATE.md define shared chat/daily-search continuity. Use the shared database APIs for statuses, search runs and profile notes; activity events preserve changes. Retired engines and historical provenance reports are not current instructions.
+
+## Active profile and email evidence
+
+`data/career.db` also owns editable knowledge, goals, email evidence and agent runs.
+Use `scripts/workspace.py profile` for active knowledge and `goals` for current
+carryover before discovery. Profile removals exclude entries from future matching;
+original evidence stays preserved. Resume preparation is guarded in Workspace as
+well as the API while active edits await canonical evidence reconciliation.
+Verified exact Gmail confirmations establish application status. Keep receipt time
+separate from an explicitly stated submission date. Reminders, automated assessments,
+marketing, ambiguous roles and silence do not establish an interview or submission.
+Gmail workers expose only read tools; no sending, drafting or mailbox changes.
+The independent hiring worker never receives candidate context.

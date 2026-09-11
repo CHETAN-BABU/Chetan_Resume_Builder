@@ -20,7 +20,11 @@ export async function api<T = any>(
 export const safeUrl = (value: string) => {
   try {
     const u = new URL(value);
-    return ["https:", "http:"].includes(u.protocol) ? u.href : "#";
+    return ["https:", "http:"].includes(u.protocol) &&
+      !u.username &&
+      !u.password
+      ? u.href
+      : "#";
   } catch {
     return "#";
   }

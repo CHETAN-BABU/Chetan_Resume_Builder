@@ -4,7 +4,7 @@ Requested on 5 September 2026. The active Codex task schedule starts work every 
 
 ## Outcome
 
-Find ten current, suitable jobs at ten distinct companies and prepare one individual, recruiter-focused resume for each. Re-read the current profile on every run. Optimize for credible applications and interviews; do not promise an offer or an invented ATS score.
+Read the current planner with `career-dashboard/.venv/bin/python career-dashboard/scripts/workspace.py goals`. Find up to the remaining daily application target in unique suitable postings (at most ten per discovery pass). The default is 30 applications per week over Monday–Saturday; unfinished work carries forward. Respect completed targets and resume partially finished searches. Preserve the existing resume workflow; prepare drafts only when active profile changes have been reconciled with the evidence registry. Re-read the active editable profile with `scripts/workspace.py profile` on every run; it overrides imported wording for discovery and matching. Original config/evidence remain the resume authority. Optimize for credible applications and interviews; do not promise an offer or an invented ATS score.
 
 ## Candidate evidence and targeting
 
@@ -20,8 +20,8 @@ Use only supported claims and registered projects. Preserve team attribution. In
 
 1. Read prior daily folders and `history.csv`, the older dated batches, `career-dashboard/data/jobs.json`, `career-dashboard/data/application-tracker.md` and `career-dashboard/data/historical-packs.json`. Exclude already-applied and previously delivered exact postings. A new suitable role at a previously listed employer may qualify on another day. Deduplicate by canonical URL/requisition ID, not just URL spelling.
 2. Search the live web and open specific postings. Verify employer, title, Ireland location, description, seniority, deadline if available and an active application route. Prefer employer or authorized ATS sources. Search snippets, old PDFs and generic careers pages alone are insufficient. Record access date and uncertainty honestly.
-3. Evaluate mandatory requirements before ranking. Reject clear experience, role or location mismatches. Do not pad ten with senior roles or unsupported production engineering. Explain manageable gaps separately from strengths.
-4. Keep replacing rejected, closed, inaccessible and duplicate leads across approved roles and Irish locations. If ten honest matches are unavailable after a broad search, release every valid match and document the exact shortage, search coverage and rejected leads.
+3. Evaluate mandatory requirements before ranking. Reject clear experience, role or location mismatches. Do not pad the target with senior roles or unsupported production engineering. Explain manageable gaps separately from strengths.
+4. Keep replacing rejected, closed, inaccessible and duplicate leads across approved roles and Irish locations. If enough honest matches are unavailable after a broad search, release every valid match and document the exact shortage, search coverage and rejected leads.
 5. For each selected JD, save a concise sourced snapshot, company-problem research and requirement-to-evidence map. Write a distinct summary, skill ordering and experience emphasis, and select exactly one relevant resume-ready registered project. Do not imply the project was built for the target company.
 6. Generate a selectable-text, single-column, exactly two-page A4 PDF plus editable LaTeX source using the existing template. Run `scripts/validate_resume.py` with compile, output, render and QA arguments. Visually inspect both pages. Resolve layout and factual issues before release; then run a cross-batch audit for consistency, duplicate jobs and near-identical tailoring.
 7. Create a run with `career-dashboard/.venv/bin/python daily-job-search/search.py start`. Save each full posting with `search.py add --file POSTING.json` (company, title, location, url, description); this updates the same database as the dashboard. Prepare through `career-dashboard/scripts/career.py prepare JOB_ID`. Keep one versioned company/job folder under `career-dashboard/output/applications/`; the dated `daily-job-search/YYYY-MM-DD/run.json` points to it. Save daily batch summaries and search coverage under the dated search folder. Required files: `job-description.md`, `evaluation.md`, `company-research.md`, `evidence-map.yml`, `resume.tex`, `resume.pdf`, `resume-preview/page-01.png`, `resume-preview/page-02.png`, `qa.json`. Save `batch.yml`, `batch-qa.json`, `companies.md` and search coverage at the date level. Resume a partially completed same-day run instead of overwriting or duplicating it.
@@ -57,3 +57,14 @@ These pending details do not prevent evidence-safe research or resume preparatio
 ## Shared tracking and continuity
 
 `career-dashboard/data/career.db` owns application statuses and dated search runs. `run.json`, `data/jobs.json`, `data/activity.json` and Markdown trackers are generated views. Never edit those views as a substitute for a database update. Use `search.py notes --file NOTES.md` for coverage, rejected leads and shortages. Update `WORKSPACE-STATE.md` after delivery. The older 20 packs live in `backup/historical/`; `history.csv` retains their delivered URL history, not proof of submissions. The scheduled task continues in its original task while this chat can maintain the same files.
+
+## Email and independent reviews
+
+Use the dashboard Gmail sync or `scripts/workspace.py run --kind email` to review
+job-related mail through the connected read-only Gmail tools. Exact unique matches
+can update automatically; unmatched or ambiguous messages stay pending. Reminders
+never count as applications. Confirmed receipt dates are distinct from actual dates.
+For an in-depth saved-role review, use `scripts/workspace.py run --kind research
+--job-id JOB_ID`. It runs public company research, an independent hiring benchmark
+without candidate context, then a separate active-profile comparison. All results
+are stored in the dashboard; original research limitations must remain visible.

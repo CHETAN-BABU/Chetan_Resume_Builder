@@ -1182,3 +1182,29 @@ blockquote {
   bottom: 0;
   border: 1px solid #c9dfc4;
 }
+
+.report-table {
+  overflow-x: auto;
+  margin: 18px 0;
+}
+.report-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  min-width: 440px;
+}
+.report-table th,
+.report-table td {
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid #dde6dc;
+  min-width: 100px;
+}
+.report-table th {
+  background: #edf4e8;
+  font-weight: 650;
+}
+.report-table tr:nth-child(even) {
+  background: #f8faf7;
+}

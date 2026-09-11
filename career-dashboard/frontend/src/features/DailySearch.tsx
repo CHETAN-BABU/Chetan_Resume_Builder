@@ -28,6 +28,7 @@ export default function DailySearch({
   }, [data]);
   const current = runs.find((r) => r.date === data.goals.date);
   const ids = new Set((current?.jobs || []).map((j: any) => j.id));
+  const latestDiscovery = data.runs.find((r) => r.kind === "discovery");
   const running = data.runs.find(
     (r) => r.kind === "discovery" && ["queued", "running"].includes(r.state),
   );
@@ -38,7 +39,7 @@ export default function DailySearch({
           <div className="eyebrow">CONSISTENCY OVER PERFECTION</div>
           <h1>Daily Search</h1>
           <p>
-            A lasting job list. A plan that carries unfinished work forward.
+            A lasting job list. Up to three verified new jobs per search pass.
           </p>
         </div>
         <button
@@ -114,7 +115,10 @@ export default function DailySearch({
           unavailable.
         </p>
       </section>
-      {running && <Running run={running} />}
+      {latestDiscovery && <Running run={latestDiscovery} />}
+      {latestDiscovery?.result?.summary && (
+        <p className="small">{latestDiscovery.result.summary}</p>
+      )}
       <section className="card">
         <div className="section-title">
           <div className="segmented">

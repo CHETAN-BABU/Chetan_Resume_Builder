@@ -21,3 +21,6 @@ career-dashboard/output/
 node_modules/
 career-dashboard/frontend/dist/
 *.tsbuildinfo
+
+# VS Code recreates this compatibility shortcut; no engine lives here.
+resume-builder-main/

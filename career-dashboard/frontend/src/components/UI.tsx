@@ -107,41 +107,92 @@ export function Running({ run }: { run: Run }) {
     </div>
   );
 }
-// Render reports as text and safe Markdown links; never inject agent-produced HTML.
-export function RichText({ text }: { text: string }) {
+// Render agent output with React text nodes; never inject HTML.
+function Inline({ text }: { text: string }) {
   return (
-    <div className="report-text">
-      {text.split("\n").map((line, i) => {
-        if (line.startsWith("### ")) return <h4 key={i}>{line.slice(4)}</h4>;
-        if (line.startsWith("## ")) return <h3 key={i}>{line.slice(3)}</h3>;
-        if (line.startsWith("# ")) return <h2 key={i}>{line.slice(2)}</h2>;
-        const parts = line.split(
-          /(\[[^\]]+\]\(https?:\/\/[^\s)]+\)|\*\*[^*]+\*\*)/g,
-        );
-        return (
-          <p key={i}>
-            {parts.map((part, n) => {
-              const link = part.match(/^\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)$/);
-              return link ? (
-                <a
-                  key={n}
-                  href={safeUrl(link[2])}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {link[1]}
-                </a>
-              ) : part.startsWith("**") ? (
-                <strong key={n}>{part.slice(2, -2)}</strong>
-              ) : (
-                part
-              );
-            })}
-          </p>
-        );
-      })}
-    </div>
+    <>
+      {text
+        .split(/(\[[^\]]+\]\(https?:\/\/[^\s)]+\)|\*\*[^*]+\*\*)/g)
+        .map((part, n) => {
+          const link = part.match(/^\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)$/);
+          return link ? (
+            <a key={n} href={safeUrl(link[2])} target="_blank" rel="noreferrer">
+              {link[1]}
+            </a>
+          ) : part.startsWith("**") ? (
+            <strong key={n}>{part.slice(2, -2)}</strong>
+          ) : (
+            part
+          );
+        })}
+    </>
   );
+}
+export function RichText({ text }: { text: string }) {
+  const lines = text.split("\n");
+  const blocks: ReactNode[] = [];
+  const cells = (line: string) =>
+    line
+      .trim()
+      .replace(/^\||\|$/g, "")
+      .split("|")
+      .map((c) => c.trim());
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (
+      line.trim().startsWith("|") &&
+      /^\s*\|?[\s:|\-]+\|?\s*$/.test(lines[i + 1] || "") &&
+      (lines[i + 1] || "").includes("---")
+    ) {
+      const headings = cells(line);
+      const rows: string[][] = [];
+      const key = i;
+      i += 2;
+      while (i < lines.length && lines[i].trim().startsWith("|")) {
+        rows.push(cells(lines[i]));
+        i++;
+      }
+      i--;
+      blocks.push(
+        <div className="report-table" key={key}>
+          <table>
+            <thead>
+              <tr>
+                {headings.map((h, n) => (
+                  <th key={n}>
+                    <Inline text={h} />
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, n) => (
+                <tr key={n}>
+                  {headings.map((_, c) => (
+                    <td key={c}>
+                      <Inline text={r[c] || ""} />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>,
+      );
+    } else if (line.startsWith("### "))
+      blocks.push(<h4 key={i}>{line.slice(4)}</h4>);
+    else if (line.startsWith("## "))
+      blocks.push(<h3 key={i}>{line.slice(3)}</h3>);
+    else if (line.startsWith("# "))
+      blocks.push(<h2 key={i}>{line.slice(2)}</h2>);
+    else
+      blocks.push(
+        <p key={i}>
+          <Inline text={line} />
+        </p>,
+      );
+  }
+  return <div className="report-text">{blocks}</div>;
 }
 export function ReportView({ report }: { report: Report }) {
   return (
