@@ -1,6 +1,6 @@
 # Career workspace state
 
-Updated 11 September 2026 after the four-tab React upgrade.
+Updated 12 September 2026 after implementing Resume Studio.
 
 ## Current application
 
@@ -50,8 +50,7 @@ Read current state with:
     career-dashboard/.venv/bin/python career-dashboard/scripts/workspace.py goals
 
 Continue reviewing unmatched email evidence against exact saved postings. Record
-actual dates only when supplied. Resume Studio’s further customization awaits
-Chetan’s promised brief. Canonical revision remains 2026-09-09.1; preserve the
+actual dates only when supplied. Resume Studio is now implemented as described below. Canonical revision remains 2026-09-09.1; preserve the
 MSc in-progress status, January 2025 employment end date and evidence caveats.
 
 ## Verification and recovery
@@ -69,3 +68,50 @@ MSc in-progress status, January 2025 employment end date and evidence caveats.
   it contains only a workspace shortcut; no retired application engine runs there.
 - Codex/Gmail/web availability can still vary. Failed runs remain in history,
   partial completed research is retained, and retry controls do not infer results.
+
+
+## Resume Studio — 12 September 2026
+
+- Dashboard and Daily Search job clicks open a persistent Studio draft keyed by
+  exact job ID. Easy edit and full LaTeX source sit beside revision-specific PDF
+  page previews. Copy/download source, auto-save, explicit save/compile and
+  restore-as-new-version controls are implemented.
+- First-open drafts use the current registered template/project evidence with
+  JD-based project selection and skill ordering. Existing prepared packs retain
+  their wording. These are editable starting drafts, not completed AI tailoring.
+- Agent 1 uses separate isolated company-research and resume-advice processes;
+  neither receives candidate profile, notes, email or chat history. Runs start
+  automatically on first open and expose retry/refresh and dated sources.
+- Agent 2 records new user-added projects and skills in the shared Profile table,
+  deduplicates repeated content, keeps versions and flags missing projects.
+  Add my own project replaces the complete selected project without inheriting
+  old bullets. Captures remain user-supplied pending evidence review.
+- Canonical profile/evidence revision is still 2026-09-09.1. Reconcile new Profile
+  facts before release or creating further new drafts. Existing Studio drafts
+  remain editable and visibly marked as drafts. No resume release, application,
+  candidate claim, email or new automation was inferred by implementation tests.
+- Original application packs remain preserved; Studio projections live within
+  their application folders under studio/. SQLite owns drafts, history and
+  captures. Full behavior and limitations: career-dashboard/docs/RESUME-STUDIO.md.
+- Verification: 81 Python tests and 7 frontend tests (88 total), production build,
+  profile/workspace validators, database relationships and historical hashes.
+  Disposable browser checks confirmed job routing, auto-save, project/skill
+  capture, real two-page preview and mobile layout. UI agent reports were fixtures;
+  live research runs on the user's first opening of each actual job.
+
+The updated dashboard was restarted successfully on 127.0.0.1:8000 and Resume
+Studio was opened for the user. Its new API routes are present; disposable UI
+checks ran separately on port 8001 and that test server has been stopped.
+
+
+## Daily career run - 12 September 2026, morning
+
+- Resumed the shared dated run. No pending profile edits; canonical revision 2026-09-09.1 unchanged. Now 16 saved postings.
+- Added KPMG 2826 as job `1acf78884105297f` and Accenture FY28 as job `fff05ec16dd35b33`. Full primary JDs and active application routes verified in browser.
+- KPMG public research, independent hiring benchmark and separate active-profile comparison persisted as research run `ed1d1050ed1d4ac1b354cf6a24560ad9`, using completed collaboration-worker results. Hiring inputs contained only the JD and public research.
+- One tailored two-page draft at `career-dashboard/output/applications/1acf78884105297f-i4s8l2l7/`. Both pages inspected; actual PDF renderings matched viewed previews. QA fails only for unresolved mandatory overall predicted 2:1/equivalence. `role_eligible` remains false; draft not released. Question pending with user.
+- Accenture form warns AI-assisted applications may be withdrawn. Saved as manual candidate-writing option; no AI résumé. Future availability, degree equivalence and permission unconfirmed.
+- Email worker failed immediately. Read-only Gmail fallback succeeded; three job-related bodies were invitations/newsletter, with no new status. The 34 older pending matches remain unchanged; Arup's actual submission date is unknown. Coverage stored in shared Gmail preferences and search notes.
+- Fifteen queries covered Ireland, Dublin, Cork, Limerick, Galway and remote roles. Exclusions in `daily-job-search/2026-09-12/search-coverage.md`. Eight-role discovery shortfall, zero approved releases, no applications submitted. Batch QA also fails while KPMG remains pending; Accenture was excluded from the AI résumé batch, not rejected by the employer.
+- Planner stays 0/10 today: five base plus five carryover. Existing 09:00 schedule unchanged. History CSV adds prepared/discovered entries.
+- Next: confirm KPMG overall predicted 2:1/equivalence, availability and permission before release/application; candidate writes Accenture materials; continue BI/reporting discovery and exact email matching. No code changed during this daily run; pre-existing Resume Studio changes preserved.

@@ -16,8 +16,8 @@
     "gmail": {
       "connected": true,
       "email": "chetanbabu07@gmail.com",
-      "last_synced_at": "2026-09-11T00:11:31+00:00",
-      "coverage": "Account verified with Gmail profile. Searched incoming mail using newer_than:90d on 2026-09-11, excluding spam, trash, sent mail, drafts and self-sent messages. Read 35 relevant message bodies; the 60-message review cap was not reached. The initial broad search was paginated twice, then replaced by a refined search whose two pages were exhausted. Supplemental confirmation, rejection, interview/assessment, offer and saved-employer/role searches were exhausted. Coverage is query-based, not a complete mailbox audit; sender exclusions in the refined search may omit additional evidence. No message-read failures occurred. No attachments were opened or email changed. Arup was the only exact saved-job match supported by reviewed application evidence. No human interview invitation or employment offer was verified. Missing evidence does not establish rejection. Dates without an explicit year remain null.",
+      "last_synced_at": "2026-09-12T08:13:08+00:00",
+      "coverage": "12 September: application email worker failed immediately. Read-only Gmail fallback searched after:2026/09/11 -in:spam -in:trash (application OR interview OR recruitment OR assessment OR \"thank you for applying\"). Four results, no next page. Read three job-related bodies: two Indeed invitations to apply and a Jobgether newsletter, not status evidence. Excluded unrelated administrative result without using it as candidate evidence. No new application, interview or offer confirmed. Previous 35-message review retained; 34 older unmatched/ambiguous records remain pending. Query-based incremental coverage, not full mailbox audit. No attachments or mail changes.",
       "mode": "Connected Gmail via Codex"
     }
   },
@@ -25,8 +25,8 @@
     "connection": {
       "connected": true,
       "email": "chetanbabu07@gmail.com",
-      "last_synced_at": "2026-09-11T00:11:31+00:00",
-      "coverage": "Account verified with Gmail profile. Searched incoming mail using newer_than:90d on 2026-09-11, excluding spam, trash, sent mail, drafts and self-sent messages. Read 35 relevant message bodies; the 60-message review cap was not reached. The initial broad search was paginated twice, then replaced by a refined search whose two pages were exhausted. Supplemental confirmation, rejection, interview/assessment, offer and saved-employer/role searches were exhausted. Coverage is query-based, not a complete mailbox audit; sender exclusions in the refined search may omit additional evidence. No message-read failures occurred. No attachments were opened or email changed. Arup was the only exact saved-job match supported by reviewed application evidence. No human interview invitation or employment offer was verified. Missing evidence does not establish rejection. Dates without an explicit year remain null.",
+      "last_synced_at": "2026-09-12T08:13:08+00:00",
+      "coverage": "12 September: application email worker failed immediately. Read-only Gmail fallback searched after:2026/09/11 -in:spam -in:trash (application OR interview OR recruitment OR assessment OR \"thank you for applying\"). Four results, no next page. Read three job-related bodies: two Indeed invitations to apply and a Jobgether newsletter, not status evidence. Excluded unrelated administrative result without using it as candidate evidence. No new application, interview or offer confirmed. Previous 35-message review retained; 34 older unmatched/ambiguous records remain pending. Query-based incremental coverage, not full mailbox audit. No attachments or mail changes.",
       "mode": "Connected Gmail via Codex"
     },
     "messages": [
@@ -593,6 +593,246 @@
     ]
   },
   "runs": [
+    {
+      "id": "c9013f7b643440ba9496481db818b794",
+      "kind": "resume_advisor",
+      "job_id": "5ef89c929c73c5d8",
+      "state": "failed",
+      "result": {
+        "stage": "Starting"
+      },
+      "error": "Agent could not finish. Check Codex sign-in, connected Gmail permissions, or usage and retry. No status was inferred from this failure.",
+      "created_at": "2026-09-12T09:30:09+00:00",
+      "updated_at": "2026-09-12T09:30:13+00:00"
+    },
+    {
+      "id": "4271130f826b440d81007c2569a2ad52",
+      "kind": "email",
+      "job_id": null,
+      "state": "failed",
+      "result": {
+        "stage": "Starting"
+      },
+      "error": "Agent could not finish. Check Codex sign-in, connected Gmail permissions, or usage and retry. No status was inferred from this failure.",
+      "created_at": "2026-09-12T08:33:22+00:00",
+      "updated_at": "2026-09-12T08:34:31+00:00"
+    },
+    {
+      "id": "a83bd36c56e8475da51523541cb83f0d",
+      "kind": "resume_advisor",
+      "job_id": "fff05ec16dd35b33",
+      "state": "completed",
+      "result": {
+        "stage": "Complete",
+        "research": {
+          "summary": "Verified live on 12 September 2026: Accenture’s Dublin AI & Data Graduate Programme FY28 is a permanent, €40,000 role closing 25 October 2026. It combines client-facing business analysis with AI, analytics and cloud-data delivery. Detailed eligibility and technology requirements rely on the supplied saved JD because the live extraction omits those sections.",
+          "report": "**Accenture — AI & Data Graduate Programme FY28**\n\nAll linked sources were accessed **12 September 2026**. “Saved JD” refers to the supplied description recorded that date; no local files or candidate information were accessed.\n\n**Posting verification and conditions**\n\nThe Ireland graduate programme’s AI & Data link resolves to the exact supplied posting. Its live metadata confirms Strategy & Consulting Ireland, Dublin, permanent full-time employment, €40,000 annually, an “Onsite” classification and a 25 October 2026 deadline. [Specific posting](https://accenture.pinpointhq.com/postings/5d2e98e6-2568-4833-bb13-8a067bf55d18) (accessed 12 September 2026).\n\nThe application page is accessible and displays CV upload and submission controls. However, the extracted posting contains empty detailed-JD sections, and the form’s substantive questions are missing. Availability is therefore verified at page level; successful submission was not tested. [Application form](https://accenture.pinpointhq.com/postings/5d2e98e6-2568-4833-bb13-8a067bf55d18/applications/new) (accessed 12 September 2026).\n\n**Saved-JD facts, not independently reverified:** starts September 2027–Spring 2028; bachelor results required before joining; minimum predicted/obtained 2.1 and Level 8 honours bachelor/equivalent; final-year/recent-graduate eligibility. Attendance is described as at least 1–2 office/client days weekly, potentially five, with domestic/international travel. The form reportedly requests full-time Irish work-rights evidence and warns that AI-assisted applications may be withdrawn. These details retain the supplied 12 September 2026 date caveat; the work-rights question does not establish sponsorship policy.\n\n**Role mission and business domain**\n\n**Explicit:** The graduate stream collects and analyses client data, applies quantitative/statistical techniques, combines AI with analytics and automation, and implements cloud-data solutions. [Ireland graduate programme](https://accenture.pinpointhq.com/graduate-programmes-ireland) (accessed 12 September 2026). The saved JD adds AI strategy, commercial use cases, process improvement and adoption.\n\nAccenture describes its business as enterprise solutions and services spanning strategy, consulting, technology and operations, supported by industry expertise and technology partnerships. [Accenture–Mistral announcement](https://newsroom.accenture.com/news/2026/accenture-and-mistral-ai-accelerate-enterprise-reinvention-with-scalable-ai-that-delivers-strategic-autonomy-for-customers) (accessed 12 September 2026).\n\n**Inference:** The mission is to translate business problems into useful data and AI outcomes: understand a process, establish evidence, support a solution and help people adopt it. Commercial value, explainability and communication likely matter alongside technical execution. No particular industry or research specialism is guaranteed. Employer guidance says assignments depend on client demand and some graduates start on internal projects. [Ireland support hub](https://accenture.pinpointhq.com/en/support-hub-ireland) (accessed 12 September 2026).\n\n**Proposed 30/60/90-day outcomes — inference, not employer commitments**\n\nThese are reasonable review milestones derived from the programme’s analysis/cloud-delivery remit and published induction, case-study and workplace training. [Programme and training](https://accenture.pinpointhq.com/graduate-programmes-ireland) (accessed 12 September 2026).\n\n| Timing | Plausible outcome | Reviewable evidence |\n|---|---|---|\n| 30 days | Complete induction; understand the assignment, users, data access and success measures | Learning plan, problem statement, stakeholder map and initial data-quality assessment |\n| 60 days | Deliver a supervised analysis or prototype addressing one agreed question | Reproducible analysis, dashboard, pipeline or AI prototype; baseline comparison and documented limitations |\n| 90 days | Own a bounded deliverable through feedback and handover | Tested output, concise client presentation, operating notes and recommended next steps |\n\nProduction deployment or quantified savings within 90 days should not be presumed; assignment scope and access would determine feasibility.\n\n**Relevant projects and recent initiatives**\n\n- **Irish AI-adoption study, July 2026 — government-confirmed:** Accenture was commissioned to investigate adoption opportunities, barriers and policy supports across manufacturing, tourism, construction and ICT services. Findings were intended to inform Ireland’s sectoral AI strategy. **Relevance inferred:** research synthesis, business interviews, use-case evaluation and adoption recommendations closely resemble the role’s consulting remit. Graduate participation is unknown. [Department announcement, 15 July 2026](https://enterprise.gov.ie/en/news-and-events/department-news/2026/july/minister-niamh-smyth-calls-on-businesses-to-shape-ireland-s-future-ai-strategy.html) (accessed 12 September 2026).\n- **Mistral collaboration, February 2026 — announced initiative:** The partnership targets enterprise AI deployment, governance and regional requirements, with planned training and change-management support. **Relevance inferred:** successful AI delivery involves operating models and user capability as well as models. This is not evidence of a particular Dublin assignment or completed rollout. [Accenture announcement, 26 February 2026](https://newsroom.accenture.com/news/2026/accenture-and-mistral-ai-accelerate-enterprise-reinvention-with-scalable-ai-that-delivers-strategic-autonomy-for-customers) (accessed 12 September 2026).\n- **Google Cloud client delivery, October 2025 — employer-reported:** JCOM’s JAICO project uses Gemini to summarise customer-service conversations. Radisson used Vertex AI, Gemini and BigQuery for multilingual advertising personalisation. Accenture also announced expanded agentic capabilities in its joint Google Cloud centre. **Relevance inferred:** these illustrate connected data preparation, AI implementation, workflow improvement and commercial evaluation. No connection to this intake is established. [Client examples, 9 October 2025](https://newsroom.accenture.com/news/2025/accenture-helps-organizations-advance-agentic-ai-with-gemini-enterprise) (accessed 12 September 2026).\n\n**Technical stack: requirements versus inference**\n\n| Evidence category | Technologies and interpretation |\n|---|---|\n| Explicitly sought in saved JD | Familiarity with a relevant combination of GenAI/agentic AI, cloud platforms, Python/R or other data languages, ML, SQL/ETL/NoSQL/warehousing and BI. All areas are expressly not expected; no individual tool is established as universally mandatory. |\n| Independently verified programme content | Statistical modelling, analytics, automation and cloud-data implementation; training includes Excel/data visualisation and PowerPoint/storytelling. These training topics are not stated entry requirements. |\n| Company-used, not role-required | Google Cloud, Gemini, Vertex AI and BigQuery appear in cited client projects. Mistral AI Studio appears in the announced partnership. Exposure is possible, not promised. |\n| Inferred working practices | Reproducible analysis, data-quality checks, version control, model evaluation and documentation would support reliable delivery. Specific frameworks, cloud provider, BI vendor and deployment tooling remain unknown. |\n\nPublic evidence: [Graduate programme](https://accenture.pinpointhq.com/graduate-programmes-ireland), [Google client projects](https://newsroom.accenture.com/news/2025/accenture-helps-organizations-advance-agentic-ai-with-gemini-enterprise), [Mistral partnership](https://newsroom.accenture.com/news/2026/accenture-and-mistral-ai-accelerate-enterprise-reinvention-with-scalable-ai-that-delivers-strategic-autonomy-for-customers) (all accessed 12 September 2026).\n\n**Skills, deliverables and relationships**\n\n**Saved-JD expectations:** structured thinking, business curiosity, clear communication, adaptability, initiative, creativity and teamwork/leadership examples.\n\n**Inferred deliverables:** use-case assessments, process maps, data analyses, prototypes, dashboards, presentations and adoption materials. Depending on assignment, likely collaborators include client process owners, data specialists, engineers, business users and an Accenture delivery lead. These are functional relationships, not a verified team structure. A People Lead supporting development and learning is explicitly described in the [Ireland support hub](https://accenture.pinpointhq.com/en/support-hub-ireland) (accessed 12 September 2026).\n\n**Seniority and interview evidence**\n\nThis is an entry-level graduate pathway; the programme explicitly welcomes final-year students and recent graduates. No professional-experience minimum or formal career level was verified. [Graduate programme](https://accenture.pinpointhq.com/graduate-programmes-ireland) (accessed 12 September 2026).\n\nThe Ireland hub describes application → Discovery Portal → virtual assessment centre → Senior Manager/Managing Director interview. It mentions strengths, decision-making, paired/immersive exercises and demonstrating educational technical skills. [Ireland recruitment guidance](https://accenture.pinpointhq.com/en/support-hub-ireland) (accessed 12 September 2026).\n\nA separate employer page describes an approximately 60-minute, usually face-to-face business interview with two technology-oriented scenarios and strengths discussion; it explicitly says successful AI & Data applicants proceed to technical interviews. Its applicability to this Irish intake needs confirmation because format differs from Ireland’s guidance. No FY28 coding-test platform or technical syllabus is established. [Business interview guidance](https://accenture.pinpointhq.com/strengths-based-interview) (accessed 12 September 2026).\n\n**Inference:** useful assessment evidence would demonstrate clear problem decomposition, personal contribution, technical reasoning, limitations and business implications—not merely familiarity with tool names.\n\n**Unresolved questions**\n\nConfirm the intake-specific interview sequence and technical format; start-date allocation; accepted degree equivalencies and sponsorship; first-assignment selection; coding-versus-strategy balance; team/reporting structure; cloud/BI stack; training allocation; attendance and travel expectations; and initial performance measures.",
+          "sources": [
+            {
+              "title": "AI & Data Graduate Programme FY28 — specific posting",
+              "url": "https://accenture.pinpointhq.com/postings/5d2e98e6-2568-4833-bb13-8a067bf55d18",
+              "accessed_at": "2026-09-12"
+            },
+            {
+              "title": "AI & Data Graduate Programme FY28 — application form",
+              "url": "https://accenture.pinpointhq.com/postings/5d2e98e6-2568-4833-bb13-8a067bf55d18/applications/new",
+              "accessed_at": "2026-09-12"
+            },
+            {
+              "title": "Graduate Programmes Ireland",
+              "url": "https://accenture.pinpointhq.com/graduate-programmes-ireland",
+              "accessed_at": "2026-09-12"
+            },
+            {
+              "title": "Support Hub Ireland",
+              "url": "https://accenture.pinpointhq.com/en/support-hub-ireland",
+              "accessed_at": "2026-09-12"
+            },
+            {
+              "title": "Business Strengths Interview Support",
+              "url": "https://accenture.pinpointhq.com/strengths-based-interview",
+              "accessed_at": "2026-09-12"
+            },
+            {
+              "title": "Irish government consultation and Accenture AI-adoption study",
+              "url": "https://enterprise.gov.ie/en/news-and-events/department-news/2026/july/minister-niamh-smyth-calls-on-businesses-to-shape-ireland-s-future-ai-strategy.html",
+              "accessed_at": "2026-09-12"
+            },
+            {
+              "title": "Accenture and Mistral AI strategic collaboration",
+              "url": "https://newsroom.accenture.com/news/2026/accenture-and-mistral-ai-accelerate-enterprise-reinvention-with-scalable-ai-that-delivers-strategic-autonomy-for-customers",
+              "accessed_at": "2026-09-12"
+            },
+            {
+              "title": "Accenture advances agentic AI with Gemini Enterprise",
+              "url": "https://newsroom.accenture.com/news/2025/accenture-helps-organizations-advance-agentic-ai-with-gemini-enterprise",
+              "accessed_at": "2026-09-12"
+            }
+          ],
+          "limitations": [
+            "Live extraction omitted detailed JD sections and application questions; corresponding details rely on the supplied saved description dated 12 September 2026.",
+            "Application submission was not tested; no information was entered or submitted.",
+            "30/60/90-day outcomes, potential deliverables and most stakeholder relationships are analytical inferences, not employer commitments.",
+            "Public interview guidance differs in format and is not conclusively specific to the Irish FY28 intake.",
+            "Company initiatives establish relevant business context, not this graduate role’s staffing, technology allocation or future projects."
+          ]
+        },
+        "advice": {
+          "summary": "For Accenture’s Dublin AI & Data Graduate Programme FY28, the strongest resume would demonstrate graduate eligibility, structured business problem-solving, credible technical work and clear communication. A relevant combination of skills matters more than covering every technology. This is advisory research only; the saved form reportedly discourages AI-assisted applications, so this report should not be submitted as application text.",
+          "report": "The expected resume should show an emerging consultant who can connect data and AI work to a business decision. No candidate information was supplied, so all recommendations below describe evidence to seek, not skills or achievements the candidate possesses.\n\n**Prioritized resume evidence**\n\n1. **Eligibility and education.** Clearly state degree, institution, graduation date and accurately labelled obtained or predicted classification. The saved JD specifies a minimum 2.1, Level 8 honours bachelor/equivalent, final-year/recent-graduate eligibility and results before starting. These details rely on the saved description dated 12 September 2026; they were not independently reverified in the supplied live extraction. [Exact posting](https://accenture.pinpointhq.com/postings/5d2e98e6-2568-4833-bb13-8a067bf55d18), publication date unavailable; supplied access date 12 September 2026.\n2. **One or two substantial analytical projects.** Prioritize a clear business question, data preparation, an appropriate analytical method, evaluation and a recommendation. Coursework, dissertations and independent projects can provide this evidence; professional experience is not established as mandatory.\n3. **Communication and collaboration.** Include verifiable examples of explaining findings, resolving ambiguity, responding to feedback and contributing to team decisions. Separate individual work from the team’s output. Extracurricular examples are relevant because the saved application explicitly requests them.\n4. **Technical depth supported by artifacts.** Connect each prominent skill to a repository, notebook, dashboard, report or demonstrable implementation. A short, supported skills list is more persuasive than an unexplained catalogue.\n5. **Initiative and adoption.** Where supported, show how a problem was identified, a solution tested with users and instructions or a handover produced. These support the saved JD’s process-improvement and AI-adoption remit.\n\nDublin attendance, travel and work authorization should be answered accurately where requested. Supporting identity or work-rights documents belong in the appropriate application process, not a public portfolio. Sponsorship policy remains unknown.\n\n**Essential versus useful skills**\n\n**Explicit expectations:** structured thinking, business curiosity, communication, adaptability, initiative, creativity and teamwork/leadership examples. Relevant technical familiarity is sought across some combination of GenAI/agentic AI, cloud, Python/R or another data language, ML, SQL/data engineering and BI. The saved JD expressly does not expect all areas; no individual language, cloud provider or BI product is established as universally mandatory.\n\n**Inferred priorities:** a coherent combination such as Python plus SQL plus visualization would support the programme’s stated analytics and cloud-data work. Reproducibility, data-quality checks, baseline comparisons and documentation would strengthen credibility. These are advisory expectations, not additional entry requirements. [Ireland graduate programme](https://accenture.pinpointhq.com/graduate-programmes-ireland), publication date unavailable; supplied access date 12 September 2026.\n\n**Useful differentiators:** evaluated AI prototypes, basic cloud implementation and adoption materials. Accenture’s Google announcement describes JCOM conversation summarization and Radisson advertising personalization; its Mistral partnership addresses enterprise AI deployment, governance and training. These establish company context, not the Dublin intake’s assigned stack. [Google announcement](https://newsroom.accenture.com/news/2025/accenture-helps-organizations-advance-agentic-ai-with-gemini-enterprise), published 9 October 2025; [Mistral announcement](https://newsroom.accenture.com/news/2026/accenture-and-mistral-ai-accelerate-enterprise-reinvention-with-scalable-ai-that-delivers-strategic-autonomy-for-customers), published 26 February 2026; both supplied access dates 12 September 2026.\n\nBefore listing a skill, retain evidence of using it and be able to explain design choices, failures and limitations. A course certificate supports training completion; a tested implementation supports practical familiarity. Claim cloud deployment only with an actual deployment and operating evidence. Claim leadership only with identifiable responsibility and contribution.\n\n**Proposed projects to build — not completed candidate experience**\n\n**1. Irish sector AI-adoption decision brief.** Accenture was commissioned to examine AI adoption across manufacturing, tourism, construction and ICT services. [Government announcement](https://enterprise.gov.ie/en/news-and-events/department-news/2026/july/minister-niamh-smyth-calls-on-businesses-to-shape-ireland-s-future-ai-strategy.html), published 15 July 2026; supplied access date 12 September 2026.\n\nScope: choose one sector and assess three bounded AI use cases against data readiness, feasibility, adoption barriers and potential value. Use publicly available enterprise AI-use statistics from [Eurostat dataset isoc_eb_ai](https://ec.europa.eu/eurostat/databrowser/view/isoc_eb_ai/default/table?lang=en), supplemented by relevant [CSO PxStat](https://data.cso.ie/) tables. Confirm sector coverage, survey definitions and release dates before analysis; detailed Irish sector breakdowns may be unavailable.\n\nTools: Python or R, SQL where useful, and Power BI or another visualization tool. Evaluate missingness, comparability and sensitivity of use-case rankings to scoring weights. Aggregate adoption figures cannot establish firm-level returns or causal barriers.\n\nFeasible deliverable: a reproducible analysis, a small dashboard and a five-slide decision brief with a proposed pilot and adoption plan. Business value is decision support: transparent prioritization and testable assumptions. Any savings calculation must be labelled a scenario with explicit inputs.\n\nResume evidence needed: completed artifacts, source/version log, scoring rationale, reproducible results and documented personal contribution. Stakeholder validation requires actual feedback; do not imply participation in Accenture’s commissioned study.\n\n**2. Customer-service narrative summarization prototype.** Inspired by the JCOM example in the October 2025 Google announcement, build a small summarization and issue-routing workflow using published narratives from the [CFPB Consumer Complaint Database](https://www.consumerfinance.gov/data-research/consumer-complaints/). These are US financial complaints, not call transcripts or JCOM data; the domain and format mismatch must remain explicit.\n\nScope: use a manageable sample, create a manually reviewed held-out evaluation set and compare a simple extractive baseline with one language-model approach. Tools could include Python, SQLite and a local model or permitted model API. Avoid unnecessary personal details and review dataset usage terms.\n\nEvaluate factual consistency, omitted critical facts, routing accuracy, latency and cost. Test invented details and prompt-like content inside narratives. A small timed reviewer study can assess review effort; without one, do not claim time savings.\n\nFeasible deliverable: a runnable demo, evaluation table, error analysis and human-review handover guide. Business relevance is more consistent triage and potentially lower review effort, subject to testing.\n\nResume evidence needed: working code, model/version records, evaluation rubric, held-out results and reproducible baseline comparisons. Measured prototype performance must not be presented as production impact, client delivery or an Accenture engagement.\n\nFor either project, describe the problem, personal contribution, method, measured result and limitation. Distinguish observed results from projected financial outcomes. Neither proposed project belongs on a resume as completed work before it is built and evaluated.",
+          "sources": [
+            {
+              "title": "Accenture AI & Data Graduate Programme FY28 — supplied posting research",
+              "url": "https://accenture.pinpointhq.com/postings/5d2e98e6-2568-4833-bb13-8a067bf55d18",
+              "accessed_at": "2026-09-12 (supplied research; not independently accessed)"
+            },
+            {
+              "title": "Application form — saved AI-use warning",
+              "url": "https://accenture.pinpointhq.com/postings/5d2e98e6-2568-4833-bb13-8a067bf55d18/applications/new",
+              "accessed_at": "2026-09-12 (supplied saved description; substantive questions not independently reverified)"
+            },
+            {
+              "title": "Graduate Programmes Ireland",
+              "url": "https://accenture.pinpointhq.com/graduate-programmes-ireland",
+              "accessed_at": "2026-09-12 (supplied research; not independently accessed)"
+            },
+            {
+              "title": "Irish AI-adoption study — published 2026-07-15",
+              "url": "https://enterprise.gov.ie/en/news-and-events/department-news/2026/july/minister-niamh-smyth-calls-on-businesses-to-shape-ireland-s-future-ai-strategy.html",
+              "accessed_at": "2026-09-12 (supplied research; not independently accessed)"
+            },
+            {
+              "title": "Accenture–Mistral collaboration — published 2026-02-26",
+              "url": "https://newsroom.accenture.com/news/2026/accenture-and-mistral-ai-accelerate-enterprise-reinvention-with-scalable-ai-that-delivers-strategic-autonomy-for-customers",
+              "accessed_at": "2026-09-12 (supplied research; not independently accessed)"
+            },
+            {
+              "title": "Accenture Google client examples — published 2025-10-09",
+              "url": "https://newsroom.accenture.com/news/2025/accenture-helps-organizations-advance-agentic-ai-with-gemini-enterprise",
+              "accessed_at": "2026-09-12 (supplied research; not independently accessed)"
+            },
+            {
+              "title": "Eurostat enterprise AI-use dataset",
+              "url": "https://ec.europa.eu/eurostat/databrowser/view/isoc_eb_ai/default/table?lang=en",
+              "accessed_at": "Not accessed; proposed public dataset"
+            },
+            {
+              "title": "CSO PxStat",
+              "url": "https://data.cso.ie/",
+              "accessed_at": "Not accessed; proposed public data portal"
+            },
+            {
+              "title": "CFPB Consumer Complaint Database",
+              "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/",
+              "accessed_at": "Not accessed; proposed public dataset"
+            }
+          ],
+          "limitations": [
+            "Only the supplied JD and dated research were used for company facts. No private information was accessed, no Profile was written, and no application or resume was created or submitted.",
+            "Detailed eligibility and the AI-use warning rely on the saved JD/form account because supplied live extraction omitted substantive sections.",
+            "Research is dated 12 September 2026. The October 2025 initiative is nearly a year old; announcements do not verify current rollout status or graduate participation.",
+            "Assigned technologies, sponsorship, interview format and first-assignment scope remain unknown.",
+            "Suggested dataset links were not accessed here; current availability, coverage, release dates and usage terms require checking before project work."
+          ]
+        },
+        "profile_access": false
+      },
+      "error": null,
+      "created_at": "2026-09-12T08:23:47+00:00",
+      "updated_at": "2026-09-12T08:27:28+00:00"
+    },
+    {
+      "id": "ed1d1050ed1d4ac1b354cf6a24560ad9",
+      "kind": "research",
+      "job_id": "1acf78884105297f",
+      "state": "completed",
+      "result": {
+        "stage": "Complete",
+        "research": {
+          "summary": "Tax information quality, source traceability and technology-supported processes are the main public role signals.",
+          "report": "# KPMG Tax Technology - public company research\n\nResearch date: 12 September 2026. Separate public-research worker; no candidate context supplied.\n\nKPMG Ireland's Tax Transformation & Technology service describes helping clients meet reporting demands, manage compliance costs and improve finance/tax information. Source-system analysis, tax master data and system logic, information quality across IT and finance, and preventative/detective controls are explicit service areas. This is a client-service offering, not a claim that KPMG itself has failing systems.\n\nSource: [KPMG Tax Transformation & Technology](https://kpmg.com/ie/en/services/tax/tax-transformation-and-technology.html), accessed 12 September 2026.\n\nThe official STEM careers page identifies digital tax reporting, ERP optimisation, compliance automation, dashboards, robotics and GenAI as possible Tax Technology activities. Python, Power Automate and Alteryx appear as possible learning/work technologies, not universal mandatory entry skills.\n\nSource: [KPMG STEM opportunities](https://kpmg.com/ie/en/careers/stem-opportunities.html), accessed 12 September 2026.\n\n## Interpretation\n\nReliable data, traceable exceptions, practical automation and communication between technical and finance colleagues are plausible graduate contribution areas. Specific client assignments, tax advisory responsibility and guaranteed use of particular tools are not established.\n\nThe research worker could not retrieve the Avature description independently. The main task read the complete employer JD and matching application gateway in the browser. The employer vacancy list's 21 October 2026, 17:00 closing date supersedes the older aggregator's September date.\n\n",
+          "sources": [
+            {
+              "title": "KPMG Tax Transformation & Technology",
+              "url": "https://kpmg.com/ie/en/services/tax/tax-transformation-and-technology.html",
+              "accessed_at": "2026-09-12"
+            },
+            {
+              "title": "KPMG STEM opportunities",
+              "url": "https://kpmg.com/ie/en/careers/stem-opportunities.html",
+              "accessed_at": "2026-09-12"
+            }
+          ],
+          "limitations": [
+            "Public research executed by /root/public_research with no candidate context; main task verified full employer JD and gateway."
+          ]
+        },
+        "hiring": {
+          "summary": "Graduate benchmark: student status, minimum predicted2.1, initiative, teamwork and clear client communication.",
+          "report": "{\n  \"worker\": \"/root/hiring_benchmark\",\n  \"profile_access\": false,\n  \"input_scope\": \"Verified JD and public company research only\",\n  \"mandatory\": [\n    \"Final-year undergraduate or current masters student\",\n    \"On track minimum 2.1 or recognised equivalent\",\n    \"Initiative\",\n    \"Communication and teamwork\"\n  ],\n  \"good_evidence\": [\n    \"Data interpretation and quality checks\",\n    \"Process improvement with personal contribution\",\n    \"Client communication\",\n    \"Learning unfamiliar business rules\"\n  ],\n  \"limitations\": [\n    \"Benchmark, not confirmed KPMG selection rubric\",\n    \"Predicted result/equivalence, availability and permission must be checked\"\n  ]\n}",
+          "sources": [
+            {
+              "title": "KPMG Tax Transformation & Technology",
+              "url": "https://kpmg.com/ie/en/services/tax/tax-transformation-and-technology.html",
+              "accessed_at": "2026-09-12"
+            },
+            {
+              "title": "KPMG STEM opportunities",
+              "url": "https://kpmg.com/ie/en/careers/stem-opportunities.html",
+              "accessed_at": "2026-09-12"
+            }
+          ],
+          "limitations": [
+            "Separate /root/hiring_benchmark process received JD/public research only; no candidate context."
+          ]
+        },
+        "comparison": {
+          "summary": "Credible graduate analytics/BI scope match; minimum 2.1 condition and administrative eligibility remain unresolved. Select PROJ-AZ-RECON.",
+          "report": "# KPMG Tax Technology Graduate Programme 2027 — evaluation\n\nJob ID: `1acf78884105297f` · Reviewed 12 September 2026.\n\n**Decision:** credible graduate analytics/BI opportunity within target scope; administrative eligibility remains unresolved. Do not assert that all entry conditions are met. This is a separate active-profile comparison against the independent hiring benchmark, not a prediction of selection.\n\n## Requirements and evidence\n\n- **Current master's student — supported by the active record:** `EDU-MSC-001` records the MSc programme in Data Science at MTU as in progress (Sep 2025–Sep 2026). The planned end month does not establish an award; exact award title remains unresolved.\n- **On track for minimum 2.1 — conditional, not confirmed:** the only MSc result is Semester 1: 2:1. There is no verified predicted or final degree result. `EDU-BTECH-001` reports 9.4/10, but its Irish classification/equivalence must not be inferred. Obtain appropriate prediction/result or employer equivalence confirmation before answering this condition affirmatively.\n- **Initiative and learning — supported:** `PROJ-NIQ-REPORTING` documents learning the proprietary platform within two weeks and delivering 300+ reports over six months. `PROJ-NIQ-POC` supports building a reusable finance-dashboard prototype from a client wireframe; efficiency estimates remain user-reported.\n- **Communication and teamwork — supported:** NielsenIQ BRD clarification with client stakeholders, `SKILL-DELIVERY-001`, and the three-person executive-dashboard demonstration/handover (`PROJ-AZ-EXEC`) provide concrete evidence.\n- **Data analysis and technology-supported processes — supported transferable evidence:** Power BI reporting, SQL, requirements translation, reconciliation, testing and refresh automation (`SKILL-BI-001`, `SKILL-SQL-001`, `PROJ-AZ-RECON`, `WORK-AZ-OTHER-001`) are relevant. Professional work is BI delivery; Python/ML evidence remains academic or project-based.\n- **Client-facing motivation — partially evidenced:** prior client delivery supports readiness, but personal motivation for tax technology and professional study needs a truthful application/interview explanation.\n- **Tax-domain knowledge — gap, not a stated mandatory entry barrier:** no professional tax advice, tax compliance, ERP tax configuration, ACA/tax qualification or Alteryx experience is established. The JD accepts any discipline and offers development; research examples do not create extra mandatory tools or candidate skills.\n\n## Exactly one selected project\n\nSelect **`PROJ-AZ-RECON` — Finance Access Reconciliation Dashboard**, a professional AstraZeneca team project. Five-source consolidation and drill-through to access requests/discrepancies directly illustrate traceability, information quality and coordination around finance processes. Preserve “co-developed”, the reported six-person manual-process baseline and source-record tracing. This is access reconciliation, not tax calculation or transaction-tax reconciliation; no time-saving, accuracy or compliance outcome is established.\n\nAgainst the configured problem/skills/evidence/domain/recency weighting, reconciliation is the closest honest analogue. `PROJ-NIQ-POC` is second for reusable finance reporting, but its efficiency result is self-reported and less directly about traceability. `PROJ-AZ-MIGRATION` has strong report-modernisation evidence but weaker control/process relevance. Other registered analytics, ML, retrieval and portfolio projects are less direct; dates provide no reliable recency tiebreak. Keep reporting and migration evidence in employment rather than adding selected projects.\n\n## Remaining checks and boundaries\n\nConfirm predicted/final 2.1 or accepted equivalent, programme start availability, attendance expectations and programme-duration permission/sponsorship terms. Stamp 1G was confirmed 5 September 2026; expiry and future sponsorship remain unconfirmed. Employment ends January 2025. The independent benchmark is not KPMG's confirmed rubric; no interview or shortlist probability is assigned.\n",
+          "sources": [
+            "Active career.db knowledge via scripts/workspace.py profile, read 2026-09-12; no unregistered edits/deletions observed",
+            "config/profile.yml (candidate revision 2026-09-09.1)",
+            "context/evidence.yml",
+            "context/QUESTIONS-FOR-YOU.md",
+            "context/PROFILE-NOTES.md",
+            "job-description.md (job 1acf78884105297f)",
+            "company-research.md",
+            "hiring-benchmark.json (candidate-independent inputs)"
+          ],
+          "limitations": [
+            "Semester 1 2:1 only; predicted/final degree result and equivalence not confirmed.",
+            "MSc remains in progress; planned end month does not prove graduation.",
+            "Stamp 1G confirmed 2026-09-05; no expiry, renewal or sponsorship inference.",
+            "Tax-domain experience is not established; specialist tax experience is not stated as mandatory.",
+            "Benchmark is an independent assessment, not KPMG selection criteria beyond the supplied JD.",
+            "JD/public research reviewed from saved documents; this comparison did not independently re-fetch the posting."
+          ]
+        },
+        "hiring_profile_access": false,
+        "role_input_sha256": "dedbe0c6c6d5f248678624d19d68bf2bd5d9d1ec0acc1a9005c01cb114f1311f",
+        "execution_mode": "Persisted results from independently completed collaboration workers",
+        "worker_ids": [
+          "/root/public_research",
+          "/root/hiring_benchmark",
+          "/root/profile_comparison"
+        ]
+      },
+      "error": null,
+      "created_at": "2026-09-12T08:16:30+00:00",
+      "updated_at": "2026-09-12T08:16:30+00:00"
+    },
+    {
+      "id": "01a93c3e6adc49739402baff08e394e5",
+      "kind": "email",
+      "job_id": null,
+      "state": "failed",
+      "result": {
+        "stage": "Starting"
+      },
+      "error": "Agent could not finish. Check Codex sign-in, connected Gmail permissions, or usage and retry. No status was inferred from this failure.",
+      "created_at": "2026-09-12T08:02:21+00:00",
+      "updated_at": "2026-09-12T08:02:21+00:00"
+    },
     {
       "id": "d75632bff900455eac23645aa3d1d72f",
       "kind": "discovery",

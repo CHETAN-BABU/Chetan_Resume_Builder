@@ -1,5 +1,253 @@
 [
   {
+    "id": 75,
+    "occurred_at": "2026-09-12T09:30:08+00:00",
+    "action": "studio_opened",
+    "job_id": "5ef89c929c73c5d8",
+    "details": {
+      "revision": 1
+    }
+  },
+  {
+    "id": 74,
+    "occurred_at": "2026-09-12T09:30:08+00:00",
+    "action": "draft_prepared",
+    "job_id": "5ef89c929c73c5d8",
+    "details": {
+      "folder": "output/applications/5ef89c929c73c5d8-vplk7dqj",
+      "project_id": "PROJ-AZ-RECON",
+      "review_required": true
+    }
+  },
+  {
+    "id": 73,
+    "occurred_at": "2026-09-12T08:27:28+00:00",
+    "action": "agent_completed",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "run_id": "a83bd36c56e8475da51523541cb83f0d",
+      "kind": "resume_advisor"
+    }
+  },
+  {
+    "id": 72,
+    "occurred_at": "2026-09-12T08:25:11+00:00",
+    "action": "search_notes_updated",
+    "job_id": null,
+    "details": {
+      "date": "2026-09-12",
+      "before": "# Daily career result - 12 September2026\n\n## Progress\n\nToday:0/10 applications (5 base + 5 carryover). First partial-week target:10, completed:0. All10 remain outstanding. Saved roles and prepared resumes do not count as applications. No submissions, recruiter contact or uploads occurred.\n\nTwo new exact postings saved in shared career.db and attached to today's run. One tailored KPMG draft; zero release-ready resumes. Eight-role discovery shortfall against today's remaining10. This bounded search does not establish that no further suitable Irish roles exist.\n\n## Selected postings\n\n- KPMG Tax Technology Graduate Programme2027, Dublin hybrid, job1acf78884105297f / requisition2826. Full Avature JD and active login/create-profile gateway read in browser. Employer vacancy list gives21October2026 17:00 deadline, superseding an older aggregator date. [Apply](https://kpmgireland.avature.net/careers/Login?folderId=2826). Professional reporting, clientBRDs and reconciliation are supported. Overall predicted2:1/equivalence is unconfirmed; programmeavailability andpermission remain unresolved. Separate public company research, candidate-independent hiring benchmark and active-profile comparison completed and persisted. Exactly one registered projectPROJ-AZ-RECON; two-page draft compiled, actualPDF renders match the two visually inspected previews. Currentvalidator fails only roleeligibility; no approvedrelease claimed.\n- Accenture AI & Data Graduate ProgrammeFY28, Dublin, jobfff05ec16dd35b33. Full browser-rendered JD and applicationform verified. Deadline25October2026, startsSeptember2027-Spring2028. BI and academic/project data/AI are credible transferable evidence; not all listedtechnicalareasrequired. Application form says AI-assisted applications may be withdrawn. Manual candidate-writing option only, no AIresume prepared. Minimumlevel8honoursbachelor/equivalence, overall2:1, futureavailability andpermission remain unconfirmed. [Apply](https://accenture.pinpointhq.com/postings/5d2e98e6-2568-4833-bb13-8a067bf55d18/applications/new). No information entered.\n\n## Coverage and deduplication\n\n15 web queries covering Ireland junioranalyst, reporting/PowerBI, data/SQL, KPMGgraduatetaxtechnology, AMCSLimerick, Wurthoperationsanalytics, CorkjuniorBI, Galwaygraduates, remoteIreland and Apple/Trimble/Gileadleads. Opened employer/ATS orspecificlistingpages; usedbrowserforclient-renderedrequirements andapplicationroutes. Fullchecks includedKPMG,Accenture,AMCS,Wurth,Sigmar,MorganMcKinley,DANV,AppleandTrimble.\n\nDeduplicated against14 pre-existing savedjobs,13 deliveredURL/requisitionhistoryrows,sharedrunmanifests andhistorical-packindex includingolderDawnMeats,UPMC,Smartbox,TuathandOccupacks. High-confidence unlinked emailapplication/rejectionevidence also reviewed. RepeatedAIB,EY,Fanatics,Kepak,FedExandAnalyticPartnerspostings were excluded.\n\n## Rejected and held leads\n\n| Lead | Evidence / decision |\n|---|---|\n| AMCS Junior Data Analyst, Limerick | https://amcsgroup.hirehive.com/data-analyst-limerick-qZOiNI redirects to jobExpired=True and explicitly says no longer available. Closed. |\n| Sigmar Junior Data Analyst4447298339 | https://ie.linkedin.com/jobs/view/junior-data-analyst-at-sigmar-recruitment-4447298339 explicitly excludes Stamp1G. Reject for stated eligibility criterion. |\n| Wurth Sales Operations Project Analyst | Aggregator https://ie.indeed.com/viewjob?jk=1ceec7c815ef395c . Official https://www.wurth.ie/en/wurth_ie/careers/startpage.php embedded nine-jobboard read inbrowser; analystabsent. No liveexactrouteverified. |\n| MorganMcKinley JuniorBI/DataOperationsSupport, Cork4376435562 | https://ie.linkedin.com/jobs/view/junior-bi-data-operations-support-contractor-at-morgan-mckinley-4376435562 explicitly no longer accepting. Closed. |\n| DANV Junior Data Analyst, remoteIreland4271328339 | https://ie.linkedin.com/jobs/view/junior-data-analyst-at-danv-4271328339 explicitly no longer accepting. Closed. |\n| Apple SupplyDemandExecutionAnalyst12month200674317 | https://jobs.apple.com/en-us/details/200674317-1418/supply-demand-execution-analyst-12-month-contract says role does notexist/no longeravailable. Closed despite indexedlistings. |\n| Trimble JuniorLogisticsSystemsSupportR56290, Galway | Full WorkdayJD read: https://trimble.wd1.myworkdayjobs.com/en-US/TrimbleCareers/job/IT-and-Logistics-Graduate_R56290 . Phone/email/chat support, softwarelogisticsrequests andhardwaretroubleshooting dominate; analysis/PowerBI secondary. Outsidetargetscope. |\n| DublinBusinessSchool DataReportingAnalystJR256170 | Search result https://ghc.wd1.myworkdayjobs.com/en-US/DBS_Career/job/Data---Reporting-Analyst_JR256170 gives5July2026closingdate. Not advanced. |\n| CircetFabric andseniorDublin analystleads | Search-level screening foundrequiredFabric/ETLplatform work or4+years andadvancedDAX. Unsupported; notverifiedorcounted. |\n| HPE CloudDeveloperInternship, Galway | Software/clouddevelopmenttrack excluded. |\n| Hireologist,Verdantis,Vhi,TechHeads | Discovery-onlyolderlistings; currentprimaryliveness andrequirements notestablished. Notcounted. |\n| Gileadfinanceautomation | Noexactofficialposting established in focusedsearch. Notcounted. |\n\n## Email review\n\nApplicationemailworker01a93c3e6adc49739402baff08e394e5 failedimmediately; cause notestablished. Connectedread-onlyGmailfallback succeeded. Query: after:2026/09/11 -in:spam -in:trash (application OR interview OR recruitment OR assessment OR \"thank you for applying\"). Fourresults,nopagination. Readthreejob-relatedbodies: IndeedAccenture invitation, IndeedTurner&Townsendinvitation, Jobgethernewsletter. Thesearemarketing/discovery,notstatusproof. Oneunrelatedresult excluded. Noattachments ormailchanges. Incrementalquerycoverage,notafullemailaudit.\n\nNo newapplication/interview/offerconfirmed. Arup's existingappliedrecord preserved, actualsubmissiondateunknown andreceiptseparate.34 olderunlinked/ambiguousrecordsremainpending. Match exactsavedpostingsbefore resolving; reminders,assessments andsilence don'testablishstatus.\n\n## Next actions\n\nConfirmKPMGoverallpredicted2:1/acceptedequivalent beforepassingeligibility/releasegate. Confirm2027availability andpermission/sponsorship beforeansweringforms. Accenturematerialsneedcandidatewritingunderitsstatedpolicy. ContinuefreshBI/reportingdiscovery andexactolderemailmatches. All10applicationscarryforward.\n",
+      "after": "# Daily career result - 12 September 2026\n\n## Progress\n\nToday: **0/10 applications**, comprising five base plus five carryover. This first partial week's target is also 10. All 10 remain outstanding. Prepared resumes and saved jobs do not count as submissions.\n\nTwo unique postings were saved and linked to the shared dated run. One tailored KPMG draft was created; zero resumes passed release. This is an eight-role discovery shortfall. This bounded search does not establish that no further suitable Irish jobs exist. No applications, recruiter contact or uploads occurred.\n\n## New postings\n\n- **KPMG — Tax Technology Graduate Programme 2027**, Dublin hybrid, job `1acf78884105297f`, requisition 2826. Full employer JD and live login/create-profile gateway read in browser. The employer vacancy list gives **21 October 2026 at 17:00**, superseding an older aggregator date. [Apply](https://kpmgireland.avature.net/careers/Login?folderId=2826). Relevant evidence: reporting, client requirements, reconciliation and teamwork. Mandatory overall predicted 2:1 or accepted equivalent remains unconfirmed, as do programme availability and permission. Public company research, a separate candidate-independent hiring benchmark and a separate active-profile comparison were completed and persisted. The tailored draft uses one registered project, PROJ-AZ-RECON. Both A4 pages were inspected; rendering the actual PDF reproduced the viewed previews. QA fails only because role eligibility remains unresolved. This is a draft, not an approved release.\n- **Accenture — AI & Data Graduate Programme FY28**, Dublin, job `fff05ec16dd35b33`. Full rendered JD and application form verified. Deadline **25 October 2026**; starts September 2027 to spring 2028. The graduate role accepts relevant BI and academic/project data and AI knowledge; every listed technical area is not required. Its form warns AI-assisted applications may be withdrawn. Saved as a candidate-writing option; no AI résumé prepared. Minimum Level 8 honours bachelor's equivalence, overall 2:1, future availability and permission are unconfirmed. [Apply](https://accenture.pinpointhq.com/postings/5d2e98e6-2568-4833-bb13-8a067bf55d18/applications/new). No information entered.\n\n## Coverage and deduplication\n\nFifteen queries covered Ireland junior analysis, reporting/Power BI, data/SQL, KPMG graduate tax technology, AMCS Limerick, Würth operations analytics, Cork junior BI, Galway graduates, remote Ireland and Apple/Trimble/Gilead leads. Specific checks included KPMG, Accenture, AMCS, Würth, Sigmar, Morgan McKinley, DANV, Apple and Trimble. Browser checks supplied requirements omitted by web-parser results.\n\nDeduplicated against 14 pre-existing saved jobs, 13 delivered URL/requisition history rows, shared dated runs and the historical-pack index, including older Dawn Meats, UPMC, Smartbox, Tuath and Occu packs. High-confidence unlinked email application/rejection evidence was also reviewed. Previously delivered exact roles were excluded.\n\n## Rejected and held leads\n\n| Lead | Evidence and decision |\n|---|---|\n| AMCS Junior Data Analyst, Limerick | [Employer posting](https://amcsgroup.hirehive.com/data-analyst-limerick-qZOiNI) redirects to jobExpired=True and explicitly says unavailable. Closed. |\n| Sigmar Junior Data Analyst 4447298339 | [Posting](https://ie.linkedin.com/jobs/view/junior-data-analyst-at-sigmar-recruitment-4447298339) explicitly excludes Stamp 1G. Rejected against the stated criterion. |\n| Würth Sales Operations Project Analyst | [Aggregator lead](https://ie.indeed.com/viewjob?jk=1ceec7c815ef395c). [Official careers page](https://www.wurth.ie/en/wurth_ie/careers/startpage.php) and its embedded nine-job board read in browser; analyst absent. No live exact route verified. |\n| Morgan McKinley Junior BI / Data Operations Support, Cork | [Posting 4376435562](https://ie.linkedin.com/jobs/view/junior-bi-data-operations-support-contractor-at-morgan-mckinley-4376435562) explicitly no longer accepting applications. Closed. |\n| DANV Junior Data Analyst, remote Ireland | [Posting 4271328339](https://ie.linkedin.com/jobs/view/junior-data-analyst-at-danv-4271328339) explicitly no longer accepting applications. Closed. |\n| Apple Supply Demand Execution Analyst, 12-month contract | [Posting 200674317](https://jobs.apple.com/en-us/details/200674317-1418/supply-demand-execution-analyst-12-month-contract) says role unavailable. Closed despite indexed vacancy lists. |\n| Trimble Junior Logistics Systems Support, Galway | Full [Workday JD R56290](https://trimble.wd1.myworkdayjobs.com/en-US/TrimbleCareers/job/IT-and-Logistics-Graduate_R56290) read in browser. Phone/email/chat support, logistics requests and hardware troubleshooting dominate; analysis and Power BI are secondary. Outside target focus. |\n| Dublin Business School Data & Reporting Analyst | [Indexed posting JR256170](https://ghc.wd1.myworkdayjobs.com/en-US/DBS_Career/job/Data---Reporting-Analyst_JR256170) gives 5 July 2026 closing date. Not advanced. |\n| Circet Fabric and senior Dublin leads | Search-level screening found required platform work or four-plus years and advanced DAX. Unsupported; not counted. |\n| HPE Cloud Developer Internship, Galway | Software/cloud development track excluded. |\n| Hireologist, Verdantis, Vhi and TechHeads | Older discovery listings; current primary liveness and requirements not established. Not counted. |\n| Gilead finance automation | No exact official posting established by the focused query. Not counted. |\n\n## Email review\n\nWorker `01a93c3e6adc49739402baff08e394e5` failed immediately; cause not established. Connected read-only Gmail fallback succeeded.\n\nQuery: `after:2026/09/11 -in:spam -in:trash (application OR interview OR recruitment OR assessment OR \"thank you for applying\")`.\n\nFour results, no next page. Read three job-related bodies: Indeed Accenture invitation, Indeed Turner & Townsend invitation and Jobgether newsletter. These were marketing/discovery, not status proof. One unrelated result excluded. No attachments or mail changes. Incremental query coverage, not a full mailbox audit.\n\nNo new application, interview or offer confirmed. Arup's existing applied record remains: actual submission date unknown, receipt separate. The 34 older unlinked/ambiguous records remain pending. Resolve exact saved posting matches only; reminders, assessments and silence do not establish status.\n\n## Next actions\n\nConfirm KPMG's overall predicted 2:1 or accepted equivalent before passing eligibility/release gates. Confirm 2027 availability and permission/sponsorship before answering forms. Accenture materials need candidate writing under its stated policy. Continue fresh BI/reporting discovery and exact older email matching. All 10 applications remain in carryover.\n"
+    }
+  },
+  {
+    "id": 71,
+    "occurred_at": "2026-09-12T08:23:46+00:00",
+    "action": "studio_opened",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "revision": 1
+    }
+  },
+  {
+    "id": 70,
+    "occurred_at": "2026-09-12T08:23:46+00:00",
+    "action": "draft_prepared",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "folder": "output/applications/fff05ec16dd35b33-wijtws6k",
+      "project_id": "PROJ-BLOGBOARD",
+      "review_required": true
+    }
+  },
+  {
+    "id": 69,
+    "occurred_at": "2026-09-12T08:22:09+00:00",
+    "action": "daily_search_reviewed",
+    "job_id": null,
+    "details": {
+      "date": "2026-09-12",
+      "job_ids": [
+        "1acf78884105297f",
+        "fff05ec16dd35b33"
+      ],
+      "drafts": 1,
+      "released": 0,
+      "applications_confirmed": 0,
+      "remaining": 10
+    }
+  },
+  {
+    "id": 68,
+    "occurred_at": "2026-09-12T08:22:09+00:00",
+    "action": "search_notes_updated",
+    "job_id": null,
+    "details": {
+      "date": "2026-09-12",
+      "before": "",
+      "after": "# Daily career result - 12 September2026\n\n## Progress\n\nToday:0/10 applications (5 base + 5 carryover). First partial-week target:10, completed:0. All10 remain outstanding. Saved roles and prepared resumes do not count as applications. No submissions, recruiter contact or uploads occurred.\n\nTwo new exact postings saved in shared career.db and attached to today's run. One tailored KPMG draft; zero release-ready resumes. Eight-role discovery shortfall against today's remaining10. This bounded search does not establish that no further suitable Irish roles exist.\n\n## Selected postings\n\n- KPMG Tax Technology Graduate Programme2027, Dublin hybrid, job1acf78884105297f / requisition2826. Full Avature JD and active login/create-profile gateway read in browser. Employer vacancy list gives21October2026 17:00 deadline, superseding an older aggregator date. [Apply](https://kpmgireland.avature.net/careers/Login?folderId=2826). Professional reporting, clientBRDs and reconciliation are supported. Overall predicted2:1/equivalence is unconfirmed; programmeavailability andpermission remain unresolved. Separate public company research, candidate-independent hiring benchmark and active-profile comparison completed and persisted. Exactly one registered projectPROJ-AZ-RECON; two-page draft compiled, actualPDF renders match the two visually inspected previews. Currentvalidator fails only roleeligibility; no approvedrelease claimed.\n- Accenture AI & Data Graduate ProgrammeFY28, Dublin, jobfff05ec16dd35b33. Full browser-rendered JD and applicationform verified. Deadline25October2026, startsSeptember2027-Spring2028. BI and academic/project data/AI are credible transferable evidence; not all listedtechnicalareasrequired. Application form says AI-assisted applications may be withdrawn. Manual candidate-writing option only, no AIresume prepared. Minimumlevel8honoursbachelor/equivalence, overall2:1, futureavailability andpermission remain unconfirmed. [Apply](https://accenture.pinpointhq.com/postings/5d2e98e6-2568-4833-bb13-8a067bf55d18/applications/new). No information entered.\n\n## Coverage and deduplication\n\n15 web queries covering Ireland junioranalyst, reporting/PowerBI, data/SQL, KPMGgraduatetaxtechnology, AMCSLimerick, Wurthoperationsanalytics, CorkjuniorBI, Galwaygraduates, remoteIreland and Apple/Trimble/Gileadleads. Opened employer/ATS orspecificlistingpages; usedbrowserforclient-renderedrequirements andapplicationroutes. Fullchecks includedKPMG,Accenture,AMCS,Wurth,Sigmar,MorganMcKinley,DANV,AppleandTrimble.\n\nDeduplicated against14 pre-existing savedjobs,13 deliveredURL/requisitionhistoryrows,sharedrunmanifests andhistorical-packindex includingolderDawnMeats,UPMC,Smartbox,TuathandOccupacks. High-confidence unlinked emailapplication/rejectionevidence also reviewed. RepeatedAIB,EY,Fanatics,Kepak,FedExandAnalyticPartnerspostings were excluded.\n\n## Rejected and held leads\n\n| Lead | Evidence / decision |\n|---|---|\n| AMCS Junior Data Analyst, Limerick | https://amcsgroup.hirehive.com/data-analyst-limerick-qZOiNI redirects to jobExpired=True and explicitly says no longer available. Closed. |\n| Sigmar Junior Data Analyst4447298339 | https://ie.linkedin.com/jobs/view/junior-data-analyst-at-sigmar-recruitment-4447298339 explicitly excludes Stamp1G. Reject for stated eligibility criterion. |\n| Wurth Sales Operations Project Analyst | Aggregator https://ie.indeed.com/viewjob?jk=1ceec7c815ef395c . Official https://www.wurth.ie/en/wurth_ie/careers/startpage.php embedded nine-jobboard read inbrowser; analystabsent. No liveexactrouteverified. |\n| MorganMcKinley JuniorBI/DataOperationsSupport, Cork4376435562 | https://ie.linkedin.com/jobs/view/junior-bi-data-operations-support-contractor-at-morgan-mckinley-4376435562 explicitly no longer accepting. Closed. |\n| DANV Junior Data Analyst, remoteIreland4271328339 | https://ie.linkedin.com/jobs/view/junior-data-analyst-at-danv-4271328339 explicitly no longer accepting. Closed. |\n| Apple SupplyDemandExecutionAnalyst12month200674317 | https://jobs.apple.com/en-us/details/200674317-1418/supply-demand-execution-analyst-12-month-contract says role does notexist/no longeravailable. Closed despite indexedlistings. |\n| Trimble JuniorLogisticsSystemsSupportR56290, Galway | Full WorkdayJD read: https://trimble.wd1.myworkdayjobs.com/en-US/TrimbleCareers/job/IT-and-Logistics-Graduate_R56290 . Phone/email/chat support, softwarelogisticsrequests andhardwaretroubleshooting dominate; analysis/PowerBI secondary. Outsidetargetscope. |\n| DublinBusinessSchool DataReportingAnalystJR256170 | Search result https://ghc.wd1.myworkdayjobs.com/en-US/DBS_Career/job/Data---Reporting-Analyst_JR256170 gives5July2026closingdate. Not advanced. |\n| CircetFabric andseniorDublin analystleads | Search-level screening foundrequiredFabric/ETLplatform work or4+years andadvancedDAX. Unsupported; notverifiedorcounted. |\n| HPE CloudDeveloperInternship, Galway | Software/clouddevelopmenttrack excluded. |\n| Hireologist,Verdantis,Vhi,TechHeads | Discovery-onlyolderlistings; currentprimaryliveness andrequirements notestablished. Notcounted. |\n| Gileadfinanceautomation | Noexactofficialposting established in focusedsearch. Notcounted. |\n\n## Email review\n\nApplicationemailworker01a93c3e6adc49739402baff08e394e5 failedimmediately; cause notestablished. Connectedread-onlyGmailfallback succeeded. Query: after:2026/09/11 -in:spam -in:trash (application OR interview OR recruitment OR assessment OR \"thank you for applying\"). Fourresults,nopagination. Readthreejob-relatedbodies: IndeedAccenture invitation, IndeedTurner&Townsendinvitation, Jobgethernewsletter. Thesearemarketing/discovery,notstatusproof. Oneunrelatedresult excluded. Noattachments ormailchanges. Incrementalquerycoverage,notafullemailaudit.\n\nNo newapplication/interview/offerconfirmed. Arup's existingappliedrecord preserved, actualsubmissiondateunknown andreceiptseparate.34 olderunlinked/ambiguousrecordsremainpending. Match exactsavedpostingsbefore resolving; reminders,assessments andsilence don'testablishstatus.\n\n## Next actions\n\nConfirmKPMGoverallpredicted2:1/acceptedequivalent beforepassingeligibility/releasegate. Confirm2027availability andpermission/sponsorship beforeansweringforms. Accenturematerialsneedcandidatewritingunderitsstatedpolicy. ContinuefreshBI/reportingdiscovery andexactolderemailmatches. All10applicationscarryforward.\n"
+    }
+  },
+  {
+    "id": 67,
+    "occurred_at": "2026-09-12T08:22:08+00:00",
+    "action": "progress_updated",
+    "job_id": "1acf78884105297f",
+    "details": {
+      "before": {
+        "id": "1acf78884105297f",
+        "company": "KPMG",
+        "title": "Tax Technology Graduate Programme 2027",
+        "location": "Dublin, Ireland; hybrid",
+        "url": "https://kpmgireland.avature.net/careers/FolderDetail/Tax-Technology-Graduate-Programme-2027/2826",
+        "description": "Verified 12 September 2026 against full employer Avature JD in browser. Graduate Programme, Tax Consulting, Dublin; hybrid. Employer vacancy list gives deadline 21 October 2026 at 17:00 (aggregator September date is superseded). Apply opens working login/create-profile gateway for folderId=2826. No information entered.\n\nThe Tax Transformation & Technology graduate programme combines tax, data and technology to improve compliance and finance systems. Work includes analysing client data, developing technology-supported tax processes and collaborating with global teams across tax, IT, operations and finance. Client engagement, technical development, coaching and feedback are central.\n\nEntry requirements: current final-year undergraduate or current master's student, any discipline; on track for minimum 2.1 results; initiative demonstrated through work, study or extracurriculars; strong communication and teamwork; motivation to develop in a client-facing role. STEM and non-STEM applicants accepted. Specialist tax experience is not stated as mandatory.\n\nACA/tax examinations or IT qualifications are offered as development options. Benefits include hybrid/flexible working, 23 days leave, study support, mentoring and wellbeing provision. Exact start date, attendance pattern and sponsorship terms are not stated.",
+        "status": "prepared",
+        "created_at": "2026-09-12T08:13:07+00:00",
+        "updated_at": "2026-09-12T08:13:08+00:00",
+        "notes": "",
+        "application_date": null,
+        "selected_project_id": "PROJ-AZ-RECON",
+        "folder": "output/applications/1acf78884105297f-i4s8l2l7",
+        "verification": "not_verified"
+      },
+      "after": {
+        "id": "1acf78884105297f",
+        "company": "KPMG",
+        "title": "Tax Technology Graduate Programme 2027",
+        "location": "Dublin, Ireland; hybrid",
+        "url": "https://kpmgireland.avature.net/careers/FolderDetail/Tax-Technology-Graduate-Programme-2027/2826",
+        "description": "Verified 12 September 2026 against full employer Avature JD in browser. Graduate Programme, Tax Consulting, Dublin; hybrid. Employer vacancy list gives deadline 21 October 2026 at 17:00 (aggregator September date is superseded). Apply opens working login/create-profile gateway for folderId=2826. No information entered.\n\nThe Tax Transformation & Technology graduate programme combines tax, data and technology to improve compliance and finance systems. Work includes analysing client data, developing technology-supported tax processes and collaborating with global teams across tax, IT, operations and finance. Client engagement, technical development, coaching and feedback are central.\n\nEntry requirements: current final-year undergraduate or current master's student, any discipline; on track for minimum 2.1 results; initiative demonstrated through work, study or extracurriculars; strong communication and teamwork; motivation to develop in a client-facing role. STEM and non-STEM applicants accepted. Specialist tax experience is not stated as mandatory.\n\nACA/tax examinations or IT qualifications are offered as development options. Benefits include hybrid/flexible working, 23 days leave, study support, mentoring and wellbeing provision. Exact start date, attendance pattern and sponsorship terms are not stated.",
+        "status": "prepared",
+        "created_at": "2026-09-12T08:13:07+00:00",
+        "updated_at": "2026-09-12T08:22:08+00:00",
+        "notes": "12 September: full employer JD and folderId2826 login gateway verified. Independent public research/hiring benchmark/profile comparison completed. One genuinely tailored two-page draft compiled and visually inspected. NOT release-ready: mandatory predicted overall2:1/equivalence unconfirmed; role eligibility gate remains false. Confirm2027 availability and permission/sponsorship. Deadline21October2026 17:00. No application submitted.",
+        "application_date": null,
+        "selected_project_id": "PROJ-AZ-RECON",
+        "folder": "output/applications/1acf78884105297f-i4s8l2l7",
+        "verification": "not_verified"
+      }
+    }
+  },
+  {
+    "id": 66,
+    "occurred_at": "2026-09-12T08:16:30+00:00",
+    "action": "agent_completed",
+    "job_id": "1acf78884105297f",
+    "details": {
+      "run_id": "ed1d1050ed1d4ac1b354cf6a24560ad9",
+      "kind": "research"
+    }
+  },
+  {
+    "id": 65,
+    "occurred_at": "2026-09-12T08:13:08+00:00",
+    "action": "email_synced",
+    "job_id": null,
+    "details": {
+      "new_messages": 0
+    }
+  },
+  {
+    "id": 64,
+    "occurred_at": "2026-09-12T08:13:08+00:00",
+    "action": "progress_updated",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "before": {
+        "id": "fff05ec16dd35b33",
+        "company": "Accenture",
+        "title": "AI & Data Graduate Programme FY28",
+        "location": "Dublin, Ireland; client/office attendance 1-5 days weekly",
+        "url": "https://accenture.pinpointhq.com/postings/5d2e98e6-2568-4833-bb13-8a067bf55d18",
+        "description": "Full employer JD and live application form read in browser 12 September 2026. Permanent full-time Strategy & Consulting Ireland role, Dublin, EUR40,000/year. Deadline25 October2026. Starts September2027-Spring2028; applicants must have bachelor results before starting.\n\nGraduate client work spans AI strategy and delivery, business process improvement, commercial use cases, AI adoption and data-science insights. Familiarity with any relevant combination of GenAI/agentic AI, cloud platforms, Python/R or other data languages, ML, SQL/ETL/NoSQL/warehousing, and BI tools is sought; all technical areas are explicitly not expected. Structured thinking, business curiosity, communication, adaptability, initiative, creativity and team/leadership examples matter. Minimum2.1 degree obtained/predicted; final-year/recent-graduate eligibility. Application asks for minimum level8 honours bachelor/equivalent, qualification details and extracurricular examples.\n\nCommutable to Dublin; minimum1-2 office/client days, up to5 and travel inside/outside Ireland depending assignment. Application asks about full-time Irish work rights and supporting document.\n\nIMPORTANT: The form states AI-assisted applications may be withdrawn and asks candidates to avoid AI use. Saved as a manual candidate-writing option only; no AI-authored application/resume released. Nothing entered or submitted.",
+        "status": "saved",
+        "created_at": "2026-09-12T08:13:08+00:00",
+        "updated_at": "2026-09-12T08:13:08+00:00",
+        "notes": "",
+        "application_date": null,
+        "selected_project_id": null,
+        "folder": null,
+        "verification": "not_verified"
+      },
+      "after": {
+        "id": "fff05ec16dd35b33",
+        "company": "Accenture",
+        "title": "AI & Data Graduate Programme FY28",
+        "location": "Dublin, Ireland; client/office attendance 1-5 days weekly",
+        "url": "https://accenture.pinpointhq.com/postings/5d2e98e6-2568-4833-bb13-8a067bf55d18",
+        "description": "Full employer JD and live application form read in browser 12 September 2026. Permanent full-time Strategy & Consulting Ireland role, Dublin, EUR40,000/year. Deadline25 October2026. Starts September2027-Spring2028; applicants must have bachelor results before starting.\n\nGraduate client work spans AI strategy and delivery, business process improvement, commercial use cases, AI adoption and data-science insights. Familiarity with any relevant combination of GenAI/agentic AI, cloud platforms, Python/R or other data languages, ML, SQL/ETL/NoSQL/warehousing, and BI tools is sought; all technical areas are explicitly not expected. Structured thinking, business curiosity, communication, adaptability, initiative, creativity and team/leadership examples matter. Minimum2.1 degree obtained/predicted; final-year/recent-graduate eligibility. Application asks for minimum level8 honours bachelor/equivalent, qualification details and extracurricular examples.\n\nCommutable to Dublin; minimum1-2 office/client days, up to5 and travel inside/outside Ireland depending assignment. Application asks about full-time Irish work rights and supporting document.\n\nIMPORTANT: The form states AI-assisted applications may be withdrawn and asks candidates to avoid AI use. Saved as a manual candidate-writing option only; no AI-authored application/resume released. Nothing entered or submitted.",
+        "status": "saved",
+        "created_at": "2026-09-12T08:13:08+00:00",
+        "updated_at": "2026-09-12T08:13:08+00:00",
+        "notes": "Live verified 12 September. Manual candidate writing required by published application policy. No resume prepared. Degree equivalence, future availability and work permission remain unconfirmed.",
+        "application_date": null,
+        "selected_project_id": null,
+        "folder": null,
+        "verification": "not_verified"
+      }
+    }
+  },
+  {
+    "id": 63,
+    "occurred_at": "2026-09-12T08:13:08+00:00",
+    "action": "search_job_added",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "date": "2026-09-12"
+    }
+  },
+  {
+    "id": 62,
+    "occurred_at": "2026-09-12T08:13:08+00:00",
+    "action": "job_saved",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "company": "Accenture",
+      "title": "AI & Data Graduate Programme FY28",
+      "url": "https://accenture.pinpointhq.com/postings/5d2e98e6-2568-4833-bb13-8a067bf55d18"
+    }
+  },
+  {
+    "id": 61,
+    "occurred_at": "2026-09-12T08:13:08+00:00",
+    "action": "draft_prepared",
+    "job_id": "1acf78884105297f",
+    "details": {
+      "folder": "output/applications/1acf78884105297f-i4s8l2l7",
+      "project_id": "PROJ-AZ-RECON",
+      "review_required": true
+    }
+  },
+  {
+    "id": 60,
+    "occurred_at": "2026-09-12T08:13:07+00:00",
+    "action": "search_job_added",
+    "job_id": "1acf78884105297f",
+    "details": {
+      "date": "2026-09-12"
+    }
+  },
+  {
+    "id": 59,
+    "occurred_at": "2026-09-12T08:13:07+00:00",
+    "action": "job_saved",
+    "job_id": "1acf78884105297f",
+    "details": {
+      "company": "KPMG",
+      "title": "Tax Technology Graduate Programme 2027",
+      "url": "https://kpmgireland.avature.net/careers/FolderDetail/Tax-Technology-Graduate-Programme-2027/2826"
+    }
+  },
+  {
+    "id": 58,
+    "occurred_at": "2026-09-12T08:02:41+00:00",
+    "action": "search_started",
+    "job_id": null,
+    "details": {
+      "date": "2026-09-12"
+    }
+  },
+  {
     "id": 57,
     "occurred_at": "2026-09-11T21:30:12+00:00",
     "action": "agent_completed",

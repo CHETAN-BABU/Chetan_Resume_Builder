@@ -10,13 +10,13 @@
       "location": "Dublin; hybrid, three office days weekly",
       "url": "https://jobs.aib.ie/aib/job/Dublin,-Belfast,-London,-North-Junior-Quantitative-Risk-Analyst-IE/1361371757",
       "description": "# Junior Quantitative Risk Analyst - AIB\n\nSource: https://jobs.aib.ie/aib/job/Dublin,-Belfast,-London,-North-Junior-Quantitative-Risk-Analyst-IE/1361371757/\nChecked: 2026-09-08\nLocation: Dublin; hybrid, three office days weekly\nPosted: 1 September 2026; deadline: 14 September 2026\n\n## Verification\nFull employer JD rechecked on 8 September 2026. The Apply link was followed in the browser on this date to the AIB SuccessFactors sign-in gateway; its account links identify requisition 84006. No login, CAPTCHA, application or upload performed.\n\n## Concise JD snapshot\nRisk analysts support credit models and decisions through data preparation, statistical analysis and model review.\n\n- required: Quantitative degree and expected 2:1\n- required: Graduating in 2026\n- required: SQL experience\n- required: Problem solving and defending analytical decisions\n- required: Curiosity and initiative\n- preferred: Additional R or Python knowledge\n\nRequirements are paraphrased. Candidate support is assessed separately in evidence-map.yml.",
-      "status": "saved",
+      "status": "prepared",
       "created_at": "2026-09-10T22:20:44+00:00",
-      "updated_at": "2026-09-10T22:20:44+00:00",
+      "updated_at": "2026-09-12T09:30:08+00:00",
       "notes": "Imported historical posting from 2026-09-08. Previously delivered pack: backup/historical/daily-job-search/2026-09-08/001-aib-junior-quantitative-risk-b209a1e2d9. Posting must be reverified; old resume is not approved against the current profile. No application was recorded.",
       "application_date": null,
-      "selected_project_id": null,
-      "folder": null,
+      "selected_project_id": "PROJ-AZ-RECON",
+      "folder": "output/applications/5ef89c929c73c5d8-vplk7dqj",
       "verification": "not_verified"
     },
     {

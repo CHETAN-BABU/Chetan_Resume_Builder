@@ -8,6 +8,18 @@ from services.workspace_v2 import CareerServices, AGENTS
 from services.agents import AgentRunner
 
 
+class StudioSave(BaseModel):
+    revision: int = Field(ge=1)
+    source: Optional[str] = Field(default=None, max_length=150000)
+    fields: Optional[dict[str, str]] = None
+    project_id: Optional[str] = None
+    restore_revision: Optional[int] = None
+
+
+class StudioPreview(BaseModel):
+    revision: int = Field(ge=1)
+
+
 class GoalInput(BaseModel):
     weekly_target: int = Field(ge=1, le=200)
     workdays: list[int]
@@ -49,6 +61,9 @@ class ScheduleInput(BaseModel):
 def attach(app, workspace):
     service = CareerServices(workspace)
     runner = AgentRunner(service)
+    from services.resume_studio import ResumeStudio
+    studio = ResumeStudio(service)
+    app.state.studio = studio
     app.state.career = service
     app.state.agents = runner
     router = APIRouter(prefix="/api/v2")
@@ -163,6 +178,27 @@ def attach(app, workspace):
     @router.post("/agents/run", status_code=202)
     def run(data: AgentInput):
         return runner.enqueue(data.kind, data.job_id)
+
+    @router.post("/studio/{job_id}/open")
+    def open_studio(job_id: str):
+        with studio.lock:
+            result = studio.open(job_id)
+            # Serialize auto-start decisions, including very fast completed runs.
+            if not any(r["kind"] == "resume_advisor" and r["job_id"] == job_id for r in service.runs()):
+                runner.enqueue("resume_advisor", job_id)
+            return result
+
+    @router.get("/studio/{job_id}")
+    def get_studio(job_id: str):
+        return studio.get(job_id)
+
+    @router.put("/studio/{job_id}")
+    def save_studio(job_id: str, data: StudioSave):
+        return studio.save(job_id, **data.model_dump())
+
+    @router.post("/studio/{job_id}/preview")
+    def preview_studio(job_id: str, data: StudioPreview):
+        return studio.preview(job_id, data.revision)
 
     app.include_router(router)
 

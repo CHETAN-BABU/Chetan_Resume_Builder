@@ -1208,3 +1208,159 @@ blockquote {
 .report-table tr:nth-child(even) {
   background: #f8faf7;
 }
+
+/* Resume Studio */
+.studio-job-bar,
+.studio-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.studio-job-bar .field {
+  flex: 1;
+  margin: 0;
+  min-width: 240px;
+}
+.studio-job-bar select {
+  max-width: 100%;
+}
+.studio-toolbar {
+  padding: 14px 0;
+  border-top: 1px solid #dce4e2;
+  border-bottom: 1px solid #dce4e2;
+}
+.studio-toolbar .check-line {
+  margin: 0;
+  font-size: 13px;
+}
+.studio-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 18px;
+  align-items: start;
+}
+.studio-panel {
+  border: 1px solid #dce4e2;
+  border-radius: 14px;
+  overflow: hidden;
+  background: white;
+  min-width: 0;
+}
+.studio-panel-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #dce4e2;
+}
+.studio-panel-heading h2 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 16px;
+  margin: 0;
+}
+.studio-editor-body,
+.studio-preview-body {
+  height: 760px;
+  max-height: 85vh;
+  overflow: auto;
+  padding: 20px;
+}
+.studio-editor-body textarea {
+  resize: vertical;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.studio-editor-body .source-editor {
+  font:
+    13px/1.6 ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    monospace;
+  min-height: 640px;
+  tab-size: 2;
+  white-space: pre;
+}
+.studio-preview-body {
+  background: #e9eeec;
+  padding: 20px;
+}
+.preview-caption {
+  font-size: 12px;
+  color: #4b625c;
+  margin-top: 0;
+  text-align: center;
+}
+.resume-page {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 22px;
+  box-shadow: 0 3px 14px #143c3620;
+  background: white;
+}
+.studio-empty {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #5e726c;
+  text-align: center;
+}
+.studio-agents {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+.studio-agents .card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.tracker-note {
+  border-left: 3px solid #d8ac49;
+  padding: 8px 12px;
+  background: #fffbef;
+  font-size: 13px;
+}
+@media (max-width: 1100px) {
+  .studio-split {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .studio-panel-heading,
+  .studio-editor-body,
+  .studio-preview-body {
+    padding: 12px;
+  }
+  .studio-agents {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 760px) {
+  .studio-split {
+    grid-template-columns: 1fr;
+  }
+  .studio-editor-body {
+    height: 520px;
+    max-height: none;
+  }
+  .studio-preview-body {
+    height: 650px;
+    max-height: none;
+  }
+  .studio-toolbar .actions {
+    flex-wrap: wrap;
+  }
+  .studio-job-bar .field {
+    min-width: 0;
+    width: 100%;
+    flex-basis: 100%;
+  }
+}

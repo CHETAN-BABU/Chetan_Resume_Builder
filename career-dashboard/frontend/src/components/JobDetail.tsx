@@ -77,7 +77,7 @@ export default function JobDetail({
         {[
           ["progress", "Progress"],
           ["research", "Company & hiring review"],
-          ["resume", "Resume tools"],
+          ["resume", "Original prepared pack"],
           ["description", "Job description"],
         ].map(([id, label]) => (
           <button
@@ -286,6 +286,13 @@ export default function JobDetail({
       )}
       {section === "resume" && (
         <>
+          <div className="callout warning">
+            <p>
+              These tools manage the original prepared pack. Your Resume Studio
+              edits and versioned previews are saved separately in its Studio
+              folder.
+            </p>
+          </div>
           <p>
             Drafts select approved project wording. Company-specific tailoring
             and visual review remain separate checks.

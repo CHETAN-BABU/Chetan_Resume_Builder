@@ -1,0 +1,43 @@
+{
+  "candidate_revision": "2026-09-09.1",
+  "checked_at": "2026-09-12T08:22:09.143425+00:00",
+  "counts": {
+    "failed": 1,
+    "rejected": 1
+  },
+  "cross_batch": {
+    "near_identical_pairs": [],
+    "selected_projects": {},
+    "unique_artifact_dirs": true,
+    "unique_job_ids": true,
+    "unique_job_snapshots": true,
+    "unique_pdf_paths": true
+  },
+  "failures": [
+    "1acf78884105297f: Non-terminal or invalid status: failed"
+  ],
+  "jobs": [
+    {
+      "artifact_dir": "/Users/chetan/Desktop/Resume/career-dashboard/output/applications/1acf78884105297f-i4s8l2l7",
+      "failures": [
+        "Job is not in a releasable terminal state"
+      ],
+      "index": 1,
+      "job_id": "1acf78884105297f",
+      "status": "failed",
+      "valid": false
+    },
+    {
+      "artifact_dir": null,
+      "failures": [],
+      "index": 2,
+      "job_id": "fff05ec16dd35b33",
+      "status": "rejected",
+      "valid": true
+    }
+  ],
+  "manifest": "/Users/chetan/Desktop/Resume/daily-job-search/2026-09-12/batch.yml",
+  "schema_version": 2,
+  "status": "FAIL",
+  "warnings": []
+}

@@ -97,9 +97,11 @@ export function Running({ run }: { run: Run }) {
         <b>
           {run.kind === "research"
             ? "Company & hiring review"
-            : run.kind === "email"
-              ? "Gmail sync"
-              : "Job discovery"}{" "}
+            : run.kind === "resume_advisor"
+              ? "Resume advisor"
+              : run.kind === "email"
+                ? "Gmail sync"
+                : "Job discovery"}{" "}
           · {run.state}
         </b>
         <small>{run.error || run.result?.stage || "Waiting to start"}</small>

@@ -1,0 +1,22 @@
+schema_version: 2
+run_id: 20260912-daily-career
+candidate_revision: 2026-09-09.1
+requested_count: 10
+unique_postings_saved: 2
+released_count: 0
+draft_count: 1
+jobs:
+- job_id: 1acf78884105297f
+  company: KPMG
+  status: failed
+  reason: Draft complete; release pending mandatory overall predicted2:1/equivalence
+    confirmation
+  artifact_dir: /Users/chetan/Desktop/Resume/career-dashboard/output/applications/1acf78884105297f-i4s8l2l7
+  snapshot_path: /Users/chetan/Desktop/Resume/career-dashboard/output/applications/1acf78884105297f-i4s8l2l7/job-description.md
+  snapshot_sha256: a3b314dbc099488450dc2713831b93398c81ce1614faf5eb980037f3e4852c80
+  selected_project_id: PROJ-AZ-RECON
+- job_id: fff05ec16dd35b33
+  company: Accenture
+  status: rejected
+  reason: Excluded from AIresume batch under employer candidate-writing policy. Saved
+    job is not employer-rejected.

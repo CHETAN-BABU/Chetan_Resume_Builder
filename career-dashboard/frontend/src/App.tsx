@@ -22,7 +22,7 @@ const tabs = [
   ["profile", "Profile", UserRound],
 ] as const;
 function routeFromHash() {
-  const r = location.hash.slice(1);
+  const r = location.hash.slice(1).split("/")[0];
   return tabs.some((t) => t[0] === r) ? r : "dashboard";
 }
 export default function App() {
@@ -33,6 +33,11 @@ export default function App() {
     null,
   );
   const [selected, setSelected] = useState<string | null>(null);
+  const [studioJob, setStudioJob] = useState<string | null>(() =>
+    location.hash.startsWith("#resumes/")
+      ? decodeURIComponent(location.hash.slice(9))
+      : null,
+  );
   const [add, setAdd] = useState(false);
   const notify = useCallback(
     (text: string, error = false) => setToast({ text, error }),
@@ -50,7 +55,11 @@ export default function App() {
   useEffect(() => {
     refresh().catch(() => {});
     const timer = setInterval(() => refresh().catch(() => {}), 8000);
-    const hash = () => setRoute(routeFromHash());
+    const hash = () => {
+      setRoute(routeFromHash());
+      if (location.hash.startsWith("#resumes/"))
+        setStudioJob(decodeURIComponent(location.hash.slice(9)));
+    };
     window.addEventListener("hashchange", hash);
     return () => {
       clearInterval(timer);
@@ -63,8 +72,16 @@ export default function App() {
     return () => clearTimeout(timer);
   }, [toast]);
   function navigate(r: string) {
-    location.hash = r;
+    location.hash =
+      r === "resumes" && studioJob
+        ? "resumes/" + encodeURIComponent(studioJob)
+        : r;
     setRoute(r);
+  }
+  function openStudio(id: string) {
+    setStudioJob(id);
+    location.hash = "resumes/" + encodeURIComponent(id);
+    setRoute("resumes");
   }
   const job = data?.jobs.find((j) => j.id === selected);
   return (
@@ -131,7 +148,7 @@ export default function App() {
                     data={data}
                     refresh={refresh}
                     notify={notify}
-                    onJob={setSelected}
+                    onJob={openStudio}
                     onDaily={() => navigate("daily")}
                     onAdd={() => setAdd(true)}
                   />
@@ -141,12 +158,18 @@ export default function App() {
                     data={data}
                     refresh={refresh}
                     notify={notify}
-                    onJob={setSelected}
+                    onJob={openStudio}
                     onAdd={() => setAdd(true)}
                   />
                 )}
                 {route === "resumes" && (
-                  <ResumeStudio data={data} onJob={setSelected} />
+                  <ResumeStudio
+                    data={data}
+                    jobId={studioJob}
+                    onJob={openStudio}
+                    onDetails={setSelected}
+                    refresh={refresh}
+                  />
                 )}
                 {route === "profile" && (
                   <Profile refresh={refresh} notify={notify} />
@@ -186,7 +209,7 @@ export default function App() {
             onClose={() => setAdd(false)}
             refresh={refresh}
             notify={notify}
-            onSelect={setSelected}
+            onSelect={openStudio}
           />
         )}
       </div>

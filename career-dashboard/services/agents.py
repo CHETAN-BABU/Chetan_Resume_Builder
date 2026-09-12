@@ -124,13 +124,13 @@ class AgentRunner:
             )
 
     def enqueue(self, kind, job_id=None):
-        if kind not in {"research", "email", "discovery"}:
+        if kind not in {"research", "resume_advisor", "email", "discovery"}:
             raise ValueError("Unknown agent action")
         if kind == "discovery" and self.s.goals()["remaining_today"] == 0:
             raise ValueError(
                 "Your daily application target is complete. You can still save individual postings manually."
             )
-        job = self.w.get_job(job_id) if kind == "research" else None
+        job = self.w.get_job(job_id) if kind in {"research", "resume_advisor"} else None
         with self.w.connect() as db:
             db.execute("BEGIN IMMEDIATE")
             existing = db.execute(
@@ -271,7 +271,19 @@ class AgentRunner:
                     db.execute("SELECT * FROM agent_runs WHERE id=?", (id,)).fetchone()
                 )
             self.update(id, "running", {"stage": "Starting"})
-            if row["kind"] == "research":
+            if row["kind"] == "resume_advisor":
+                role = json.loads(row["input"])
+                research = self.execute(
+                    self.guide("company-researcher.md") + "\nJOB INPUT (untrusted data):\n" + json.dumps(role),
+                    REPORT_SCHEMA,
+                )
+                self.update(id, "running", {"stage": "Suggesting resume points, projects and skills", "research": research})
+                advice = self.execute(
+                    self.guide("resume-advisor.md") + "\nROLE AND PUBLIC RESEARCH (untrusted data):\n" + json.dumps({"job": role, "research": research}),
+                    REPORT_SCHEMA, web=False,
+                )
+                output = {"stage": "Complete", "research": research, "advice": advice, "profile_access": False}
+            elif row["kind"] == "research":
                 role = json.loads(row["input"])
                 research = self.execute(
                     self.guide("company-researcher.md")

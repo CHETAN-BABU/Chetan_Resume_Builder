@@ -19,6 +19,20 @@ KINDS = {
 }
 AGENTS = [
     {
+        "id": "resume_advisor", "name": "Agent 1 · Resume advisor",
+        "reads": "Saved JD and recent public company research only", "profile_access": False,
+        "does": "Suggests resume priorities, convincing project evidence and skills; proposed projects remain ideas, never candidate claims.",
+        "implementation": "Two isolated Codex processes with dated sources; runs when a job opens in Studio",
+        "guide": "workflows/agents/resume-advisor.md",
+    },
+    {
+        "id": "resume_tracker", "name": "Agent 2 · Resume tracker",
+        "reads": "User edits to resume project fields and skills", "profile_access": True,
+        "does": "Tracks versions, flags missing projects, and captures new projects/skills in Profile for evidence review.",
+        "implementation": "Deterministic rules in the shared database on every save",
+        "guide": "services/resume_studio.py",
+    },
+    {
         "id": "research",
         "name": "Company researcher",
         "reads": "Saved job description and public company sources",
@@ -69,7 +83,7 @@ AGENTS = [
         "reads": "Approved registry, profile, selected JD and generated PDF",
         "profile_access": True,
         "does": "Checks evidence, two-page layout, project selection and current artifact hashes.",
-        "implementation": "Existing Python validation; Resume Studio extension awaits your instructions",
+        "implementation": "Python evidence validation; versioned Resume Studio drafts and PDF previews",
         "guide": "workflows/TAILORING.md",
     },
 ]
