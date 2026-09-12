@@ -115,3 +115,39 @@ checks ran separately on port 8001 and that test server has been stopped.
 - Fifteen queries covered Ireland, Dublin, Cork, Limerick, Galway and remote roles. Exclusions in `daily-job-search/2026-09-12/search-coverage.md`. Eight-role discovery shortfall, zero approved releases, no applications submitted. Batch QA also fails while KPMG remains pending; Accenture was excluded from the AI résumé batch, not rejected by the employer.
 - Planner stays 0/10 today: five base plus five carryover. Existing 09:00 schedule unchanged. History CSV adds prepared/discovered entries.
 - Next: confirm KPMG overall predicted 2:1/equivalence, availability and permission before release/application; candidate writes Accenture materials; continue BI/reporting discovery and exact email matching. No code changed during this daily run; pre-existing Resume Studio changes preserved.
+
+
+## Resume page-fill upgrade — 12 September 2026
+
+- Added a ranked Fill two pages operation and first-preview fitting. Supported
+  detail expands only from active registered evidence; original custom summary
+  wording, dates, ownership and caveats remain intact. No new profile claim or
+  canonical revision is introduced by formatting existing evidence.
+- Layout acceptance now measures both page usage and gaps in actual rendered
+  pages, in addition to requiring two A4 pages and readable 10–12pt body text.
+  Successful fits are saved as new versions; failures preserve the prior draft.
+- Current request concerns Accenture job fff05ec16dd35b33 and its Studio draft.
+  The saved employer note about candidate-written applications remains relevant;
+  a layout fit does not establish release readiness or application eligibility.
+- Completed Accenture Studio revision 2 at
+  `career-dashboard/output/applications/fff05ec16dd35b33-wijtws6k/studio/preview-2/`.
+  PDF is exactly two A4 pages, with 95.8% and 96.0% content-height usage,
+  10.94pt body text and no overfull boxes. Both latest rendered pages were
+  visually inspected: no clipping, split bullets or large blank bands. The
+  original prepared pack and Studio version 1 remain preserved.
+- Added opt-in `--studio-layout` validation for the supported density block,
+  ranked section order and actual page-fill measurements. Default legacy
+  validation remains intact. Each preview stores its own source, JD snapshot
+  and matching evidence references; generated details do not create Profile
+  duplicates. Registry/profile revision remains 2026-09-09.1 with no pending edits.
+- Final artifact QA now fails only for the existing unresolved role eligibility
+  and empty requirement review. It is explicitly a draft, not a released
+  application. Employer AI-use note, availability/equivalence/work-permission
+  questions and application status were not overridden by the layout change.
+- Final verification: 85 Python tests and 7 frontend tests (92 total), production
+  build, profile/workspace integrity and all 20 historical-pack hashes pass.
+  Production dashboard was restarted; browser confirmed saved version 2,
+  Fill two pages, both previews and the 95.8%/96% measurements.
+- Next: use Fill two pages after substantial source changes; retain evidence
+  reconciliation and role-specific review before release. No new automation,
+  application submission or outreach was performed.

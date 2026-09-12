@@ -76,6 +76,7 @@ ALLOWED_VISIBLE_NUMBERS = {
     "300",
     "14,964",
     "16",
+    "16.3",  # PROJ-MSC-FRAUD: registered independent-test precision.
     "90.6",
     "2019",
     "9.4",
@@ -760,6 +761,7 @@ def main() -> int:
     parser.add_argument("--qa-json", type=Path, help="Write the QA manifest as JSON")
     parser.add_argument("--render-dir", type=Path, help="Directory for page preview PNGs")
     parser.add_argument("--evidence-map", type=Path, help="Tailored-resume evidence-map.yml")
+    parser.add_argument("--studio-layout", action="store_true", help="Validate ranked Studio typography and measured page fill; all evidence/release gates still apply")
     parser.add_argument(
         "--visual-review",
         choices=("pending", "pass", "fail"),
@@ -813,6 +815,19 @@ def main() -> int:
 
     qa["source_sha256"] = sha256(source_path)
     clean = strip_latex_comments(source)
+    required_order = list(REQUIRED_SECTIONS)
+    layout_clean = clean
+    if args.studio_layout:
+        sys.path.insert(0, str(ROOT))
+        from services.resume_layout import validate_density, measure_pages
+        layout_errors, layout_clean = validate_density(source)
+        failures.extend(layout_errors)
+        required_order = re.findall(r"\\section\{([^{}]+)\}", clean)
+        allowed_orders = [
+            ["Professional Summary", "Core Skills", *middle, "Education", "Technical Skills", "Certifications"]
+            for middle in [("Selected Project", "Professional Experience"), ("Professional Experience", "Selected Project")]
+        ]
+        add_failure(failures, required_order in allowed_orders, "Studio section order must preserve all seven required sections exactly once")
 
     try:
         evidence = load_yaml(EVIDENCE_PATH)
@@ -836,8 +851,8 @@ def main() -> int:
 
     add_failure(
         failures,
-        len(re.findall(r"\\documentclass\[a4paper,10pt\]\{article\}", clean)) == 1,
-        "Resume must contain exactly one fixed A4 10pt document class",
+        len(re.findall(r"\\documentclass\[a4paper," + ("11" if args.studio_layout else "10") + r"pt\]\{article\}", clean)) == 1,
+        "Resume must contain exactly one fixed A4 " + ("11pt Studio" if args.studio_layout else "10pt") + " document class",
     )
     geometry_declarations = re.findall(
         r"\\usepackage\[([^\]]*)\]\{geometry\}",
@@ -855,7 +870,7 @@ def main() -> int:
     )
     add_failure(
         failures,
-        line_spread_values == ["1.04"],
+        line_spread_values == (["1.02"] if args.studio_layout else ["1.04"]),
         "Resume must preserve the single fixed baselinestretch value",
     )
     add_failure(failures, latex_braces_balanced(source), "LaTeX braces are unbalanced")
@@ -866,7 +881,7 @@ def main() -> int:
     )
     add_failure(
         failures,
-        clean.count(r"\newpage") == 1,
+        clean.count(r"\newpage") == (0 if args.studio_layout else 1),
         "Resume must contain exactly one explicit page break",
     )
     add_failure(
@@ -883,7 +898,7 @@ def main() -> int:
     )
 
     for label, pattern in PROHIBITED_LAYOUT_PATTERNS.items():
-        if re.search(pattern, clean):
+        if re.search(pattern, layout_clean):
             failures.append(f"Prohibited layout detected: {label}")
 
     placeholder_hits = []
@@ -949,7 +964,7 @@ def main() -> int:
     qa["selected_project"] = project_validation
 
     section_positions = []
-    for section in REQUIRED_SECTIONS:
+    for section in required_order:
         match = re.search(rf"\\section\{{{re.escape(section)}\}}", clean)
         section_positions.append(match.start() if match else -1)
     add_failure(
@@ -1049,6 +1064,9 @@ def main() -> int:
                     str(page.get("text", "")) for page in pages if isinstance(page, dict)
                 )
                 qa["page_count"] = page_count
+                if args.studio_layout and pages:
+                    qa["layout"] = measure_pages(pdf_path, render_dir)
+                    add_failure(failures, qa["layout"]["full_two_pages"], "Studio PDF must fill two A4 pages with readable spacing and no large gaps")
                 qa["pdf_metadata"] = (
                     inspection.get("metadata")
                     if isinstance(inspection.get("metadata"), dict)
@@ -1158,10 +1176,10 @@ def main() -> int:
                 add_failure(
                     failures,
                     isinstance(expected_project_title, str)
-                    and normalized_pdf_text.count(expected_project_title) == 1,
+                    and (sum(line.strip() == expected_project_title for line in normalized_pdf_text.splitlines()) == 1 if args.studio_layout else normalized_pdf_text.count(expected_project_title) == 1),
                     "Compiled PDF must show the registered selected-project title exactly once",
                 )
-                heading_positions = [normalized_pdf_text.find(heading) for heading in REQUIRED_SECTIONS]
+                heading_positions = [normalized_pdf_text.find(heading) for heading in required_order]
                 qa["text_order_ok"] = all(
                     left >= 0 and right >= 0 and left < right
                     for left, right in zip(heading_positions, heading_positions[1:])

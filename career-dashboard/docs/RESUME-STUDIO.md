@@ -66,3 +66,38 @@ cover nested LaTeX fields and safe punctuation. Disposable browser checks exerci
 Dashboard and Daily Search navigation, automatic skill/project capture, preview
 updates and a 390-pixel layout. Agent responses in UI tests are explicit fixtures;
 they do not represent a new live company-research result.
+
+## Full two-page fitting — 12 September 2026
+
+New drafts use **Fill two pages** for their first preview. Existing drafts have the
+same button alongside Save & preview. It orders existing skills and professional
+examples against the saved JD, preserves employment chronology and moves the
+selected applied-AI project ahead of experience for relevant AI graduate roles.
+Only recognized template wording is expanded from active registered evidence:
+MSc methods/results retain their limitations, professional baselines retain
+reported/team attribution, and project-only skills remain labelled separately.
+
+The fitter removes the old forced page break and searches readable 10–12pt body
+sizes at normal margins. It keeps bullet paragraphs intact and reserves space
+for role/client headings. It measures ink extent, bottom space and internal gaps
+on actual page images. A successful fit requires exactly two A4 pages, at least
+92% use of each page's content height, at most 16mm unused height above the bottom
+margin and no large internal blank band. These are layout measurements, not ATS
+scores or evidence approval. Normal margins and paragraph/section spacing remain.
+
+Only a successful measured result creates a new saved version and activity event.
+Generated additions bypass user-entry capture because they reuse registered
+facts; they do not add duplicate Profile entries. Saved source edits are preserved;
+the expansion recognizes original compressed template paragraphs rather than
+replacing arbitrary custom prose. Changed/deleted profile evidence blocks automatic
+expansion until reconciliation. Unfillable/custom layouts return an explicit
+message and leave the previous draft unchanged. Save & preview continues to show
+manual edits and flags page-fill problems rather than inventing filler.
+
+Each new preview also stores its source, saved JD and an updated evidence map
+beside the PDF. Claim references follow the visible source; prior eligibility and
+requirement-review results are retained. This does not approve changed wording.
+For the ranked layout, run `scripts/validate_resume.py` with `--studio-layout`
+alongside its usual compile/visual-review options. This checks the exact generated
+10–12pt typography block, permitted section orders and measured page fill while
+retaining all evidence and release gates. Legacy templates use the default mode.

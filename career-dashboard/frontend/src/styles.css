@@ -1364,3 +1364,28 @@ blockquote {
     flex-basis: 100%;
   }
 }
+
+.studio-edit-fields {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.layout-meter {
+  padding: 12px;
+  background: #f6faf5;
+  border: 1px solid #cddbd2;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+.layout-meter p {
+  margin: 8px 0;
+}
+.layout-ranking {
+  padding: 12px;
+  font-size: 12px;
+  background: #fff;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}

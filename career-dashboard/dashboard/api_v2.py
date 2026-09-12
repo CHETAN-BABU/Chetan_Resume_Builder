@@ -196,6 +196,10 @@ def attach(app, workspace):
     def save_studio(job_id: str, data: StudioSave):
         return studio.save(job_id, **data.model_dump())
 
+    @router.post("/studio/{job_id}/fill")
+    def fill_studio(job_id: str, data: StudioPreview):
+        return studio.fill(job_id, data.revision)
+
     @router.post("/studio/{job_id}/preview")
     def preview_studio(job_id: str, data: StudioPreview):
         return studio.preview(job_id, data.revision)

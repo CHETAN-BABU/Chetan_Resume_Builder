@@ -1,5 +1,28 @@
 [
   {
+    "id": 76,
+    "occurred_at": "2026-09-12T14:34:08+00:00",
+    "action": "studio_filled_two_pages",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "revision": 2,
+      "body_font_pt": 10.94,
+      "page_fill": [
+        95.8,
+        96.0
+      ],
+      "section_order": [
+        "Professional Summary",
+        "Core Skills",
+        "Selected Project",
+        "Professional Experience",
+        "Education",
+        "Technical Skills",
+        "Certifications"
+      ]
+    }
+  },
+  {
     "id": 75,
     "occurred_at": "2026-09-12T09:30:08+00:00",
     "action": "studio_opened",

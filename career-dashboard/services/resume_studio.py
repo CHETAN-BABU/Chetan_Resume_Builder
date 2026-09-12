@@ -7,9 +7,12 @@ import shutil
 import subprocess
 import tempfile
 import threading
+import yaml
 from pathlib import Path
+from pypdf import PdfReader
 from career import atomic_write, safe_child, tex_escape
-from validate_resume import extract_zero_argument_macros, inspect_pdf
+from validate_resume import extract_zero_argument_macros, inspect_pdf, evidence_ids_from_source
+from services.resume_layout import ranked_source, set_density, measure_pages
 
 
 def plain(text):
@@ -90,6 +93,8 @@ class ResumeStudio:
             warnings.append('This draft was started with an older evidence revision. Review it against the current profile.')
         if not fields.get('SelectedProjectTitle') or not fields.get('SelectedProjectBulletOne'):
             warnings.append('Your selected project is missing. Add a project before exporting your application resume.')
+        if preview and preview.get('layout') and not preview['layout']['full_two_pages']:
+            warnings.append('The preview has unfilled space or more/fewer than two pages. Use Fill two pages to rank supported content and balance the layout.')
         warnings.append('Draft only: wording, evidence, two-page layout and visual review must pass before release.')
         active_projects = {i['id'] for i in self.s.knowledge() if i['kind'] == 'project' and i['review_state'] == 'registered'}
         return {**result, 'fields': fields, 'preview': preview, 'versions': versions,
@@ -177,6 +182,8 @@ class ResumeStudio:
                 for name in ['One', 'Two', 'Three'][:len(project['bullets'])]:
                     block += '% EVIDENCE: ' + project_id + '\n\\item \\SelectedProjectBullet' + name + '\n'
                 source = source[:start] + block + '\\end{resumeitems}\n' + source[end:]
+            if extract_zero_argument_macros(before).get('SelectedProjectID') != extract_zero_argument_macros(source).get('SelectedProjectID'):
+                source = re.sub(r'% STUDIO_PROJECT_SKILLS\n% EVIDENCE:[^\n]+\n[^\n]+\n', '', source)
             if not source.strip() or len(source) > 150000:
                 raise ValueError('Resume source must contain 1–150,000 characters')
             if source != before:
@@ -189,6 +196,24 @@ class ResumeStudio:
         self.s.export_profile()
         self.w.export_tracking()
         return self.get(job_id)
+
+    def write_review_sources(self, target, source, job_id):
+        """Keep each preview's JD and claim references aligned without claiming a review."""
+        original = self.w.current_folder(job_id)
+        mapping_path = original / 'evidence-map.yml'
+        mapping = yaml.safe_load(mapping_path.read_text()) if mapping_path.exists() else {}
+        snapshot = original / 'job-description.md'
+        if snapshot.exists():
+            shutil.copy2(snapshot, target / 'job-description.md')
+            mapping['job_snapshot_sha256'] = hashlib.sha256(snapshot.read_bytes()).hexdigest()
+        errors = []
+        ids = evidence_ids_from_source(source, self.w.evidence(), errors)
+        mapping.update(job_id=job_id, resume_claim_ids=sorted(ids),
+                       selected_project_id=extract_zero_argument_macros(source).get('SelectedProjectID'),
+                       candidate_revision=self.w.evidence()['candidate_revision'],
+                       studio_review_required=True, source_evidence_errors=errors)
+        atomic_write(target / 'resume.tex', source)
+        atomic_write(target / 'evidence-map.yml', yaml.safe_dump(mapping, sort_keys=False))
 
     def preview(self, job_id, revision):
         with self.lock:
@@ -208,14 +233,86 @@ class ResumeStudio:
                     raise ValueError('Preview timed out. Your source is saved; check it for loops or very large content.') from None
                 if run.returncode or not (build / 'resume.pdf').exists():
                     raise ValueError('Preview could not compile. Your edits are saved.\n' + (run.stderr + run.stdout)[-3500:])
-                report = inspect_pdf(build / 'resume.pdf', build / 'pages')
-                if report['page_count'] > 10:
+                if len(PdfReader(str(build / 'resume.pdf')).pages) > 10:
                     raise ValueError('Preview exceeds ten pages. Reduce the content before compiling again.')
+                report = inspect_pdf(build / 'resume.pdf', build / 'pages')
                 target = folder / ('preview-' + str(revision))
                 target.mkdir(exist_ok=True)
+                self.write_review_sources(target, draft['source'], job_id)
                 shutil.copy2(build / 'resume.pdf', target / 'resume.pdf')
                 for page in (build / 'pages').glob('*.png'):
                     shutil.copy2(page, target / page.name)
-                metadata = {'revision': revision, 'source_sha256': hashlib.sha256(draft['source'].encode()).hexdigest(), 'page_count': report['page_count'], 'created_at': self.s.now(), 'path': str(target.relative_to(self.w.root / 'output')), 'review_required': True}
+                metadata = {'revision': revision, 'source_sha256': hashlib.sha256(draft['source'].encode()).hexdigest(), 'page_count': report['page_count'], 'created_at': self.s.now(), 'path': str(target.relative_to(self.w.root / 'output')), 'review_required': True, 'layout': measure_pages(build / 'resume.pdf', build / 'pages')}
                 atomic_write(folder / 'preview.json', json.dumps(metadata))
+            return self.get(job_id)
+
+
+    def fill(self, job_id, revision):
+        """Commit a ranked full two-page version only after measuring the compiled result."""
+        with self.lock:
+            draft = self.get(job_id)
+            if draft['revision'] != revision:
+                raise ValueError('This resume changed elsewhere. Reload before filling two pages.')
+            if self.s.profile_dirty() or draft['profile_revision'] != self.w.evidence()['candidate_revision']:
+                raise ValueError('Reconcile your Profile edits with the evidence registry before adding ranked content. You can still edit and preview the saved draft.')
+            source, ranking = ranked_source(draft['source'], self.w.get_job(job_id), self.w.evidence(), self.s.knowledge())
+            executable = shutil.which('tectonic')
+            if not executable:
+                raise ValueError('PDF compiler is unavailable. Restart with Start Dashboard.command.')
+            folder = safe_child(self.w.root / 'output', draft['file_root'])
+            # Binary search typography within normal readable resume sizes. Never shrink below 10pt.
+            low, high, point = 10.0, 12.0, 11.5
+            best = None
+            with tempfile.TemporaryDirectory(prefix='studio-fill-') as temp:
+                for attempt in range(8):
+                    build = Path(temp) / str(attempt)
+                    build.mkdir()
+                    candidate = set_density(source, round(point, 2), 5.0)
+                    (build / 'resume.tex').write_text(candidate)
+                    try:
+                        result = subprocess.run([executable, '--untrusted', '--outdir', str(build), 'resume.tex'], cwd=build, capture_output=True, text=True, timeout=90)
+                    except subprocess.TimeoutExpired:
+                        raise ValueError('Page fitting timed out. Your previous draft remains unchanged.') from None
+                    if result.returncode or not (build / 'resume.pdf').exists():
+                        raise ValueError('Could not compile the ranked draft. Your previous version is preserved.\n' + (result.stderr + result.stdout)[-2000:])
+                    if len(PdfReader(str(build / 'resume.pdf')).pages) > 2:
+                        high = point
+                        point = (low + high) / 2
+                        continue
+                    report = inspect_pdf(build / 'resume.pdf', build / 'pages')
+                    layout = measure_pages(build / 'resume.pdf', build / 'pages')
+                    if layout['full_two_pages']:
+                        best = (build, candidate, layout, round(point, 2))
+                        break
+                    if report['page_count'] > 2:
+                        high = point
+                    else:
+                        low = point
+                    point = (low + high) / 2
+                if best is None:
+                    raise ValueError('The available supported content could not fill exactly two pages cleanly at 10–12pt. Your draft is unchanged. Add relevant confirmed detail or reduce unusually long custom text, then try again.')
+                build, candidate, layout, body_pt = best
+                stamp = self.s.now()
+                new_revision = revision + 1 if candidate != draft['source'] else revision
+                with self.w.connect() as db:
+                    db.execute('BEGIN IMMEDIATE')
+                    current = db.execute('SELECT revision FROM studio_drafts WHERE job_id=?', (job_id,)).fetchone()
+                    if current[0] != revision:
+                        raise ValueError('This resume changed elsewhere during fitting. Reload before retrying.')
+                    if new_revision != revision:
+                        # Registry-derived additions are not new user claims: do not feed the profile tracker.
+                        db.execute('UPDATE studio_drafts SET source=?,revision=?,updated_at=? WHERE job_id=?', (candidate, new_revision, stamp, job_id))
+                        db.execute('INSERT INTO studio_versions VALUES(?,?,?,?)', (job_id, new_revision, candidate, stamp))
+                    self.w.record_event(db, 'studio_filled_two_pages', job_id, revision=new_revision, body_font_pt=body_pt, page_fill=[p['fill_percent'] for p in layout['pages']], section_order=ranking['section_order'])
+                target = folder / ('preview-' + str(new_revision))
+                target.mkdir(exist_ok=True)
+                self.write_review_sources(target, candidate, job_id)
+                shutil.copy2(build / 'resume.pdf', target / 'resume.pdf')
+                for page in (build / 'pages').glob('*.png'):
+                    shutil.copy2(page, target / page.name)
+                metadata = {'revision': new_revision, 'source_sha256': hashlib.sha256(candidate.encode()).hexdigest(), 'page_count': 2, 'created_at': stamp, 'path': str(target.relative_to(self.w.root / 'output')), 'review_required': True, 'layout': layout, 'ranking': ranking, 'body_font_pt': body_pt}
+                atomic_write(folder / 'preview.json', json.dumps(metadata, indent=2))
+                atomic_write(target / 'layout-review.json', json.dumps(metadata, indent=2))
+                atomic_write(target / 'resume.tex', candidate)
+            self.w.export_tracking()
             return self.get(job_id)

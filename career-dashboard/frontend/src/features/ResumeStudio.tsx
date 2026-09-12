@@ -14,6 +14,12 @@ type Draft = {
     page_count: number;
     revision: number;
     path: string;
+    layout?: {
+      full_two_pages: boolean;
+      pages: { page: number; fill_percent: number; bottom_blank_mm: number }[];
+    };
+    ranking?: { section_order: string[]; changes: string[] };
+    body_font_pt?: number;
   } | null;
   versions: { revision: number; created_at: string }[];
   captures: { id: string; title: string; kind: string; deleted: boolean }[];
@@ -133,12 +139,15 @@ function Editor({
       setDraft(d);
       setSource(sessionStorage.getItem(key) ?? d.source);
       refresh().catch(() => {});
-      if (!d.preview) {
-        setBusy("Building the first preview…");
-        const p = await api<Draft>(base + "/preview", "POST", {
+      if (!d.preview && !sessionStorage.getItem(key)) {
+        setBusy("Filling two pages with ranked content…");
+        const p = await api<Draft>(base + "/fill", "POST", {
           revision: d.revision,
         });
-        if (alive.current) setDraft(p);
+        if (alive.current) {
+          setDraft(p);
+          setSource(p.source);
+        }
       }
     } catch (e) {
       if (alive.current) setError((e as Error).message);
@@ -195,6 +204,33 @@ function Editor({
       if (alive.current) setBusy("");
     }
   }
+  async function fillPages() {
+    if (!draft || busy) return;
+    setBusy("Filling two pages with ranked content…");
+    setError("");
+    try {
+      let saved = draft;
+      if (dirty) {
+        saved = await api<Draft>(base, "PUT", {
+          revision: draft.revision,
+          source,
+        });
+        if (alive.current) setDraft(saved);
+      }
+      const fitted = await api<Draft>(base + "/fill", "POST", {
+        revision: saved.revision,
+      });
+      if (!alive.current) return;
+      setDraft(fitted);
+      setSource(fitted.source);
+      sessionStorage.removeItem(key);
+      refresh().catch(() => {});
+    } catch (e) {
+      if (alive.current) setError((e as Error).message);
+    } finally {
+      if (alive.current) setBusy("");
+    }
+  }
   useEffect(() => {
     if (!auto || !dirty || busy || error) return;
     const timer = setTimeout(() => save(true), 1400);
@@ -232,6 +268,9 @@ function Editor({
           <button className="primary" disabled={!!busy} onClick={() => save()}>
             <Save size={16} />
             Save & preview
+          </button>
+          <button className="secondary" disabled={!!busy} onClick={fillPages}>
+            Fill two pages
           </button>
           <label className="check-line">
             <input
@@ -315,76 +354,83 @@ function Editor({
             </div>
           </div>
           <div className="studio-editor-body">
-            {mode === "source" ? (
-              <>
-                <p className="small">
-                  Edit every section and the layout. Keep the project fields and
-                  skills sections so the tracker can recognize additions.
-                </p>
-                <textarea
-                  className="source-editor"
-                  aria-label="LaTeX resume source"
-                  spellCheck={false}
-                  value={source}
-                  maxLength={150000}
-                  onChange={(e) => edit(e.target.value)}
-                />
-              </>
-            ) : (
-              <>
-                <p className="small">
-                  The default draft selects an evidenced project for this job
-                  and orders skills by its requirements. Use the advisor below
-                  to refine it. All sections are editable in LaTeX source.
-                </p>
-                <button
-                  className="secondary"
-                  disabled={!!busy}
-                  onClick={() => setAddingProject(true)}
-                >
-                  ＋ Add my own project
-                </button>
-                <Field label="Use an existing project">
-                  <select
-                    value=""
-                    disabled={!!busy || dirty}
-                    onChange={(e) => save(true, { project_id: e.target.value })}
+            <fieldset
+              className="studio-edit-fields"
+              disabled={busy === "Filling two pages with ranked content…"}
+            >
+              {mode === "source" ? (
+                <>
+                  <p className="small">
+                    Edit every section and the layout. Keep the project fields
+                    and skills sections so the tracker can recognize additions.
+                  </p>
+                  <textarea
+                    className="source-editor"
+                    aria-label="LaTeX resume source"
+                    spellCheck={false}
+                    value={source}
+                    maxLength={150000}
+                    onChange={(e) => edit(e.target.value)}
+                  />
+                </>
+              ) : (
+                <>
+                  <p className="small">
+                    The default draft selects an evidenced project for this job
+                    and orders skills by its requirements. Use the advisor below
+                    to refine it. All sections are editable in LaTeX source.
+                  </p>
+                  <button
+                    className="secondary"
+                    disabled={!!busy}
+                    onClick={() => setAddingProject(true)}
                   >
-                    <option value="">Choose a registered project…</option>
-                    {draft.projects.map((p) => (
-                      <option key={p.id} value={p.id}>
-                        {p.title}
-                      </option>
-                    ))}
-                  </select>
-                </Field>
-                {fieldNames.map(
-                  (name) =>
-                    macroSpan(source, name) && (
-                      <Field label={labels[name]} key={name}>
-                        <textarea
-                          rows={
-                            name === "ResumeSummary"
-                              ? 7
-                              : name.includes("Bullet")
-                                ? 4
-                                : 3
-                          }
-                          value={readField(source, name)}
-                          onChange={(e) =>
-                            edit(writeField(source, name, e.target.value))
-                          }
-                        />
-                      </Field>
-                    ),
-                )}
-                <p className="small">
-                  To add your own project, replace the project name, context and
-                  points above. New skills go in Core skills. Agent 2 saves
-                  these additions to Profile automatically.
-                </p>
-              </>
-            )}
+                    ＋ Add my own project
+                  </button>
+                  <Field label="Use an existing project">
+                    <select
+                      value=""
+                      disabled={!!busy || dirty}
+                      onChange={(e) =>
+                        save(true, { project_id: e.target.value })
+                      }
+                    >
+                      <option value="">Choose a registered project…</option>
+                      {draft.projects.map((p) => (
+                        <option key={p.id} value={p.id}>
+                          {p.title}
+                        </option>
+                      ))}
+                    </select>
+                  </Field>
+                  {fieldNames.map(
+                    (name) =>
+                      macroSpan(source, name) && (
+                        <Field label={labels[name]} key={name}>
+                          <textarea
+                            rows={
+                              name === "ResumeSummary"
+                                ? 7
+                                : name.includes("Bullet")
+                                  ? 4
+                                  : 3
+                            }
+                            value={readField(source, name)}
+                            onChange={(e) =>
+                              edit(writeField(source, name, e.target.value))
+                            }
+                          />
+                        </Field>
+                      ),
+                  )}
+                  <p className="small">
+                    To add your own project, replace the project name, context
+                    and points above. New skills go in Core skills. Agent 2
+                    saves these additions to Profile automatically.
+                  </p>
+                </>
+              )}
+            </fieldset>
           </div>
         </section>
         <section className="studio-panel preview-panel">
@@ -404,6 +450,44 @@ function Editor({
                     ? "A4 target: 2 pages"
                     : "Adjust content to reach two pages"}
                 </p>
+                {draft.preview.layout && (
+                  <div className="layout-meter">
+                    <Badge
+                      tone={
+                        current && draft.preview.layout.full_two_pages
+                          ? "green"
+                          : "amber"
+                      }
+                    >
+                      {draft.preview.layout.full_two_pages
+                        ? "Two full pages"
+                        : "Page fill needs attention"}
+                    </Badge>
+                    <p>
+                      {draft.preview.layout.pages
+                        .map((p) => `Page ${p.page}: ${p.fill_percent}% filled`)
+                        .join(" · ")}
+                      {draft.preview.body_font_pt
+                        ? ` · ${draft.preview.body_font_pt}pt body`
+                        : ""}
+                    </p>
+                    <small>
+                      Measured within normal margins. Content and evidence still
+                      need review.
+                    </small>
+                  </div>
+                )}
+                {draft.preview.ranking && (
+                  <details className="layout-ranking">
+                    <summary>Content order and additions</summary>
+                    <p>{draft.preview.ranking.section_order.join(" → ")}</p>
+                    <ul>
+                      {draft.preview.ranking.changes.map((c) => (
+                        <li key={c}>{c}</li>
+                      ))}
+                    </ul>
+                  </details>
+                )}
                 {!current && (
                   <p className="callout warning">
                     Showing the last successful preview. Your newest edits are
