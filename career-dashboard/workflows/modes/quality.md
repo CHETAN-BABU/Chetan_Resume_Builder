@@ -26,7 +26,7 @@ The evidence map must show:
 - one evidence mapping per normalized JD requirement;
 - all resume claim IDs;
 - no held claims;
-- one selected project ID;
+- two selected project IDs;
 - ownership/status wording preserved;
 - current-company problem source, date, confidence, and explicit/inferred label.
 

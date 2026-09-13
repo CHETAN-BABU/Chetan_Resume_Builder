@@ -74,7 +74,7 @@ Use the verified JD first, then dated authoritative employer sources. Record:
 
 Third-party commentary may add context but cannot be the only evidence for what the team is currently solving. Save the result as `output/applications/{job-id}/company-research.md`.
 
-### 4. Select exactly one real project
+### 4. Select exactly two distinct real projects
 
 - Score every resume-ready project in `context/evidence.yml` using the weights in `config/profile.yml`.
 - Select the strongest truthful analogue to the sourced company problem and JD.
@@ -84,7 +84,7 @@ Disclosure update (2026-09-09): include client names and the Irish phone exactly
 - Never create a completed project or metric. If no strong project fits, record the gap and use only the closest honest evidence.
 - Preserve the evidence type and every registry prohibition for all academic and candidate projects; never move project methods into professional experience.
 
-The visible resume must contain exactly one `Selected Project` block.
+The visible resume must contain exactly two registered project blocks.
 
 ### 5. Write the evidence map
 
@@ -124,7 +124,7 @@ Release requires:
 
 - successful compile;
 - exactly two A4 pages;
-- exactly one registered project;
+- exactly two distinct registered projects;
 - no overfull boxes, placeholders, unsafe claims, unconfirmed phone, or unsupported filler;
 - required headings and facts;
 - source/PDF freshness;

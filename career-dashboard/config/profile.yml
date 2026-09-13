@@ -1,5 +1,5 @@
 schema_version: 2
-candidate_revision: 2026-09-09.1
+candidate_revision: 2026-09-13.1
 candidate:
   full_name: Chetan Babu M
   preferred_name: Chetan
@@ -24,8 +24,9 @@ candidate:
   visa_external_resume_policy: omit_unless_form_requires; do not infer work rights
   current_status: MSc Data Science candidate at Munster Technological University
   most_recent_role: Associate Analyst — Data Analyst / BI Developer at Infocepts Technologies
-    (ended Jan 2025)
-  dated_professional_experience: Feb 2023–Jan 2025 (approximately two years)
+    (ended Jul 2025)
+  dated_professional_experience: Feb 2023–Jul 2025; 3+ years overall including internships,
+    user-confirmed 13 September 2026. Additional internship dates pending.
   education_summary: MSc in Data Science, Munster Technological University (Sep 2025–Sep
     2026); B.Tech in Computer Science (AI and ML), SRM Institute of Science and Technology
     (Jun 2019–May 2023), reported CGPA 9.4/10
@@ -172,7 +173,6 @@ claim_policy:
   - RAG 90%+ relevance or any unverified project score
   - Docker, Kubernetes, and GitHub Actions implementation until a repository or artifact
     is reviewed
-  - January 2025 versus July 2025 employment end-date conflict
   - Ireland versus Chennai location and preferred phone conflict
   never_invent:
   - Project performance metrics
@@ -210,7 +210,6 @@ competition_strategy:
   - Roles with no meaningful analytics, reporting, BI, or applied data-science scope
 project_selection:
   registry: context/evidence.yml
-  exactly_one_selected_project: true
   allow_only_resume_ready_projects: true
   current_problem_sources:
   - Verified job-description snapshot
@@ -229,6 +228,7 @@ project_selection:
   - Do not imply the project was built for the target employer.
   - If no project is a strong analogue, disclose the gap and select the closest honest
     evidence.
+  required_selected_projects: 2
 ten_company_request:
   trigger_examples:
   - give me 10 companies
@@ -274,6 +274,7 @@ resume_contract:
     artifact_qa: Binary hard gates; never averaged into a score
   release_command: python3 scripts/validate_resume.py <resume.tex> --compile --output
     <resume.pdf> --render-dir <resume-preview> --qa-json <qa.json>
+  required_selected_projects: 2
 batch_contract:
   maximum_jobs: 10
   isolated_job_folders: true

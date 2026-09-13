@@ -181,26 +181,54 @@
     "id": "EXP-INFOCEPTS-001",
     "kind": "experience",
     "title": "Associate Analyst",
-    "summary": "Infocepts Technologies Pvt. Ltd. · Sep 2023-Jan 2025",
+    "summary": "Infocepts Technologies Pvt. Ltd. · Sep 2023–Jul 2025",
     "data": {
       "id": "EXP-INFOCEPTS-001",
       "status": "confirmed",
       "category": "employment",
       "approved_external_use": "always",
       "source_refs": [
-        "context/sources/career.md > Infocepts Technologies Pvt. Ltd. - Associate Analyst"
+        "context/sources/career.md > Infocepts Technologies Pvt. Ltd. - Associate Analyst",
+        "context/sources/2026-09-13-correction.md"
       ],
       "employer": "Infocepts Technologies Pvt. Ltd.",
       "title": "Associate Analyst",
       "functional_title": "Data Analyst / BI Developer",
-      "dates": "Sep 2023-Jan 2025",
-      "location": "India"
+      "dates": "Sep 2023-Jul 2025",
+      "location": "India",
+      "superseded_dates": "Sep 2023-Jan 2025; July end date confirmed by user on 2026-09-13"
     },
     "source": "context/evidence.yml > EXP-INFOCEPTS-001",
+    "revision": 2,
+    "deleted": 0,
+    "review_state": "registered",
+    "updated_at": "2026-09-13T00:43:41+00:00"
+  },
+  {
+    "id": "EXP-TOTAL-001",
+    "kind": "experience",
+    "title": "Overall professional and internship experience",
+    "summary": "3+ years of combined professional and internship experience",
+    "data": {
+      "id": "EXP-TOTAL-001",
+      "status": "user_reported",
+      "category": "employment",
+      "title": "Overall professional and internship experience",
+      "approved_external_use": "May state 3+ years of combined professional and internship experience. Do not imply 3+ years of post-training BI employment or invent internship dates.",
+      "source_refs": [
+        "context/sources/2026-09-13-correction.md"
+      ],
+      "approved_facts": [
+        "3+ years of combined professional and internship experience, confirmed by Chetan on 13 September 2026."
+      ],
+      "value": "3+ years of combined professional and internship experience",
+      "unresolved": "Additional internship chronology has not been supplied."
+    },
+    "source": "context/sources/2026-09-13-correction.md",
     "revision": 1,
     "deleted": 0,
     "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
+    "updated_at": "2026-09-13T00:43:41+00:00"
   },
   {
     "id": "CONTACT-PHONE-001",
@@ -698,16 +726,16 @@
     "id": "personal:dated_professional_experience",
     "kind": "personal",
     "title": "Dated professional experience",
-    "summary": "Feb 2023–Jan 2025 (approximately two years)",
+    "summary": "Feb 2023–Jul 2025; 3+ years overall including internships, user-confirmed 13 September 2026. Additional internship dates pending.",
     "data": {
       "field": "dated_professional_experience",
-      "value": "Feb 2023–Jan 2025 (approximately two years)"
+      "value": "Feb 2023–Jul 2025; 3+ years overall including internships, user-confirmed 13 September 2026. Additional internship dates pending."
     },
     "source": "config/profile.yml > candidate > dated_professional_experience",
-    "revision": 1,
+    "revision": 2,
     "deleted": 0,
     "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
+    "updated_at": "2026-09-13T00:43:41+00:00"
   },
   {
     "id": "personal:disclosure_instruction",
@@ -921,16 +949,16 @@
     "id": "personal:most_recent_role",
     "kind": "personal",
     "title": "Most recent role",
-    "summary": "Associate Analyst — Data Analyst / BI Developer at Infocepts Technologies (ended Jan 2025)",
+    "summary": "Associate Analyst — Data Analyst / BI Developer at Infocepts Technologies (ended Jul 2025)",
     "data": {
       "field": "most_recent_role",
-      "value": "Associate Analyst — Data Analyst / BI Developer at Infocepts Technologies (ended Jan 2025)"
+      "value": "Associate Analyst — Data Analyst / BI Developer at Infocepts Technologies (ended Jul 2025)"
     },
     "source": "config/profile.yml > candidate > most_recent_role",
-    "revision": 1,
+    "revision": 2,
     "deleted": 0,
     "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
+    "updated_at": "2026-09-13T00:43:41+00:00"
   },
   {
     "id": "personal:phone",
@@ -1256,7 +1284,7 @@
       "id": "PROJ-AZ-EXEC",
       "canonical_name": "Executive Power BI Dashboard",
       "external_name": "Executive Power BI Dashboard - Pharmaceutical Client",
-      "date_context": "Within the Sep 2023-Jan 2025 Associate Analyst period; one-month delivery window",
+      "date_context": "Within the Sep 2023-Jul 2025 Associate Analyst period; one-month delivery window",
       "source_refs": [
         "context/sources/career.md > Executive/CEO dashboard"
       ],
@@ -1313,7 +1341,7 @@
       "id": "PROJ-AZ-RECON",
       "canonical_name": "Finance Access Reconciliation Dashboard",
       "external_name": "Finance Access Reconciliation Dashboard - Pharmaceutical Client",
-      "date_context": "Within the Sep 2023-Jan 2025 Associate Analyst period; exact project dates not supplied",
+      "date_context": "Within the Sep 2023-Jul 2025 Associate Analyst period; exact project dates not supplied",
       "source_refs": [
         "context/sources/career.md > Finance reconciliation dashboard"
       ],
@@ -1379,7 +1407,7 @@
       "id": "PROJ-NIQ-REPORTING",
       "canonical_name": "High-Volume Client Reporting Delivery",
       "external_name": "Client Reporting Delivery - FMCG Client",
-      "date_context": "Within the Sep 2023-Jan 2025 Associate Analyst period; about six months",
+      "date_context": "Within the Sep 2023-Jul 2025 Associate Analyst period; about six months",
       "source_refs": [
         "context/sources/career.md > NielsenIQ - BI Report Developer"
       ],
@@ -1703,7 +1731,7 @@
       "id": "PROJ-AZ-MIGRATION",
       "canonical_name": "Power BI Redshift-to-Snowflake Report Migration",
       "external_name": "Power BI Report Migration - Pharmaceutical Client",
-      "date_context": "Within the Sep 2023-Jan 2025 Associate Analyst period; three-month delivery window",
+      "date_context": "Within the Sep 2023-Jul 2025 Associate Analyst period; three-month delivery window",
       "source_refs": [
         "context/sources/career.md > Redshift-to-Snowflake migration"
       ],
@@ -1893,7 +1921,7 @@
       "id": "PROJ-NIQ-POC",
       "canonical_name": "Reusable Finance Dashboard Proof of Concept",
       "external_name": "Reusable Finance Dashboard POC - FMCG Client",
-      "date_context": "Within the Sep 2023-Jan 2025 Associate Analyst period; exact POC date not supplied",
+      "date_context": "Within the Sep 2023-Jul 2025 Associate Analyst period; exact POC date not supplied",
       "source_refs": [
         "context/sources/career.md > NielsenIQ - BI Report Developer"
       ],

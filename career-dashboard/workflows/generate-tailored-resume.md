@@ -11,7 +11,7 @@ description: "End-to-end single-job workflow: verify, evaluate, research, select
 3. Run `workflows/modes/evaluate.md`, save `output/applications/{job-id}/evaluation.md`, and stop excluded roles.
 4. Run `workflows/modes/deep.md`; save sourced company-problem research.
 5. Run `workflows/modes/resume.md`; write the evidence map before LaTeX.
-6. Select exactly one resume-ready project from `context/evidence.yml`.
+6. Select exactly two distinct resume-ready projects from `context/evidence.yml`.
 7. Compile and validate with `scripts/validate_resume.py`.
 8. Repair evidence-safe content at most three times.
 9. Run `workflows/modes/quality.md`, including both-page visual review.

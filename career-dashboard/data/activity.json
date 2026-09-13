@@ -1,5 +1,339 @@
 [
   {
+    "id": 98,
+    "occurred_at": "2026-09-13T08:09:04+00:00",
+    "action": "draft_prepared",
+    "job_id": "10ba01413aa6075f",
+    "details": {
+      "folder": "output/applications/10ba01413aa6075f-p6u0becs",
+      "project_id": "PROJ-AZ-RECON",
+      "review_required": true
+    }
+  },
+  {
+    "id": 97,
+    "occurred_at": "2026-09-13T08:09:03+00:00",
+    "action": "draft_prepared",
+    "job_id": "5b8921d814b94f76",
+    "details": {
+      "folder": "output/applications/5b8921d814b94f76-c2s4n1cd",
+      "project_id": "PROJ-AZ-RECON",
+      "review_required": true
+    }
+  },
+  {
+    "id": 96,
+    "occurred_at": "2026-09-13T08:07:29+00:00",
+    "action": "email_synced",
+    "job_id": null,
+    "details": {
+      "new_messages": 0
+    }
+  },
+  {
+    "id": 95,
+    "occurred_at": "2026-09-13T08:07:28+00:00",
+    "action": "search_job_added",
+    "job_id": "7bfa6b3fce1853f0",
+    "details": {
+      "date": "2026-09-13"
+    }
+  },
+  {
+    "id": 94,
+    "occurred_at": "2026-09-13T08:07:28+00:00",
+    "action": "job_saved",
+    "job_id": "7bfa6b3fce1853f0",
+    "details": {
+      "company": "Lidl Ireland",
+      "title": "Graduate Programme - Controlling & Analytics",
+      "url": "https://jobs.lidl.ie/jobs/graduate-programme-controlling-analytics-dublin-24-741208"
+    }
+  },
+  {
+    "id": 93,
+    "occurred_at": "2026-09-13T08:07:28+00:00",
+    "action": "search_job_added",
+    "job_id": "30cb363d12392b54",
+    "details": {
+      "date": "2026-09-13"
+    }
+  },
+  {
+    "id": 92,
+    "occurred_at": "2026-09-13T08:07:28+00:00",
+    "action": "job_saved",
+    "job_id": "30cb363d12392b54",
+    "details": {
+      "company": "Morgan McKinley",
+      "title": "Data Analyst - Contract",
+      "url": "https://morganmckinley.com/jobs/cork/data-analyst-contract/1104845"
+    }
+  },
+  {
+    "id": 91,
+    "occurred_at": "2026-09-13T08:07:28+00:00",
+    "action": "search_job_added",
+    "job_id": "10ba01413aa6075f",
+    "details": {
+      "date": "2026-09-13"
+    }
+  },
+  {
+    "id": 90,
+    "occurred_at": "2026-09-13T08:07:28+00:00",
+    "action": "job_saved",
+    "job_id": "10ba01413aa6075f",
+    "details": {
+      "company": "Engineering Support & Services Limited",
+      "title": "Data Analyst",
+      "url": "https://jobsireland.ie/en-US/job-Details?id=2464829"
+    }
+  },
+  {
+    "id": 89,
+    "occurred_at": "2026-09-13T08:07:28+00:00",
+    "action": "search_job_added",
+    "job_id": "5b8921d814b94f76",
+    "details": {
+      "date": "2026-09-13"
+    }
+  },
+  {
+    "id": 88,
+    "occurred_at": "2026-09-13T08:07:28+00:00",
+    "action": "job_saved",
+    "job_id": "5b8921d814b94f76",
+    "details": {
+      "company": "Prime Street",
+      "title": "Junior Reporting Analyst",
+      "url": "https://ie.indeed.com/viewjob?jk=03a4c1873988fa89"
+    }
+  },
+  {
+    "id": 87,
+    "occurred_at": "2026-09-13T08:05:06+00:00",
+    "action": "search_started",
+    "job_id": null,
+    "details": {
+      "date": "2026-09-13"
+    }
+  },
+  {
+    "id": 86,
+    "occurred_at": "2026-09-13T00:54:57+00:00",
+    "action": "resume_scored",
+    "job_id": "5ef89c929c73c5d8",
+    "details": {
+      "revision": 3,
+      "score": 100,
+      "profile_access": false
+    }
+  },
+  {
+    "id": 85,
+    "occurred_at": "2026-09-13T00:54:56+00:00",
+    "action": "studio_filled_two_pages",
+    "job_id": "5ef89c929c73c5d8",
+    "details": {
+      "revision": 3,
+      "body_font_pt": 11.75,
+      "page_fill": [
+        98.8,
+        94.9
+      ],
+      "section_order": [
+        "Professional Summary",
+        "Core Skills",
+        "Professional Experience",
+        "Selected Project",
+        "Education",
+        "Technical Skills",
+        "Certifications"
+      ]
+    }
+  },
+  {
+    "id": 84,
+    "occurred_at": "2026-09-13T00:54:54+00:00",
+    "action": "studio_profile_synced",
+    "job_id": "5ef89c929c73c5d8",
+    "details": {
+      "revision": 2,
+      "profile_revision": "2026-09-13.1",
+      "projects": [
+        "PROJ-AZ-RECON",
+        "PROJ-KPMG-FORAGE"
+      ]
+    }
+  },
+  {
+    "id": 83,
+    "occurred_at": "2026-09-13T00:54:53+00:00",
+    "action": "resume_scored",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "revision": 4,
+      "score": 88,
+      "profile_access": false
+    }
+  },
+  {
+    "id": 82,
+    "occurred_at": "2026-09-13T00:54:53+00:00",
+    "action": "studio_filled_two_pages",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "revision": 4,
+      "body_font_pt": 10.75,
+      "page_fill": [
+        99.3,
+        97.6
+      ],
+      "section_order": [
+        "Professional Summary",
+        "Core Skills",
+        "Selected Project",
+        "Professional Experience",
+        "Education",
+        "Technical Skills",
+        "Certifications"
+      ]
+    }
+  },
+  {
+    "id": 81,
+    "occurred_at": "2026-09-13T00:54:50+00:00",
+    "action": "studio_profile_synced",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "revision": 3,
+      "profile_revision": "2026-09-13.1",
+      "projects": [
+        "PROJ-BLOGBOARD",
+        "PROJ-NIQ-POC"
+      ]
+    }
+  },
+  {
+    "id": 80,
+    "occurred_at": "2026-09-13T00:43:41+00:00",
+    "action": "profile_evidence_reconciled",
+    "job_id": null,
+    "details": {
+      "candidate_revision": "2026-09-13.1",
+      "evidence_ids": [
+        "EXP-INFOCEPTS-001",
+        "EXP-TOTAL-001"
+      ],
+      "source": "context/sources/2026-09-13-correction.md",
+      "remaining": "Additional internship chronology"
+    }
+  },
+  {
+    "id": 79,
+    "occurred_at": "2026-09-13T00:43:41+00:00",
+    "action": "profile_entry_saved",
+    "job_id": null,
+    "details": {
+      "entry_id": "personal:dated_professional_experience",
+      "before": {
+        "id": "personal:dated_professional_experience",
+        "kind": "personal",
+        "title": "Dated professional experience",
+        "summary": "Feb 2023–Jan 2025 (approximately two years)",
+        "data": "{\"field\": \"dated_professional_experience\", \"value\": \"Feb 2023–Jan 2025 (approximately two years)\"}",
+        "source": "config/profile.yml > candidate > dated_professional_experience",
+        "revision": 1,
+        "deleted": 0,
+        "review_state": "registered",
+        "updated_at": "2026-09-10T23:39:00+00:00"
+      },
+      "after": {
+        "kind": "personal",
+        "title": "Dated professional experience",
+        "summary": "Feb 2023–Jul 2025; 3+ years overall including internships, user-confirmed 13 September 2026. Additional internship dates pending.",
+        "data": {
+          "field": "dated_professional_experience"
+        },
+        "revision": 1
+      }
+    }
+  },
+  {
+    "id": 78,
+    "occurred_at": "2026-09-13T00:43:41+00:00",
+    "action": "profile_entry_saved",
+    "job_id": null,
+    "details": {
+      "entry_id": "personal:most_recent_role",
+      "before": {
+        "id": "personal:most_recent_role",
+        "kind": "personal",
+        "title": "Most recent role",
+        "summary": "Associate Analyst — Data Analyst / BI Developer at Infocepts Technologies (ended Jan 2025)",
+        "data": "{\"field\": \"most_recent_role\", \"value\": \"Associate Analyst — Data Analyst / BI Developer at Infocepts Technologies (ended Jan 2025)\"}",
+        "source": "config/profile.yml > candidate > most_recent_role",
+        "revision": 1,
+        "deleted": 0,
+        "review_state": "registered",
+        "updated_at": "2026-09-10T23:39:00+00:00"
+      },
+      "after": {
+        "kind": "personal",
+        "title": "Most recent role",
+        "summary": "Associate Analyst — Data Analyst / BI Developer at Infocepts Technologies (ended Jul 2025)",
+        "data": {
+          "field": "most_recent_role"
+        },
+        "revision": 1
+      }
+    }
+  },
+  {
+    "id": 77,
+    "occurred_at": "2026-09-13T00:43:41+00:00",
+    "action": "profile_entry_saved",
+    "job_id": null,
+    "details": {
+      "entry_id": "EXP-INFOCEPTS-001",
+      "before": {
+        "id": "EXP-INFOCEPTS-001",
+        "kind": "experience",
+        "title": "Associate Analyst",
+        "summary": "Infocepts Technologies Pvt. Ltd. · Sep 2023-Jan 2025",
+        "data": "{\"id\": \"EXP-INFOCEPTS-001\", \"status\": \"confirmed\", \"category\": \"employment\", \"approved_external_use\": \"always\", \"source_refs\": [\"context/sources/career.md > Infocepts Technologies Pvt. Ltd. - Associate Analyst\"], \"employer\": \"Infocepts Technologies Pvt. Ltd.\", \"title\": \"Associate Analyst\", \"functional_title\": \"Data Analyst / BI Developer\", \"dates\": \"Sep 2023-Jan 2025\", \"location\": \"India\"}",
+        "source": "context/evidence.yml > EXP-INFOCEPTS-001",
+        "revision": 1,
+        "deleted": 0,
+        "review_state": "registered",
+        "updated_at": "2026-09-10T23:39:00+00:00"
+      },
+      "after": {
+        "kind": "experience",
+        "title": "Associate Analyst",
+        "summary": "Infocepts Technologies Pvt. Ltd. · Sep 2023–Jul 2025",
+        "data": {
+          "id": "EXP-INFOCEPTS-001",
+          "status": "confirmed",
+          "category": "employment",
+          "approved_external_use": "always",
+          "source_refs": [
+            "context/sources/career.md > Infocepts Technologies Pvt. Ltd. - Associate Analyst",
+            "context/sources/2026-09-13-correction.md"
+          ],
+          "employer": "Infocepts Technologies Pvt. Ltd.",
+          "title": "Associate Analyst",
+          "functional_title": "Data Analyst / BI Developer",
+          "dates": "Sep 2023-Jul 2025",
+          "location": "India",
+          "superseded_dates": "Sep 2023-Jan 2025; July end date confirmed by user on 2026-09-13"
+        },
+        "revision": 1
+      }
+    }
+  },
+  {
     "id": 76,
     "occurred_at": "2026-09-12T14:34:08+00:00",
     "action": "studio_filled_two_pages",

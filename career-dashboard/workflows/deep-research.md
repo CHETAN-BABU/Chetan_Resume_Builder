@@ -26,7 +26,7 @@ Use `workflows/modes/deep.md`:
 For current claims, record source URLs and dates, explicit/inferred status, confidence, and linked requirement ID. Prefer the verified JD and authoritative employer sources.
 
 Rank every resume-ready project in `context/evidence.yml`, including the 12
-August additions, and select exactly one real project. Research may rank
+August additions, and select exactly two distinct real projects. Research may rank
 evidence but cannot create candidate experience or imply work for the target
 employer.
 

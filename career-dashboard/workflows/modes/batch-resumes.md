@@ -54,7 +54,7 @@ The batch runner also owns `worker.log` as an operational audit file. It is requ
 
 Each job follows:
 
-`snapshot -> eligibility -> evaluation -> research -> evidence map -> one project -> write -> compile -> QA -> visual review`
+`snapshot -> eligibility -> evaluation -> research -> evidence map -> two projects -> write -> compile -> QA -> visual review`
 
 A worker is complete only when all nine required artifact paths exist and `qa.json` reports every hard gate as passed. An exit code alone is not completion.
 
@@ -86,7 +86,7 @@ After all workers finish:
 
 1. Compare name, email, LinkedIn, employer titles/dates, education status/dates, metrics, and ownership wording across every resume.
 2. Confirm ten unique output paths and matching JD hashes.
-3. Confirm every passed resume has exactly one selected project and two pages.
+3. Confirm every passed resume has exactly two selected projects and two pages.
 4. Flag near-identical summaries or bullet ordering; tailoring should reflect real differences in requirements.
 5. Report passed, rejected, failed, and retryable counts.
 

@@ -1,3 +1,5 @@
+Current system: [Agent architecture and end-to-end workflow](docs/AGENT-ARCHITECTURE.md).
+
 # Chetan's Career Workspace
 
 Your Ireland job-search and resume workspace, rebuilt around your BI experience and academic data science evidence. Start with the local dashboard, or use the same files through the agent workflows and command line.

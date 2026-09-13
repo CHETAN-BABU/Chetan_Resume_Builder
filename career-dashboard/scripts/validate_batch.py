@@ -44,7 +44,7 @@ VISIBLE_INVARIANTS = (
     "chetanbabu07@gmail.com",
     "linkedin.com/in/chetan-babu",
     "Infocepts Technologies Pvt. Ltd.",
-    "Sep 2023 - Jan 2025",
+    "Sep 2023 - Jul 2025",
     "Feb 2023 - Aug 2023",
     "Munster Technological University",
     "Sep 2025 - Sep 2026",
@@ -350,7 +350,7 @@ def audit_passed_artifact(
         and qa.get("status") == "PASS"
         and qa.get("release_ready") is True
         and qa.get("page_count") == 2
-        and qa.get("project_count") == 1
+        and qa.get("project_count") == 2
         and qa.get("compile_ok") is True
         and qa.get("published_pdf") is True
         and qa.get("pdf_text_extractable") is True

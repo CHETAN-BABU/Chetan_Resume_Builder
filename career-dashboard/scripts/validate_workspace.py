@@ -163,7 +163,7 @@ def validate_profile() -> None:
         "never_position_as",
         "claim_policy",
         "project_selection",
-        "exactly_one_selected_project",
+        "required_selected_projects: 2",
         "resume_contract",
         "required_pages: 2",
         "batch_contract",
@@ -184,7 +184,7 @@ def validate_profile() -> None:
     resume_agent = read(".github/agents/resume-builder.agent.md")
     for value in (
         "context/evidence.yml",
-        "exactly one",
+        "exactly two",
         "exactly two",
         "supported requirement coverage",
         "scripts/validate_resume.py",
@@ -414,6 +414,8 @@ def validate_resume() -> None:
         fail("Resume must contain exactly one Selected Project section")
     if len(re.findall(r"\\newcommand\{\\SelectedProjectID\}\{[^{}]+\}", resume)) != 1:
         fail("Resume must declare exactly one SelectedProjectID")
+    if len(re.findall(r"\\newcommand\{\\SecondProjectID\}\{[^{}]+\}", resume)) != 1:
+        fail("Resume must declare a second project")
     if resume.count(r"\newpage") != 1:
         fail("Resume must contain exactly one explicit page break")
     if r"\documentclass[a4paper,10pt]{article}" not in resume:

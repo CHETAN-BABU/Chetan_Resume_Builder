@@ -253,7 +253,7 @@ def evidence_ids_from_source(
     claim_pattern = re.compile(
         r"""(?x)
         ^(?:
-          \\newcommand\{\\(?:ResumeSummary|CoreSkills|SelectedProject(?:ID|Title|Context|BulletOne|BulletTwo|BulletThree))\}
+          \\newcommand\{\\(?:ResumeSummary|CoreSkills|(?:SelectedProject|SecondProject)(?:ID|Title|Context|BulletOne|BulletTwo|BulletThree))\}
           |\\roleheading\b
           |\\clientheading\b
           |\\item\b
@@ -494,6 +494,10 @@ def validate_evidence_map(
     claim_ids = mapping.get("resume_claim_ids")
     held = mapping.get("held_claims_used")
     mapped_project = mapping.get("selected_project_id")
+    source_macros = extract_zero_argument_macros(source_path.read_text())
+    selected_ids = [source_macros.get(k) for k in ('SelectedProjectID', 'SecondProjectID')]
+    add_failure(failures, mapping.get('selected_project_ids') == selected_ids,
+                'Evidence map selected_project_ids must match both resume slots in order')
     requirements = mapping.get("requirements")
     company_problem = mapping.get("company_problem")
     coverage = mapping.get("supported_requirement_coverage")
@@ -674,7 +678,12 @@ def validate_selected_project(
     evidence: dict[str, Any],
     selected_project_id: str,
     failures: list[str],
+    second: bool = False,
 ) -> dict[str, Any]:
+    if second:
+        # Validate each slot against the identical registry and rendering rules.
+        source = source.replace('SelectedProject', 'IgnoredFirstProject').replace('SELECTED_PROJECT', 'IGNORED_FIRST_PROJECT')
+        source = source.replace('SecondProject', 'SelectedProject').replace('SECOND_PROJECT', 'SELECTED_PROJECT')
     projects = {
         item.get("id"): item
         for item in evidence.get("projects", [])
@@ -943,7 +952,7 @@ def main() -> int:
     ready_project_ids = {
         item.get("id")
         for item in evidence.get("projects", [])
-        if isinstance(item, dict) and item.get("id")
+        if isinstance(item, dict) and item.get("id") and item.get("resume_content") and item.get("status") not in {"hold", "missing"}
     }
     add_failure(
         failures,
@@ -962,6 +971,17 @@ def main() -> int:
         failures,
     )
     qa["selected_project"] = project_validation
+    second_matches = re.findall(r"\\newcommand\{\\SecondProjectID\}\{([^{}]+)\}", clean)
+    second_id = second_matches[0] if len(second_matches) == 1 else ''
+    qa['selected_project_ids'] = [selected_project_id, second_id]
+    qa['project_count'] = len(project_matches) + len(second_matches)
+    add_failure(failures, len(second_matches) == 1 and second_id in ready_project_ids and second_id != selected_project_id,
+                'Resume must contain exactly two distinct registered selected projects')
+    second_failures = []
+    qa['second_project'] = validate_selected_project(source, evidence, second_id, second_failures, second=True)
+    failures.extend('Second project: ' + message for message in second_failures)
+    if second_id:
+        add_failure(failures, second_id in evidence_ids_from_source(source, evidence, []), 'Second project evidence is missing')
 
     section_positions = []
     for section in required_order:
@@ -981,7 +1001,7 @@ def main() -> int:
         "Chetan Babu M",
         "chetanbabu07@gmail.com",
         "linkedin.com/in/chetan-babu",
-        "Sep 2023 -- Jan 2025",
+        "Sep 2023 -- Jul 2025",
         "Feb 2023 -- Aug 2023",
         "Jun 2019 -- May 2023",
         "SRM Institute of Science and Technology",
@@ -1156,7 +1176,7 @@ def main() -> int:
                 )
                 visible_invariants = (
                     "Infocepts Technologies Pvt. Ltd.",
-                    "Sep 2023 - Jan 2025",
+                    "Sep 2023 - Jul 2025",
                     "Feb 2023 - Aug 2023",
                     "Munster Technological University",
                     "Sep 2025 - Sep 2026",
@@ -1179,6 +1199,9 @@ def main() -> int:
                     and (sum(line.strip() == expected_project_title for line in normalized_pdf_text.splitlines()) == 1 if args.studio_layout else normalized_pdf_text.count(expected_project_title) == 1),
                     "Compiled PDF must show the registered selected-project title exactly once",
                 )
+                second_title = qa.get('second_project', {}).get('title')
+                add_failure(failures, isinstance(second_title, str) and normalized_pdf_text.count(second_title) == 1,
+                            'Compiled PDF must show the registered second-project title exactly once')
                 heading_positions = [normalized_pdf_text.find(heading) for heading in required_order]
                 qa["text_order_ok"] = all(
                     left >= 0 and right >= 0 and left < right

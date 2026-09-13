@@ -4,6 +4,10 @@ Generated from data/career.db. Do not edit this projection directly.
 
 | Company | Role | Location | Status | Posting |
 |---|---|---|---|---|
+| Engineering Support & Services Limited | Data Analyst | Raheen Business Park, Limerick, Ireland; office based; 40 hours weekly | prepared | https://jobsireland.ie/en-US/job-Details?id=2464829 |
+| Morgan McKinley | Data Analyst - Contract | Cork, Ireland; hybrid, 2-3 onsite days weekly; 12-month contract | saved | https://morganmckinley.com/jobs/cork/data-analyst-contract/1104845 |
+| Prime Street | Junior Reporting Analyst | Dublin 8, Ireland; in person; Monday-Friday | prepared | https://ie.indeed.com/viewjob?jk=03a4c1873988fa89 |
+| Lidl Ireland | Graduate Programme - Controlling & Analytics | Tallaght, Dublin 24, Ireland; travel/relocation required | saved | https://jobs.lidl.ie/jobs/graduate-programme-controlling-analytics-dublin-24-741208 |
 | Accenture | AI & Data Graduate Programme FY28 | Dublin, Ireland; client/office attendance 1-5 days weekly | prepared | https://accenture.pinpointhq.com/postings/5d2e98e6-2568-4833-bb13-8a067bf55d18 |
 | KPMG | Tax Technology Graduate Programme 2027 | Dublin, Ireland; hybrid | prepared | https://kpmgireland.avature.net/careers/FolderDetail/Tax-Technology-Graduate-Programme-2027/2826 |
 | Arup | Data Scientist Work Placement | Dublin, Ireland | applied | https://jobs.arup.com/jobs/data-scientist-work-placement-34369 |

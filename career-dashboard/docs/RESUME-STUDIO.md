@@ -1,3 +1,5 @@
+Superseded details: the 13 September upgrade uses two projects, opt-in cached AI, durable instruction chat and independent scoring. See [AGENT-ARCHITECTURE.md](AGENT-ARCHITECTURE.md) for the current workflow.
+
 # Resume Studio
 
 Implemented 12 September 2026.

@@ -8,7 +8,7 @@ Professional identity: Data Analyst / BI Analyst / BI Developer. Academic identi
 
 The user explicitly authorised inclusion of all supplied information on 9 September 2026. Include client names and the Irish phone exactly as supplied. Do not reintroduce the earlier anonymity or phone-omission defaults. Both supplied phone numbers and conflicting location information remain visible in the internal profile; the resume uses Ireland and the supplied Irish number until corrected.
 
-This disclosure preference does not establish an MSc award, a different employment end date, unverified metrics, solo ownership or work rights. Keep January 2025 as the employment end date and the MSc in progress until the conflicts are resolved. Stamp 1G was confirmed on 5 September 2026; earlier expiry and future sponsorship remain unconfirmed. Do not infer current immigration law or eligibility from these notes.
+This disclosure preference does not establish an MSc award, a different employment end date, unverified metrics, solo ownership or work rights. July 2025 is the user-confirmed employment end date (13 September 2026). Use 3+ years of combined professional and internship experience; additional internship dates are unspecified. Keep the MSc in progress until its award is confirmed. Stamp 1G was confirmed on 5 September 2026; earlier expiry and future sponsorship remain unconfirmed. Do not infer current immigration law or eligibility from these notes.
 
 ## Evidence and scope
 
@@ -27,7 +27,7 @@ This disclosure preference does not establish an MSc award, a different employme
 
 ## Resume and review contract
 
-Every tailored resume uses one saved JD, exactly one registered resume-ready selected project and exactly two A4 pages. Keep 10pt minimum body text, a single column and the required sections from `config/profile.yml`. Each content construct needs registry evidence IDs; company research never creates candidate experience.
+Every tailored resume uses one saved JD, exactly two distinct registered resume-ready selected projects and exactly two A4 pages. Keep 10pt minimum body text, a single column and the required sections from `config/profile.yml`. Each content construct needs registry evidence IDs; company research never creates candidate experience.
 
 Each reviewed application folder contains:
 

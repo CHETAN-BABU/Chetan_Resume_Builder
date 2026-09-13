@@ -16,8 +16,8 @@
     "gmail": {
       "connected": true,
       "email": "chetanbabu07@gmail.com",
-      "last_synced_at": "2026-09-12T08:13:08+00:00",
-      "coverage": "12 September: application email worker failed immediately. Read-only Gmail fallback searched after:2026/09/11 -in:spam -in:trash (application OR interview OR recruitment OR assessment OR \"thank you for applying\"). Four results, no next page. Read three job-related bodies: two Indeed invitations to apply and a Jobgether newsletter, not status evidence. Excluded unrelated administrative result without using it as candidate evidence. No new application, interview or offer confirmed. Previous 35-message review retained; 34 older unmatched/ambiguous records remain pending. Query-based incremental coverage, not full mailbox audit. No attachments or mail changes.",
+      "last_synced_at": "2026-09-13T08:07:29+00:00",
+      "coverage": "13 September incremental read-only Gmail review: query after:2026/09/12 -in:spam -in:trash (application OR interview OR recruitment OR assessment OR \"thank you for applying\"). Four results, no next page: two new Indeed invitations (Lidl and Snap-on), an AI newsletter and the previously reviewed Accenture invitation. Read both new job invitation bodies. No new submission/interview/offer or rejection confirmed. Existing pending messages preserved. Application email worker 525ee1c441ba402e93dd077fe99f377f failed; connected Gmail fallback succeeded. No mail mutations.",
       "mode": "Connected Gmail via Codex"
     }
   },
@@ -25,8 +25,8 @@
     "connection": {
       "connected": true,
       "email": "chetanbabu07@gmail.com",
-      "last_synced_at": "2026-09-12T08:13:08+00:00",
-      "coverage": "12 September: application email worker failed immediately. Read-only Gmail fallback searched after:2026/09/11 -in:spam -in:trash (application OR interview OR recruitment OR assessment OR \"thank you for applying\"). Four results, no next page. Read three job-related bodies: two Indeed invitations to apply and a Jobgether newsletter, not status evidence. Excluded unrelated administrative result without using it as candidate evidence. No new application, interview or offer confirmed. Previous 35-message review retained; 34 older unmatched/ambiguous records remain pending. Query-based incremental coverage, not full mailbox audit. No attachments or mail changes.",
+      "last_synced_at": "2026-09-13T08:07:29+00:00",
+      "coverage": "13 September incremental read-only Gmail review: query after:2026/09/12 -in:spam -in:trash (application OR interview OR recruitment OR assessment OR \"thank you for applying\"). Four results, no next page: two new Indeed invitations (Lidl and Snap-on), an AI newsletter and the previously reviewed Accenture invitation. Read both new job invitation bodies. No new submission/interview/offer or rejection confirmed. Existing pending messages preserved. Application email worker 525ee1c441ba402e93dd077fe99f377f failed; connected Gmail fallback succeeded. No mail mutations.",
       "mode": "Connected Gmail via Codex"
     },
     "messages": [
@@ -593,6 +593,18 @@
     ]
   },
   "runs": [
+    {
+      "id": "525ee1c441ba402e93dd077fe99f377f",
+      "kind": "email",
+      "job_id": null,
+      "state": "failed",
+      "result": {
+        "stage": "Starting"
+      },
+      "error": "Agent could not finish. Check Codex sign-in, connected Gmail permissions, or usage and retry. No status was inferred from this failure.",
+      "created_at": "2026-09-13T08:01:56+00:00",
+      "updated_at": "2026-09-13T08:01:56+00:00"
+    },
     {
       "id": "c9013f7b643440ba9496481db818b794",
       "kind": "resume_advisor",

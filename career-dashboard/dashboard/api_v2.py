@@ -13,11 +13,23 @@ class StudioSave(BaseModel):
     source: Optional[str] = Field(default=None, max_length=150000)
     fields: Optional[dict[str, str]] = None
     project_id: Optional[str] = None
+    second_project_id: Optional[str] = None
     restore_revision: Optional[int] = None
 
 
 class StudioPreview(BaseModel):
     revision: int = Field(ge=1)
+
+
+class InstructionInput(BaseModel):
+    message: str = Field(min_length=1, max_length=10000)
+    job_id: Optional[str] = None
+    revision: Optional[int] = None
+    request_id: str = Field(min_length=1, max_length=100)
+
+
+class AIPolicyInput(BaseModel):
+    daily_call_limit: int = Field(ge=0, le=50)
 
 
 class GoalInput(BaseModel):
@@ -63,6 +75,10 @@ def attach(app, workspace):
     runner = AgentRunner(service)
     from services.resume_studio import ResumeStudio
     studio = ResumeStudio(service)
+    runner.studio = studio
+    from services.instruction_tracker import InstructionTracker
+    tracker = InstructionTracker(service, studio)
+    app.state.tracker = tracker
     app.state.studio = studio
     app.state.career = service
     app.state.agents = runner
@@ -181,12 +197,8 @@ def attach(app, workspace):
 
     @router.post("/studio/{job_id}/open")
     def open_studio(job_id: str):
-        with studio.lock:
-            result = studio.open(job_id)
-            # Serialize auto-start decisions, including very fast completed runs.
-            if not any(r["kind"] == "resume_advisor" and r["job_id"] == job_id for r in service.runs()):
-                runner.enqueue("resume_advisor", job_id)
-            return result
+        # Opening a document never spends AI credits.
+        return studio.open(job_id)
 
     @router.get("/studio/{job_id}")
     def get_studio(job_id: str):
@@ -196,6 +208,10 @@ def attach(app, workspace):
     def save_studio(job_id: str, data: StudioSave):
         return studio.save(job_id, **data.model_dump())
 
+    @router.post('/studio/{job_id}/sync-profile')
+    def sync_profile_studio(job_id: str, data: StudioPreview):
+        return studio.sync_profile(job_id, data.revision)
+
     @router.post("/studio/{job_id}/fill")
     def fill_studio(job_id: str, data: StudioPreview):
         return studio.fill(job_id, data.revision)
@@ -203,6 +219,26 @@ def attach(app, workspace):
     @router.post("/studio/{job_id}/preview")
     def preview_studio(job_id: str, data: StudioPreview):
         return studio.preview(job_id, data.revision)
+
+    @router.get('/agent-control')
+    def agent_control():
+        return {'budget': runner.cache.stats(), 'runs': service.runs(), 'agents': AGENTS}
+
+    @router.put('/agent-control/budget')
+    def ai_budget(data: AIPolicyInput):
+        return runner.cache.configure(data.daily_call_limit)
+
+    @router.get('/instructions')
+    def instructions(job_id: Optional[str] = None):
+        return tracker.history(job_id)
+
+    @router.post('/instructions')
+    def instruction(data: InstructionInput):
+        return tracker.send(**data.model_dump())
+
+    @router.post('/studio/{job_id}/score')
+    def score_studio(job_id: str):
+        return studio.score(job_id)
 
     app.include_router(router)
 

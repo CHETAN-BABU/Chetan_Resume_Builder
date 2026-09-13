@@ -59,9 +59,11 @@ class ResumeQualityTests(unittest.TestCase):
         )
         claim_list = "\n".join(f'  - "{evidence_id}"' for evidence_id in source_ids)
 
+        from validate_resume import extract_zero_argument_macros
+        second_id = extract_zero_argument_macros(source_text).get('SecondProjectID')
         evidence_map = directory / "evidence-map.yml"
         evidence_map.write_text(
-            'candidate_revision: "2026-09-09.1"\n'
+            'candidate_revision: "2026-09-13.1"\n'
             'job_id: "001-data-analyst-test"\n'
             "role_eligible: true\n"
             f'job_snapshot_sha256: "{job_hash}"\n'
@@ -86,6 +88,7 @@ class ResumeQualityTests(unittest.TestCase):
             '  published_or_accessed: "2026-07-27"\n'
             '  evidence_class: "explicit"\n'
             '  confidence: "high"\n'
+            f'selected_project_ids: ["{selected_project_id}", "{second_id}"]\n'
             f'selected_project_id: "{selected_project_id}"\n'
             'selected_project_reason: "The reconciliation dashboard directly '
             'demonstrates multi-source reporting and traceability."\n'
@@ -112,78 +115,10 @@ class ResumeQualityTests(unittest.TestCase):
         return json.loads(result.stdout)
 
     def source_with_project(self, project: dict[str, object]) -> str:
-        def latex(value: object) -> str:
-            return (
-                str(value)
-                .replace("%", r"\%")
-                .replace("&", r"\&")
-                .replace("|", r"\textbar{}")
-            )
-
-        project_id = str(project["id"])
-        content = project["resume_content"]
-        self.assertIsInstance(content, dict)
-        title = latex(content["title"])
-        context = latex(content["context"])
-        bullets = content["bullets"]
-        self.assertIsInstance(bullets, list)
-        names = ("One", "Two", "Three")
-
-        definition_lines = [
-            "% Exactly one registered project may be rendered.",
-            f"% EVIDENCE: {project_id}",
-            rf"\newcommand{{\SelectedProjectID}}{{{project_id}}}",
-            f"% EVIDENCE: {project_id}",
-            rf"\newcommand{{\SelectedProjectTitle}}{{{title}}}",
-            f"% EVIDENCE: {project_id}",
-            rf"\newcommand{{\SelectedProjectContext}}{{{context}}}",
-        ]
-        for index, bullet in enumerate(bullets):
-            definition_lines.extend(
-                [
-                    f"% EVIDENCE: {project_id}",
-                    rf"\newcommand{{\SelectedProjectBullet{names[index]}}}{{{latex(bullet)}}}",
-                ]
-            )
-
-        selected_lines = [
-            "% SELECTED_PROJECT_BLOCK_START",
-            r"\textbf{\SelectedProjectTitle}\\",
-            r"\textit{\SelectedProjectContext}",
-            r"\begin{resumeitems}",
-        ]
-        for index, _ in enumerate(bullets):
-            selected_lines.extend(
-                [
-                    f"  % EVIDENCE: {project_id}",
-                    rf"  \item \SelectedProjectBullet{names[index]}",
-                ]
-            )
-        selected_lines.extend(
-            [
-                r"\end{resumeitems}",
-                "% SELECTED_PROJECT_BLOCK_END",
-            ]
-        )
-
-        source = BASE.read_text(encoding="utf-8")
-        definitions_start = source.index("% Exactly one registered project may be rendered.")
-        definitions_end = source.index(r"\begin{document}")
-        source = (
-            source[:definitions_start]
-            + "\n".join(definition_lines)
-            + "\n\n"
-            + source[definitions_end:]
-        )
-        block_start = source.index("% SELECTED_PROJECT_BLOCK_START")
-        block_end = source.index("% SELECTED_PROJECT_BLOCK_END") + len(
-            "% SELECTED_PROJECT_BLOCK_END"
-        )
-        return (
-            source[:block_start]
-            + "\n".join(selected_lines)
-            + source[block_end:]
-        )
+        from services.resume_projects import install_project
+        source = install_project(BASE.read_text(), project)
+        second = next(p for p in self.registered_projects() if p['id'] != project['id'] and p['id'] == 'PROJ-AZ-RECON') if project['id'] != 'PROJ-AZ-RECON' else next(p for p in self.registered_projects() if p['id'] == 'PROJ-POWERBI-PORTFOLIO')
+        return install_project(source, second, second=True)
 
     def test_base_resume_passes_static_contract(self) -> None:
         result = self.run_validator(BASE)
@@ -418,7 +353,7 @@ class ResumeQualityTests(unittest.TestCase):
             self.assertEqual(qa["status"], "PASS")
             self.assertTrue(qa["release_ready"])
             self.assertEqual(qa["page_count"], 2)
-            self.assertEqual(qa["project_count"], 1)
+            self.assertEqual(qa["project_count"], 2)
             self.assertTrue(qa["pdf_text_extractable"])
             self.assertEqual(qa["overflow_count"], 0)
             self.assertTrue(output.is_file())

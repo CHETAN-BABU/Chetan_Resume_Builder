@@ -15,7 +15,8 @@ from dashboard.app import create_app
 
 
 @pytest.fixture
-def service(workspace):
+def service(workspace, monkeypatch):
+    monkeypatch.setattr(CareerServices, "today", staticmethod(lambda: "2026-09-12"))
     shutil.copytree(ROOT / "workflows", workspace.root / "workflows")
     return CareerServices(workspace)
 

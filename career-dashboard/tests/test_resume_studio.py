@@ -131,7 +131,7 @@ def test_studio_api_keeps_origin_guard_and_rejects_stale_save(service):
         url = '/api/v2/studio/' + j['id']
         assert client.post(url + '/open').status_code == 200
         assert client.post(url + '/open').status_code == 200
-        assert len([r for r in service.runs() if r['kind'] == 'resume_advisor']) == 1
+        assert len([r for r in service.runs() if r['kind'] == 'resume_advisor']) == 0
         assert client.put(url, json={'revision': 1, 'fields': {'CoreSkills': 'SQL; API test skill'}}, headers={'Origin': 'https://foreign.test'}).status_code == 403
         assert client.put(url, json={'revision': 1, 'fields': {'CoreSkills': 'SQL; API test skill'}}).status_code == 200
         assert client.put(url, json={'revision': 1, 'source': 'Stale'}).status_code == 400

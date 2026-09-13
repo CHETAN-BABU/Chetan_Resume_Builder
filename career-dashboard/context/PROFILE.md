@@ -43,3 +43,6 @@ He is currently pursuing an MSc in Data Science at Munster Technological Univers
 Do not use the reported USD 5 million contract causality, sole-project ownership, “led the migration,” “100+ reports in one month,” final MSc grade/submission date, RAG evaluation score, professional/production AI claims, or unrestricted visa claims. Capstone results may be used only with the registry's limited-discrimination caveat.
 
 Disclosure update (2026-09-09): include client names and the Irish phone exactly as supplied, as Chetan requested. Conflicting dates and unverified outcomes remain unresolved.
+
+
+13 September 2026 correction: July 2025 employment end confirmed; 3+ years combined professional and internship experience is user-reported and registered as EXP-TOTAL-001. Additional internship chronology remains unspecified. Exactly two ranked projects per two-page resume now supersedes earlier one-project instructions.

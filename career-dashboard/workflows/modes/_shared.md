@@ -42,7 +42,7 @@ Only score jobs that pass the role gate.
 | Dimension | Weight | Question |
 |-----------|--------|----------|
 | **Skill and responsibility match** | 40% | Do the actual duties match Chetan's supported professional or academic evidence? |
-| **Seniority/evidence fit** | 25% | Does the role accept approximately two years of dated experience or graduate-level evidence? |
+| **Seniority/evidence fit** | 25% | Does the role accept 3+ years combined professional/internship experience, with the additional internship chronology still unspecified or graduate-level evidence? |
 | **Location and work requirements** | 15% | Is it Ireland-based and compatible with the current, verified status? |
 | **Posting quality and liveness** | 10% | Is there a specific, current job page with an application route? |
 | **Competition** | 10% | Is the role reasonably targeted rather than a broad, highly saturated mismatch? |
@@ -100,7 +100,7 @@ Generic career portals require a manual search for the exact role and must be ma
 - Prefer readable sections and conventional headings over keyword stuffing.
 - Use a saved JD snapshot and map required/preferred requirements separately.
 - Research a target-company problem only from the verified JD or dated authoritative company sources; record source, date, confidence, and whether the conclusion is explicit or inferred.
-- Select exactly one resume-ready project from `context/evidence.yml`. Research can rank projects but cannot create experience.
+- Select exactly two distinct resume-ready projects from `context/evidence.yml`. Research can rank projects but cannot create experience.
 Disclosure update (2026-09-09): include client names and the Irish phone exactly as supplied, as Chetan requested. Conflicting dates and unverified outcomes remain unresolved.
 - Compile and hard-fail unless the PDF is exactly two A4 pages.
 - Run `python3 scripts/validate_resume.py <resume.tex> --compile --output <resume.pdf> --render-dir <resume-preview> --qa-json <qa.json>` before release.
@@ -115,7 +115,7 @@ Never blend these into one flattering number:
 
 1. **Job fit** — whether the opportunity is worth pursuing.
 2. **Supported requirement coverage** — how much of the JD is backed by evidence IDs; required items matter more than preferred items.
-3. **Artifact QA** — binary release gates for provenance, one project, successful compilation, exactly two pages, ATS-readable structure, and no unresolved/unsafe content.
+3. **Artifact QA** — binary release gates for provenance, two projects, successful compilation, exactly two pages, ATS-readable structure, and no unresolved/unsafe content.
 
 A failed artifact gate is a failed resume regardless of job-fit or coverage score.
 

@@ -52,7 +52,7 @@ Prefer the verified JD and first-party employer sources. A third-party article m
 
 - Rank every resume-ready project from `context/evidence.yml`, including the
   audited 12 August MSc, RAG, Power BI, and agent-workflow additions
-- Select exactly one project for the resume using the configured weights
+- Select exactly two projects for the resume using the configured weights
 - Academic evidence only when the role is junior/graduate data science
 - One interview story
 - Material gaps and an honest mitigation plan

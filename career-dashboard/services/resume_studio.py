@@ -39,6 +39,7 @@ class ResumeStudio:
             db.executescript('''
             CREATE TABLE IF NOT EXISTS studio_drafts(job_id TEXT PRIMARY KEY REFERENCES jobs(id), source TEXT NOT NULL, revision INTEGER NOT NULL, folder TEXT NOT NULL, updated_at TEXT NOT NULL, profile_revision TEXT NOT NULL);
             CREATE TABLE IF NOT EXISTS studio_versions(job_id TEXT NOT NULL REFERENCES jobs(id), revision INTEGER NOT NULL, source TEXT NOT NULL, created_at TEXT NOT NULL, PRIMARY KEY(job_id,revision));
+            CREATE TABLE IF NOT EXISTS resume_scores(job_id TEXT NOT NULL REFERENCES jobs(id), revision INTEGER NOT NULL, source_sha256 TEXT NOT NULL, pdf_sha256 TEXT NOT NULL, jd_sha256 TEXT NOT NULL, result TEXT NOT NULL, created_at TEXT NOT NULL, PRIMARY KEY(job_id,revision,jd_sha256,pdf_sha256));
             CREATE TABLE IF NOT EXISTS studio_captures(job_id TEXT NOT NULL REFERENCES jobs(id), fingerprint TEXT NOT NULL, knowledge_id TEXT NOT NULL REFERENCES knowledge(id), PRIMARY KEY(job_id,fingerprint));
             ''')
 
@@ -61,11 +62,13 @@ class ResumeStudio:
                     jd = (job['title'] + ' ' + job['description']).casefold()
                     skills.sort(key=lambda skill: skill.casefold() not in jd)
                     source = replace_macro(source, 'CoreSkills', '; '.join(skills))
+                mapping_file = folder / 'evidence-map.yml'
+                draft_profile_revision = (yaml.safe_load(mapping_file.read_text()) or {}).get('candidate_revision', self.w.evidence()['candidate_revision']) if mapping_file.exists() else self.w.evidence()['candidate_revision']
                 studio_folder = folder / 'studio'
                 studio_folder.mkdir(exist_ok=True)
                 stamp = self.s.now()
                 with self.w.connect() as db:
-                    db.execute('INSERT INTO studio_drafts VALUES(?,?,?,?,?,?)', (job_id, source, 1, str(studio_folder.relative_to(self.w.root)), stamp, self.w.evidence()['candidate_revision']))
+                    db.execute('INSERT INTO studio_drafts VALUES(?,?,?,?,?,?)', (job_id, source, 1, str(studio_folder.relative_to(self.w.root)), stamp, draft_profile_revision))
                     db.execute('INSERT INTO studio_versions VALUES(?,?,?,?)', (job_id, 1, source, stamp))
                     self.w.record_event(db, 'studio_opened', job_id, revision=1)
                 self.w.export_tracking()
@@ -85,7 +88,7 @@ class ResumeStudio:
         preview = json.loads(preview_file.read_text()) if preview_file.exists() else None
         if preview:
             preview['current'] = preview['source_sha256'] == hashlib.sha256(row['source'].encode()).hexdigest()
-        fields = {k: plain(v) for k, v in extract_zero_argument_macros(row['source']).items() if k in {'ResumeSummary', 'CoreSkills'} or k.startswith('SelectedProject')}
+        fields = {k: plain(v) for k, v in extract_zero_argument_macros(row['source']).items() if k in {'ResumeSummary', 'CoreSkills'} or k.startswith(('SelectedProject', 'SecondProject'))}
         warnings = []
         if self.s.profile_dirty():
             warnings.append('Profile has unreviewed changes. Reconcile evidence before releasing this resume; this saved draft may contain older wording.')
@@ -96,8 +99,29 @@ class ResumeStudio:
         if preview and preview.get('layout') and not preview['layout']['full_two_pages']:
             warnings.append('The preview has unfilled space or more/fewer than two pages. Use Fill two pages to rank supported content and balance the layout.')
         warnings.append('Draft only: wording, evidence, two-page layout and visual review must pass before release.')
+        if not fields.get('SecondProjectID') or not fields.get('SecondProjectTitle') or not fields.get('SecondProjectBulletOne'):
+            warnings.append('A second project is required. Sync profile & rank 2 projects, or select a second registered project.')
         active_projects = {i['id'] for i in self.s.knowledge() if i['kind'] == 'project' and i['review_state'] == 'registered'}
-        return {**result, 'fields': fields, 'preview': preview, 'versions': versions,
+        with self.w.connect() as db:
+            score_row = db.execute('SELECT * FROM resume_scores WHERE job_id=? ORDER BY created_at DESC,rowid DESC LIMIT 1', (job_id,)).fetchone()
+        match = None
+        if score_row:
+            match = {**json.loads(score_row['result']), 'revision': score_row['revision'], 'created_at': score_row['created_at'],
+                     'current': score_row['source_sha256'] == hashlib.sha256(row['source'].encode()).hexdigest()
+                     and score_row['jd_sha256'] == hashlib.sha256(self.w.get_job(job_id)['description'].encode()).hexdigest()}
+        library = self.s.knowledge()
+        ranked = self.w.rank_projects(self.w.get_job(job_id)['description'])
+        ranks = {p['id']: (index + 1, p) for index, p in enumerate(ranked)}
+        projects = []
+        for item in library:
+            if item['kind'] != 'project':
+                continue
+            rank, known = ranks.get(item['id'], (None, {}))
+            projects.append({'id': item['id'], 'title': item['title'], 'rank': rank if item['review_state'] == 'registered' else None,
+                             'review_state': item['review_state'], 'eligible': item['id'] in active_projects and bool(known),
+                             'score': known.get('match_count'), 'reason': known.get('matched_terms', [])})
+        projects.sort(key=lambda p: (p['rank'] is None, p['rank'] or 999, p['title']))
+        return {**result, 'fields': fields, 'match': match, 'project_library': projects, 'preview': preview, 'versions': versions,
                 'captures': captures, 'warnings': warnings, 'file_root': str(folder.relative_to(self.w.root / 'output')),
                 'projects': [p for p in self.w.rank_projects(self.w.get_job(job_id)['description']) if p['id'] in active_projects]}
 
@@ -126,6 +150,11 @@ class ResumeStudio:
         db.execute('INSERT OR IGNORE INTO studio_captures VALUES(?,?,?)', (job_id, fingerprint, key))
 
     def track(self, db, job_id, before, after):
+        if 'SecondProjectTitle' in after:
+            # Reuse the first-slot tracker on a document containing only second-slot definitions.
+            def second_only(text):
+                return '\n'.join(line for line in text.splitlines() if 'SecondProject' in line).replace('SecondProject', 'SelectedProject')
+            self.track(db, job_id, second_only(before), second_only(after))
         old, new = extract_zero_argument_macros(before), extract_zero_argument_macros(after)
         keys = ['SelectedProjectTitle', 'SelectedProjectContext', 'SelectedProjectBulletOne', 'SelectedProjectBulletTwo', 'SelectedProjectBulletThree']
         if any(old.get(k) != new.get(k) for k in keys) and new.get('SelectedProjectTitle'):
@@ -151,7 +180,7 @@ class ResumeStudio:
             if normalized not in previous and not re.search(r'(?<!\w)' + re.escape(normalized) + r'(?!\w)', known):
                 self.capture(db, job_id, 'skill', skill, skill)
 
-    def save(self, job_id, revision, source=None, fields=None, project_id=None, restore_revision=None):
+    def save(self, job_id, revision, source=None, fields=None, project_id=None, restore_revision=None, second_project_id=None):
         with self.lock, self.w.connect() as db:
             db.execute('BEGIN IMMEDIATE')
             row = db.execute('SELECT * FROM studio_drafts WHERE job_id=?', (job_id,)).fetchone()
@@ -165,23 +194,22 @@ class ResumeStudio:
                 source = version['source']
             source = before if source is None else source
             for name, value in (fields or {}).items():
-                if name not in {'ResumeSummary', 'CoreSkills'} and not name.startswith('SelectedProject'):
+                if name not in {'ResumeSummary', 'CoreSkills'} and not name.startswith(('SelectedProject', 'SecondProject')):
                     raise ValueError('Unknown resume field')
                 source = replace_macro(source, name, value)
-            if project_id:
+            if project_id or second_project_id:
+                from services.resume_projects import install_project
                 active = {i['id']: i for i in self.s.knowledge()}
-                project = next((p for p in self.w.rank_projects('') if p['id'] == project_id), None)
-                if not project or project_id not in active or active[project_id]['review_state'] != 'registered':
-                    raise ValueError('Choose an active registered project. Edited projects need evidence review.')
-                for name, value in {'SelectedProjectID': project_id, 'SelectedProjectTitle': project['title'], 'SelectedProjectContext': project['context'], **dict(zip(['SelectedProjectBulletOne', 'SelectedProjectBulletTwo', 'SelectedProjectBulletThree'], (project['bullets'] + [''])[:3]))}.items():
-                    if name not in extract_zero_argument_macros(source):
-                        source = source.replace(r'\begin{document}', '\\newcommand{\\' + name + '}{}\n' + r'\begin{document}')
-                    source = replace_macro(source, name, value)
-                start, end = source.index('% SELECTED_PROJECT_BLOCK_START'), source.index('% SELECTED_PROJECT_BLOCK_END')
-                block = '% SELECTED_PROJECT_BLOCK_START\n\\textbf{\\SelectedProjectTitle}\\\\\n\\textit{\\SelectedProjectContext}\n\\begin{resumeitems}\n'
-                for name in ['One', 'Two', 'Three'][:len(project['bullets'])]:
-                    block += '% EVIDENCE: ' + project_id + '\n\\item \\SelectedProjectBullet' + name + '\n'
-                source = source[:start] + block + '\\end{resumeitems}\n' + source[end:]
+                for chosen, second in [(project_id, False), (second_project_id, True)]:
+                    if not chosen:
+                        continue
+                    project = next((p for p in self.w.rank_projects('') if p['id'] == chosen), None)
+                    if not project or chosen not in active or active[chosen]['review_state'] != 'registered':
+                        raise ValueError('Choose an active registered project. Edited projects need evidence review.')
+                    other = extract_zero_argument_macros(source).get('SelectedProjectID' if second else 'SecondProjectID')
+                    if other == chosen:
+                        raise ValueError('Choose two distinct projects')
+                    source = install_project(source, project, second)
             if extract_zero_argument_macros(before).get('SelectedProjectID') != extract_zero_argument_macros(source).get('SelectedProjectID'):
                 source = re.sub(r'% STUDIO_PROJECT_SKILLS\n% EVIDENCE:[^\n]+\n[^\n]+\n', '', source)
             if not source.strip() or len(source) > 150000:
@@ -210,6 +238,7 @@ class ResumeStudio:
         ids = evidence_ids_from_source(source, self.w.evidence(), errors)
         mapping.update(job_id=job_id, resume_claim_ids=sorted(ids),
                        selected_project_id=extract_zero_argument_macros(source).get('SelectedProjectID'),
+                       selected_project_ids=[extract_zero_argument_macros(source).get(k) for k in ('SelectedProjectID', 'SecondProjectID') if extract_zero_argument_macros(source).get(k)],
                        candidate_revision=self.w.evidence()['candidate_revision'],
                        studio_review_required=True, source_evidence_errors=errors)
         atomic_write(target / 'resume.tex', source)
@@ -244,6 +273,7 @@ class ResumeStudio:
                     shutil.copy2(page, target / page.name)
                 metadata = {'revision': revision, 'source_sha256': hashlib.sha256(draft['source'].encode()).hexdigest(), 'page_count': report['page_count'], 'created_at': self.s.now(), 'path': str(target.relative_to(self.w.root / 'output')), 'review_required': True, 'layout': measure_pages(build / 'resume.pdf', build / 'pages')}
                 atomic_write(folder / 'preview.json', json.dumps(metadata))
+            self.score(job_id)
             return self.get(job_id)
 
 
@@ -255,19 +285,33 @@ class ResumeStudio:
                 raise ValueError('This resume changed elsewhere. Reload before filling two pages.')
             if self.s.profile_dirty() or draft['profile_revision'] != self.w.evidence()['candidate_revision']:
                 raise ValueError('Reconcile your Profile edits with the evidence registry before adding ranked content. You can still edit and preview the saved draft.')
-            source, ranking = ranked_source(draft['source'], self.w.get_job(job_id), self.w.evidence(), self.s.knowledge())
+            # Old saved drafts get the second ranked project on explicit fitting.
+            from services.resume_projects import install_project
+            base_source = draft['source']
+            if not extract_zero_argument_macros(base_source).get('SecondProjectID'):
+                choices = [p for p in draft['projects'] if p['id'] != draft['fields'].get('SelectedProjectID')]
+                if not choices:
+                    raise ValueError('Two active registered projects are required')
+                base_source = install_project(base_source, choices[0], second=True)
+            source, ranking = ranked_source(base_source, self.w.get_job(job_id), self.w.evidence(), self.s.knowledge())
             executable = shutil.which('tectonic')
             if not executable:
                 raise ValueError('PDF compiler is unavailable. Restart with Start Dashboard.command.')
             folder = safe_child(self.w.root / 'output', draft['file_root'])
             # Binary search typography within normal readable resume sizes. Never shrink below 10pt.
-            low, high, point = 10.0, 12.0, 11.5
+            fixed_font = self.s.pref('resume_font:' + job_id)
+            low, high, point = 10.0, 12.0, fixed_font or 11.5
             best = None
             with tempfile.TemporaryDirectory(prefix='studio-fill-') as temp:
-                for attempt in range(8):
+                for attempt in range(2 if fixed_font else 13):
+                    item_sep = 5.0
+                    if fixed_font and attempt == 1:
+                        point, item_sep = fixed_font, 6.0
+                    elif not fixed_font and attempt >= 8:
+                        point, item_sep = [12.0, 11.5, 11.0, 10.5, 10.0][attempt - 8], 6.0
                     build = Path(temp) / str(attempt)
                     build.mkdir()
-                    candidate = set_density(source, round(point, 2), 5.0)
+                    candidate = set_density(source, round(point, 2), item_sep)
                     (build / 'resume.tex').write_text(candidate)
                     try:
                         result = subprocess.run([executable, '--untrusted', '--outdir', str(build), 'resume.tex'], cwd=build, capture_output=True, text=True, timeout=90)
@@ -314,5 +358,76 @@ class ResumeStudio:
                 atomic_write(folder / 'preview.json', json.dumps(metadata, indent=2))
                 atomic_write(target / 'layout-review.json', json.dumps(metadata, indent=2))
                 atomic_write(target / 'resume.tex', candidate)
+            self.w.export_tracking()
+            self.score(job_id)
+            return self.get(job_id)
+
+
+    def match_input(self, job_id):
+        """Allow-listed snapshot from the actual current PDF, never candidate context."""
+        draft = self.get(job_id)
+        preview = draft['preview']
+        if not preview or not preview['current'] or preview['revision'] != draft['revision']:
+            raise ValueError('Build the current saved resume before scoring')
+        pdf = safe_child(self.w.root / 'output', preview['path'] + '/resume.pdf')
+        text = '\n'.join(p.extract_text() or '' for p in PdfReader(str(pdf)).pages)
+        jd = self.w.get_job(job_id)['description']
+        return {'resume_text': text, 'job_description': jd, 'revision': draft['revision'],
+                'source_sha256': hashlib.sha256(draft['source'].encode()).hexdigest(),
+                'pdf_sha256': hashlib.sha256(pdf.read_bytes()).hexdigest(),
+                'jd_sha256': hashlib.sha256(jd.encode()).hexdigest()}
+
+    def score(self, job_id):
+        from services.resume_match import evaluate
+        with self.lock:
+            payload = self.match_input(job_id)
+            with self.w.connect() as db:
+                old = db.execute('SELECT result FROM resume_scores WHERE job_id=? AND revision=? AND jd_sha256=? AND pdf_sha256=?',
+                                 (job_id, payload['revision'], payload['jd_sha256'], payload['pdf_sha256'])).fetchone()
+                if old:
+                    return {**json.loads(old[0]), 'cached': True}
+            result = evaluate(payload['resume_text'], payload['job_description'])
+            with self.w.connect() as db:
+                db.execute('INSERT INTO resume_scores VALUES(?,?,?,?,?,?,?)',
+                           (job_id, payload['revision'], payload['source_sha256'], payload['pdf_sha256'], payload['jd_sha256'], json.dumps(result), self.s.now()))
+                self.w.record_event(db, 'resume_scored', job_id, revision=payload['revision'], score=result['score'], profile_access=False)
+            self.w.export_tracking()
+            return {**result, 'cached': False}
+
+    def sync_profile(self, job_id, revision):
+        """Apply the reviewed September correction and rank both slots as a new version."""
+        from services.resume_projects import install_project
+        with self.lock:
+            draft = self.get(job_id)
+            if draft['revision'] != revision:
+                raise ValueError('This resume changed elsewhere. Reload before syncing')
+            if self.s.profile_dirty():
+                raise ValueError('Reconcile pending Profile edits before syncing the resume')
+            ranked = draft['projects']
+            if len(ranked) < 2:
+                raise ValueError('Two active registered projects are required')
+            source = draft['source']
+            # This migration is deliberately tied to reviewed evidence, not arbitrary date guessing.
+            claim = next(c for c in self.w.evidence()['claims'] if c['id'] == 'EXP-INFOCEPTS-001')
+            if claim['dates'] == 'Sep 2023-Jul 2025':
+                source = source.replace('Sep 2023 -- Jan 2025', 'Sep 2023 -- Jul 2025')
+            if any(c['id'] == 'EXP-TOTAL-001' for c in self.w.evidence()['claims']):
+                source = source.replace('approximately two years of enterprise reporting experience', '3+ years of combined professional and internship experience')
+                source = re.sub(r'(% EVIDENCE: )([^\n]+)(\n\\newcommand\{\\ResumeSummary\})',
+                                lambda m: m[1] + ' '.join(dict.fromkeys((m[2] + ' EXP-TOTAL-001').split())) + m[3], source)
+            source = install_project(source, ranked[0])
+            source = install_project(source, ranked[1], second=True)
+            # Registry-derived updates are not new user claims, so bypass capture.
+            stamp = self.s.now()
+            with self.w.connect() as db:
+                db.execute('BEGIN IMMEDIATE')
+                current = db.execute('SELECT revision FROM studio_drafts WHERE job_id=?', (job_id,)).fetchone()
+                if current[0] != revision:
+                    raise ValueError('This resume changed elsewhere. Reload before syncing')
+                db.execute('UPDATE studio_drafts SET source=?,revision=revision+1,profile_revision=?,updated_at=? WHERE job_id=?',
+                           (source, self.w.evidence()['candidate_revision'], stamp, job_id))
+                db.execute('INSERT INTO studio_versions VALUES(?,?,?,?)', (job_id, revision+1, source, stamp))
+                self.w.record_event(db, 'studio_profile_synced', job_id, revision=revision+1,
+                                    profile_revision=self.w.evidence()['candidate_revision'], projects=[p['id'] for p in ranked[:2]])
             self.w.export_tracking()
             return self.get(job_id)

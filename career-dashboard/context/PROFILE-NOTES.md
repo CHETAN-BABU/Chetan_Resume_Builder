@@ -25,8 +25,8 @@ Never position Chetan as having professional or production AI, Generative AI, Ma
 - Current permission confirmed by Chetan on 5 September 2026: **Stamp 1G**. The earlier expiry date was not reconfirmed, and future sponsorship requirements remain unknown. Use `WORKAUTH-STAMP-001` for this new fact. Do not assume permission covers an entire multi-year programme.
 - Languages: English (fluent), Tamil (fluent), Telugu (native)
 - Current status: MSc Data Science candidate at Munster Technological University
-- Most recent employment ended: January 2025
-- A newly supplied draft instead gives July 2025; keep January 2025 externally until Chetan resolves the conflict
+- Most recent employment ended: July 2025
+- July 2025 was explicitly confirmed by Chetan on 13 September 2026, superseding the older January date
 
 Do not state that a visa extension is guaranteed or describe unrestricted work authorization without current confirmation.
 
@@ -40,7 +40,7 @@ conflict.
 
 ### Infocepts Technologies Pvt. Ltd. — Associate Analyst
 
-**Data Analyst / BI Developer | India | Sep 2023–Jan 2025**
+**Data Analyst / BI Developer | India | Sep 2023–Jul 2025**
 
 #### Hindustan Unilever — Power BI Developer
 
@@ -292,7 +292,7 @@ Each tailored resume must satisfy all of the following:
 2. Use a saved job-description snapshot; a title or company name alone is insufficient for truthful tailoring.
 3. Map each required and preferred job requirement to an evidence ID, or mark it as a gap.
 4. Use only supported JD terminology. A JD keyword does not become a Chetan skill merely because it appears in the posting.
-5. Include **exactly one** `Selected Project`, chosen from the resume-ready project registry in `context/evidence.yml`.
+5. Include **exactly two distinct** selected projects, chosen from the resume-ready project registry in `context/evidence.yml`.
 6. Keep the project's real identity, evidence type, ownership, status, and results. Never present it as work completed for the target employer.
 7. Compile to a selectable-text, single-column A4 PDF with **exactly two pages**.
 8. Pass hard QA for page count, project count, unresolved placeholders, unsafe claims, contact facts, compilation warnings, and provenance before release.
@@ -351,7 +351,7 @@ Time-series coursework and HUL dashboard enhancements are not standalone resume 
 The fixed layout is a quality constraint, not permission to add filler.
 
 - Page 1: header, targeted summary, supported competencies, and highest-relevance professional experience.
-- Page 2: remaining experience, exactly one selected project, education, verified certifications, and concise technical skills.
+- Page 2: remaining experience, exactly two selected projects, education, verified certifications, and concise technical skills.
 - Summary: 55–80 words.
 - Selected project: title/context plus 2–3 bullets; 70–120 words.
 - Experience: 8–11 bullets total, normally 18–32 words each.
@@ -378,10 +378,13 @@ These answers will improve future resumes more than adding generic keywords:
 1. Current location and preferred phone: Ireland/Irish number or Chennai/Indian WhatsApp number; plus current work-permission wording.
 2. Permission to name AstraZeneca, NielsenIQ, and Hindustan Unilever.
 3. Exact MSc award title and expected award date.
-4. Associate Analyst end date: January 2025 or July 2025.
+4. Additional internship dates/employers supporting the user-confirmed combined 3+ years; July 2025 employment end is resolved.
 5. Project dates, course/personal classification, collaboration status, repositories, dataset sources, validation details, and reproducible outputs.
 6. Thesis dataset, completed preprocessing, models actually run, evaluation method, results, and repository/demo link.
 7. Exact personal contribution and validation steps for each AstraZeneca project.
 8. HUL dashboard domain, specific enhancement, acceptance process (BAT/UAT), and release outcome.
 9. Certification credential IDs and public verification links.
 10. Exact award/recognition wording and issuer for the NielsenIQ POC.
+
+
+13 September 2026 correction: July 2025 employment end confirmed; 3+ years combined professional and internship experience is user-reported and registered as EXP-TOTAL-001. Additional internship chronology remains unspecified. Exactly two ranked projects per two-page resume now supersedes earlier one-project instructions.

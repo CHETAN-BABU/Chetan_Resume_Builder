@@ -24,7 +24,7 @@ Read `AGENTS.md` and `config/profile.yml` first. This file defines how to adapt 
 
 ## Selected-project routing
 
-Every tailored resume contains exactly one project block. Rank all resume-ready projects in `context/evidence.yml` against the verified JD and current-company problem evidence; use this as a starting preference, not an automatic choice:
+Every tailored resume contains exactly two project blocks. Rank all resume-ready projects in `context/evidence.yml` against the verified JD and current-company problem evidence; use this as a starting preference, not an automatic choice:
 
 | Strongest target signal | Candidate project ID |
 |---|---|

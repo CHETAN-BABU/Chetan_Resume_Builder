@@ -456,6 +456,11 @@ class Workspace(Tracking):
             + re.sub(r"% EVIDENCE: [^\n]+", "% EVIDENCE: " + pid, source[a:b])
             + source[b:]
         )
+        from services.resume_projects import install_project
+        second = next((p for p in ranked if p['id'] != pid), None)
+        if not second:
+            raise ValueError('Two distinct resume-ready projects are required')
+        source = install_project(source, second, second=True)
         snapshot = f"# {job['company']} — {job['title']}\n\nLocation: {job['location']}\nSource: {job['url']}\nSaved: {now()}\nVerification: not verified; user-supplied snapshot.\n\n{job['description']}\n"
         (folder / "job-description.md").write_text(snapshot)
         (folder / "resume.tex").write_text(source)
@@ -481,6 +486,7 @@ class Workspace(Tracking):
                 "confidence": "low",
             },
             "selected_project_id": pid,
+            "selected_project_ids": [pid, second["id"]],
             "selected_project_reason": "Draft selection by overlap with approved project wording; review the business problem and full job requirements.",
             "resume_claim_ids": ids,
             "held_claims_used": [],
@@ -491,7 +497,7 @@ class Workspace(Tracking):
         (folder / "evaluation.md").write_text(
             "# Review required\n\n"
             + json.dumps(self.screen(job), indent=2)
-            + "\n\nThis draft selects one existing project and retains the approved base summary. It has not received a recruiter review or complete JD tailoring. Review and complete evidence-map.yml before validation.\n"
+            + "\n\nThis draft selects two ranked existing projects and retains the approved base summary. It has not received a recruiter review or complete JD tailoring. Review and complete evidence-map.yml before validation.\n"
         )
         (folder / "company-research.md").write_text(
             "# Research pending\n\nThe saved JD is user supplied. Verify the original posting, record employer sources and explain the selected project’s relevance. No employer research or live-job claim has been generated.\n"

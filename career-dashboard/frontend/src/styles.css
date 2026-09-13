@@ -1389,3 +1389,14 @@ blockquote {
   margin-bottom: 16px;
   border-radius: 8px;
 }
+
+/* Durable agent monitor and instruction chat. */
+.agent-control { margin-bottom: 20px; }
+.agent-control-grid { display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap:26px; }
+.instruction-history { max-height:330px; overflow:auto; background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:14px; margin-bottom:14px; }
+.instruction-history article { padding:12px 0; border-bottom:1px solid var(--line); overflow-wrap:anywhere; white-space:pre-wrap; }
+.agent-run-list { max-height:340px; overflow:auto; }
+.agent-run-list article { padding:12px 0; border-bottom:1px solid var(--line); }
+.agent-control details { margin-top:14px; }
+.agent-control-grid > div { min-width:0; }
+@media (max-width:850px) { .agent-control-grid { grid-template-columns:1fr; } }

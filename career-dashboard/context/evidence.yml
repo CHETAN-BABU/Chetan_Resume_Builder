@@ -1,5 +1,5 @@
 schema_version: 1
-candidate_revision: 2026-09-09.1
+candidate_revision: 2026-09-13.1
 candidate: Chetan Babu M
 status_definitions:
   confirmed: Supported by Chetan's supplied career narrative and approved for normal use.
@@ -79,11 +79,13 @@ claims:
   approved_external_use: always
   source_refs:
   - context/sources/career.md > Infocepts Technologies Pvt. Ltd. - Associate Analyst
+  - context/sources/2026-09-13-correction.md
   employer: Infocepts Technologies Pvt. Ltd.
   title: Associate Analyst
   functional_title: Data Analyst / BI Developer
-  dates: Sep 2023-Jan 2025
+  dates: Sep 2023-Jul 2025
   location: India
+  superseded_dates: Sep 2023-Jan 2025; July end date confirmed by user on 2026-09-13
 - id: EXP-INFOCEPTS-002
   status: conditional
   category: employment
@@ -383,11 +385,23 @@ claims:
   source_refs:
   - context/sources/career.md > Quantified claims
   value_as_supplied: 100+ reports in one month and a team delivery record
+- id: EXP-TOTAL-001
+  status: user_reported
+  category: employment
+  title: Overall professional and internship experience
+  approved_external_use: May state 3+ years of combined professional and internship experience. Do not
+    imply 3+ years of post-training BI employment or invent internship dates.
+  source_refs:
+  - context/sources/2026-09-13-correction.md
+  approved_facts:
+  - 3+ years of combined professional and internship experience, confirmed by Chetan on 13 September 2026.
+  value: 3+ years of combined professional and internship experience
+  unresolved: Additional internship chronology has not been supplied.
 projects:
 - id: PROJ-AZ-RECON
   canonical_name: Finance Access Reconciliation Dashboard
   external_name: Finance Access Reconciliation Dashboard - Pharmaceutical Client
-  date_context: Within the Sep 2023-Jan 2025 Associate Analyst period; exact project dates not supplied
+  date_context: Within the Sep 2023-Jul 2025 Associate Analyst period; exact project dates not supplied
   source_refs:
   - context/sources/career.md > Finance reconciliation dashboard
   evidence_type: professional
@@ -437,7 +451,7 @@ projects:
 - id: PROJ-AZ-MIGRATION
   canonical_name: Power BI Redshift-to-Snowflake Report Migration
   external_name: Power BI Report Migration - Pharmaceutical Client
-  date_context: Within the Sep 2023-Jan 2025 Associate Analyst period; three-month delivery window
+  date_context: Within the Sep 2023-Jul 2025 Associate Analyst period; three-month delivery window
   source_refs:
   - context/sources/career.md > Redshift-to-Snowflake migration
   evidence_type: professional
@@ -477,7 +491,7 @@ projects:
 - id: PROJ-NIQ-POC
   canonical_name: Reusable Finance Dashboard Proof of Concept
   external_name: Reusable Finance Dashboard POC - FMCG Client
-  date_context: Within the Sep 2023-Jan 2025 Associate Analyst period; exact POC date not supplied
+  date_context: Within the Sep 2023-Jul 2025 Associate Analyst period; exact POC date not supplied
   source_refs:
   - context/sources/career.md > NielsenIQ - BI Report Developer
   evidence_type: professional
@@ -517,7 +531,7 @@ projects:
 - id: PROJ-AZ-EXEC
   canonical_name: Executive Power BI Dashboard
   external_name: Executive Power BI Dashboard - Pharmaceutical Client
-  date_context: Within the Sep 2023-Jan 2025 Associate Analyst period; one-month delivery window
+  date_context: Within the Sep 2023-Jul 2025 Associate Analyst period; one-month delivery window
   source_refs:
   - context/sources/career.md > Executive/CEO dashboard
   evidence_type: professional
@@ -556,7 +570,7 @@ projects:
 - id: PROJ-NIQ-REPORTING
   canonical_name: High-Volume Client Reporting Delivery
   external_name: Client Reporting Delivery - FMCG Client
-  date_context: Within the Sep 2023-Jan 2025 Associate Analyst period; about six months
+  date_context: Within the Sep 2023-Jul 2025 Associate Analyst period; about six months
   source_refs:
   - context/sources/career.md > NielsenIQ - BI Report Developer
   evidence_type: professional

@@ -4,8 +4,11 @@ import { api, fileUrl } from "../api";
 import { Badge, Field, Modal, ReportView, Running } from "../components/UI";
 import { JobList } from "../components/JobList";
 import { fieldNames, macroSpan, readField, writeField } from "./studioFields";
+import { AgentControl } from "./AgentControl";
 import type { Summary } from "../types";
 type Draft = {
+  match?: { score: number | null; current: boolean; revision: number; gaps: string[]; limitations: string[]; requirements: {term: string; matched: boolean; jd_excerpt: string; resume_excerpt: string}[] };
+  project_library: {id: string; title: string; rank: number | null; eligible: boolean; review_state: string}[];
   source: string;
   revision: number;
   file_root: string;
@@ -29,7 +32,12 @@ type Draft = {
 const labels: Record<string, string> = {
   ResumeSummary: "Professional summary",
   CoreSkills: "Core skills · separate with semicolons",
-  SelectedProjectTitle: "Project name",
+  SecondProjectTitle: "Second project name",
+  SecondProjectContext: "Second project context and tools",
+  SecondProjectBulletOne: "Second project point 1",
+  SecondProjectBulletTwo: "Second project point 2",
+  SecondProjectBulletThree: "Second project point 3",
+  SelectedProjectTitle: "First project name",
   SelectedProjectContext: "Project context and tools",
   SelectedProjectBulletOne: "Project point 1",
   SelectedProjectBulletTwo: "Project point 2",
@@ -263,6 +271,9 @@ function Editor({
   const current = !dirty && !!draft.preview?.current;
   return (
     <>
+      <AgentControl jobId={jobId} revision={draft.revision} locked={!!busy || dirty}
+        onBuilding={active => setBusy(active ? "Orchestrator building and scoring…" : "")}
+        onChanged={async () => { const next = await api<Draft>(base); setDraft(next); setSource(next.source); sessionStorage.removeItem(key); await refresh(); }} />
       <div className="studio-toolbar">
         <div className="actions">
           <button className="primary" disabled={!!busy} onClick={() => save()}>
@@ -272,6 +283,11 @@ function Editor({
           <button className="secondary" disabled={!!busy} onClick={fillPages}>
             Fill two pages
           </button>
+          <button className="secondary" disabled={!!busy || dirty} onClick={async () => {
+            setBusy("Syncing reviewed profile and ranking two projects…"); setError("");
+            try { const d = await api<Draft>(base + "/sync-profile", "POST", {revision: draft.revision}); setDraft(d); setSource(d.source); await refresh(); }
+            catch (e) { setError((e as Error).message); } finally { setBusy(""); }
+          }}>Sync profile & rank 2 projects</button>
           <label className="check-line">
             <input
               type="checkbox"
@@ -356,7 +372,7 @@ function Editor({
           <div className="studio-editor-body">
             <fieldset
               className="studio-edit-fields"
-              disabled={busy === "Filling two pages with ranked content…"}
+              disabled={!!busy}
             >
               {mode === "source" ? (
                 <>
@@ -376,7 +392,7 @@ function Editor({
               ) : (
                 <>
                   <p className="small">
-                    The default draft selects an evidenced project for this job
+                    The default draft selects two ranked evidenced projects for this job
                     and orders skills by its requirements. Use the advisor below
                     to refine it. All sections are editable in LaTeX source.
                   </p>
@@ -403,7 +419,17 @@ function Editor({
                       ))}
                     </select>
                   </Field>
-                  {fieldNames.map(
+                  <Field label="Use a second registered project">
+                    <select value="" disabled={!!busy || dirty} onChange={e => save(true, {second_project_id: e.target.value})}>
+                      <option value="">Choose the second project…</option>
+                      {draft.projects.map(p => <option key={p.id} value={p.id}>{p.title}</option>)}
+                    </select>
+                  </Field>
+                  <details><summary>Full project library · ranked for this JD</summary>
+                    <ol>{draft.project_library.map(p => <li key={p.id}><b>{p.rank ? `#${p.rank} ` : ""}{p.title}</b><br/><small>{p.id} · {p.eligible ? "Ready to select" : p.review_state + " · evidence review needed"}</small></li>)}</ol>
+                    <p className="small">Ranks order approved project wording by JD overlap; they are not hiring scores. Both selected projects must be distinct.</p>
+                  </details>
+                  {[...fieldNames, "SecondProjectTitle", "SecondProjectContext", "SecondProjectBulletOne", "SecondProjectBulletTwo", "SecondProjectBulletThree"].map(
                     (name) =>
                       macroSpan(source, name) && (
                         <Field label={labels[name]} key={name}>
@@ -567,6 +593,11 @@ function Editor({
           }}
         />
       )}
+      {draft.match && <section className="card">
+        <div className="section-head"><div><div className="eyebrow">INDEPENDENT MATCHER · PDF + JD ONLY</div><h2>JD term coverage: {draft.match.score === null ? "Not scored" : `${draft.match.score}/100`}</h2></div><Badge tone={draft.match.current && !dirty ? "green" : "amber"}>{draft.match.current && !dirty ? "Current PDF" : "Stale · rebuild"}</Badge></div>
+        <p>Version {draft.match.revision} · no profile access · zero AI calls. {draft.match.gaps.length ? `Missing terms: ${draft.match.gaps.join(", ")}.` : "No gaps in the detected vocabulary."}</p>
+        <details><summary>Evidence and scoring limits</summary>{draft.match.requirements.map(r => <p key={r.term}><b>{r.matched ? "✓" : "—"} {r.term}</b><br/>JD: {r.jd_excerpt}<br/>PDF: {r.resume_excerpt || "Not found"}</p>)}{draft.match.limitations.map(l => <p className="small" key={l}>{l}</p>)}</details>
+      </section>}
       <div className="studio-agents">
         <section className="card">
           <div className="section-head">
@@ -600,7 +631,7 @@ function Editor({
             {activeRun
               ? "Research in progress…"
               : run
-                ? "Refresh research"
+                ? "Research · reuse cache"
                 : "Research this company"}
           </button>
           {run && <Running run={run} />}

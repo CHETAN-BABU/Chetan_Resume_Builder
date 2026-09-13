@@ -59,7 +59,7 @@ When an academic or candidate project is selected:
 1. Read all resume-ready projects in `context/evidence.yml`.
 2. Score them using `config/profile.yml > project_selection > ranking_weights`.
 3. Prefer professional completed evidence for BI roles and the academic thesis only for eligible junior/graduate data-science or directly relevant fraud/health analytics roles.
-4. Write one selected project using its real external name, ownership, evidence type, status, and approved facts.
+4. Write two selected projects using its real external name, ownership, evidence type, status, and approved facts.
 5. Use the registry's `resume_content` title/context/bullets exactly so automated QA can bind visible text to the selected ID.
 6. Do not create a second project block, turn coursework into a project, or imply work for the target employer.
 7. If the match is weak, say so in the evidence map; do not manufacture a stronger project.

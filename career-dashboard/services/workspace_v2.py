@@ -18,11 +18,20 @@ KINDS = {
     "fact",
 }
 AGENTS = [
+    {'id': 'orchestrator', 'name': 'Main orchestrator', 'reads': 'Saved instructions, job IDs, draft versions and worker states', 'profile_access': True,
+     'does': 'Serializes build/score and AI work, persists progress and failures, deduplicates active runs, recovers interrupted work and enforces the shared AI budget.',
+     'implementation': 'Deterministic dispatcher and monitor; no monitoring AI calls', 'guide': 'docs/AGENT-ARCHITECTURE.md'},
+    {'id': 'instruction_tracker', 'name': 'Instruction chat', 'reads': 'User messages and the selected draft', 'profile_access': True,
+     'does': 'Applies precise edits, captures profile facts for reconciliation and retains unresolved messages.',
+     'implementation': 'Rules and SQLite; zero AI calls', 'guide': 'services/instruction_tracker.py'},
+    {'id': 'resume_match', 'name': 'Independent resume matcher', 'reads': 'Finished PDF text and saved JD only', 'profile_access': False,
+     'does': 'Scores document term coverage for free; optional cached AI review explains matches and gaps independently.',
+     'implementation': 'Pure document scorer plus optional isolated Codex process', 'guide': 'services/resume_match.py'},
     {
         "id": "resume_advisor", "name": "Agent 1 · Resume advisor",
         "reads": "Saved JD and recent public company research only", "profile_access": False,
         "does": "Suggests resume priorities, convincing project evidence and skills; proposed projects remain ideas, never candidate claims.",
-        "implementation": "Two isolated Codex processes with dated sources; runs when a job opens in Studio",
+        "implementation": "Two isolated Codex processes with dated sources; explicit opt-in; shared persistent stage cache",
         "guide": "workflows/agents/resume-advisor.md",
     },
     {

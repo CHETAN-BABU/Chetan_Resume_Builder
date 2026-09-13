@@ -52,7 +52,7 @@ Report the weighted percentage with blockers. This is a transparent evidence dia
 
 Assess:
 
-- Required years versus Chetan's dated Feb 2023–Jan 2025 experience
+- Required years versus Chetan's dated Feb 2023–Jul 2025 experience
 - Graduate/junior wording
 - Applicant count when visible
 - Posting age and reposting signals
@@ -79,7 +79,7 @@ Give the top five truthful changes:
 - professional bullets
 - academic project emphasis when relevant
 - unsupported keywords to avoid
-- ranked project candidates and the one selected real project ID
+- ranked project candidates and the two selected real project IDs
 
 ## F. Interview preparation
 

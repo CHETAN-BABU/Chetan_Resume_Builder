@@ -15,6 +15,10 @@ def main():
     parser.add_argument(
         "command",
         choices=[
+            "instructions",
+            "send-instruction",
+            "agent-control",
+            "score",
             "summary",
             "goals",
             "profile",
@@ -30,10 +34,24 @@ def main():
     parser.add_argument("--file", type=Path)
     parser.add_argument("--id")
     parser.add_argument("--job-id")
-    parser.add_argument("--kind", choices=["research", "email", "discovery"])
+    parser.add_argument('--message')
+    parser.add_argument('--revision', type=int)
+    parser.add_argument("--kind", choices=["research", "resume_advisor", "email", "discovery", "resume_build", "resume_match", "instruction_interpret"])
     args = parser.parse_args()
     s = CareerServices(Workspace(ROOT))
-    if args.command == "save-profile":
+    if args.command in {'instructions', 'send-instruction', 'agent-control', 'score'}:
+        from services.resume_studio import ResumeStudio
+        from services.instruction_tracker import InstructionTracker
+        from services.agent_cache import AgentCache
+        studio = ResumeStudio(s)
+        tracker = InstructionTracker(s, studio)
+        if args.command == 'instructions': result = tracker.history(args.job_id)
+        elif args.command == 'send-instruction':
+            if not args.message: parser.error('--message is required')
+            result = tracker.send(args.message, args.job_id, args.revision, args.id)
+        elif args.command == 'score': result = studio.score(args.job_id)
+        else: result = {'budget': AgentCache(s).stats(), 'runs': s.runs()}
+    elif args.command == "save-profile":
         if not args.file:
             parser.error("--file is required")
         result = s.save_knowledge(json.loads(args.file.read_text()), args.id)
@@ -45,6 +63,8 @@ def main():
         if not args.kind:
             parser.error("--kind is required")
         runner = AgentRunner(s)
+        from services.resume_studio import ResumeStudio
+        runner.studio = ResumeStudio(s)
         result = runner.enqueue(args.kind, args.job_id)
         print(json.dumps(result), flush=True)
         runner.pool.shutdown(wait=True)
