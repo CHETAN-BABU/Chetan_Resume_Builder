@@ -717,10 +717,10 @@
       "value": "MSc Data Science candidate at Munster Technological University"
     },
     "source": "config/profile.yml > candidate > current_status",
-    "revision": 1,
+    "revision": 2,
     "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
+    "review_state": "user_updated",
+    "updated_at": "2026-09-14T14:09:11+00:00"
   },
   {
     "id": "personal:dated_professional_experience",
@@ -756,16 +756,16 @@
     "id": "personal:education_summary",
     "kind": "personal",
     "title": "Education summary",
-    "summary": "MSc in Data Science, Munster Technological University (Sep 2025–Sep 2026); B.Tech in Computer Science (AI and ML), SRM Institute of Science and Technology (Jun 2019–May 2023), reported CGPA 9.4/10",
+    "summary": "MSc in Data Science, Munster Technological University (Sep 2025–Sep 2026); B.Tech in Computer Science (AI and ML), SRM Institute of Science and Technology (Jun 2019–May 2023), Equivalent to 1:1",
     "data": {
       "field": "education_summary",
-      "value": "MSc in Data Science, Munster Technological University (Sep 2025–Sep 2026); B.Tech in Computer Science (AI and ML), SRM Institute of Science and Technology (Jun 2019–May 2023), reported CGPA 9.4/10"
+      "value": "MSc in Data Science, Munster Technological University (Sep 2025–Sep 2026); B.Tech in Computer Science (AI and ML), SRM Institute of Science and Technology (Jun 2019–May 2023), Equivalent to 1:1"
     },
     "source": "config/profile.yml > candidate > education_summary",
-    "revision": 1,
+    "revision": 2,
     "deleted": 0,
-    "review_state": "registered",
-    "updated_at": "2026-09-10T23:39:00+00:00"
+    "review_state": "user_updated",
+    "updated_at": "2026-09-14T14:08:41+00:00"
   },
   {
     "id": "personal:email",

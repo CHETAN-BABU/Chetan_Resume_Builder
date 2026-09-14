@@ -1,6 +1,6 @@
 # Career workspace state
 
-Updated 12 September 2026 after implementing Resume Studio.
+Updated 13 September 2026 after implementing agent orchestration, instruction chat, independent scoring and two-project resumes. See the newest section below for current behavior.
 
 ## Current application
 
@@ -151,3 +151,77 @@ checks ran separately on port 8001 and that test server has been stopped.
 - Next: use Fill two pages after substantial source changes; retain evidence
   reconciliation and role-specific review before release. No new automation,
   application submission or outreach was performed.
+
+## Agent orchestration and two-project resumes — 13 September 2026
+
+This section supersedes earlier one-project, January 2025 end-date and automatic
+Studio AI-start behavior. The architecture is documented end to end in
+`career-dashboard/docs/AGENT-ARCHITECTURE.md`.
+
+- Implemented the main deterministic orchestrator, all-worker monitoring,
+  durable instruction chat, optional contextual AI interpretation, persistent
+  AI stage caching, and a shared daily invocation limit (default 6, configurable
+  0–50). Opening Studio spends no AI calls. Cached public research expires after
+  seven days; changed offline inputs invalidate their cache. Discovery/mail remain
+  live and budgeted. Existing schedule remains unchanged.
+- Added free independent PDF/JD term-coverage scoring after compilation and an
+  optional isolated AI document review. Neither evaluator receives Profile,
+  evidence, notes, mail or public-research history. Scores are version/hash bound;
+  keyword coverage is explicitly not an ATS score or hiring probability.
+- Instruction chat preserves every request and outcome, applies supported edits,
+  captures profile facts for reconciliation and retains unclear requests. Optional
+  AI interpretation suggests commands for the user to review and send. Font
+  commands support 10–12pt and `font: auto`. Interrupted messages and worker runs
+  show attention/failure states; duplicate message IDs cannot apply twice.
+- User confirmed July 2025 as the Associate Analyst end date and 3+ years of
+  combined professional and internship experience. Canonical profile/evidence
+  revision is now 2026-09-13.1. Source is
+  `context/sources/2026-09-13-correction.md`; EXP-TOTAL-001 records the combined
+  total. Additional internship employers/dates remain unspecified. MSc is still
+  in progress. No pending profile edits at final verification.
+- All active projects remain in the ranked library. New resumes contain exactly
+  two distinct registered projects. Both slots support editing/capture and are
+  validated against registry wording and the evidence-map ID pair. Existing
+  drafts can Sync profile & rank 2 projects while preserving previous versions.
+- Updated both existing Studio drafts: Accenture fff05ec16dd35b33 version 4
+  (`preview-4`, 10.75pt, 99.3%/97.6% page usage) and the existing draft for
+  5ef89c929c73c5d8 version 3 (`preview-3`, 11.75pt, 98.8%/94.9%). Actual pages were
+  inspected. Both PDFs have two projects, two full A4 pages and no overflow;
+  final QA fails only for unresolved role eligibility and empty requirement
+  review. They remain drafts. Accenture's saved employer AI-use note remains.
+- Rebuilt and visually checked the generic two-page base PDF against the current
+  registry. Original application packs and historical manifests are preserved.
+- Fixed a fitting edge case for short project descriptions by trying normal
+  6pt bullet spacing within the existing 10–12pt font range when the initial
+  5pt-spacing search does not satisfy full-page measurements. Fitting failures
+  preserve the previous version and never fabricate content.
+- Verification: 94 Python tests + 7 frontend tests (101 total), TypeScript and
+  production build, profile/workspace validation, SQLite integrity and foreign
+  keys, projections and all 20 historical-pack hashes passed. Disposable browser
+  checks verified chat persistence, two ranked project fields, first-open fitting
+  (96.7%/98.8%), free document scoring and orchestrator controls. Optional AI was
+  tested with fixtures; no live paid AI was needed for implementation validation.
+- Production dashboard restarted on 127.0.0.1:8000 with the new routes. The shared
+  database contains 20 jobs at verification; other daily-search activity during
+  this task was preserved. No submissions, outreach or additional automation
+  were performed by this implementation.
+
+Next: use the chat and Build & score for saved jobs; reconcile new candidate facts
+before generation; complete per-job eligibility/requirement review before release.
+The new score does not override those gates. Additional internship chronology is
+still a useful profile detail to supply when available.
+
+Final follow-up: corrected the new worker display names in the run monitor; reran the complete check (94 Python + 7 frontend tests, all passing). The disposable port-8001 test server was stopped. Production remains on port 8000.
+
+
+## Daily search continuation and final drafts - 14 September 2026
+
+- Finalised interrupted 13 September records and two tailored drafts. ESS `10ba01413aa6075f` and Prime Street `5b8921d814b94f76` actual PDFs now match the inspected final previews. Both are two full A4 pages, exactly two registered projects, no overflow, grounded facts. QA fails only role eligibility; zero releases/submissions. `draft-review.json` records actual PDF/source/preview hashes. Studio revisions and concurrent user app work preserved.
+- ESS closes 16 September; Power Apps/DAX experience and MyGovID form requirements remain unresolved. Prime Excel example/property interest and Indeed verification gate unresolved. Morgan McKinley `30cb363d12392b54` advanced Excel remains unconfirmed; empty Apply Now form inspection was blocked by auto-review and was not bypassed. Lidl `7bfa6b3fce1853f0` degree equivalence, full licence, travel and 2027 availability/permission remain unresolved.
+- 13 September: four new conditional leads, two drafts, six-lead discovery shortage, zero approved releases. Separate-worker research/comparison persisted in date files and shared search notes. Prime research import completed; other three imports retain budget failures. Profile comparator wrote its reports before usage interrupted its final response. History updated with four exact IDs/URLs; no duplicate delivered entries.
+- 14 September: 26 job-search queries and full-page follow-ups across approved Ireland tracks found zero new verified suitable postings. Current four roles linked as carryovers, never counted as new discoveries. Closed/duplicate/unsupported/unverified leads detailed in `daily-job-search/2026-09-14/search-coverage.md`. Planner remains 0/15 today (5 base + 10 carryover), weekly target30. No application or contact sent.
+- Gmail worker `698f674f589c421386ad83a0361d7994` succeeded: 30 relevant messages, fully paginated 90-day searches, no attachments or mail mutations. Two newly captured older records remain pending: Arup saved-job reminder and Crossing Hurdles BI Analyst application with explicit 12 July date. Pending now36. No new human interview or offer confirmed. Parent saw GCS recruiter Kritika Mishra LinkedIn notification; actual message absent from email, no role/status inferred.
+- Existing automation `chetan-s-daily-10-jobs-and-tailored-r-sum-s` updated in place: latest reconciled facts, July2025 employment end, combined3+ years, confirmed Stamp1G, exactlytwo projects. Remains active daily09:00 Europe/Dublin. No duplicate schedule.
+- Workspace validator passed. No application code changed by this daily run. Batch release QA remains failed because drafts/holds are not releasable. Profile/evidence remains2026-09-13.1;84 active entries, no pending edits at preflight.
+
+Next: candidate reviews ESS/Prime drafts and confirms concrete Excel tasks, DAX/Power Apps if used, property interest, permission expiry/future sponsorship and required practical availability. Resolve ESS before16September. User permission is needed to revisit the previously blocked Morgan McKinley empty form inspection. Continue unique live search without padding or silently changing evidence.

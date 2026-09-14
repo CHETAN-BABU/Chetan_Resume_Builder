@@ -95,13 +95,7 @@ export function Running({ run }: { run: Run }) {
       </span>
       <div>
         <b>
-          {run.kind === "research"
-            ? "Company & hiring review"
-            : run.kind === "resume_advisor"
-              ? "Resume advisor"
-              : run.kind === "email"
-                ? "Gmail sync"
-                : "Job discovery"}{" "}
+          {({research: "Company & hiring review", resume_advisor: "Resume advisor", email: "Gmail sync", discovery: "Job discovery", resume_build: "Resume build & score", resume_match: "Independent document review", instruction_interpret: "Instruction interpreter"} as Record<string, string>)[run.kind] || run.kind}{" "}
           · {run.state}
         </b>
         <small>{run.error || run.result?.stage || "Waiting to start"}</small>

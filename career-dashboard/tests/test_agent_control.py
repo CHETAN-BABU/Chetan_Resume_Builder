@@ -112,3 +112,35 @@ def test_build_scores_actual_pdf_and_ai_review_has_only_document(service):
     assert not changed['match']['current']
     with pytest.raises(ValueError,match='Build'):
         studio.match_input(j['id'])
+
+
+def test_interpreter_is_cached_and_never_applies_suggestions(service):
+    studio = ResumeStudio(service); j = add(service.w); d = studio.open(j['id'])
+    tracker = InstructionTracker(service, studio)
+    tracker.send('Make the summary clearer without changing the facts', j['id'], d['revision'])
+    calls = []
+    def invoke(prompt, schema, **kwargs):
+        calls.append(prompt)
+        return {'summary': 'Suggested edit', 'commands': ['summary: Suggested wording'], 'clarifications': []}
+    runner = AgentRunner(service, invoke); runner.studio = studio
+    runner.enqueue('instruction_interpret', j['id']); runner.pool.shutdown(wait=True)
+    assert service.runs()[0]['state'] == 'completed'
+    assert service.runs()[0]['result']['applied'] is False
+    assert studio.get(j['id'])['source'] == d['source']
+    runner = AgentRunner(service, invoke); runner.studio = studio
+    runner.enqueue('instruction_interpret', j['id']); runner.pool.shutdown(wait=True)
+    assert len(calls) == 1 and 'Make the summary clearer' in calls[0]
+
+
+def test_font_auto_and_restart_recovery(service):
+    studio = ResumeStudio(service); j = add(service.w); d = studio.open(j['id'])
+    tracker = InstructionTracker(service, studio)
+    assert tracker.send('font: 11', j['id'], d['revision'])['state'] == 'applied'
+    assert service.pref('resume_font:' + j['id']) == 11
+    d = studio.get(j['id'])
+    assert tracker.send('font: auto', j['id'], d['revision'])['state'] == 'applied'
+    assert service.pref('resume_font:' + j['id']) is None
+    with service.w.connect() as db:
+        db.execute("INSERT INTO instruction_messages VALUES('interrupted',?,?,?,'processing',?)", (j['id'], 'pending instruction', 'Processing', service.now()))
+    runner = AgentRunner(service); runner.recover(); runner.pool.shutdown()
+    assert tracker.history(j['id'])[-1]['state'] == 'needs_attention'

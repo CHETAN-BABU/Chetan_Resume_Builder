@@ -1,5 +1,534 @@
 [
   {
+    "id": 131,
+    "occurred_at": "2026-09-14T14:10:57+00:00",
+    "action": "agent_completed",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "run_id": "5fe4d2fa63ca4166b2c6627bba307a1e",
+      "kind": "instruction_interpret"
+    }
+  },
+  {
+    "id": 130,
+    "occurred_at": "2026-09-14T14:09:11+00:00",
+    "action": "profile_entry_saved",
+    "job_id": null,
+    "details": {
+      "entry_id": "personal:current_status",
+      "before": {
+        "id": "personal:current_status",
+        "kind": "personal",
+        "title": "Current status",
+        "summary": "MSc Data Science candidate at Munster Technological University",
+        "data": "{\"field\": \"current_status\", \"value\": \"MSc Data Science candidate at Munster Technological University\"}",
+        "source": "config/profile.yml > candidate > current_status",
+        "revision": 1,
+        "deleted": 0,
+        "review_state": "registered",
+        "updated_at": "2026-09-10T23:39:00+00:00"
+      },
+      "after": {
+        "kind": "personal",
+        "title": "Current status",
+        "summary": "MSc Data Science candidate at Munster Technological University",
+        "data": {
+          "field": "current_status",
+          "value": "MSc Data Science candidate at Munster Technological University"
+        },
+        "revision": 1
+      }
+    }
+  },
+  {
+    "id": 129,
+    "occurred_at": "2026-09-14T14:08:41+00:00",
+    "action": "profile_entry_saved",
+    "job_id": null,
+    "details": {
+      "entry_id": "personal:education_summary",
+      "before": {
+        "id": "personal:education_summary",
+        "kind": "personal",
+        "title": "Education summary",
+        "summary": "MSc in Data Science, Munster Technological University (Sep 2025–Sep 2026); B.Tech in Computer Science (AI and ML), SRM Institute of Science and Technology (Jun 2019–May 2023), reported CGPA 9.4/10",
+        "data": "{\"field\": \"education_summary\", \"value\": \"MSc in Data Science, Munster Technological University (Sep 2025–Sep 2026); B.Tech in Computer Science (AI and ML), SRM Institute of Science and Technology (Jun 2019–May 2023), reported CGPA 9.4/10\"}",
+        "source": "config/profile.yml > candidate > education_summary",
+        "revision": 1,
+        "deleted": 0,
+        "review_state": "registered",
+        "updated_at": "2026-09-10T23:39:00+00:00"
+      },
+      "after": {
+        "kind": "personal",
+        "title": "Education summary",
+        "summary": "MSc in Data Science, Munster Technological University (Sep 2025–Sep 2026); B.Tech in Computer Science (AI and ML), SRM Institute of Science and Technology (Jun 2019–May 2023), Equivalent to 1:1",
+        "data": {
+          "field": "education_summary",
+          "value": "MSc in Data Science, Munster Technological University (Sep 2025–Sep 2026); B.Tech in Computer Science (AI and ML), SRM Institute of Science and Technology (Jun 2019–May 2023), reported CGPA 9.4/10"
+        },
+        "revision": 1
+      }
+    }
+  },
+  {
+    "id": 128,
+    "occurred_at": "2026-09-14T14:07:29+00:00",
+    "action": "agent_completed",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "run_id": "423ffc6809e54b9085fcd542458f8584",
+      "kind": "resume_build"
+    }
+  },
+  {
+    "id": 127,
+    "occurred_at": "2026-09-14T14:07:29+00:00",
+    "action": "resume_scored",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "revision": 7,
+      "score": 88,
+      "profile_access": false
+    }
+  },
+  {
+    "id": 126,
+    "occurred_at": "2026-09-14T14:07:28+00:00",
+    "action": "studio_filled_two_pages",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "revision": 7,
+      "body_font_pt": 10.38,
+      "page_fill": [
+        97.3,
+        94.5
+      ],
+      "section_order": [
+        "Professional Summary",
+        "Core Skills",
+        "Professional Experience",
+        "Selected Project",
+        "Education",
+        "Technical Skills",
+        "Certifications"
+      ]
+    }
+  },
+  {
+    "id": 125,
+    "occurred_at": "2026-09-14T14:07:15+00:00",
+    "action": "instruction_recorded",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "message_id": "7667d068-7ddd-439f-955a-b909c8c3cec1",
+      "state": "needs_clarification"
+    }
+  },
+  {
+    "id": 124,
+    "occurred_at": "2026-09-14T14:06:12+00:00",
+    "action": "resume_scored",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "revision": 6,
+      "score": 88,
+      "profile_access": false
+    }
+  },
+  {
+    "id": 123,
+    "occurred_at": "2026-09-14T14:06:10+00:00",
+    "action": "studio_saved",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "revision": 6,
+      "restored_from": null
+    }
+  },
+  {
+    "id": 122,
+    "occurred_at": "2026-09-14T14:05:55+00:00",
+    "action": "resume_scored",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "revision": 5,
+      "score": 88,
+      "profile_access": false
+    }
+  },
+  {
+    "id": 121,
+    "occurred_at": "2026-09-14T14:05:53+00:00",
+    "action": "studio_saved",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "revision": 5,
+      "restored_from": null
+    }
+  },
+  {
+    "id": 120,
+    "occurred_at": "2026-09-14T14:04:52+00:00",
+    "action": "instruction_recorded",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "message_id": "d90e020b-736e-49db-ae24-91aeab27bf05",
+      "state": "needs_clarification"
+    }
+  },
+  {
+    "id": 119,
+    "occurred_at": "2026-09-14T13:58:34+00:00",
+    "action": "search_notes_updated",
+    "job_id": null,
+    "details": {
+      "date": "2026-09-14",
+      "before": "",
+      "after": "# Daily career result - 14 September 2026\n\nCompleted final validation and publication of two review drafts from the interrupted 13 September run. Four carried-over conditional roles remain; today's search added zero verified suitable new postings. No application was submitted. Planner: 0 of 15 completed (five base, ten carryover).\n\n1. **ESS - Data Analyst, Limerick:** first to resolve; employer deadline 16 September. Power BI, operational reporting and source reconciliation are supported. DAX/Power Apps delivery and application-form requirements remain unconfirmed. [Employer posting](https://jobsireland.ie/en-US/job-Details?id=2464829). [Draft and editable source](../../career-dashboard/output/applications/10ba01413aa6075f-p6u0becs/).\n2. **Prime Street - Junior Reporting Analyst, Dublin 8:** reporting, finance reconciliation and dashboards are supported. Need concrete Excel evidence and confirmation of interest in property work; Indeed verification gate remains. [Employer description](https://primestreet.ie/) and [application posting](https://ie.indeed.com/viewjob?jk=03a4c1873988fa89). [Draft and editable source](../../career-dashboard/output/applications/5b8921d814b94f76-c2s4n1cd/).\n3. **Morgan McKinley - Data Analyst Contract, Cork:** reconciliation work is relevant; advanced Excel mandatory and unconfirmed. No tailored resume yet. [Recruiter posting](https://www.morganmckinley.com/jobs/cork/data-analyst-contract/1104845). Empty form inspection remains blocked by automatic approval review.\n4. **Lidl - Controlling & Analytics graduate programme, Dublin 24:** KPI work transfers; 2:1/Level 8 equivalence, full licence, mobility and September 2027 availability/permission unresolved. No tailored resume yet. [Employer posting](https://jobs.lidl.ie/jobs/graduate-programme-controlling-analytics-dublin-24-741208).\n\nBoth PDF drafts have exactly two A4 pages and two distinct registered selected projects, with readable single-column text, no overflow and final PDF renderings matching the visually reviewed pages. Current profile/evidence revision 2026-09-13.1 is retained, including July 2025 employment end and MSc in progress. Individual release QA still fails only role eligibility; neither is advertised as release-ready. Current PDFs and review hashes are in the original application folders; existing Studio revisions were preserved.\n\nGmail is connected and its worker completed a 30-message review. An older unmatched application confirmation and a saved-job reminder were added to pending review, now 36 messages. No new interview or offer was confirmed. A GCS recruiter notification in LinkedIn is worth checking; its message content was absent from the email.\n\nThe existing daily 09:00 Europe/Dublin automation remains active. Its prompt was corrected to use the confirmed July end date and exactly two projects; no second schedule was created. [Official schedule documentation](https://learn.chatgpt.com/docs/automations?surface=app).\n\n[Search coverage and exclusions](search-coverage.md) | [Email coverage](email-review.md) | [Full four-role comparison](../2026-09-13/companies.md)\n\n# Search coverage - 14 September 2026\n\nContinued the interrupted 13 September work and carried its four exact saved IDs into today's run. They are carryovers, not new discoveries. Today's planner is 15: five base plus ten carried forward, zero completed. A broad discovery pass found zero additional verified eligible unique postings; shortfall is ten against the maximum first-pass discovery count, and all 15 applications remain outstanding. This is a bounded search result, not a claim that no suitable jobs exist in Ireland.\n\nJob-search queries (26 including targeted follow-ups/retries) covered BI, data/reporting, junior/graduate and insights roles across Ireland, Dublin, Cork, Galway, Limerick, remote Ireland and Monaghan. Sources included employer/ATS pages, authorised recruiter pages, JobsIreland, LinkedIn, IrishJobs and aggregators for discovery. Existing 20 jobs, history and historical packs were checked for duplicates.\n\nImportant dispositions:\n\n| Lead | Evidence and disposition |\n| --- | --- |\n| ESS JOB-2464829 | Reopened full official JD on 14 September; still shows 16 September closing date. Carried-over draft; MyGovID form remains uninspected. https://jobsireland.ie/en-US/job-Details?id=2464829 |\n| Prime Street 03a4c1873988fa89 | Employer career page still lists analyst role. Carried-over draft; previous Indeed additional-verification gate unresolved. https://primestreet.ie/ |\n| Bank of Ireland 2027 Data, Technology and Change | Current employer advert, but exact role already delivered 5 September; excluded as duplicate. https://careers.bankofireland.com/jobs/data-technology-and-change-graduate-programme-2027-dublin-ireland |\n| Kepak 18C12557B9 | Same previously delivered Watergrasshill analyst vacancy; not counted again. https://apply.workable.com/kepak/j/18C12557B9/ |\n| Morgan McKinley Cork contract | Existing saved lead 30cb363d12392b54 resurfaced; advanced Excel still unconfirmed. Form block was not bypassed. |\n| EirGrid Data & Reporting Analyst | Discovery result carries 11 September closing date, already past. No verified reopened employer posting. https://www.simplyhired.ie/en-IE/job/M2I9PJ8dyTMJMwGXR_P9W9aW2L98ExUNNiNQ56lbvUE27paAcTMSyw |\n| Dublin Business School JR256170 | Official Workday indexed posting closed 5 July 2026. https://ghc.wd1.myworkdayjobs.com/en-US/DBS_Career/job/Data---Reporting-Analyst_JR256170 |\n| Monaghan Ref-339 | Full employer PDF read; suitable trainee requirements but absent from current employer vacancy list. IrishJobs detail fetch failed. Liveness unverified, not claimed closed or selected. https://www.monaghan.eu/careers/view-jobs/ ; https://www.monaghan.eu/wp-content/uploads/2026/01/Graduate-Trainee-Master-Data-Business-Systems-Analyst-Ref-339.pdf |\n| Dogpatch Junior Portfolio & Data Analyst | Indeed explicitly says job expired; no live primary posting verified. https://ie.indeed.com/q-junior-data-analyst-l-dublin%2C-county-dublin-jobs.html?vjk=e3fb98628ab700fb |\n| Genesys JR111847 | Browser Workday page says page does not exist. https://genesys.wd1.myworkdayjobs.com/en-US/Genesys/job/Galway-Flexible/Business-Operations-Analyst_JR111847 |\n| Analog Devices R260180 | Full official indexed JD requires 5+ years plus laboratory/electronic-device testing; unsupported. https://analogdevices.wd1.myworkdayjobs.com/en-US/External/job/Data-Analyst_R260180 |\n| Talentspot ref243 | Full recruiter JD requires 3-4+ years Python/Power BI and commercial analytics. Combined internships total does not establish this. https://www.talentspot.ie/vacancy/data-and-insights-analysts-x-2-243/ |\n| HERO 4432233140 | Promising transferable role; exact recruiter LinkedIn posting explicitly says no longer accepting applications. Official current listings did not surface an equivalent posting. https://ie.linkedin.com/jobs/view/data-analyst-at-hero-recruitment-4432233140 |\n| Coffey 4332968048 | Exact posting explicitly no longer accepting; also full licence requirement unconfirmed. https://ie.linkedin.com/jobs/view/junior-data-analyst-at-coffey-4332968048 |\n| Planet BI Data Analyst | Full mirror requires advanced DAX and dbt/equivalent pipelines, not established by current evidence; no verified primary application route. https://builtin.com/job/data-analyst/10799301 |\n| NTMA Junior Data Analyst | Old advert closed 24 October 2025. https://www.irishjobs.ie/job/junior-data-analyst/national-treasury-management-agency-job105960547 |\n| Duna AI JOB-2440140 | Official report shows closed 23 April 2026. https://employer.jobsireland.ie/Reports/GetJobsDetail?id=2440140 |\n| CPL Galway JO-2608-568012 | Previous visa-restriction uncertainty remains; not a confirmed Stamp 1G rejection. https://www.cpl.com/cs/prace/reporting-analyst-6004101 |\n| Archer / Centric / Confidential / Metaplanet | Aggregator or old social listings only; exact current primary route not verified. |\n| Senior, Fabric/platform, Galway council SQL administration and Aerogen Power Apps leads | Discovery indicated substantial unsupported expertise; not shortlisted from title alone. |\n\nNo new company/hiring workers were needed because no additional role passed discovery verification. Existing independent reviews for the four carried-over roles remain available in the 13 September files and shared notes.\n\n# Email review - 14 September 2026\n\nThe application's email worker completed: 698f674f589c421386ad83a0361d7994. It reviewed 30 unique relevant messages from fully paginated 90-day keyword searches. No attachments or email mutations. Keyword coverage is not a guarantee of all correspondence.\n\nTwo new evidence records were preserved, both pending: an Arup saved-job reminder (not a new application), and an unmatched Crossing Hurdles Business Intelligence Analyst (Excel) confirmation that explicitly gives an application date of 12 July 2026, separately from its receipt time. The latter is older historical evidence and earns no September application credit. Total pending records: 36. No new human interview or offer was confirmed.\n\nThe parent also searched after 13 September using application/interview/recruitment/assessment terms: six results, no remaining page token. New relevant full bodies were a Collins McNicholas electronics programme-manager invitation (not an application) and a LinkedIn notification from Kritika Mishra, Recruitment Consultant at GCS. The LinkedIn email contains no message body or exact role; review in LinkedIn is a candidate action. No reply was sent. Unrelated receipt/newsletter hits and prior invitations did not change candidate facts or application status.\n"
+    }
+  },
+  {
+    "id": 118,
+    "occurred_at": "2026-09-14T13:58:34+00:00",
+    "action": "search_job_added",
+    "job_id": "7bfa6b3fce1853f0",
+    "details": {
+      "date": "2026-09-14"
+    }
+  },
+  {
+    "id": 117,
+    "occurred_at": "2026-09-14T13:58:34+00:00",
+    "action": "search_job_added",
+    "job_id": "30cb363d12392b54",
+    "details": {
+      "date": "2026-09-14"
+    }
+  },
+  {
+    "id": 116,
+    "occurred_at": "2026-09-14T13:58:34+00:00",
+    "action": "search_job_added",
+    "job_id": "5b8921d814b94f76",
+    "details": {
+      "date": "2026-09-14"
+    }
+  },
+  {
+    "id": 115,
+    "occurred_at": "2026-09-14T13:58:34+00:00",
+    "action": "search_job_added",
+    "job_id": "10ba01413aa6075f",
+    "details": {
+      "date": "2026-09-14"
+    }
+  },
+  {
+    "id": 114,
+    "occurred_at": "2026-09-14T13:58:34+00:00",
+    "action": "search_started",
+    "job_id": null,
+    "details": {
+      "date": "2026-09-14"
+    }
+  },
+  {
+    "id": 113,
+    "occurred_at": "2026-09-14T13:52:44+00:00",
+    "action": "agent_completed",
+    "job_id": null,
+    "details": {
+      "run_id": "698f674f589c421386ad83a0361d7994",
+      "kind": "email"
+    }
+  },
+  {
+    "id": 112,
+    "occurred_at": "2026-09-14T13:52:44+00:00",
+    "action": "email_synced",
+    "job_id": null,
+    "details": {
+      "new_messages": 2
+    }
+  },
+  {
+    "id": 111,
+    "occurred_at": "2026-09-14T13:52:10+00:00",
+    "action": "search_notes_updated",
+    "job_id": null,
+    "details": {
+      "date": "2026-09-13",
+      "before": "",
+      "after": "# Daily career search - 13 September 2026\n\nFinalised on 14 September after interruption. Four new conditional leads, two tailored PDF drafts, zero release-ready resumes and zero submissions. Six fewer new leads than the ten sought; all ten application targets remained uncompleted. The four leads are not four verified eligible applications.\n\nESS is the first role to resolve because it closes 16 September. Prime Street is second. Morgan McKinley is worth progressing if advanced Excel evidence is confirmed. Lidl is a longer-term graduate option starting 6 September 2027, with deadline 31 October 2026.\n\n| Priority | Employer and role | Location | Direct posting | Supported fit | Gap / next action | Artifacts |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | Engineering Support & Services Limited - Data Analyst | Raheen Business Park, Limerick, Ireland; office based; 40 hours weekly | [Posting](https://jobsireland.ie/en-US/job-Details?id=2464829) | Power BI dashboards, operational reporting, multi-source reconciliation and stakeholder delivery. | DAX and Power Apps delivery unconfirmed; industrial context is transferable evidence. MyGovID/account-gated form not inspected. | [Reviewed draft and source](/Users/chetan/Desktop/Resume/career-dashboard/output/applications/10ba01413aa6075f-p6u0becs) |\n| 2 | Prime Street - Junior Reporting Analyst | Dublin 8, Ireland; in person; Monday-Friday | [Posting](https://ie.indeed.com/viewjob?jk=03a4c1873988fa89) | Recurring finance reporting, validation, dashboard development and feedback handling. | Concrete Excel tasks and property interest need confirmation. Indeed requires additional verification. | [Reviewed draft and source](/Users/chetan/Desktop/Resume/career-dashboard/output/applications/5b8921d814b94f76-c2s4n1cd) |\n| 3 | Morgan McKinley - Data Analyst - Contract | Cork, Ireland; hybrid, 2-3 onsite days weekly; 12-month contract | [Posting](https://morganmckinley.com/jobs/cork/data-analyst-contract/1104845) | Data-quality investigation, finance access reconciliation, Power BI/Tableau and stakeholder delivery. | Advanced Excel is mandatory and unconfirmed. End employer undisclosed. Empty application form inspection blocked by automatic approval review. | No resume; eligibility pending |\n| 4 | Lidl Ireland - Graduate Programme - Controlling & Analytics | Tallaght, Dublin 24, Ireland; travel/relocation required | [Posting](https://jobs.lidl.ie/jobs/graduate-programme-controlling-analytics-dublin-24-741208) | KPI reporting, analytical degree background and client communication. | Overall 2:1/Level 8 equivalence, full driving licence, travel/relocation and September 2027 availability/permission unconfirmed. | No resume; eligibility pending |\n\nBoth drafts use candidate revision 2026-09-13.1, July 2025 employment end, 3+ years combined professional and internship experience, MSc in progress, disclosed client names and the supplied Irish phone. Stamp 1G is confirmed internally; no unsupported duration or sponsorship claim appears on the resume. No DAX, Power Apps or advanced Excel expertise was invented.\n\nThe final PDF files match the inspected previews. Prime Street page-fill is 98.6% / 95.2%; ESS 99.0% / 94.9%. Two projects each, selectable text, no overflow. `qa.json` remains FAIL solely for `role_eligible=false`; `draft-review.json` binds actual PDF/source/preview hashes. These are review drafts, not approved application documents.\n\nSeparate public-research and candidate-blind hiring workers completed for all four roles. Separate active-profile comparison reports were written before that worker's final response was interrupted by usage limits. Prime research import completed; ESS, Morgan McKinley and Lidl imports failed at the app's daily AI budget. Their actual results are preserved in research-results.json and the shared search notes; failed runs were not relabelled as completed.\n\nRead-only Gmail fallback found no new application, interview, offer or rejection. Invitations/newsletters did not change status; 34 older ambiguous messages remained pending. The application email worker failed, and its error was retained. Arup remains applied with its actual application date unknown.\n\n[Search coverage](search-coverage.md) | [Profile comparison](profile-comparison.md) | [Batch release QA](batch-qa.json)\n\n# Search coverage - 13 September 2026\n\n18 parent search queries plus focused public research covered Ireland, Dublin, Cork, Limerick, Galway and remote Ireland. Tracks included BI/data/reporting/insights and supported graduate roles. Deduplicated against 16 previously saved jobs, 15 history rows, 20 historical packs and verified email evidence. Four new exact postings were saved in the shared database; no previous delivered posting was repeated.\n\nSelected conditional leads: ESS JOB-2464829, Prime Street 03a4c1873988fa89, Morgan McKinley JN-092026-2008476, Lidl 741208. Full employer/recruiter descriptions were read. Application routes remain partly inaccessible/unverified, as recorded in companies.md. Six-role lead shortage and zero fully verified releases.\n\nExcluded or held leads:\n\n- Morgan McKinley Cork permanent 1104834/JN-092026-2008454: full official JD requires five years. https://www.morganmckinley.com/jobs/cork/data-analyst/1104834\n- Morgan McKinley Technical Data Analyst 1104830/JN-092026-2008446: enterprise ETL/ELT and production AI-ready foundations exceed evidence. https://www.morganmckinley.com/jobs/dublin/technical-data-analyst/1104830\n- Ardonagh Data Analyst 8297985: five years mandatory. https://theardonaghgroup.teamtailor.com/jobs/8297985-data-analyst\n- Davy risk reporting 10419254: full mirror requires 3-8 years financial-services/risk/controls; exact employer route not verified. https://builtin.com/job/risk-reporting-analyst-18m-ftc/10419254\n- NCI MIS001723: closed 11 September 17:00. https://www.vacancies.ncirl.ie/job/data-analyst-mis-project-6014806\n- CPL Reporting Analyst JO-2608-568012, Galway: 12-month body despite permanent metadata; eligibility wording excludes restricted visas/sponsorship. Stamp 1G eligibility unresolved, not assumed rejected. https://www.cpl.com/cs/prace/reporting-analyst-6004101\n- Sigmar Junior Data Analyst 4447298339: explicit no Stamp 1G; previous rejection remains.\n- AMCS: same expired listing; no verified reopened posting.\n- Taskify AI 4338753028: closed, and duties are content writing rather than suitable analytics.\n- Cognizant 00067654271: seven years plus three pharmaceutical years required.\n- Sigmar Senior DA ACCA10115: four years financial experience unsupported.\n- KTS Recruits: 3-5 years and no verified exact primary posting.\n- Spait Infotech: aggregator only; no verified primary posting.\n- Flutter BI JR134782: Gibraltar and expired March deadline.\n- Telfer 2413610 and old DCU PDFs: historical, not verified current postings.\n- TEKenable and Glanbia senior/platform leads: outside supported scope.\n\nEmail: read-only query after:2026/09/12 with job-confirmation terms returned four messages, no pagination. Two new full bodies were Indeed invitations (Snap-on and Lidl); newsletter and old Accenture invitation did not establish status. No mailbox mutations or attachments opened.\n\nAutomatic approval review blocked opening Morgan McKinley's Apply Now form because it classified it as starting an application. No bypass was attempted. Prime Indeed displayed Additional Verification Required. ESS account route and Lidl empty form were not traversed. No application or outreach was performed.\n\n## Preserved separate-worker results\n[\n  {\n    \"job_id\": \"5b8921d814b94f76\",\n    \"run_id\": \"4d83ba1570ad4fd3b944f394e705f154\",\n    \"state\": \"completed\",\n    \"public\": {\n      \"summary\": \"Prime Street manages mixed Dublin property portfolios using Yardi and Notion. It prioritises transparent financial reporting and responsive operations. The Junior Reporting Analyst produces recurring reports, reconciles sources, builds dashboards and supports lender/investor/regulator reporting; ad-hoc bookkeeping and IT administration also feature. Dublin 8, in person, Monday-Friday, EUR35,000. No driving licence or PSRA requirement belongs to this analyst posting.\",\n      \"report\": \"Prime Street manages mixed Dublin property portfolios using Yardi and Notion. It prioritises transparent financial reporting and responsive operations. The Junior Reporting Analyst produces recurring reports, reconciles sources, builds dashboards and supports lender/investor/regulator reporting; ad-hoc bookkeeping and IT administration also feature. Dublin 8, in person, Monday-Friday, EUR35,000. No driving licence or PSRA requirement belongs to this analyst posting.\",\n      \"sources\": [\n        {\n          \"title\": \"Official role/company source\",\n          \"url\": \"https://primestreet.ie/\",\n          \"accessed_at\": \"2026-09-13\"\n        }\n      ],\n      \"limitations\": [\n        \"Full public worker results were delivered in this chat; this is a concise persisted rendering. Application-route verification is a separate step.\"\n      ]\n    },\n    \"hiring\": {\n      \"summary\": \"Mandatory: English, Excel competence, basic financial/operational report understanding, cross-checking, organisation, reliability and analytical interest in property. Preferred systems/accounting, Office/Power BI, programming/AI and integrations are not collectively mandatory. Seek a source-reconciliation example, repeatable validated reporting, feedback handling, spreadsheet fluency and willingness to perform adjacent operational duties. Actual assessment contents are unknown.\",\n      \"report\": \"Mandatory: English, Excel competence, basic financial/operational report understanding, cross-checking, organisation, reliability and analytical interest in property. Preferred systems/accounting, Office/Power BI, programming/AI and integrations are not collectively mandatory. Seek a source-reconciliation example, repeatable validated reporting, feedback handling, spreadsheet fluency and willingness to perform adjacent operational duties. Actual assessment contents are unknown.\",\n      \"sources\": [\n        {\n          \"title\": \"Official role/company source\",\n          \"url\": \"https://primestreet.ie/\",\n          \"accessed_at\": \"2026-09-13\"\n        }\n      ],\n      \"limitations\": [\n        \"Candidate-blind benchmark used only JD and public research. Interview themes are inferred.\"\n      ]\n    }\n  },\n  {\n    \"job_id\": \"10ba01413aa6075f\",\n    \"run_id\": \"4e59eabdc83c4b0fb2d177a2f76243d3\",\n    \"state\": \"failed\",\n    \"public\": {\n      \"summary\": \"ESS supports asset performance, maintenance, reliability and operational efficiency through engineering and analytical services. This role addresses accurate, accessible project and operational performance information using KPI trackers, Power BI, validation and stakeholder reporting. SharePoint, Power Apps, DAX and data modelling appear in duties. Relevant bachelor and operational-data OR engineering/technical experience required; postgraduate and industrial domain understanding desirable. Limerick, 40 hours, EUR46,000-50,000; closes 16 September 2026.\",\n      \"report\": \"ESS supports asset performance, maintenance, reliability and operational efficiency through engineering and analytical services. This role addresses accurate, accessible project and operational performance information using KPI trackers, Power BI, validation and stakeholder reporting. SharePoint, Power Apps, DAX and data modelling appear in duties. Relevant bachelor and operational-data OR engineering/technical experience required; postgraduate and industrial domain understanding desirable. Limerick, 40 hours, EUR46,000-50,000; closes 16 September 2026.\",\n      \"sources\": [\n        {\n          \"title\": \"Official role/company source\",\n          \"url\": \"https://jobsireland.ie/en-US/job-Details?id=2464829\",\n          \"accessed_at\": \"2026-09-13\"\n        }\n      ],\n      \"limitations\": [\n        \"Full public worker results were delivered in this chat; this is a concise persisted rendering. Application-route verification is a separate step.\"\n      ]\n    },\n    \"hiring\": {\n      \"summary\": \"Mandatory: relevant technical bachelor; engineering projects OR operational data OR technical/industrial experience; BI/KPI/performance analysis; multisource interpretation, communication and learning. Seek operational KPI/report examples, validation controls, stakeholder requirements and Power BI modelling. DAX and Power Apps capability would support duties; no proficiency threshold is stated. Postgraduate study and industrial understanding are preferred. Generic permit notice does not establish a particular stamp restriction.\",\n      \"report\": \"Mandatory: relevant technical bachelor; engineering projects OR operational data OR technical/industrial experience; BI/KPI/performance analysis; multisource interpretation, communication and learning. Seek operational KPI/report examples, validation controls, stakeholder requirements and Power BI modelling. DAX and Power Apps capability would support duties; no proficiency threshold is stated. Postgraduate study and industrial understanding are preferred. Generic permit notice does not establish a particular stamp restriction.\",\n      \"sources\": [\n        {\n          \"title\": \"Official role/company source\",\n          \"url\": \"https://jobsireland.ie/en-US/job-Details?id=2464829\",\n          \"accessed_at\": \"2026-09-13\"\n        }\n      ],\n      \"limitations\": [\n        \"Candidate-blind benchmark used only JD and public research. Interview themes are inferred.\"\n      ]\n    }\n  },\n  {\n    \"job_id\": \"30cb363d12392b54\",\n    \"run_id\": \"625f988e8dff4d2dad78a8ddb0bc4235\",\n    \"state\": \"failed\",\n    \"public\": {\n      \"summary\": \"Morgan McKinley is the recruiter for an unnamed client. The client identity and sector are not established. Cork, 12-month contract, hybrid 2-3 onsite days, competitive pay. Work covers complex multisource validation and reconciliation, root-cause investigation, governance/audit reporting support, stakeholder queries, process improvement and deadlines/SLAs. Advanced Excel, a relevant BI/system tool, data-quality experience and controls/governance understanding are required. Finance/accounting/reconciliation background is advantageous. No numeric experience threshold or degree requirement is stated.\",\n      \"report\": \"Morgan McKinley is the recruiter for an unnamed client. The client identity and sector are not established. Cork, 12-month contract, hybrid 2-3 onsite days, competitive pay. Work covers complex multisource validation and reconciliation, root-cause investigation, governance/audit reporting support, stakeholder queries, process improvement and deadlines/SLAs. Advanced Excel, a relevant BI/system tool, data-quality experience and controls/governance understanding are required. Finance/accounting/reconciliation background is advantageous. No numeric experience threshold or degree requirement is stated.\",\n      \"sources\": [\n        {\n          \"title\": \"Official role/company source\",\n          \"url\": \"https://www.morganmckinley.com/jobs/cork/data-analyst-contract/1104845\",\n          \"accessed_at\": \"2026-09-13\"\n        }\n      ],\n      \"limitations\": [\n        \"Full public worker results were delivered in this chat; this is a concise persisted rendering. Application-route verification is a separate step.\"\n      ]\n    },\n    \"hiring\": {\n      \"summary\": \"Mandatory: demonstrated analysis/data-quality/reconciliation, advanced Excel and Power BI/Tableau/SAP or similar, multisource complex data, controls/governance/audit understanding, organisation and stakeholder delivery. Seek concrete Excel techniques, source-discrepancy investigation, validation and auditability examples. No numeric experience/degree/SQL rule. Interview themes about reconciliation, source defects and deadlines are inferences, not confirmed questions.\",\n      \"report\": \"Mandatory: demonstrated analysis/data-quality/reconciliation, advanced Excel and Power BI/Tableau/SAP or similar, multisource complex data, controls/governance/audit understanding, organisation and stakeholder delivery. Seek concrete Excel techniques, source-discrepancy investigation, validation and auditability examples. No numeric experience/degree/SQL rule. Interview themes about reconciliation, source defects and deadlines are inferences, not confirmed questions.\",\n      \"sources\": [\n        {\n          \"title\": \"Official role/company source\",\n          \"url\": \"https://www.morganmckinley.com/jobs/cork/data-analyst-contract/1104845\",\n          \"accessed_at\": \"2026-09-13\"\n        }\n      ],\n      \"limitations\": [\n        \"Candidate-blind benchmark used only JD and public research. Interview themes are inferred.\"\n      ]\n    }\n  },\n  {\n    \"job_id\": \"7bfa6b3fce1853f0\",\n    \"run_id\": \"89843321ca2a4d0a9e2128ef2c7b7771\",\n    \"state\": \"failed\",\n    \"public\": {\n      \"summary\": \"Lidl Controlling & Analytics provides accurate turnover, margin, stock-loss and productivity reporting and trend insights to stores and the board. The 18-month programme rotates through business insights, partnering and financial controlling, with store/distribution training. Expected/attained 2.1 Honours Level 8 degree, full driver licence, Ireland travel/relocation, numeracy, communication and deadline delivery are required; German optional. EUR45,500 pro rata. Parent verified deadline 31 October 2026 and start 6 September 2027 on the exact employer page.\",\n      \"report\": \"Lidl Controlling & Analytics provides accurate turnover, margin, stock-loss and productivity reporting and trend insights to stores and the board. The 18-month programme rotates through business insights, partnering and financial controlling, with store/distribution training. Expected/attained 2.1 Honours Level 8 degree, full driver licence, Ireland travel/relocation, numeracy, communication and deadline delivery are required; German optional. EUR45,500 pro rata. Parent verified deadline 31 October 2026 and start 6 September 2027 on the exact employer page.\",\n      \"sources\": [\n        {\n          \"title\": \"Official role/company source\",\n          \"url\": \"https://jobs.lidl.ie/jobs/graduate-programme-controlling-analytics-dublin-24-741208\",\n          \"accessed_at\": \"2026-09-13\"\n        }\n      ],\n      \"limitations\": [\n        \"Full public worker results were delivered in this chat; this is a concise persisted rendering. Application-route verification is a separate step.\"\n      ]\n    },\n    \"hiring\": {\n      \"summary\": \"Mandatory: expected/attained 2.1 Honours Level 8, full driver licence, travel/relocation, numeracy/analysis, communication, motivation and deadlines. German optional; no named analytics software required. Seek confirmed degree/licence/mobility and accurate KPI analysis with clear communication. Interview themes about turnover/margin/stock loss/productivity and retail rotations are inferred, not confirmed questions.\",\n      \"report\": \"Mandatory: expected/attained 2.1 Honours Level 8, full driver licence, travel/relocation, numeracy/analysis, communication, motivation and deadlines. German optional; no named analytics software required. Seek confirmed degree/licence/mobility and accurate KPI analysis with clear communication. Interview themes about turnover/margin/stock loss/productivity and retail rotations are inferred, not confirmed questions.\",\n      \"sources\": [\n        {\n          \"title\": \"Official role/company source\",\n          \"url\": \"https://jobs.lidl.ie/jobs/graduate-programme-controlling-analytics-dublin-24-741208\",\n          \"accessed_at\": \"2026-09-13\"\n        }\n      ],\n      \"limitations\": [\n        \"Candidate-blind benchmark used only JD and public research. Interview themes are inferred.\"\n      ]\n    }\n  }\n]\n\n# Active-profile comparison — 13 September 2026\n\n**Decision:** Draft ESS and Prime Street using supported BI/reporting evidence. Keep Morgan McKinley provisional until advanced Excel is substantiated. Check Lidl’s degree, licence and mobility eligibility before prioritising full tailoring. None is application-ready or artifact-QA approved by this comparison.\n\nRevision **2026-09-13.1** was checked against the active profile (84 returned entries; none pending/deleted), config and evidence registry. This is the separate candidate comparison following candidate-blind public research and hiring benchmarks. The saved posting snapshots and parent-supplied benchmarks are the company/JD sources; this worker did not independently inspect the web or forms.\n\nEmployment ended July 2025. `EXP-TOTAL-001` supports **3+ years of combined professional and internship experience**. MSc remains in progress. No profile evidence, database statuses, submissions or other artifacts were changed.\n\n| Priority | Exact job ID | Employer / role | Draft decision |\n|---|---|---|---|\n| 1 | `10ba01413aa6075f` | Engineering Support & Services Limited — Data Analyst | Proceed with a supported role-fit draft and prioritise because the posting closes 16 September 2026. |\n| 2 | `5b8921d814b94f76` | Prime Street — Junior Reporting Analyst | Proceed with a supported role-fit draft; retain partial Excel evidence and unconfirmed property interest in the evaluation. |\n| 3 | `30cb363d12392b54` | Morgan McKinley — Data Analyst - Contract | A truthful provisional draft is useful, but retain mandatory advanced Excel coverage as unresolved; do not mark fully eligible or release-ready. |\n| 4 | `7bfa6b3fce1853f0` | Lidl Ireland — Graduate Programme - Controlling & Analytics | Keep as an eligibility-check lead. Supported analytics content can form a provisional draft, but defer full tailoring priority until objective degree/licence/mobility requirements are resolved. |\n\n## Engineering Support & Services Limited — Data Analyst\n\nJob `10ba01413aa6075f` · Requisition `2464829` · [Saved JD source](https://jobsireland.ie/en-US/job-Details?id=2464829)\n\nStrong transferable BI/operational-data fit. The advertised alternatives do not require prior engineering employment in addition to operational-data experience.\n\n**Strongest supported fit:** Multi-source access operations reporting, Power BI modelling/delivery, stakeholder handover and refresh automation match project-data validation and accessible KPI reporting.\n\n### Mandatory coverage\n\n| Requirement | Evidence / coverage | Assessment |\n|---|---|---|\n| Relevant technical bachelor degree, including computer science | supported; `EDU-BTECH-001` | Candidate-supplied B.Tech Computer Science (AI and ML) meets the subject requirement; no honours equivalence should be invented. |\n| Engineering projects OR operational data OR technical/industrial experience | supported_transferable; `PROJ-AZ-RECON`, `PROJ-NIQ-REPORTING` | Professional access-tracking operations and reporting delivery support the operational-data route. No maintenance-engineering employment is claimed. |\n| BI, KPI/performance analysis | supported; `SKILL-BI-001`, `PROJ-AZ-EXEC`, `PROJ-POWERBI-PORTFOLIO` | Professional dashboard/data-model delivery plus visible candidate KPI reporting. Maintenance-specific performance measures are a learning area. |\n| Interpret and validate complex multi-source data | supported; `PROJ-AZ-RECON`, `WORK-HUL-001` | Five-source consolidation, discrepancy drill-through and validation are direct evidence. |\n| Communication, requirements, adaptability and learning | supported; `SKILL-DELIVERY-001`, `PROJ-NIQ-REPORTING`, `PROJ-AZ-EXEC` | BRDs, two-week platform learning, executive demonstration and handover are registered. |\n\n### Preferences and development areas\n\n- Relevant postgraduate study is supported by EDU-MSC-001, but the MSc award remains in progress. Do not present an awarded masters.\n- Industrial maintenance/reliability domain expertise is not established. PROJ-SECOM-FAULT-DETECTION provides academic manufacturing exposure, not operational engineering employment.\n- DAX and Power Apps appear in duties without an explicit proficiency threshold. They remain unverified development areas, not automatic knockout requirements. SharePoint is supported as a reconciliation source, not full SharePoint application/workflow development. Power Automate refresh work is supported by WORK-AZ-OTHER-001.\n\n### Exactly two ranked projects\n\n1. `PROJ-AZ-RECON` — Directly addresses multi-source operational data, traceable discrepancy checks and accessible Power BI reporting. Boundary: Co-developed access-tracking solution; not engineering-asset maintenance or accounts reconciliation.\n2. `PROJ-AZ-EXEC` — Shows data modelling, end-to-end Power BI delivery, demonstration and stakeholder handover within a stated time window. Boundary: One contributor in a three-person team; exact KPI definitions and commercial causality are not established.\n\nPROJ-SECOM-FAULT-DETECTION ranks behind the two professional BI examples: it adds academic industrial context but is less similar to recurring operational/project reporting. If used elsewhere, retain one-split and low failure-class F1 limitations. PROJ-POWERBI-PORTFOLIO can support KPI visibility in the comparison without replacing stronger professional delivery evidence.\n\n### Evidence or checks still needed\n\n- Confirm Limerick office-based availability and start availability.\n- If the form asks about DAX, Power Apps or SharePoint development, use only actual examples; seek candidate confirmation/artifacts before adding such proficiency to the registry.\n- Inspect login-gated application requirements and any actual work-permission questions. The generic permit notice is not evidence of a Stamp 1G exclusion or sponsorship promise.\n\n**Draft decision:** Proceed with a supported role-fit draft and prioritise because the posting closes 16 September 2026.\n\n**Release readiness:** Not release-ready. The full JD and account gateway were observed, but account-gated instructions/form requirements have not been traversed. Complete truthful tailoring, evidence mapping, two-page compilation and visual QA before releasing a reviewed artifact.\n\n## Prime Street — Junior Reporting Analyst\n\nJob `5b8921d814b94f76` · Requisition `03a4c1873988fa89` · [Saved JD source](https://ie.indeed.com/viewjob?jk=03a4c1873988fa89)\n\nPlausible fit; mandatory competency coverage is partly evidenced, with no demonstrated disqualifier.\n\n**Strongest supported fit:** Professional source reconciliation, finance-dashboard delivery, recurring reporting, stakeholder requirements and rapid platform learning directly address the reporting function.\n\n### Mandatory coverage\n\n| Requirement | Evidence / coverage | Assessment |\n|---|---|---|\n| English communication | supported; `LANG-001`, `SKILL-DELIVERY-001` | Fluent English and professional stakeholder communication are registered. |\n| Excel competence | partial; `PROJ-AZ-RECON`, `PROJ-POWERBI-PORTFOLIO` | Excel is an established source in professional reconciliation and candidate dashboards. This supports Excel exposure, but does not establish independent spreadsheet proficiency or particular formulas. Confirm a concrete workbook task; do not label advanced Excel. |\n| Basic financial/operational report understanding | supported_transferable; `PROJ-NIQ-POC`, `PROJ-AZ-RECON` | Finance dashboard construction and access-tracking reconciliation support reporting understanding. The reconciliation project concerns access requests, not ledger balances, rent accounts or financial-statement preparation. |\n| Cross-checking, organisation and reliability | supported_transferable; `PROJ-AZ-RECON`, `WORK-HUL-001`, `PROJ-NIQ-REPORTING` | Source discrepancy tracing, testing and 300+ reports over six months provide examples. They do not establish zero errors or perfect SLA performance. |\n| Analytical mindset and interest in property/alternative investment | partial; `PROJ-AZ-RECON`, `PROJ-NIQ-POC` | Analytical work is supported. Personal property/investment motivation is not registered and must come from the candidate; do not fabricate it. |\n\n### Preferences and development areas\n\n- Yardi Voyager 7S, AccountsIQ, property/CRM systems and Notion proficiency are not registered. These are preferences or named tools, not a mandatory prior-property-employment rule.\n- Accounting principles, bookkeeping, specific Office/Google Workspace proficiency and API/no-code integration experience are not established. Power BI and general SQL are supported; Python/R are academic.\n- AI is optional. Do not force restricted GenAI-project wording into a property reporting resume merely to include the keyword.\n\n### Exactly two ranked projects\n\n1. `PROJ-AZ-RECON` — Closest analogue to cross-checking multiple sources and tracing reporting discrepancies. Boundary: Professional team project about access tracking; preserve co-development and the reported baseline.\n2. `PROJ-NIQ-POC` — Finance reporting and a reusable dashboard template align with recurring reports, feedback and new reporting tools. Boundary: Built from a client wireframe on a proprietary BI platform; effort savings are candidate-reported, not independently measured.\n\nPROJ-NIQ-REPORTING is the next strongest alternative and should remain prominent in Professional Experience for reporting volume, requirements and two-week learning. The selected POC adds distinct finance-reporting evidence.\n\n### Evidence or checks still needed\n\n- Candidate example of hands-on Excel work: inputs, cross-checks, formulas or pivot/filter methods actually used, output and personal contribution. A sanitised workbook or walkthrough would substantiate competence.\n- Candidate explanation of interest in property/alternative investment and willingness to undertake bookkeeping, operations and IT-administration duties.\n- Confirm Dublin 8 in-person availability; inspect the actual application instructions when accessible.\n\n**Draft decision:** Proceed with a supported role-fit draft; retain partial Excel evidence and unconfirmed property interest in the evaluation.\n\n**Release readiness:** Not release-ready. The employer JD is verified, but the exact Indeed route returned Additional Verification Required. Application instructions/form gates remain unverified; resume compilation, mapping and visual QA are separate outstanding steps.\n\n## Morgan McKinley — Data Analyst - Contract\n\nJob `30cb363d12392b54` · Requisition `JN-092026-2008476` · [Saved JD source](https://www.morganmckinley.com/jobs/cork/data-analyst-contract/1104845)\n\nStrong reconciliation/data-quality overlap with one clear mandatory evidence gap: advanced Excel. No evidence of inability, but current evidence cannot establish the required level.\n\n**Strongest supported fit:** Five-source reconciliation, discrepancy traceability, access controls and stakeholder reporting are closely related to the advertised contract work.\n\n### Mandatory coverage\n\n| Requirement | Evidence / coverage | Assessment |\n|---|---|---|\n| Proven analysis, data quality and reconciliation | supported; `PROJ-AZ-RECON`, `WORK-HUL-001` | Source consolidation, discrepancy tracing, testing and validation; do not equate access requests with financial ledger reconciliation. |\n| Advanced Excel with Power BI/Tableau/SAP or similar | partial; `PROJ-AZ-RECON`, `SKILL-BI-001` | Power BI/Tableau are supported, but Excel-source use does not establish advanced spreadsheet methods. SAP is not established; do not treat every listed BI tool as separately mandatory. |\n| Complex multi-source data | supported; `PROJ-AZ-RECON` | Five access-tracking sources provide a concrete professional example. |\n| Understanding compliance, governance, controls OR audit | supported_transferable; `PROJ-AZ-RECON`, `WORK-AZ-OTHER-001` | Access request traceability, discrepancies and Power BI membership administration support a controls/governance analogue. This is not financial audit employment, regulatory compliance ownership or certified accounting expertise. |\n| Stakeholder communication, organisation and priorities | supported_transferable; `SKILL-DELIVERY-001`, `PROJ-NIQ-REPORTING`, `PROJ-AZ-EXEC` | Requirements, high-volume delivery and timed team handover are supported; formal SLAs and root-cause methodology are not documented. |\n\n### Preferences and development areas\n\n- Finance/accounting background is advantageous. Finance BI/access reconciliation is relevant; bookkeeping, ledger reconciliation and accounting credentials are not established.\n- Employer client is undisclosed. No client sector, regulatory regime or technology estate should be inferred from recruiter branding.\n\n### Exactly two ranked projects\n\n1. `PROJ-AZ-RECON` — Closest match to reconciliation, multi-source quality checks, source traceability and controls. Boundary: Access-governance reconciliation, co-developed in a team; no audit/ledger or advanced Excel claim.\n2. `PROJ-NIQ-REPORTING` — Adds sustained report delivery, requirements translation, client communication and learning unfamiliar systems. Boundary: 300+ reports over six months; no unsupported SLA, defect rate or solo-delivery claim.\n\nPROJ-AZ-MIGRATION is a credible third option for collection-to-reporting change, but does not itself prove data-quality or Excel controls. A compliance RAG project would not establish professional audit/governance capability.\n\n### Evidence or checks still needed\n\n- Advanced Excel: an actual work or project example, personal contribution, workbook scale/structure, exact methods used (for example lookups, SUMIFS, PivotTables or Excel Power Query only if true), reconciliation/error-check approach and resulting output. A sanitised workbook or concrete walkthrough should support the claimed level; do not require VBA unless the employer does.\n- Controls/governance detail: describe one access discrepancy/control, how source records were traced, who reviewed/resolved it and which steps Chetan performed. Existing evidence supports the narrow controls analogy; stronger financial audit/compliance claims need separate evidence.\n- Confirm Cork attendance two to three days weekly, availability for the 12-month contract and answers to any actual work-permission question when the form is accessible.\n\n**Draft decision:** A truthful provisional draft is useful, but retain mandatory advanced Excel coverage as unresolved; do not mark fully eligible or release-ready.\n\n**Release readiness:** Not release-ready. Mandatory advanced Excel remains unverified. Automatic approval review blocked opening Apply Now; actual gateway requirements are unknown. No workaround or submission is authorised by this comparison.\n\n## Lidl Ireland — Graduate Programme - Controlling & Analytics\n\nJob `7bfa6b3fce1853f0` · Requisition `741208` · [Saved JD source](https://jobs.lidl.ie/jobs/graduate-programme-controlling-analytics-dublin-24-741208)\n\nMultiple genuine mandatory requirements are unverified: 2.1 Honours Level 8 eligibility, full driving licence and willingness to travel/relocate. This is uncertainty, not a confirmed rejection.\n\n**Strongest supported fit:** Retail/e-commerce sales and profit KPI communication plus executive Power BI handover transfer to business insights and controlling rotations.\n\n### Mandatory coverage\n\n| Requirement | Evidence / coverage | Assessment |\n|---|---|---|\n| Expected or attained 2.1 Honours Level 8 degree | unverified; `EDU-BTECH-001`, `EDU-MSC-001` | B.Tech CGPA 9.4/10 is supplied but no Irish classification/equivalence is established. MSc Semester 1 2:1 is not the final award or automatic proof of the specified bachelor eligibility. |\n| Full driving licence | unverified; no registered evidence | No registered licence evidence; do not assume from country, age or professional experience. |\n| Flexibility to travel and relocate within Ireland | unverified; `LOCATION-001` | Ireland location and general preferred cities do not establish relocation/travel commitment. |\n| Analytical/numeracy skills and accurate KPI reporting | supported; `PROJ-POWERBI-PORTFOLIO`, `PROJ-AZ-RECON`, `SKILL-ACADEMIC-001` | E-commerce KPIs, discrepancy checks and academic quantitative methods are supported. |\n| Communication and deadline delivery under pressure | supported_transferable; `SKILL-DELIVERY-001`, `PROJ-AZ-EXEC`, `PROJ-NIQ-REPORTING` | Stakeholder delivery and time-bounded projects support the requirement; do not invent crisis/pressure anecdotes. |\n| Motivation and programme availability from 6 September 2027 for 18 months | unverified; no registered evidence | Motivation for retail rotations, store/distribution training and the future start require the candidate response. No graduation, availability or permission coverage can be inferred from elapsed time. |\n\n### Preferences and development areas\n\n- German is advantageous, not required; LANG-001 lists English, Tamil and Telugu. Its absence is not a hard blocker.\n- No particular analytics software is mandatory. Do not add a DAX/Excel/SAP screening requirement absent from the verified JD.\n- Financial controlling or retail employment is not established; transferable finance/retail analytics examples remain usable.\n\n### Exactly two ranked projects\n\n1. `PROJ-POWERBI-PORTFOLIO` — Closest retail KPI analogue: visible e-commerce sales, profit, quantity, shipping and geography reporting. Boundary: Candidate portfolio, not retail employment; no undocumented DAX, data model, deployment or business impact.\n2. `PROJ-AZ-EXEC` — Professional senior-stakeholder dashboard delivery complements the retail KPI example and maps to decision support from operational teams to leadership. Boundary: Three-person team; do not claim Lidl-like margin, stock-loss or productivity metrics in this dashboard without evidence.\n\nPROJ-AZ-RECON is the next strongest accuracy/controls analogue; PROJ-NIQ-POC adds finance reporting, but neither is as close to retail KPI content as the selected portfolio.\n\n### Evidence or checks still needed\n\n- Degree: degree certificate/transcript and a supported classification/equivalence or employer confirmation that the B.Tech 9.4/10 meets its 2.1 Honours Level 8 requirement. Do not self-convert CGPA.\n- Licence: candidate confirmation of holding a full licence, issuing country/category and any employer-required validity details. Learner status cannot be relabelled full.\n- Mobility: explicit willingness/ability to travel and relocate within Ireland and undertake store/distribution-centre training.\n- Availability: explicit ability to start 6 September 2027 and complete the 18-month programme; candidate motivation for this retail/controlling route.\n- Inspect the actual application form for work-permission and other eligibility questions. WORKAUTH-STAMP-001 confirms only the supplied Stamp 1G fact on 5 September 2026; future duration/sponsorship are unconfirmed.\n\n**Draft decision:** Keep as an eligibility-check lead. Supported analytics content can form a provisional draft, but defer full tailoring priority until objective degree/licence/mobility requirements are resolved.\n\n**Release readiness:** Not release-ready. Objective eligibility remains unresolved and the linked application form has not been opened. Deadline is 31 October 2026; start is 6 September 2027. No application or related mail invitation is a submission.\n\n## Interpretation boundaries\n\nThe project order weighs problem similarity, required-skill evidence, strength of evidence and domain/stakeholder relevance; project dates are often incomplete, so recency is not used to manufacture precision. All selections are active, registered projects with resume content. Candidate-only Power BI portfolio wording stays within visible dashboard scope. Company systems never become candidate skills by association.\n\nPrime Street has no licence requirement in its Junior Reporting Analyst section. ESS accepts operational-data experience as an alternative to engineering/industrial experience. Morgan McKinley does not require a fixed number of years or all of Power BI, Tableau and SAP. Lidl does require a full licence and the stated degree threshold; German is optional. These distinctions materially change the recommendations.\n\nThe technical/application barriers reported here are inherited observations from the parent task: Prime Street verification challenge, ESS account gateway, Morgan McKinley automatic approval block, Lidl form untraversed. They establish neither candidate ineligibility nor successful application. Resume source/PDF/evidence mapping and both rendered A4 pages still need current QA before a reviewed PDF can be released.\n"
+    }
+  },
+  {
+    "id": 110,
+    "occurred_at": "2026-09-14T13:52:10+00:00",
+    "action": "progress_updated",
+    "job_id": "7bfa6b3fce1853f0",
+    "details": {
+      "before": {
+        "id": "7bfa6b3fce1853f0",
+        "company": "Lidl Ireland",
+        "title": "Graduate Programme - Controlling & Analytics",
+        "location": "Tallaght, Dublin 24, Ireland; travel/relocation required",
+        "url": "https://jobs.lidl.ie/jobs/graduate-programme-controlling-analytics-dublin-24-741208",
+        "description": "Full employer JD read in browser13September2026. Reference741208;deadline31October2026;start6September2027;18monthgraduateprogramme;EUR45,500annualprorata. Rotations in Business Insights & Analytics,Business Partnering and Financial Controlling. Timely accurate turnover,margin,stock-loss and productivity KPI reporting,trend analysis and decision support from stores to board. Includes store/distribution-centre training. Required expected/attained2.1HonoursLevel8degree,analytical/numeracy skills,deadlines underpressure,communication,motivation,flexibility to travel/relocate withinIreland and full drivinglicence. German advantageous,notrequired;no namedanalyticssoftwaremandatory. Up to2remote days. Employer Apply link visible https://ea-lidl.cfapps.eu20.hana.ondemand.com/easyapply/index.html?ReqId=741208&sap-language=en_IE ; form not opened. No application or mail invitation counted as submission.",
+        "status": "saved",
+        "created_at": "2026-09-13T08:07:28+00:00",
+        "updated_at": "2026-09-13T08:07:28+00:00",
+        "notes": "",
+        "application_date": null,
+        "selected_project_id": null,
+        "folder": null,
+        "verification": "not_verified"
+      },
+      "after": {
+        "id": "7bfa6b3fce1853f0",
+        "company": "Lidl Ireland",
+        "title": "Graduate Programme - Controlling & Analytics",
+        "location": "Tallaght, Dublin 24, Ireland; travel/relocation required",
+        "url": "https://jobs.lidl.ie/jobs/graduate-programme-controlling-analytics-dublin-24-741208",
+        "description": "Full employer JD read in browser13September2026. Reference741208;deadline31October2026;start6September2027;18monthgraduateprogramme;EUR45,500annualprorata. Rotations in Business Insights & Analytics,Business Partnering and Financial Controlling. Timely accurate turnover,margin,stock-loss and productivity KPI reporting,trend analysis and decision support from stores to board. Includes store/distribution-centre training. Required expected/attained2.1HonoursLevel8degree,analytical/numeracy skills,deadlines underpressure,communication,motivation,flexibility to travel/relocate withinIreland and full drivinglicence. German advantageous,notrequired;no namedanalyticssoftwaremandatory. Up to2remote days. Employer Apply link visible https://ea-lidl.cfapps.eu20.hana.ondemand.com/easyapply/index.html?ReqId=741208&sap-language=en_IE ; form not opened. No application or mail invitation counted as submission.",
+        "status": "saved",
+        "created_at": "2026-09-13T08:07:28+00:00",
+        "updated_at": "2026-09-14T13:52:10+00:00",
+        "notes": "13 September search, finalised 14 September. Supported fit: KPI reporting, analytical degree background and client communication. Pending: Overall 2:1/Level 8 equivalence, full driving licence, travel/relocation and September 2027 availability/permission unconfirmed. Saved lead only; no tailored resume released. ",
+        "application_date": null,
+        "selected_project_id": null,
+        "folder": null,
+        "verification": "not_verified"
+      }
+    }
+  },
+  {
+    "id": 109,
+    "occurred_at": "2026-09-14T13:52:10+00:00",
+    "action": "progress_updated",
+    "job_id": "30cb363d12392b54",
+    "details": {
+      "before": {
+        "id": "30cb363d12392b54",
+        "company": "Morgan McKinley",
+        "title": "Data Analyst - Contract",
+        "location": "Cork, Ireland; hybrid, 2-3 onsite days weekly; 12-month contract",
+        "url": "https://morganmckinley.com/jobs/cork/data-analyst-contract/1104845",
+        "description": "Full official recruiter JD read in browser13September2026. Recruiter for an undisclosed client; do not infer end employer. Cork12monthcontract,hybrid2-3onsitedays;competitivepay. Analyse,validate,reconcile complex datasets; investigate data quality discrepancies and root causes; multisource Excel/PowerBI/Tableau/SAP data; reporting,governance,compliance,audit support; internal/external stakeholders and cross-cultural teamwork;collection-to-reporting processes; improvements;priorities,deadlines and SLAs. Requires proven analysis/data quality,reconciliation,advancedExcel with PowerBI/Tableau/SAP or similar,complexmultisource data,understanding compliance/governance/controls OR audit,organisation. Finance/accounting/reconciliation background advantageous. No numeric tenure,degree,SQL requirement,deadline or sponsorship policy stated. Apply Now visible but opening the form was blocked by automatic approval review. No workaround attempted; application gateway remains unverified. No application submitted.",
+        "status": "saved",
+        "created_at": "2026-09-13T08:07:28+00:00",
+        "updated_at": "2026-09-13T08:07:28+00:00",
+        "notes": "",
+        "application_date": null,
+        "selected_project_id": null,
+        "folder": null,
+        "verification": "not_verified"
+      },
+      "after": {
+        "id": "30cb363d12392b54",
+        "company": "Morgan McKinley",
+        "title": "Data Analyst - Contract",
+        "location": "Cork, Ireland; hybrid, 2-3 onsite days weekly; 12-month contract",
+        "url": "https://morganmckinley.com/jobs/cork/data-analyst-contract/1104845",
+        "description": "Full official recruiter JD read in browser13September2026. Recruiter for an undisclosed client; do not infer end employer. Cork12monthcontract,hybrid2-3onsitedays;competitivepay. Analyse,validate,reconcile complex datasets; investigate data quality discrepancies and root causes; multisource Excel/PowerBI/Tableau/SAP data; reporting,governance,compliance,audit support; internal/external stakeholders and cross-cultural teamwork;collection-to-reporting processes; improvements;priorities,deadlines and SLAs. Requires proven analysis/data quality,reconciliation,advancedExcel with PowerBI/Tableau/SAP or similar,complexmultisource data,understanding compliance/governance/controls OR audit,organisation. Finance/accounting/reconciliation background advantageous. No numeric tenure,degree,SQL requirement,deadline or sponsorship policy stated. Apply Now visible but opening the form was blocked by automatic approval review. No workaround attempted; application gateway remains unverified. No application submitted.",
+        "status": "saved",
+        "created_at": "2026-09-13T08:07:28+00:00",
+        "updated_at": "2026-09-14T13:52:10+00:00",
+        "notes": "13 September search, finalised 14 September. Supported fit: Data-quality investigation, finance access reconciliation, Power BI/Tableau and stakeholder delivery. Pending: Advanced Excel is mandatory and unconfirmed. End employer undisclosed. Empty application form inspection blocked by automatic approval review. Saved lead only; no tailored resume released. ",
+        "application_date": null,
+        "selected_project_id": null,
+        "folder": null,
+        "verification": "not_verified"
+      }
+    }
+  },
+  {
+    "id": 108,
+    "occurred_at": "2026-09-14T13:52:10+00:00",
+    "action": "progress_updated",
+    "job_id": "5b8921d814b94f76",
+    "details": {
+      "before": {
+        "id": "5b8921d814b94f76",
+        "company": "Prime Street",
+        "title": "Junior Reporting Analyst",
+        "location": "Dublin 8, Ireland; in person; Monday-Friday",
+        "url": "https://ie.indeed.com/viewjob?jk=03a4c1873988fa89",
+        "description": "Official full JD read 13 September 2026 at https://primestreet.ie/ in the Junior Reporting Analyst section, distinct from the adjacent property manager role. Employer links to this exact Indeed posting. Dublin 8; full-time; EUR35,000; Head of Operations. Recurring weekly-to-annual reports, feedback implementation, source reconciliation, new dashboards/systems, external lender/investor/regulator reporting. Ad-hoc bookkeeping, property operations and IT administration also feature. Systems include Excel, PowerPoint, Yardi Voyager 7S, AccountsIQ, Notion and Google Workspace. Requires English communication, Excel competence, basic financial/operational report understanding, meticulous cross-checking, organisation, reliability, analytical mindset and interest in property/alternative investment. Preferred: property/CRM/accounting systems, Office/Power BI, Python/HTML/R/SQL, accounting principles, AI problem-solving, integrations/no-code/APIs. No driver licence requirement for this analyst role. Hiring comprises CV review, two assessments, video interview, onsite practical and final leadership interview. Deadline not stated. Employer advert verified; Indeed route encountered Additional Verification Required in browser. No CAPTCHA solved or information entered.",
+        "status": "prepared",
+        "created_at": "2026-09-13T08:07:28+00:00",
+        "updated_at": "2026-09-13T08:09:03+00:00",
+        "notes": "",
+        "application_date": null,
+        "selected_project_id": "PROJ-AZ-RECON",
+        "folder": "output/applications/5b8921d814b94f76-c2s4n1cd",
+        "verification": "not_verified"
+      },
+      "after": {
+        "id": "5b8921d814b94f76",
+        "company": "Prime Street",
+        "title": "Junior Reporting Analyst",
+        "location": "Dublin 8, Ireland; in person; Monday-Friday",
+        "url": "https://ie.indeed.com/viewjob?jk=03a4c1873988fa89",
+        "description": "Official full JD read 13 September 2026 at https://primestreet.ie/ in the Junior Reporting Analyst section, distinct from the adjacent property manager role. Employer links to this exact Indeed posting. Dublin 8; full-time; EUR35,000; Head of Operations. Recurring weekly-to-annual reports, feedback implementation, source reconciliation, new dashboards/systems, external lender/investor/regulator reporting. Ad-hoc bookkeeping, property operations and IT administration also feature. Systems include Excel, PowerPoint, Yardi Voyager 7S, AccountsIQ, Notion and Google Workspace. Requires English communication, Excel competence, basic financial/operational report understanding, meticulous cross-checking, organisation, reliability, analytical mindset and interest in property/alternative investment. Preferred: property/CRM/accounting systems, Office/Power BI, Python/HTML/R/SQL, accounting principles, AI problem-solving, integrations/no-code/APIs. No driver licence requirement for this analyst role. Hiring comprises CV review, two assessments, video interview, onsite practical and final leadership interview. Deadline not stated. Employer advert verified; Indeed route encountered Additional Verification Required in browser. No CAPTCHA solved or information entered.",
+        "status": "prepared",
+        "created_at": "2026-09-13T08:07:28+00:00",
+        "updated_at": "2026-09-14T13:52:10+00:00",
+        "notes": "13 September search, finalised 14 September. Supported fit: Recurring finance reporting, validation, dashboard development and feedback handling. Pending: Concrete Excel tasks and property interest need confirmation. Indeed requires additional verification. Tailored draft PDF compiled and its two rendered A4 pages visually verified; exactly two registered selected projects. QA fails only unresolved role eligibility. Not released or submitted. Existing Studio revision preserved. ",
+        "application_date": null,
+        "selected_project_id": "PROJ-AZ-RECON",
+        "folder": "output/applications/5b8921d814b94f76-c2s4n1cd",
+        "verification": "not_verified"
+      }
+    }
+  },
+  {
+    "id": 107,
+    "occurred_at": "2026-09-14T13:52:10+00:00",
+    "action": "progress_updated",
+    "job_id": "10ba01413aa6075f",
+    "details": {
+      "before": {
+        "id": "10ba01413aa6075f",
+        "company": "Engineering Support & Services Limited",
+        "title": "Data Analyst",
+        "location": "Raheen Business Park, Limerick, Ireland; office based; 40 hours weekly",
+        "url": "https://jobsireland.ie/en-US/job-Details?id=2464829",
+        "description": "Full official JobsIreland employer posting read 13 September 2026. JOB-2464829; published19August; closes16September2026; one Limerick position; EUR46,000-50,000;40hours. ESS supports engineering clients with asset performance, maintenance, reliability and operational improvement. Duties: analyse project/operational data, define KPI trackers, build Power BI dashboards and DAX/data models, validate multiple sources, automate reporting, communicate insights, support engineering teams, use SharePoint/Power Apps for collection/workflows, gather requirements and learn client systems. Requires relevant technical bachelor degree (including computer science), engineering-project OR operational-data OR technical/industrial experience, BI/KPI/performance analysis, complex multisource interpretation, clear communication and adaptability. Related postgraduate qualification and industrial-domain understanding desirable. No numeric years threshold. Generic permit/exemption notice does not establish a stamp-specific restriction or sponsorship. Apply control and login/register instructions visible; account-gated application has not been traversed. No information entered.",
+        "status": "prepared",
+        "created_at": "2026-09-13T08:07:28+00:00",
+        "updated_at": "2026-09-13T08:09:04+00:00",
+        "notes": "",
+        "application_date": null,
+        "selected_project_id": "PROJ-AZ-RECON",
+        "folder": "output/applications/10ba01413aa6075f-p6u0becs",
+        "verification": "not_verified"
+      },
+      "after": {
+        "id": "10ba01413aa6075f",
+        "company": "Engineering Support & Services Limited",
+        "title": "Data Analyst",
+        "location": "Raheen Business Park, Limerick, Ireland; office based; 40 hours weekly",
+        "url": "https://jobsireland.ie/en-US/job-Details?id=2464829",
+        "description": "Full official JobsIreland employer posting read 13 September 2026. JOB-2464829; published19August; closes16September2026; one Limerick position; EUR46,000-50,000;40hours. ESS supports engineering clients with asset performance, maintenance, reliability and operational improvement. Duties: analyse project/operational data, define KPI trackers, build Power BI dashboards and DAX/data models, validate multiple sources, automate reporting, communicate insights, support engineering teams, use SharePoint/Power Apps for collection/workflows, gather requirements and learn client systems. Requires relevant technical bachelor degree (including computer science), engineering-project OR operational-data OR technical/industrial experience, BI/KPI/performance analysis, complex multisource interpretation, clear communication and adaptability. Related postgraduate qualification and industrial-domain understanding desirable. No numeric years threshold. Generic permit/exemption notice does not establish a stamp-specific restriction or sponsorship. Apply control and login/register instructions visible; account-gated application has not been traversed. No information entered.",
+        "status": "prepared",
+        "created_at": "2026-09-13T08:07:28+00:00",
+        "updated_at": "2026-09-14T13:52:10+00:00",
+        "notes": "13 September search, finalised 14 September. Supported fit: Power BI dashboards, operational reporting, multi-source reconciliation and stakeholder delivery. Pending: DAX and Power Apps delivery unconfirmed; industrial context is transferable evidence. MyGovID/account-gated form not inspected. Tailored draft PDF compiled and its two rendered A4 pages visually verified; exactly two registered selected projects. QA fails only unresolved role eligibility. Not released or submitted. Existing Studio revision preserved. ",
+        "application_date": null,
+        "selected_project_id": "PROJ-AZ-RECON",
+        "folder": "output/applications/10ba01413aa6075f-p6u0becs",
+        "verification": "not_verified"
+      }
+    }
+  },
+  {
+    "id": 106,
+    "occurred_at": "2026-09-14T13:50:25+00:00",
+    "action": "agent_completed",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "run_id": "2858dec05b014ef2b4acdc9ba7fdce6b",
+      "kind": "resume_match"
+    }
+  },
+  {
+    "id": 105,
+    "occurred_at": "2026-09-14T13:49:17+00:00",
+    "action": "agent_completed",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "run_id": "9597c75a16f14a71a03c3a0a286b1262",
+      "kind": "resume_build"
+    }
+  },
+  {
+    "id": 104,
+    "occurred_at": "2026-09-14T13:49:17+00:00",
+    "action": "resume_scored",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "revision": 4,
+      "score": 88,
+      "profile_access": false
+    }
+  },
+  {
+    "id": 103,
+    "occurred_at": "2026-09-14T13:49:16+00:00",
+    "action": "studio_filled_two_pages",
+    "job_id": "fff05ec16dd35b33",
+    "details": {
+      "revision": 4,
+      "body_font_pt": 10.75,
+      "page_fill": [
+        99.3,
+        97.6
+      ],
+      "section_order": [
+        "Professional Summary",
+        "Core Skills",
+        "Selected Project",
+        "Professional Experience",
+        "Education",
+        "Technical Skills",
+        "Certifications"
+      ]
+    }
+  },
+  {
+    "id": 102,
+    "occurred_at": "2026-09-13T14:13:44+00:00",
+    "action": "agent_completed",
+    "job_id": "5b8921d814b94f76",
+    "details": {
+      "run_id": "4d83ba1570ad4fd3b944f394e705f154",
+      "kind": "research"
+    }
+  },
+  {
+    "id": 101,
+    "occurred_at": "2026-09-13T11:39:11+00:00",
+    "action": "studio_filled_two_pages",
+    "job_id": "10ba01413aa6075f",
+    "details": {
+      "revision": 2,
+      "body_font_pt": 11.5,
+      "page_fill": [
+        95.5,
+        97.1
+      ],
+      "section_order": [
+        "Professional Summary",
+        "Core Skills",
+        "Professional Experience",
+        "Selected Project",
+        "Education",
+        "Technical Skills",
+        "Certifications"
+      ]
+    }
+  },
+  {
+    "id": 100,
+    "occurred_at": "2026-09-13T11:39:10+00:00",
+    "action": "studio_opened",
+    "job_id": "10ba01413aa6075f",
+    "details": {
+      "revision": 1
+    }
+  },
+  {
+    "id": 99,
+    "occurred_at": "2026-09-13T11:38:36+00:00",
+    "action": "studio_opened",
+    "job_id": "1acf78884105297f",
+    "details": {
+      "revision": 1
+    }
+  },
+  {
     "id": 98,
     "occurred_at": "2026-09-13T08:09:04+00:00",
     "action": "draft_prepared",

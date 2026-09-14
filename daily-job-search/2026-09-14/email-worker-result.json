@@ -1,0 +1,15 @@
+{
+  "id": "698f674f589c421386ad83a0361d7994",
+  "kind": "email",
+  "job_id": null,
+  "state": "completed",
+  "result": {
+    "stage": "Complete",
+    "summary": "Reviewed 30 job-related messages.",
+    "email": "chetanbabu07@gmail.com",
+    "coverage": "Verified with Gmail profile. Searched incoming messages using newer_than:90d on 2026-09-14, excluding spam, trash, sent and drafts. Fully paginated the application/outcome query (2 pages) and supplementary employer/interview/assessment/offer query (3 pages); no remaining page tokens. Read 30 unique relevant messages, below the 60-message cap, including HTML alternatives where needed. No attachments or files read; no email changed. Marketing, recommendations, unrelated search hits and detailed assessment-feedback messages were excluded from evidence review. Coverage is keyword-based, not a guarantee of all job correspondence. No reviewed message confirmed a human interview invitation or employment offer."
+  },
+  "error": null,
+  "created_at": "2026-09-14T13:48:20+00:00",
+  "updated_at": "2026-09-14T13:52:44+00:00"
+}

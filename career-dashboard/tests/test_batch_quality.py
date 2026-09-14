@@ -303,6 +303,7 @@ class BatchQualityTests(unittest.TestCase):
                 "confidence": "medium",
             },
             "selected_project_id": "PROJ-AZ-RECON",
+            "selected_project_ids": ["PROJ-AZ-RECON", "PROJ-POWERBI-PORTFOLIO"],
             "selected_project_reason": (
                 "The reconciliation project is the closest supported analogue for this role."
             ),

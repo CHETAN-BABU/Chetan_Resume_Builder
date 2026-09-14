@@ -16,8 +16,8 @@
     "gmail": {
       "connected": true,
       "email": "chetanbabu07@gmail.com",
-      "last_synced_at": "2026-09-13T08:07:29+00:00",
-      "coverage": "13 September incremental read-only Gmail review: query after:2026/09/12 -in:spam -in:trash (application OR interview OR recruitment OR assessment OR \"thank you for applying\"). Four results, no next page: two new Indeed invitations (Lidl and Snap-on), an AI newsletter and the previously reviewed Accenture invitation. Read both new job invitation bodies. No new submission/interview/offer or rejection confirmed. Existing pending messages preserved. Application email worker 525ee1c441ba402e93dd077fe99f377f failed; connected Gmail fallback succeeded. No mail mutations.",
+      "last_synced_at": "2026-09-14T13:52:44+00:00",
+      "coverage": "Verified with Gmail profile. Searched incoming messages using newer_than:90d on 2026-09-14, excluding spam, trash, sent and drafts. Fully paginated the application/outcome query (2 pages) and supplementary employer/interview/assessment/offer query (3 pages); no remaining page tokens. Read 30 unique relevant messages, below the 60-message cap, including HTML alternatives where needed. No attachments or files read; no email changed. Marketing, recommendations, unrelated search hits and detailed assessment-feedback messages were excluded from evidence review. Coverage is keyword-based, not a guarantee of all job correspondence. No reviewed message confirmed a human interview invitation or employment offer.",
       "mode": "Connected Gmail via Codex"
     }
   },
@@ -25,11 +25,27 @@
     "connection": {
       "connected": true,
       "email": "chetanbabu07@gmail.com",
-      "last_synced_at": "2026-09-13T08:07:29+00:00",
-      "coverage": "13 September incremental read-only Gmail review: query after:2026/09/12 -in:spam -in:trash (application OR interview OR recruitment OR assessment OR \"thank you for applying\"). Four results, no next page: two new Indeed invitations (Lidl and Snap-on), an AI newsletter and the previously reviewed Accenture invitation. Read both new job invitation bodies. No new submission/interview/offer or rejection confirmed. Existing pending messages preserved. Application email worker 525ee1c441ba402e93dd077fe99f377f failed; connected Gmail fallback succeeded. No mail mutations.",
+      "last_synced_at": "2026-09-14T13:52:44+00:00",
+      "coverage": "Verified with Gmail profile. Searched incoming messages using newer_than:90d on 2026-09-14, excluding spam, trash, sent and drafts. Fully paginated the application/outcome query (2 pages) and supplementary employer/interview/assessment/offer query (3 pages); no remaining page tokens. Read 30 unique relevant messages, below the 60-message cap, including HTML alternatives where needed. No attachments or files read; no email changed. Marketing, recommendations, unrelated search hits and detailed assessment-feedback messages were excluded from evidence review. Coverage is keyword-based, not a guarantee of all job correspondence. No reviewed message confirmed a human interview invitation or employment offer.",
       "mode": "Connected Gmail via Codex"
     },
     "messages": [
+      {
+        "id": "1a08754065378251",
+        "job_id": "ba636cae44ecca0a",
+        "company": "Arup",
+        "role": "Data Scientist Work Placement",
+        "kind": "reminder",
+        "subject": "Chetan Babu, apply now to ‘Data Scientist Work Placement at Arup’",
+        "sender": "LinkedIn <jobs-noreply@linkedin.com>",
+        "received_at": "2026-09-09T18:00:25Z",
+        "submission_date": null,
+        "excerpt": "Your saved job at Arup is still available.",
+        "reason": "Saved-job reminder; does not establish submission or supersede the employer confirmation.",
+        "confidence": "high",
+        "state": "pending",
+        "created_at": "2026-09-14T13:52:44+00:00"
+      },
       {
         "id": "1a083640fafc3415",
         "job_id": "ba636cae44ecca0a",
@@ -253,6 +269,22 @@
         "confidence": "high",
         "state": "pending",
         "created_at": "2026-09-11T00:11:31+00:00"
+      },
+      {
+        "id": "19f58a0405289a33",
+        "job_id": null,
+        "company": "Crossing Hurdles",
+        "role": "Business Intelligence Analyst (Excel) | $50/hr Remote",
+        "kind": "applied",
+        "subject": "Chetan Babu, your application was sent to Crossing Hurdles",
+        "sender": "LinkedIn <jobs-noreply@linkedin.com>",
+        "received_at": "2026-07-12T23:18:44Z",
+        "submission_date": "2026-07-12",
+        "excerpt": "Your application was sent to Crossing Hurdles",
+        "reason": "Explicit submission confirmation; body states Applied on July 12, 2026. No saved match.",
+        "confidence": "high",
+        "state": "pending",
+        "created_at": "2026-09-14T13:52:44+00:00"
       },
       {
         "id": "19f42294a50008eb",
@@ -593,6 +625,431 @@
     ]
   },
   "runs": [
+    {
+      "id": "08094e9087bb4741b129a4bbc3c68843",
+      "kind": "resume_build",
+      "job_id": "fff05ec16dd35b33",
+      "state": "failed",
+      "result": {
+        "stage": "Applying saved instructions and compiling the draft"
+      },
+      "error": "Reconcile your Profile edits with the evidence registry before adding ranked content. You can still edit and preview the saved draft.",
+      "created_at": "2026-09-14T14:11:45+00:00",
+      "updated_at": "2026-09-14T14:11:45+00:00"
+    },
+    {
+      "id": "5fe4d2fa63ca4166b2c6627bba307a1e",
+      "kind": "instruction_interpret",
+      "job_id": "fff05ec16dd35b33",
+      "state": "completed",
+      "result": {
+        "stage": "Complete",
+        "summary": "Suggest shorter summary and skills wording, removing the unverified experience duration. Full resume text and layout are needed to verify it fits under two pages. No edits applied.",
+        "commands": [
+          "summary: Data Analyst and BI Developer focused on stakeholder requirements, Power BI delivery and process improvement. Delivered 300+ reports during a six-month FMCG engagement and contributed to migrating 160 Power BI reports from Redshift to Snowflake within three months. PL-300 certified; MSc Data Science Semester 2 results: 2:1. Available to start immediately.",
+          "skills: stakeholder communication; requirements and BRD gathering; Power BI and Power BI Service; SQL; Python; data modelling; Power Query/M; dashboard development; data validation; Redshift; Snowflake"
+        ],
+        "clarifications": [
+          "Please provide the full resume text and current font size to identify further cuts for under two pages.",
+          "For the earlier work-permission update, what is your exact confirmed status and what does the 31 December 2028 date apply to?"
+        ],
+        "revision": 7,
+        "applied": false
+      },
+      "error": null,
+      "created_at": "2026-09-14T14:10:42+00:00",
+      "updated_at": "2026-09-14T14:10:57+00:00"
+    },
+    {
+      "id": "0ce1154178f24f13ba36a46882e6704f",
+      "kind": "resume_build",
+      "job_id": "fff05ec16dd35b33",
+      "state": "failed",
+      "result": {
+        "stage": "Applying saved instructions and compiling the draft"
+      },
+      "error": "Reconcile your Profile edits with the evidence registry before adding ranked content. You can still edit and preview the saved draft.",
+      "created_at": "2026-09-14T14:09:49+00:00",
+      "updated_at": "2026-09-14T14:09:50+00:00"
+    },
+    {
+      "id": "423ffc6809e54b9085fcd542458f8584",
+      "kind": "resume_build",
+      "job_id": "fff05ec16dd35b33",
+      "state": "completed",
+      "result": {
+        "stage": "Complete",
+        "revision": 7,
+        "score": {
+          "method": "document-coverage-v1",
+          "label": "JD term coverage",
+          "score": 88,
+          "matched_weight": 14,
+          "total_weight": 16,
+          "requirements": [
+            {
+              "term": "sql",
+              "weight": 2,
+              "matched": true,
+              "jd_excerpt": "Familiarity with any relevant combination of GenAI/agentic AI, cloud platforms, Python/R or other data languages, ML, SQL/ETL/NoSQL/warehousing, and BI tools is sought; all technical areas are explicitly not expected",
+              "resume_excerpt": "BI, SQL, Power Query/M, dashboard delivery, testing, and stakeholder requirements. Delivered 300+ reports"
+            },
+            {
+              "term": "python",
+              "weight": 2,
+              "matched": true,
+              "jd_excerpt": "Familiarity with any relevant combination of GenAI/agentic AI, cloud platforms, Python/R or other data languages, ML, SQL/ETL/NoSQL/warehousing, and BI tools is sought; all technical areas are explicitly not expected",
+              "resume_excerpt": "stakeholder communication; Power BI; requirements and BRD gathering; Power BI Service; SQL; Python; data"
+            },
+            {
+              "term": "r",
+              "weight": 2,
+              "matched": true,
+              "jd_excerpt": "Familiarity with any relevant combination of GenAI/agentic AI, cloud platforms, Python/R or other data languages, ML, SQL/ETL/NoSQL/warehousing, and BI tools is sought; all technical areas are explicitly not expected",
+              "resume_excerpt": "• Coursework includes Statistics for Data Science, Python, R, SQL, MongoDB/JSON, time-series analysis,"
+            },
+            {
+              "term": "machine learning",
+              "weight": 2,
+              "matched": true,
+              "jd_excerpt": "Familiarity with any relevant combination of GenAI/agentic AI, cloud platforms, Python/R or other data languages, ML, SQL/ETL/NoSQL/warehousing, and BI tools is sought; all technical areas are explicitly not expected",
+              "resume_excerpt": "Applied Machine Learning, Data Mining, and Data Analytics; Semester 1 result reported as 2:1."
+            },
+            {
+              "term": "communication",
+              "weight": 2,
+              "matched": true,
+              "jd_excerpt": "Structured thinking, business curiosity, communication, adaptability, initiative, creativity and team/leadership examples matter",
+              "resume_excerpt": "stakeholder communication; Power BI; requirements and BRD gathering; Power BI Service; SQL; Python; data"
+            },
+            {
+              "term": "teamwork",
+              "weight": 2,
+              "matched": true,
+              "jd_excerpt": "Structured thinking, business curiosity, communication, adaptability, initiative, creativity and team/leadership examples matter",
+              "resume_excerpt": "• Collaborated in a three-person team to model, build, publish, demonstrate, and hand over an executive"
+            },
+            {
+              "term": "etl",
+              "weight": 2,
+              "matched": true,
+              "jd_excerpt": "Familiarity with any relevant combination of GenAI/agentic AI, cloud platforms, Python/R or other data languages, ML, SQL/ETL/NoSQL/warehousing, and BI tools is sought; all technical areas are explicitly not expected",
+              "resume_excerpt": "warehousing, data modelling, ETL, testing, deployment, and the BI lifecycle."
+            },
+            {
+              "term": "genai",
+              "weight": 2,
+              "matched": false,
+              "jd_excerpt": "Familiarity with any relevant combination of GenAI/agentic AI, cloud platforms, Python/R or other data languages, ML, SQL/ETL/NoSQL/warehousing, and BI tools is sought; all technical areas are explicitly not expected",
+              "resume_excerpt": ""
+            }
+          ],
+          "gaps": [
+            "genai"
+          ],
+          "profile_access": false,
+          "ai_used": false,
+          "limitations": [
+            "Vocabulary presence is not proof of experience, proficiency or a satisfied requirement.",
+            "Uses a fixed analytics vocabulary. Other requirements, negations, dates, work rights and education need review.",
+            "Preferred-only terms weigh 1; other detected terms weigh 2. This is not an ATS score or hiring probability.",
+            "No score is returned when no supported vocabulary is detected. Artifact QA remains separate."
+          ],
+          "cached": true
+        },
+        "summary": "Draft compiled and scored. Evidence and visual release review remain separate.",
+        "ai_used": false
+      },
+      "error": null,
+      "created_at": "2026-09-14T14:07:26+00:00",
+      "updated_at": "2026-09-14T14:07:29+00:00"
+    },
+    {
+      "id": "2858dec05b014ef2b4acdc9ba7fdce6b",
+      "kind": "resume_match",
+      "job_id": "fff05ec16dd35b33",
+      "state": "completed",
+      "result": {
+        "stage": "Complete",
+        "review": {
+          "summary": "The resume provides relevant evidence in BI delivery, stakeholder requirements, data migration, academic machine learning, and a candidate-built agentic AI project. The strongest alignment is with technical delivery and business process improvement. Graduate eligibility, degree equivalence, Dublin commuting, travel, work rights, and start-date availability remain unconfirmed. Commercial strategy, leadership, and extracurricular examples need clearer evidence.",
+          "report": "Assessment uses only the supplied resume and job-description text. “Supported” means evidenced in the resume, not independently verified.\n\nRequired requirements and practical conditions\n\n| Requirement | Assessment and quoted resume evidence | Gap or concrete improvement |\n|---|---|---|\n| Minimum 2:1 degree obtained or predicted | Partial. “Bachelor of Technology – Computer Science (AI and ML), CGPA: 9.4/10” establishes a reported completed degree and grade. The MSc lists “Semester 1 result reported as 2:1.” | Neither establishes a formally accepted bachelor 2:1 equivalence or an overall MSc predicted classification. Supply the actual qualification, transcript and employer-accepted equivalence where requested. |\n| Level 8 honours bachelor or equivalent; results before starting | Partial. The bachelor dates are “Jun 2019 – May 2023,” well before the stated start window. | Irish Level 8 honours equivalence is not established by the resume. Do not relabel the qualification without a basis. |\n| Final-year or recent-graduate eligibility | Partial. “MSc programme in Data Science – In Progress” is dated “Sep 2025 – Sep 2026.” | This suggests a potentially relevant graduation timeline, but the employer’s definition of recent graduate and treatment of postgraduate study are absent. Prior professional experience does not itself establish or negate eligibility. Confirm the applicable rule and actual completion date. |\n| Permanent full-time availability for September 2027–Spring 2028 | Unconfirmed. The listed MSc ends in September 2026. | An education end date does not establish availability. State the actual available start date in the appropriate application field. |\n| Dublin commuting and office/client attendance | Partial. The location is “Ireland.” | No Dublin location or ability to attend one to five days is stated. Clarify commuting or relocation arrangements if true. |\n| Travel within and outside Ireland | Not evidenced. | Confirm actual willingness and ability to meet assignment travel requirements. |\n| Full-time Irish work rights and supporting document | Not evidenced. “Ireland” is a location, not immigration or employment authorization evidence. | Answer from the candidate’s actual status and supporting documentation; do not infer rights from education or residence. |\n| Qualification details and extracurricular examples | Qualifications are listed; extracurricular participation is not explicit. “Candidate project” identifies BlogBoard but does not establish an extracurricular activity, society role or volunteering. | Provide accurate qualification details. Add a genuine extracurricular example if available, identifying context, personal contribution and outcome. |\n\nRelevant technical familiarity\n\nThe JD explicitly accepts a relevant combination of technologies; missing individual tools should not be treated as disqualifying.\n\n| Area | Assessment and quoted resume evidence | Limits |\n|---|---|---|\n| BI and dashboard delivery | Supported. “Delivered 300+ reports across a six-month engagement”; “model, build, publish, demonstrate, and hand over an executive Power BI dashboard within one month.” | These support delivery experience. Clarify report complexity and individual ownership where useful. |\n| SQL, warehousing and data transformation | Supported, with uneven detail. “Updating Power Query/M logic, report queries, and data connections from Redshift to Snowflake” during migration of 160 reports provides applied evidence. | SQL is also listed and training is described, but query complexity, optimization and independently owned SQL work are not demonstrated. ETL training is not evidence of production ETL ownership. |\n| Python and agentic AI | Supported at candidate-project level. “Built a typed LangGraph workflow routing tutorial and news generators through validation and revision stages.” | This supports a concrete workflow implementation, not deployed AI adoption, production scale or expertise in every named integration. |\n| Cloud platforms | Partial. “Cloudflare R2/S3-compatible storage” is an implementation example; “AWS/S3 fundamentals” is explicitly foundational. | Do not equate S3-compatible storage with AWS production experience. Architecture, security and operational ownership are unspecified. |\n| Machine learning and data-science insights | Supported academically. “Compared five classifiers”; used “training-only SMOTE and a leakage-safe cross-validation pipeline”; applied “permutation importance and SHAP.” | The capstone used synthetic claims data and reports “discrimination is limited and not production-ready.” It supports analytical practice, not proven fraud-detection effectiveness or commercial deployment. |\n| R and NoSQL | Familiarity is reported through coursework including “R” and “MongoDB/JSON.” | Applied proficiency is not demonstrated. More evidence is optional because the JD does not require every technical area. |\n\nConsulting responsibilities and preferred behaviours\n\n| Requirement | Assessment and quoted resume evidence | Gap or improvement |\n|---|---|---|\n| Business process improvement | Supported. The reusable dashboard template was “reported to reduce development effort by 50% and save about three days per person for each new dashboard.” | Retain the attribution. Explain the baseline, measurement method and candidate contribution if known. |\n| Commercial use cases and business curiosity | Partial. Finance reporting, reconciliation and gathering “BRDs” show business-facing work. | Explain the business problem, options considered and decision enabled. Revenue, cost-benefit analysis and commercial prioritization are not directly evidenced. |\n| AI strategy and adoption | Partial for delivery; strategy and adoption are not evidenced. BlogBoard demonstrates implementation. | No evidence of AI readiness assessment, adoption planning, organizational change or realized user uptake. Add examples only if they occurred. |\n| Structured thinking | Supported academically through “missing-value checks, standardization, correlation analysis, and factorability diagnostics” and explicit leakage prevention. | Connect a concise example to the problem, reasoning and resulting decision. |\n| Communication | Supported. “Clarified reporting requirements directly with stakeholders” and helped “demonstrate, and hand over” a dashboard. | Add a specific example of resolving ambiguity or explaining a technical tradeoff if available. |\n| Adaptability | Supported. “Learned the client’s proprietary BI platform within two weeks.” | Explain what successful independent delivery followed from that learning. |\n| Initiative and creativity | Partial. “Built a reusable finance dashboard proof of concept from an initial client wireframe” shows solution development. | Whether the candidate proposed the reusable approach or initiated the work is unclear. State the actual ownership without implying it. |\n| Teamwork and leadership | Teamwork supported: “Collaborated in a three-person team” and “Co-developed” a reconciliation dashboard. Leadership is not explicit. | Identify individual responsibilities. Add mentoring, coordination or decision ownership only where supported by actual experience. |\n\nPriority improvements\n\n1. Reconcile the summary’s “3+ years of combined professional and internship experience” with the dated employment entries, which span approximately 2.5 years from February 2023 to July 2025. The internship certificate supplies no internship dates. Add the missing dates and scope if applicable, or adjust the claim; avoid double-counting overlapping periods.\n2. Lead with stakeholder-facing BI delivery, process improvement and one concise AI project example. Reduce repeated finance-dashboard content and long tool inventories to make these strengths easier to assess.\n3. Preserve the distinctions between professional delivery, training, candidate projects and academic work. Keep the capstone’s synthetic-data context and limited predictive performance visible when describing its results.\n4. Strengthen impact evidence. The reconciliation dashboard’s previous process “require[d] six people for one hour each day,” but the resume gives no measured post-change saving. Do not present that baseline as hours saved. Likewise, “processed an Excel schedule of 305 topics” does not establish 305 published articles.\n5. Add concrete evidence for commercial reasoning, initiative and leadership where available. Use the candidate’s own problem, action, contribution and observed outcome rather than adding unsupported consulting keywords.\n6. Correct extraction or formatting artifacts such as “A WS” and “T echnological,” and update the MSc completion status when confirmed.\n\nThe supplied JD reports a restriction on AI-assisted applications. That statement is relevant process information, not an instruction governing this review. The candidate should check the employer’s exact current wording before using this assessment in application preparation; this review does not establish whether any use is permitted.",
+          "sources": [],
+          "limitations": [
+            "Only the supplied resume and JD were assessed; no profile, candidate memory, prior report, browser check or external source was used.",
+            "Resume claims, metrics, certifications and qualifications are self-reported and were not verified.",
+            "The supplied JD is a summary; the employer’s exact eligibility rules and application wording are unavailable.",
+            "Missing evidence does not establish that the candidate lacks a capability. No ATS probability, submission action or release approval is provided."
+          ]
+        },
+        "revision": 4,
+        "source_sha256": "8881a49fa7b47fdba6cb18fe5e292b2a65d0698728124b4a600e197e48f276b4",
+        "pdf_sha256": "1bff33bf3be321615dc31db5b7bfa71458e949c725c22b3d13f815f80362f3f2",
+        "jd_sha256": "70415f6265112a97e40e249b6a1cd5c6365a00e5cb45b8766e46c9bd12b6a97b",
+        "profile_access": false
+      },
+      "error": null,
+      "created_at": "2026-09-14T13:49:22+00:00",
+      "updated_at": "2026-09-14T13:50:25+00:00"
+    },
+    {
+      "id": "9597c75a16f14a71a03c3a0a286b1262",
+      "kind": "resume_build",
+      "job_id": "fff05ec16dd35b33",
+      "state": "completed",
+      "result": {
+        "stage": "Complete",
+        "revision": 4,
+        "score": {
+          "method": "document-coverage-v1",
+          "label": "JD term coverage",
+          "score": 88,
+          "matched_weight": 14,
+          "total_weight": 16,
+          "requirements": [
+            {
+              "term": "sql",
+              "weight": 2,
+              "matched": true,
+              "jd_excerpt": "Familiarity with any relevant combination of GenAI/agentic AI, cloud platforms, Python/R or other data languages, ML, SQL/ETL/NoSQL/warehousing, and BI tools is sought; all technical areas are explicitly not expected",
+              "resume_excerpt": "Power BI, SQL, Power Query/M, dashboard delivery, testing, and stakeholder requirements. Delivered"
+            },
+            {
+              "term": "python",
+              "weight": 2,
+              "matched": true,
+              "jd_excerpt": "Familiarity with any relevant combination of GenAI/agentic AI, cloud platforms, Python/R or other data languages, ML, SQL/ETL/NoSQL/warehousing, and BI tools is sought; all technical areas are explicitly not expected",
+              "resume_excerpt": "stakeholder communication; Power BI; requirements and BRD gathering; Power BI Service; SQL; Python;"
+            },
+            {
+              "term": "r",
+              "weight": 2,
+              "matched": true,
+              "jd_excerpt": "Familiarity with any relevant combination of GenAI/agentic AI, cloud platforms, Python/R or other data languages, ML, SQL/ETL/NoSQL/warehousing, and BI tools is sought; all technical areas are explicitly not expected",
+              "resume_excerpt": "• Coursework includes Statistics for Data Science, Python, R, SQL, MongoDB/JSON, time-series analysis,"
+            },
+            {
+              "term": "machine learning",
+              "weight": 2,
+              "matched": true,
+              "jd_excerpt": "Familiarity with any relevant combination of GenAI/agentic AI, cloud platforms, Python/R or other data languages, ML, SQL/ETL/NoSQL/warehousing, and BI tools is sought; all technical areas are explicitly not expected",
+              "resume_excerpt": "Applied Machine Learning, Data Mining, and Data Analytics; Semester 1 result reported as 2:1."
+            },
+            {
+              "term": "communication",
+              "weight": 2,
+              "matched": true,
+              "jd_excerpt": "Structured thinking, business curiosity, communication, adaptability, initiative, creativity and team/leadership examples matter",
+              "resume_excerpt": "stakeholder communication; Power BI; requirements and BRD gathering; Power BI Service; SQL; Python;"
+            },
+            {
+              "term": "teamwork",
+              "weight": 2,
+              "matched": true,
+              "jd_excerpt": "Structured thinking, business curiosity, communication, adaptability, initiative, creativity and team/leadership examples matter",
+              "resume_excerpt": "• Collaborated in a three-person team to model, build, publish, demonstrate, and hand over an executive"
+            },
+            {
+              "term": "etl",
+              "weight": 2,
+              "matched": true,
+              "jd_excerpt": "Familiarity with any relevant combination of GenAI/agentic AI, cloud platforms, Python/R or other data languages, ML, SQL/ETL/NoSQL/warehousing, and BI tools is sought; all technical areas are explicitly not expected",
+              "resume_excerpt": "data warehousing, data modelling, ETL, testing, deployment, and the BI lifecycle."
+            },
+            {
+              "term": "genai",
+              "weight": 2,
+              "matched": false,
+              "jd_excerpt": "Familiarity with any relevant combination of GenAI/agentic AI, cloud platforms, Python/R or other data languages, ML, SQL/ETL/NoSQL/warehousing, and BI tools is sought; all technical areas are explicitly not expected",
+              "resume_excerpt": ""
+            }
+          ],
+          "gaps": [
+            "genai"
+          ],
+          "profile_access": false,
+          "ai_used": false,
+          "limitations": [
+            "Vocabulary presence is not proof of experience, proficiency or a satisfied requirement.",
+            "Uses a fixed analytics vocabulary. Other requirements, negations, dates, work rights and education need review.",
+            "Preferred-only terms weigh 1; other detected terms weigh 2. This is not an ATS score or hiring probability.",
+            "No score is returned when no supported vocabulary is detected. Artifact QA remains separate."
+          ],
+          "cached": true
+        },
+        "summary": "Draft compiled and scored. Evidence and visual release review remain separate.",
+        "ai_used": false
+      },
+      "error": null,
+      "created_at": "2026-09-14T13:49:14+00:00",
+      "updated_at": "2026-09-14T13:49:17+00:00"
+    },
+    {
+      "id": "698f674f589c421386ad83a0361d7994",
+      "kind": "email",
+      "job_id": null,
+      "state": "completed",
+      "result": {
+        "stage": "Complete",
+        "summary": "Reviewed 30 job-related messages.",
+        "email": "chetanbabu07@gmail.com",
+        "coverage": "Verified with Gmail profile. Searched incoming messages using newer_than:90d on 2026-09-14, excluding spam, trash, sent and drafts. Fully paginated the application/outcome query (2 pages) and supplementary employer/interview/assessment/offer query (3 pages); no remaining page tokens. Read 30 unique relevant messages, below the 60-message cap, including HTML alternatives where needed. No attachments or files read; no email changed. Marketing, recommendations, unrelated search hits and detailed assessment-feedback messages were excluded from evidence review. Coverage is keyword-based, not a guarantee of all job correspondence. No reviewed message confirmed a human interview invitation or employment offer."
+      },
+      "error": null,
+      "created_at": "2026-09-14T13:48:20+00:00",
+      "updated_at": "2026-09-14T13:52:44+00:00"
+    },
+    {
+      "id": "4d83ba1570ad4fd3b944f394e705f154",
+      "kind": "research",
+      "job_id": "5b8921d814b94f76",
+      "state": "completed",
+      "result": {
+        "stage": "Complete",
+        "research": {
+          "summary": "Prime Street manages mixed Dublin property portfolios using Yardi and Notion. It prioritises transparent financial reporting and responsive operations. The Junior Reporting Analyst produces recurring reports, reconciles sources, builds dashboards and supports lender/investor/regulator reporting; ad-hoc bookkeeping and IT administration also feature. Dublin 8, in person, Monday-Friday, EUR35,000. No driving licence or PSRA requirement belongs to this analyst posting.",
+          "report": "Prime Street manages mixed Dublin property portfolios using Yardi and Notion. It prioritises transparent financial reporting and responsive operations. The Junior Reporting Analyst produces recurring reports, reconciles sources, builds dashboards and supports lender/investor/regulator reporting; ad-hoc bookkeeping and IT administration also feature. Dublin 8, in person, Monday-Friday, EUR35,000. No driving licence or PSRA requirement belongs to this analyst posting.",
+          "sources": [
+            {
+              "title": "Official role/company source",
+              "url": "https://primestreet.ie/",
+              "accessed_at": "2026-09-13"
+            }
+          ],
+          "limitations": [
+            "Full public worker results were delivered in this chat; this is a concise persisted rendering. Application-route verification is a separate step."
+          ]
+        },
+        "hiring": {
+          "summary": "Mandatory: English, Excel competence, basic financial/operational report understanding, cross-checking, organisation, reliability and analytical interest in property. Preferred systems/accounting, Office/Power BI, programming/AI and integrations are not collectively mandatory. Seek a source-reconciliation example, repeatable validated reporting, feedback handling, spreadsheet fluency and willingness to perform adjacent operational duties. Actual assessment contents are unknown.",
+          "report": "Mandatory: English, Excel competence, basic financial/operational report understanding, cross-checking, organisation, reliability and analytical interest in property. Preferred systems/accounting, Office/Power BI, programming/AI and integrations are not collectively mandatory. Seek a source-reconciliation example, repeatable validated reporting, feedback handling, spreadsheet fluency and willingness to perform adjacent operational duties. Actual assessment contents are unknown.",
+          "sources": [
+            {
+              "title": "Official role/company source",
+              "url": "https://primestreet.ie/",
+              "accessed_at": "2026-09-13"
+            }
+          ],
+          "limitations": [
+            "Candidate-blind benchmark used only JD and public research. Interview themes are inferred."
+          ]
+        },
+        "comparison": {
+          "summary": "Proceed with a supported role-fit draft; retain partial Excel evidence and unconfirmed property interest in the evaluation.",
+          "report": "{\n  \"job_id\": \"5b8921d814b94f76\",\n  \"company\": \"Prime Street\",\n  \"title\": \"Junior Reporting Analyst\",\n  \"priority\": 2,\n  \"draft_decision\": \"Proceed with a supported role-fit draft; retain partial Excel evidence and unconfirmed property interest in the evaluation.\",\n  \"eligibility\": \"Plausible fit; mandatory competency coverage is partly evidenced, with no demonstrated disqualifier.\",\n  \"strongest_fit\": \"Professional source reconciliation, finance-dashboard delivery, recurring reporting, stakeholder requirements and rapid platform learning directly address the reporting function.\",\n  \"mandatory_requirements\": [\n    {\n      \"requirement\": \"English communication\",\n      \"coverage\": \"supported\",\n      \"evidence_ids\": [\n        \"LANG-001\",\n        \"SKILL-DELIVERY-001\"\n      ],\n      \"assessment\": \"Fluent English and professional stakeholder communication are registered.\"\n    },\n    {\n      \"requirement\": \"Excel competence\",\n      \"coverage\": \"partial\",\n      \"evidence_ids\": [\n        \"PROJ-AZ-RECON\",\n        \"PROJ-POWERBI-PORTFOLIO\"\n      ],\n      \"assessment\": \"Excel is an established source in professional reconciliation and candidate dashboards. This supports Excel exposure, but does not establish independent spreadsheet proficiency or particular formulas. Confirm a concrete workbook task; do not label advanced Excel.\"\n    },\n    {\n      \"requirement\": \"Basic financial/operational report understanding\",\n      \"coverage\": \"supported_transferable\",\n      \"evidence_ids\": [\n        \"PROJ-NIQ-POC\",\n        \"PROJ-AZ-RECON\"\n      ],\n      \"assessment\": \"Finance dashboard construction and access-tracking reconciliation support reporting understanding. The reconciliation project concerns access requests, not ledger balances, rent accounts or financial-statement preparation.\"\n    },\n    {\n      \"requirement\": \"Cross-checking, organisation and reliability\",\n      \"coverage\": \"supported_transferable\",\n      \"evidence_ids\": [\n        \"PROJ-AZ-RECON\",\n        \"WORK-HUL-001\",\n        \"PROJ-NIQ-REPORTING\"\n      ],\n      \"assessment\": \"Source discrepancy tracing, testing and 300+ reports over six months provide examples. They do not establish zero errors or perfect SLA performance.\"\n    },\n    {\n      \"requirement\": \"Analytical mindset and interest in property/alternative investment\",\n      \"coverage\": \"partial\",\n      \"evidence_ids\": [\n        \"PROJ-AZ-RECON\",\n        \"PROJ-NIQ-POC\"\n      ],\n      \"assessment\": \"Analytical work is supported. Personal property/investment motivation is not registered and must come from the candidate; do not fabricate it.\"\n    }\n  ],\n  \"preferred_gaps\": [\n    \"Yardi Voyager 7S, AccountsIQ, property/CRM systems and Notion proficiency are not registered. These are preferences or named tools, not a mandatory prior-property-employment rule.\",\n    \"Accounting principles, bookkeeping, specific Office/Google Workspace proficiency and API/no-code integration experience are not established. Power BI and general SQL are supported; Python/R are academic.\",\n    \"AI is optional. Do not force restricted GenAI-project wording into a property reporting resume merely to include the keyword.\"\n  ],\n  \"selected_projects\": [\n    {\n      \"rank\": 1,\n      \"evidence_id\": \"PROJ-AZ-RECON\",\n      \"rationale\": \"Closest analogue to cross-checking multiple sources and tracing reporting discrepancies.\",\n      \"boundary\": \"Professional team project about access tracking; preserve co-development and the reported baseline.\"\n    },\n    {\n      \"rank\": 2,\n      \"evidence_id\": \"PROJ-NIQ-POC\",\n      \"rationale\": \"Finance reporting and a reusable dashboard template align with recurring reports, feedback and new reporting tools.\",\n      \"boundary\": \"Built from a client wireframe on a proprietary BI platform; effort savings are candidate-reported, not independently measured.\"\n    }\n  ],\n  \"selection_note\": \"PROJ-NIQ-REPORTING is the next strongest alternative and should remain prominent in Professional Experience for reporting volume, requirements and two-week learning. The selected POC adds distinct finance-reporting evidence.\",\n  \"exact_evidence_needed\": [\n    \"Candidate example of hands-on Excel work: inputs, cross-checks, formulas or pivot/filter methods actually used, output and personal contribution. A sanitised workbook or walkthrough would substantiate competence.\",\n    \"Candidate explanation of interest in property/alternative investment and willingness to undertake bookkeeping, operations and IT-administration duties.\",\n    \"Confirm Dublin 8 in-person availability; inspect the actual application instructions when accessible.\"\n  ],\n  \"release_readiness\": \"Not release-ready. The employer JD is verified, but the exact Indeed route returned Additional Verification Required. Application instructions/form gates remain unverified; resume compilation, mapping and visual QA are separate outstanding steps.\",\n  \"gateway\": \"Additional Verification Required on exact employer-linked Indeed posting; do not bypass verification.\",\n  \"posting_url\": \"https://ie.indeed.com/viewjob?jk=03a4c1873988fa89\",\n  \"requisition_id\": \"03a4c1873988fa89\",\n  \"application_submitted\": false,\n  \"artifact_qa\": \"not_performed_in_this_comparison\"\n}",
+          "sources": [
+            {
+              "title": "Official role/company source",
+              "url": "https://primestreet.ie/",
+              "accessed_at": "2026-09-13"
+            }
+          ],
+          "limitations": [
+            "Separate comparison worker wrote and validated both reports before its final turn hit a usage limit. Parent re-read the saved reports. No artifact QA was performed by the worker."
+          ]
+        },
+        "hiring_profile_access": false,
+        "role_input_sha256": "9a4659cd5c4487ef9554e31e56626cfa8af35e5f3d3441785022b076b8f33806",
+        "execution_mode": "Persisted results from independent collaboration workers; no new model inference during this import.",
+        "worker_ids": [
+          "public_research_sep13",
+          "hiring_benchmark_sep13",
+          "profile_comparison_sep13"
+        ],
+        "comparison_terminal_status": "Usage limit after report files were written; reports independently re-read by parent."
+      },
+      "error": null,
+      "created_at": "2026-09-13T14:13:44+00:00",
+      "updated_at": "2026-09-13T14:13:44+00:00"
+    },
+    {
+      "id": "4e59eabdc83c4b0fb2d177a2f76243d3",
+      "kind": "research",
+      "job_id": "10ba01413aa6075f",
+      "state": "failed",
+      "result": {
+        "stage": "Comparing your active profile",
+        "research": {
+          "summary": "ESS supports asset performance, maintenance, reliability and operational efficiency through engineering and analytical services. This role addresses accurate, accessible project and operational performance information using KPI trackers, Power BI, validation and stakeholder reporting. SharePoint, Power Apps, DAX and data modelling appear in duties. Relevant bachelor and operational-data OR engineering/technical experience required; postgraduate and industrial domain understanding desirable. Limerick, 40 hours, EUR46,000-50,000; closes 16 September 2026.",
+          "report": "ESS supports asset performance, maintenance, reliability and operational efficiency through engineering and analytical services. This role addresses accurate, accessible project and operational performance information using KPI trackers, Power BI, validation and stakeholder reporting. SharePoint, Power Apps, DAX and data modelling appear in duties. Relevant bachelor and operational-data OR engineering/technical experience required; postgraduate and industrial domain understanding desirable. Limerick, 40 hours, EUR46,000-50,000; closes 16 September 2026.",
+          "sources": [
+            {
+              "title": "Official role/company source",
+              "url": "https://jobsireland.ie/en-US/job-Details?id=2464829",
+              "accessed_at": "2026-09-13"
+            }
+          ],
+          "limitations": [
+            "Full public worker results were delivered in this chat; this is a concise persisted rendering. Application-route verification is a separate step."
+          ]
+        },
+        "hiring": {
+          "summary": "Mandatory: relevant technical bachelor; engineering projects OR operational data OR technical/industrial experience; BI/KPI/performance analysis; multisource interpretation, communication and learning. Seek operational KPI/report examples, validation controls, stakeholder requirements and Power BI modelling. DAX and Power Apps capability would support duties; no proficiency threshold is stated. Postgraduate study and industrial understanding are preferred. Generic permit notice does not establish a particular stamp restriction.",
+          "report": "Mandatory: relevant technical bachelor; engineering projects OR operational data OR technical/industrial experience; BI/KPI/performance analysis; multisource interpretation, communication and learning. Seek operational KPI/report examples, validation controls, stakeholder requirements and Power BI modelling. DAX and Power Apps capability would support duties; no proficiency threshold is stated. Postgraduate study and industrial understanding are preferred. Generic permit notice does not establish a particular stamp restriction.",
+          "sources": [
+            {
+              "title": "Official role/company source",
+              "url": "https://jobsireland.ie/en-US/job-Details?id=2464829",
+              "accessed_at": "2026-09-13"
+            }
+          ],
+          "limitations": [
+            "Candidate-blind benchmark used only JD and public research. Interview themes are inferred."
+          ]
+        }
+      },
+      "error": "Daily AI call budget reached. Saved results remain available. Raise the limit in Agent control or retry tomorrow.",
+      "created_at": "2026-09-13T14:13:44+00:00",
+      "updated_at": "2026-09-13T14:13:44+00:00"
+    },
+    {
+      "id": "625f988e8dff4d2dad78a8ddb0bc4235",
+      "kind": "research",
+      "job_id": "30cb363d12392b54",
+      "state": "failed",
+      "result": {
+        "stage": "Starting"
+      },
+      "error": "Daily AI call budget reached. Saved results remain available. Raise the limit in Agent control or retry tomorrow.",
+      "created_at": "2026-09-13T14:13:44+00:00",
+      "updated_at": "2026-09-13T14:13:44+00:00"
+    },
+    {
+      "id": "89843321ca2a4d0a9e2128ef2c7b7771",
+      "kind": "research",
+      "job_id": "7bfa6b3fce1853f0",
+      "state": "failed",
+      "result": {
+        "stage": "Starting"
+      },
+      "error": "Daily AI call budget reached. Saved results remain available. Raise the limit in Agent control or retry tomorrow.",
+      "created_at": "2026-09-13T14:13:44+00:00",
+      "updated_at": "2026-09-13T14:13:44+00:00"
+    },
+    {
+      "id": "0abc0f20d8c4422c9bcf613ff3dbfd6c",
+      "kind": "resume_advisor",
+      "job_id": "10ba01413aa6075f",
+      "state": "failed",
+      "result": {
+        "stage": "Starting"
+      },
+      "error": "Agent could not finish. Check Codex sign-in, connected Gmail permissions, or usage and retry. No status was inferred from this failure.",
+      "created_at": "2026-09-13T11:39:10+00:00",
+      "updated_at": "2026-09-13T11:39:13+00:00"
+    },
+    {
+      "id": "06eaf224ff874d11b0daf302f20ed614",
+      "kind": "resume_advisor",
+      "job_id": "1acf78884105297f",
+      "state": "failed",
+      "result": {
+        "stage": "Starting"
+      },
+      "error": "Agent could not finish. Check Codex sign-in, connected Gmail permissions, or usage and retry. No status was inferred from this failure.",
+      "created_at": "2026-09-13T11:38:36+00:00",
+      "updated_at": "2026-09-13T11:38:39+00:00"
+    },
     {
       "id": "525ee1c441ba402e93dd077fe99f377f",
       "kind": "email",

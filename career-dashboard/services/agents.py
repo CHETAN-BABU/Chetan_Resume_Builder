@@ -125,6 +125,8 @@ class AgentRunner:
     def recover(self):
         with self.w.connect() as db:
             db.execute("UPDATE ai_calls SET state='failed',error='App stopped during invocation' WHERE state='running'")
+            if db.execute("SELECT 1 FROM sqlite_master WHERE name='instruction_messages'").fetchone():
+                db.execute("UPDATE instruction_messages SET state='needs_attention',response='App stopped before this instruction finished. Inspect the saved draft/profile before retrying.' WHERE state='processing'")
             db.execute(
                 "UPDATE agent_runs SET state='failed',error='The app stopped during this run. Retry to continue.',updated_at=? WHERE state IN ('queued','running')",
                 (self.s.now(),),

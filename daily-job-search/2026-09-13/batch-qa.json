@@ -1,0 +1,68 @@
+{
+  "candidate_revision": "2026-09-13.1",
+  "checked_at": "2026-09-14T13:52:10.245448+00:00",
+  "counts": {
+    "failed": 2,
+    "pending": 2
+  },
+  "cross_batch": {
+    "near_identical_pairs": [],
+    "selected_projects": {},
+    "unique_artifact_dirs": true,
+    "unique_job_ids": true,
+    "unique_job_snapshots": true,
+    "unique_pdf_paths": true
+  },
+  "failures": [
+    "10ba01413aa6075f: Non-terminal or invalid status: failed",
+    "5b8921d814b94f76: Non-terminal or invalid status: failed",
+    "30cb363d12392b54: Non-terminal or invalid status: pending",
+    "7bfa6b3fce1853f0: Non-terminal or invalid status: pending"
+  ],
+  "jobs": [
+    {
+      "artifact_dir": "/Users/chetan/Desktop/Resume/career-dashboard/output/applications/10ba01413aa6075f-p6u0becs",
+      "failures": [
+        "Job is not in a releasable terminal state"
+      ],
+      "index": 1,
+      "job_id": "10ba01413aa6075f",
+      "status": "failed",
+      "valid": false
+    },
+    {
+      "artifact_dir": "/Users/chetan/Desktop/Resume/career-dashboard/output/applications/5b8921d814b94f76-c2s4n1cd",
+      "failures": [
+        "Job is not in a releasable terminal state"
+      ],
+      "index": 2,
+      "job_id": "5b8921d814b94f76",
+      "status": "failed",
+      "valid": false
+    },
+    {
+      "artifact_dir": null,
+      "failures": [
+        "Job is not in a releasable terminal state"
+      ],
+      "index": 3,
+      "job_id": "30cb363d12392b54",
+      "status": "pending",
+      "valid": false
+    },
+    {
+      "artifact_dir": null,
+      "failures": [
+        "Job is not in a releasable terminal state"
+      ],
+      "index": 4,
+      "job_id": "7bfa6b3fce1853f0",
+      "status": "pending",
+      "valid": false
+    }
+  ],
+  "manifest": "/Users/chetan/Desktop/Resume/daily-job-search/2026-09-13/batch.yml",
+  "schema_version": 2,
+  "status": "FAIL",
+  "warnings": []
+}

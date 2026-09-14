@@ -105,10 +105,13 @@ class ResumeStudio:
         with self.w.connect() as db:
             score_row = db.execute('SELECT * FROM resume_scores WHERE job_id=? ORDER BY created_at DESC,rowid DESC LIMIT 1', (job_id,)).fetchone()
         match = None
+        preview_pdf = safe_child(self.w.root / 'output', preview['path'] + '/resume.pdf') if preview else None
+        current_pdf_hash = hashlib.sha256(preview_pdf.read_bytes()).hexdigest() if preview_pdf and preview_pdf.exists() else None
         if score_row:
             match = {**json.loads(score_row['result']), 'revision': score_row['revision'], 'created_at': score_row['created_at'],
                      'current': score_row['source_sha256'] == hashlib.sha256(row['source'].encode()).hexdigest()
-                     and score_row['jd_sha256'] == hashlib.sha256(self.w.get_job(job_id)['description'].encode()).hexdigest()}
+                     and score_row['jd_sha256'] == hashlib.sha256(self.w.get_job(job_id)['description'].encode()).hexdigest()
+                     and score_row['pdf_sha256'] == current_pdf_hash}
         library = self.s.knowledge()
         ranked = self.w.rank_projects(self.w.get_job(job_id)['description'])
         ranks = {p['id']: (index + 1, p) for index, p in enumerate(ranked)}

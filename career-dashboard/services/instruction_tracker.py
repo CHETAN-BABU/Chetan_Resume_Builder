@@ -1,8 +1,6 @@
 """Durable chat above profile and resume editing. Explicit commands cost no AI."""
-import json
 import re
 import uuid
-from services.resume_studio import replace_macro
 from services.resume_layout import set_density
 
 
@@ -25,15 +23,18 @@ class InstructionTracker:
         key = request_id or uuid.uuid4().hex
         if len(key) > 100:
             raise ValueError('Invalid message ID')
+        if job_id:
+            self.w.get_job(job_id)
         with self.studio.lock:
             with self.w.connect() as db:
+                db.execute('BEGIN IMMEDIATE')
                 old = db.execute('SELECT * FROM instruction_messages WHERE id=?', (key,)).fetchone()
                 if old:
                     if old['message'] != message or old['job_id'] != job_id:
                         raise ValueError('Message ID already belongs to another request')
                     return dict(old)
-            if job_id:
-                self.w.get_job(job_id)
+                db.execute('INSERT INTO instruction_messages VALUES(?,?,?,?,?,?)',
+                           (key, job_id, message, 'Processing this instruction.', 'processing', self.s.now()))
             state, response = 'needs_clarification', 'Saved your full request. It has not changed resume wording. Use “summary: …”, “skills: …”, “project: ID”, “second project: ID”, “font: 11”, “experience: …”, or “note: …” for a precise update.'
             field = re.fullmatch(r'(?:set\s+)?(summary|skills)\s*:\s*([\s\S]+)', message, re.I)
             project = re.fullmatch(r'(second project|project)\s*:\s*([\w:-]+)', message, re.I)
@@ -67,7 +68,7 @@ class InstructionTracker:
             elif re.fullmatch(r'(help|what can you do)\??', message, re.I):
                 state, response = 'answered', 'I retain every message. Precise commands: summary: text; skills: SQL; Power BI; project: PROJ-ID; second project: PROJ-ID; font: 11; experience: roles and dates; note: any profile fact. Resume instructions apply to the selected job. Profile notes apply globally. Unknown requests stay visible until clarified; no AI is used.'
             with self.w.connect() as db:
-                db.execute('INSERT INTO instruction_messages VALUES(?,?,?,?,?,?)', (key, job_id, message, response, state, self.s.now()))
+                db.execute('UPDATE instruction_messages SET response=?,state=? WHERE id=?', (response, state, key))
                 self.w.record_event(db, 'instruction_recorded', job_id, message_id=key, state=state)
             self.w.export_tracking()
             return next(m for m in self.history(job_id) if m['id'] == key)

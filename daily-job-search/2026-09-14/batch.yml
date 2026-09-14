@@ -1,0 +1,43 @@
+schema_version: 2
+run_id: 20260914-daily-career
+candidate_revision: 2026-09-13.1
+requested_count: 15
+unique_postings_saved: 0
+released_count: 0
+draft_count: 2
+finalised_on: '2026-09-14'
+jobs:
+- job_id: 10ba01413aa6075f
+  company: Engineering Support & Services Limited
+  status: failed
+  reason: DAX and Power Apps delivery unconfirmed; industrial context is transferable
+    evidence. MyGovID/account-gated form not inspected.
+  artifact_dir: /Users/chetan/Desktop/Resume/career-dashboard/output/applications/10ba01413aa6075f-p6u0becs
+  snapshot_path: /Users/chetan/Desktop/Resume/career-dashboard/output/applications/10ba01413aa6075f-p6u0becs/job-description.md
+  snapshot_sha256: 0f0d55ba925530aa6313bc4c6a3ef09341525e605ae3c33718f004d31aeba2f8
+  selected_project_ids:
+  - PROJ-AZ-RECON
+  - PROJ-AZ-EXEC
+- job_id: 5b8921d814b94f76
+  company: Prime Street
+  status: failed
+  reason: Concrete Excel tasks and property interest need confirmation. Indeed requires
+    additional verification.
+  artifact_dir: /Users/chetan/Desktop/Resume/career-dashboard/output/applications/5b8921d814b94f76-c2s4n1cd
+  snapshot_path: /Users/chetan/Desktop/Resume/career-dashboard/output/applications/5b8921d814b94f76-c2s4n1cd/job-description.md
+  snapshot_sha256: 678851ea2a60bbbaf418cb3723984bddd8c137769c93b5f8983b827a7df7bd4e
+  selected_project_ids:
+  - PROJ-AZ-RECON
+  - PROJ-NIQ-POC
+- job_id: 30cb363d12392b54
+  company: Morgan McKinley
+  status: pending
+  reason: Advanced Excel is mandatory and unconfirmed. End employer undisclosed. Empty
+    application form inspection blocked by automatic approval review.
+- job_id: 7bfa6b3fce1853f0
+  company: Lidl Ireland
+  status: pending
+  reason: Overall 2:1/Level 8 equivalence, full driving licence, travel/relocation
+    and September 2027 availability/permission unconfirmed.
+discovery_pass_limit: 10
+carried_over_postings: 4
