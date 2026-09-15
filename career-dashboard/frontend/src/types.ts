@@ -11,6 +11,30 @@ export type Job = {
   folder: string | null;
   created_at: string;
   selected_project_id: string | null;
+  record_source: "posting" | "gmail" | "posting+gmail";
+  deleted_at: string | null;
+  deletion_reason: string;
+};
+export type ApplicationDocuments = {
+  job_id: string;
+  company: string;
+  title: string;
+  resumes: { label: string; path: string }[];
+  cover_letter: {
+    version: number;
+    path: string;
+    created_at: string;
+  } | null;
+};
+export type CoverLetter = {
+  job_id: string;
+  company: string;
+  title: string;
+  version: number;
+  content: string;
+  path: string;
+  created_at: string;
+  review_required: boolean;
 };
 export type Report = {
   summary: string;
@@ -75,6 +99,8 @@ export type Agent = {
 };
 export type Summary = {
   jobs: Job[];
+  removed_jobs: Job[];
+  documents: ApplicationDocuments[];
   goals: Goals;
   mail: {
     connection: {
@@ -83,6 +109,9 @@ export type Summary = {
       last_synced_at?: string;
       coverage?: string;
       mode?: string;
+      status?: string;
+      last_attempt_at?: string;
+      last_error?: string;
     };
     messages: Mail[];
   };

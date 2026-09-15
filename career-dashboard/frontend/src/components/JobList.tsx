@@ -1,4 +1,4 @@
-import { ArrowUpRight, MapPin, Search } from "lucide-react";
+import { ArrowUpRight, FileText, Search, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { Badge, Empty } from "./UI";
 import type { Job } from "../types";
@@ -14,10 +14,14 @@ export const statuses = [
 export function JobList({
   jobs,
   onSelect,
+  onCoverLetter,
+  onRemove,
   compact = false,
 }: {
   jobs: Job[];
   onSelect: (id: string) => void;
+  onCoverLetter?: (job: Job) => void;
+  onRemove?: (job: Job) => void;
   compact?: boolean;
 }) {
   const [q, setQ] = useState("");
@@ -60,43 +64,78 @@ export function JobList({
       ) : (
         <div className="job-list">
           {shown.map((j) => (
-            <button
-              key={j.id}
-              className="job-row"
-              onClick={() => onSelect(j.id)}
-            >
-              <span className="company-avatar">
-                {j.company.slice(0, 2).toUpperCase()}
-              </span>
-              <span className="job-main">
-                <strong>{j.title}</strong>
-                <span>
-                  {j.company}{" "}
-                  <span className="job-location">· {j.location}</span>
+            <div key={j.id} className="job-row">
+              <button
+                type="button"
+                className="job-open"
+                onClick={() => onSelect(j.id)}
+              >
+                <span className="company-avatar">
+                  {j.company.slice(0, 2).toUpperCase()}
                 </span>
-              </span>
-              <span className="job-meta">
-                <Badge
-                  tone={
-                    ["applied", "offer", "interview"].includes(j.status)
-                      ? "green"
-                      : j.status === "rejected"
-                        ? "red"
-                        : "neutral"
-                  }
-                >
-                  {j.status}
-                </Badge>
-                {!compact && (
-                  <small>
-                    {j.application_date
-                      ? "Applied " + j.application_date
-                      : "Date not recorded"}
-                  </small>
-                )}
-              </span>
-              <ArrowUpRight size={18} />
-            </button>
+                <span className="job-main">
+                  <strong>{j.title}</strong>
+                  <span>
+                    {j.company}{" "}
+                    <span className="job-location">· {j.location}</span>
+                  </span>
+                </span>
+                <span className="job-meta">
+                  <Badge
+                    tone={
+                      ["applied", "offer", "interview"].includes(j.status)
+                        ? "green"
+                        : j.status === "rejected"
+                          ? "red"
+                          : "neutral"
+                    }
+                  >
+                    {j.status}
+                  </Badge>
+                  {!compact && (
+                    <small>
+                      {j.record_source === "gmail"
+                        ? "Tracked from Gmail · add the posting to create documents"
+                        : j.application_date
+                          ? "Applied " + j.application_date
+                          : "Date not recorded"}
+                    </small>
+                  )}
+                </span>
+                <ArrowUpRight size={18} />
+              </button>
+              {(onCoverLetter ||
+                (onRemove && ["saved", "prepared"].includes(j.status))) && (
+                <span className="job-row-actions">
+                  {onCoverLetter && (
+                    <button
+                      type="button"
+                      className="secondary"
+                      disabled={j.record_source === "gmail"}
+                      title={
+                        j.record_source === "gmail"
+                          ? "Add the full job description first"
+                          : `Generate a cover letter for ${j.company}`
+                      }
+                      onClick={() => onCoverLetter(j)}
+                    >
+                      <FileText size={15} /> Cover letter
+                    </button>
+                  )}
+                  {onRemove && ["saved", "prepared"].includes(j.status) && (
+                    <button
+                      type="button"
+                      className="icon-button danger-icon"
+                      aria-label={`Remove ${j.company} ${j.title}`}
+                      title="Remove unsuitable role"
+                      onClick={() => onRemove(j)}
+                    >
+                      <Trash2 size={16} />
+                    </button>
+                  )}
+                </span>
+              )}
+            </div>
           ))}
         </div>
       )}

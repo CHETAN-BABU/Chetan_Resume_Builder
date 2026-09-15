@@ -232,6 +232,45 @@ def test_invalid_mail_rejected_atomically(service, changes):
     assert not service.mail()["messages"]
 
 
+def test_inaccessible_gmail_does_not_replace_last_success(service):
+    service.ingest_mail(
+        {
+            "email": "connected@example.test",
+            "coverage": "Verified fixture",
+            "messages": [],
+        }
+    )
+    before = service.mail()["connection"]
+    with pytest.raises(ValueError, match="verification"):
+        service.ingest_mail({"email": "", "coverage": "Unavailable", "messages": []})
+    service.record_mail_sync_failure("Gmail tools unavailable")
+    after = service.mail()["connection"]
+    assert after["connected"] is False
+    assert after["email"] == "connected@example.test"
+    assert after["last_synced_at"] == before["last_synced_at"]
+    assert after["status"] == "needs_attention"
+    assert "unavailable" in after["last_error"]
+
+
+def test_email_worker_requires_verified_completed_search(service):
+    def inaccessible(*args, **kwargs):
+        return {
+            "email": "",
+            "coverage": "No Gmail tools available",
+            "connection_verified": False,
+            "search_completed": False,
+            "messages": [],
+        }
+
+    runner = AgentRunner(service, inaccessible)
+    runner.enqueue("email")
+    runner.pool.shutdown(wait=True)
+    run = service.runs()[0]
+    assert run["state"] == "failed"
+    assert "not connected" in run["error"]
+    assert service.mail()["connection"]["connected"] is False
+
+
 def test_independent_hiring_has_no_candidate_context(service):
     j = add(service.w)
     service.w.update_job(j["id"], "saved", notes="PRIVATE-NOTES-SECRET")
@@ -331,6 +370,88 @@ def test_exact_email_updates_automatically_but_ambiguous_does_not(service):
         == "pending"
     )
     assert service.w.get_job(second["id"])["status"] == "saved"
+
+
+def test_unlisted_high_confidence_email_creates_tracked_application(service):
+    ingest(
+        service,
+        {
+            **message(
+                {
+                    "id": "unused",
+                    "company": "External Employer",
+                    "title": "Reporting Analyst",
+                },
+                id="external-mail",
+            ),
+            "job_id": None,
+            "submission_date": None,
+        },
+    )
+    job = service.w.jobs()[0]
+    assert job["company"] == "External Employer"
+    assert job["title"] == "Reporting Analyst"
+    assert job["record_source"] == "gmail"
+    assert job["status"] == "applied"
+    assert job["application_date"] is None
+    assert service.mail()["messages"][0]["job_id"] == job["id"]
+    with service.w.connect() as db:
+        evidence = db.execute(
+            "SELECT * FROM application_evidence WHERE job_id=?", (job["id"],)
+        ).fetchone()
+    assert evidence and evidence["submission_date"] is None
+
+
+def test_email_application_can_be_upgraded_with_full_posting(service):
+    ingest(
+        service,
+        {
+            **message(
+                {"id": "unused", "company": "Portal Co", "title": "BI Analyst"},
+                id="portal-mail",
+            ),
+            "job_id": None,
+        },
+    )
+    tracked = service.w.jobs()[0]
+    result = service.add_posting(
+        {
+            "company": "Portal Co",
+            "title": "BI Analyst",
+            "location": "Dublin, Ireland",
+            "url": "https://careers.portal.test/jobs/bi-1",
+            "description": "Build Power BI reporting, use SQL, gather stakeholder requirements and validate dashboards across multiple business sources.",
+        }
+    )
+    assert result["upgraded"]
+    assert result["job"]["id"] == tracked["id"]
+    assert result["job"]["record_source"] == "posting+gmail"
+    assert result["job"]["status"] == "applied"
+
+
+def test_remove_unsuitable_job_is_recoverable_and_protects_applications(service):
+    job = add(service.w)
+    service.remove_job(job["id"], "Outside target role")
+    assert service.w.jobs() == []
+    removed = service.w.jobs(include_deleted=True)[0]
+    assert removed["deleted_at"] and removed["deletion_reason"] == "Outside target role"
+    service.restore_job(job["id"])
+    assert service.w.jobs()[0]["id"] == job["id"]
+    service.w.update_job(job["id"], "applied", application_date="2026-09-10")
+    with pytest.raises(ValueError, match="Only saved or prepared"):
+        service.remove_job(job["id"])
+
+
+def test_cover_letter_is_company_specific_versioned_and_listed(service):
+    job = add(service.w)
+    first = service.generate_cover_letter(job["id"])
+    second = service.generate_cover_letter(job["id"])
+    assert "Example employer" in first["content"]
+    assert "Data Analyst" in first["content"]
+    assert first["version"] == 1 and second["version"] == 2
+    assert (service.w.root / "output" / second["path"]).exists()
+    documents = service.documents()
+    assert documents[0]["cover_letter"]["version"] == 2
 
 
 def test_discovery_filters_historical_postings_even_if_agent_repeats(service):
@@ -447,7 +568,9 @@ def test_discovery_excludes_unlinked_email_confirmed_roles(service):
     runner.enqueue("discovery")
     runner.pool.shutdown(wait=True)
     assert service.runs()[0]["state"] == "completed"
-    assert len(service.w.jobs()) == 1
+    # The exact unlisted email is now a first-class tracked application. Discovery
+    # still recognises it and does not add a duplicate posting.
+    assert len(service.w.jobs()) == 2
     assert service.runs()[0]["result"]["duplicate_job_ids"] == [
         "https://new.example.test/jobs/9"
     ]

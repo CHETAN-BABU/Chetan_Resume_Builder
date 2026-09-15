@@ -1,5 +1,5 @@
 schema_version: 1
-candidate_revision: 2026-09-13.1
+candidate_revision: 2026-09-14.1
 candidate: Chetan Babu M
 status_definitions:
   confirmed: Supported by Chetan's supplied career narrative and approved for normal use.
@@ -110,13 +110,16 @@ claims:
 - id: EDU-BTECH-001
   status: user_reported
   category: education
-  approved_external_use: Use as candidate-supplied education; do not infer an honours classification.
+  approved_external_use: Use as candidate-supplied education. May state that Chetan reports the qualification
+    as equivalent to 1:1; do not present the equivalence as independently verified.
   source_refs:
   - context/sources/career.md > B.Tech in Computer Science
+  - context/sources/2026-09-14-profile-update.md
   institution: SRM Institute of Science and Technology
   degree_as_supplied: Bachelor of Technology in Computer Science (AI and ML)
   dates: Jun 2019-May 2023
   cgpa_as_supplied: 9.4/10
+  equivalence_as_supplied: Equivalent to 1:1
 - id: CERT-PL300-001
   status: confirmed
   category: certification

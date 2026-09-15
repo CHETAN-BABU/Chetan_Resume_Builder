@@ -1,5 +1,497 @@
 [
   {
+    "id": 161,
+    "occurred_at": "2026-09-15T16:03:22+00:00",
+    "action": "search_notes_updated",
+    "job_id": null,
+    "details": {
+      "date": "2026-09-15",
+      "before": "",
+      "after": "# Daily career result — 15 September 2026\n\n**No new eligible postings or new résumé releases from today’s search pass.** Thirty-three queries and full-source follow-ups are documented in [search coverage](search-coverage.md). No applications were submitted. The planner has 20 applications remaining today: five base plus fifteen carried forward; this is a target, not a count of verified vacancies.\n\n## Priority carryovers\n\n| Priority | Exact job | Supported fit | Outstanding check | Existing materials |\n|---|---|---|---|---|\n| 1 | ESS — Data Analyst, Limerick, `10ba01413aa6075f` — [apply](https://jobsireland.ie/en-US/job-Details?id=2464829) | Power BI, operational reporting, reconciliation and stakeholders | **Closes 16 September**; DAX/Power Apps evidence and account-gated form requirements unconfirmed | [Existing draft folder](../../career-dashboard/output/applications/10ba01413aa6075f-p6u0becs/) |\n| 2 | Prime Street — Junior Reporting Analyst, Dublin 8, `5b8921d814b94f76` — [posting](https://ie.indeed.com/viewjob?jk=03a4c1873988fa89) | Reporting, dashboards and finance reconciliation | Concrete Excel examples, property interest and previous Indeed verification gate; not reverified today | [Existing draft folder](../../career-dashboard/output/applications/5b8921d814b94f76-c2s4n1cd/) |\n| 3 | Morgan McKinley — contract Data Analyst, Cork, `30cb363d12392b54` — [posting](https://morganmckinley.com/jobs/cork/data-analyst-contract/1104845) | Reconciliation, multisource validation and stakeholder delivery | Advanced Excel unconfirmed; employer undisclosed; previous empty-form auto-review block remains; not reverified today | Saved lead; no reviewed résumé |\n\nESS and Prime Street files remain previous drafts using revision 2026-09-13.1. They must be reconciled with current revision 2026-09-14.1, rebuilt and reviewed before release. This run did not replace their PDFs or claim current artifact QA. These are priorities for resolving checks, not approved applications.\n\nLidl `7bfa6b3fce1853f0` also remains a carryover. The current profile includes user-reported B.Tech equivalence to 1:1; independent documentation/employer acceptance, driving licence, mobility and 2027 availability/permission remain unresolved. The separately prepared Tomorrow’s Guides UK role is preserved and excluded from new Ireland discovery counts.\n\nGmail could not be checked today; the last verified sync was 14 September at 13:52:44 UTC. See [email review](email-review.md). No mailbox outcome was inferred. The existing daily 09:00 Europe/Dublin automation is active; no duplicate schedule was added.\n\nNext: provide real DAX, Power Apps and advanced Excel examples if used; resolve ESS before its deadline. Current Stamp 1G is recorded; expiry/future sponsorship and MSc award remain unconfirmed. Continue replacing unsuitable or unverifiable leads on the next search pass.\n\n\n# Search coverage — 15 September 2026\n\nCompleted an afternoon continuation of the existing daily workflow. The scheduled time remains 09:00 Europe/Dublin; this report does not claim execution at that time.\n\n33 search queries across Ireland, Dublin, Cork, Limerick, Galway and Ireland-compatible remote roles, followed by full-page and employer-PDF checks. Tracks included data analysis, BI, reporting, junior/graduate analytics and adjacent data-quality/research roles. Deduplication used 21 saved jobs, 20 history rows (including the separately prepared UK role), the historical-pack index and saved email evidence. Today’s Gmail check failed, so new email outcomes could not be included.\n\n## Excluded or unresolved leads\n\n| Posting | Decision and evidence |\n|---|---|\n| [LGMA Data Analyst Grade 6](https://www.lgma.ie/en/about-us/work-with-us/260907-cdu-data-analyst-grade-6-open-competition.pdf) | Full current official PDF requires at least five years of professional analytics experience and pipeline development. Profile does not establish these. Not selected. Closes 24 September at 13:00. |\n| [LGMA Research Officer Grade 5](https://www.lgma.ie/en/about-us/work-with-us/260831-research-officer-grade-5-open-competition.pdf) | Full official PDF requires two years of relevant policy/social/economic research plus policy research outputs. BI employment and academic analytics do not establish the required policy experience. Not selected. |\n| [LGMA candidate booklet](https://www.lgma.ie/en/about-us/work-with-us/260909-lgma-candidate-information-booklet-copy-3.pdf) | Lists specific citizenship/Stamp 4/work-permit categories; confirmed Stamp 1G alone does not establish acceptance under those employer criteria. No immigration-law conclusion inferred. |\n| [LaunchDarkly Data Analyst – Revenue & Metrics, 7692792003](https://job-boards.greenhouse.io/launchdarkly/jobs/7692792003) | Current full employer ATS page and empty application fields verified; Ireland included. Typically requires minimum five years of related experience. Not selected; third-party three-year summaries conflict with primary wording. |\n| [SAP AI Data Analytics internship, 457734](https://ie.linkedin.com/jobs/view/sap-ixp-intern-partner-business-operations-ai-data-analytics-at-sap-4452711351) | Employer-posted full description requires active undergraduate enrolment; current profile is an MSc candidate. Advertised August 2026 start also already passed. Not selected. |\n| [Pale Blue Dot Data Scientist](https://ie.linkedin.com/jobs/view/data-scientist-at-pale-blue-dot%C2%AErecruitment-limited-4466071103) | Recruiter full JD requires 3–5 years in applied professional data science/ML and independent principal-scientist delivery. Academic ML projects do not establish this. Not selected. |\n| [Planet Merchant Data Steward](https://ie.linkedin.com/jobs/view/merchant-data-steward-at-planet-4454773698) | Employer full JD requires hands-on Salesforce and payments/merchant-hierarchy knowledge, unregistered in candidate evidence. Location also remains to be confirmed within description despite Galway header. Not selected. |\n| [Irish Pensions & Finance Junior Data Analyst](https://ie.indeed.com/q-junior-data-analyst-l-dublin%2C-county-dublin-jobs.html?vjk=14ff8369e71a7b0c) | Indeed indicates expired; aggregator deadline claims do not establish reopening. |\n| [Nadara Offshore Junior Data Analyst](https://ie.linkedin.com/jobs/view/junior-data-analyst-at-nadara-offshore-4353682674) | Full posting says no longer accepting applications. |\n| [eir Health IT Reporting Analyst](https://jobs.eir.care/jobs/detail/health-it-reporting-analyst-2088) | Belfast location outside the Ireland work-permission target; not treated as covered by Stamp 1G. |\n| HSE NRS15574 Grade VI Data & Systems Analyst | Advertised deadline 15 September 12:00 had passed before this run; also advertised as confined competition. No verified reopening. |\n| [CPL Reporting Analyst JO-2608-568012](https://www.cpl.com/cs/prace/reporting-analyst-5997386) | Previously examined exact requisition through another URL; not new. Earlier eligibility issue remains unresolved. |\n| [Hibernian Junior Reporting Analyst](https://bebee.com/ie/jobs/junior-reporting-analyst-hibernian-recruitment-limited-galway--jobs-sea-4171778259) | Discovery-only aggregator. No verified current primary posting/application route found; client undisclosed and strong Excel unconfirmed. Do not assume unrelated German Hibernian recruiter is this company. |\n| [STRIVE Data Reporting Analyst](https://ie.linkedin.com/jobs/data-reporting-analyst-jobs-galway-metropolitan-area) | Cached list/aggregator discovery; live list no longer exposed the specific role. Exact live JD/application route not verified. Could overlap the undisclosed Galway client; not counted as another employer. |\n| Re-Cell IT Data Analyst, Maynooth | Aggregator discovery only; exact primary JobsIreland posting not located. Not selected. |\n| TikTok AI Analysis & Performance Analyst | Discovery-only; professional AI/model-pipeline requirements and primary application route not established. Not selected. |\n| Salesforce AI/Data six-month intern JR340530 | Official Workday URL returned no readable full JD; Ireland location and complete eligibility unverified. |\n| Future Proof Insights Research & Innovation Analyst | Aggregator discovery only; primary posting not verified. Relevant psychology/market-research qualification and short-notice international travel requirements are not established. |\n\nNo new eligible live posting was verified in this bounded pass. This is a search-coverage result, not a claim that Ireland has no suitable jobs. No employer rejection or application is inferred from a screening exclusion. No new posting was selected for separate employer research, independent hiring benchmark or résumé creation.\n"
+    }
+  },
+  {
+    "id": 160,
+    "occurred_at": "2026-09-15T16:03:22+00:00",
+    "action": "progress_updated",
+    "job_id": "7bfa6b3fce1853f0",
+    "details": {
+      "before": {
+        "id": "7bfa6b3fce1853f0",
+        "company": "Lidl Ireland",
+        "title": "Graduate Programme - Controlling & Analytics",
+        "location": "Tallaght, Dublin 24, Ireland; travel/relocation required",
+        "url": "https://jobs.lidl.ie/jobs/graduate-programme-controlling-analytics-dublin-24-741208",
+        "description": "Full employer JD read in browser13September2026. Reference741208;deadline31October2026;start6September2027;18monthgraduateprogramme;EUR45,500annualprorata. Rotations in Business Insights & Analytics,Business Partnering and Financial Controlling. Timely accurate turnover,margin,stock-loss and productivity KPI reporting,trend analysis and decision support from stores to board. Includes store/distribution-centre training. Required expected/attained2.1HonoursLevel8degree,analytical/numeracy skills,deadlines underpressure,communication,motivation,flexibility to travel/relocate withinIreland and full drivinglicence. German advantageous,notrequired;no namedanalyticssoftwaremandatory. Up to2remote days. Employer Apply link visible https://ea-lidl.cfapps.eu20.hana.ondemand.com/easyapply/index.html?ReqId=741208&sap-language=en_IE ; form not opened. No application or mail invitation counted as submission.",
+        "status": "saved",
+        "created_at": "2026-09-13T08:07:28+00:00",
+        "updated_at": "2026-09-14T13:52:10+00:00",
+        "notes": "13 September search, finalised 14 September. Supported fit: KPI reporting, analytical degree background and client communication. Pending: Overall 2:1/Level 8 equivalence, full driving licence, travel/relocation and September 2027 availability/permission unconfirmed. Saved lead only; no tailored resume released. ",
+        "application_date": null,
+        "selected_project_id": null,
+        "folder": null,
+        "verification": "not_verified"
+      },
+      "after": {
+        "id": "7bfa6b3fce1853f0",
+        "company": "Lidl Ireland",
+        "title": "Graduate Programme - Controlling & Analytics",
+        "location": "Tallaght, Dublin 24, Ireland; travel/relocation required",
+        "url": "https://jobs.lidl.ie/jobs/graduate-programme-controlling-analytics-dublin-24-741208",
+        "description": "Full employer JD read in browser13September2026. Reference741208;deadline31October2026;start6September2027;18monthgraduateprogramme;EUR45,500annualprorata. Rotations in Business Insights & Analytics,Business Partnering and Financial Controlling. Timely accurate turnover,margin,stock-loss and productivity KPI reporting,trend analysis and decision support from stores to board. Includes store/distribution-centre training. Required expected/attained2.1HonoursLevel8degree,analytical/numeracy skills,deadlines underpressure,communication,motivation,flexibility to travel/relocate withinIreland and full drivinglicence. German advantageous,notrequired;no namedanalyticssoftwaremandatory. Up to2remote days. Employer Apply link visible https://ea-lidl.cfapps.eu20.hana.ondemand.com/easyapply/index.html?ReqId=741208&sap-language=en_IE ; form not opened. No application or mail invitation counted as submission.",
+        "status": "saved",
+        "created_at": "2026-09-13T08:07:28+00:00",
+        "updated_at": "2026-09-15T16:03:22+00:00",
+        "notes": "13 September search, finalised 14 September. Supported fit: KPI reporting, analytical degree background and client communication. Pending: Overall 2:1/Level 8 equivalence, full driving licence, travel/relocation and September 2027 availability/permission unconfirmed. Saved lead only; no tailored resume released.\n\n15 September 2026 profile comparison correction: the current registry now includes user-reported B.Tech equivalence to 1:1. Independent equivalence documentation and employer acceptance remain unverified. Full driving licence, travel/relocation and 2027 availability/permission remain unconfirmed. No application or new liveness verification today.",
+        "application_date": null,
+        "selected_project_id": null,
+        "folder": null,
+        "verification": "not_verified"
+      }
+    }
+  },
+  {
+    "id": 159,
+    "occurred_at": "2026-09-15T16:03:22+00:00",
+    "action": "progress_updated",
+    "job_id": "5b8921d814b94f76",
+    "details": {
+      "before": {
+        "id": "5b8921d814b94f76",
+        "company": "Prime Street",
+        "title": "Junior Reporting Analyst",
+        "location": "Dublin 8, Ireland; in person; Monday-Friday",
+        "url": "https://ie.indeed.com/viewjob?jk=03a4c1873988fa89",
+        "description": "Official full JD read 13 September 2026 at https://primestreet.ie/ in the Junior Reporting Analyst section, distinct from the adjacent property manager role. Employer links to this exact Indeed posting. Dublin 8; full-time; EUR35,000; Head of Operations. Recurring weekly-to-annual reports, feedback implementation, source reconciliation, new dashboards/systems, external lender/investor/regulator reporting. Ad-hoc bookkeeping, property operations and IT administration also feature. Systems include Excel, PowerPoint, Yardi Voyager 7S, AccountsIQ, Notion and Google Workspace. Requires English communication, Excel competence, basic financial/operational report understanding, meticulous cross-checking, organisation, reliability, analytical mindset and interest in property/alternative investment. Preferred: property/CRM/accounting systems, Office/Power BI, Python/HTML/R/SQL, accounting principles, AI problem-solving, integrations/no-code/APIs. No driver licence requirement for this analyst role. Hiring comprises CV review, two assessments, video interview, onsite practical and final leadership interview. Deadline not stated. Employer advert verified; Indeed route encountered Additional Verification Required in browser. No CAPTCHA solved or information entered.",
+        "status": "prepared",
+        "created_at": "2026-09-13T08:07:28+00:00",
+        "updated_at": "2026-09-14T13:52:10+00:00",
+        "notes": "13 September search, finalised 14 September. Supported fit: Recurring finance reporting, validation, dashboard development and feedback handling. Pending: Concrete Excel tasks and property interest need confirmation. Indeed requires additional verification. Tailored draft PDF compiled and its two rendered A4 pages visually verified; exactly two registered selected projects. QA fails only unresolved role eligibility. Not released or submitted. Existing Studio revision preserved. ",
+        "application_date": null,
+        "selected_project_id": "PROJ-AZ-RECON",
+        "folder": "output/applications/5b8921d814b94f76-c2s4n1cd",
+        "verification": "not_verified"
+      },
+      "after": {
+        "id": "5b8921d814b94f76",
+        "company": "Prime Street",
+        "title": "Junior Reporting Analyst",
+        "location": "Dublin 8, Ireland; in person; Monday-Friday",
+        "url": "https://ie.indeed.com/viewjob?jk=03a4c1873988fa89",
+        "description": "Official full JD read 13 September 2026 at https://primestreet.ie/ in the Junior Reporting Analyst section, distinct from the adjacent property manager role. Employer links to this exact Indeed posting. Dublin 8; full-time; EUR35,000; Head of Operations. Recurring weekly-to-annual reports, feedback implementation, source reconciliation, new dashboards/systems, external lender/investor/regulator reporting. Ad-hoc bookkeeping, property operations and IT administration also feature. Systems include Excel, PowerPoint, Yardi Voyager 7S, AccountsIQ, Notion and Google Workspace. Requires English communication, Excel competence, basic financial/operational report understanding, meticulous cross-checking, organisation, reliability, analytical mindset and interest in property/alternative investment. Preferred: property/CRM/accounting systems, Office/Power BI, Python/HTML/R/SQL, accounting principles, AI problem-solving, integrations/no-code/APIs. No driver licence requirement for this analyst role. Hiring comprises CV review, two assessments, video interview, onsite practical and final leadership interview. Deadline not stated. Employer advert verified; Indeed route encountered Additional Verification Required in browser. No CAPTCHA solved or information entered.",
+        "status": "prepared",
+        "created_at": "2026-09-13T08:07:28+00:00",
+        "updated_at": "2026-09-15T16:03:22+00:00",
+        "notes": "13 September search, finalised 14 September. Supported fit: Recurring finance reporting, validation, dashboard development and feedback handling. Pending: Concrete Excel tasks and property interest need confirmation. Indeed requires additional verification. Tailored draft PDF compiled and its two rendered A4 pages visually verified; exactly two registered selected projects. QA fails only unresolved role eligibility. Not released or submitted. Existing Studio revision preserved.\n\n15 September 2026 carryover review: existing draft predates canonical revision 2026-09-14.1; reconcile/rebuild before release. Concrete Excel evidence and existing eligibility/form checks remain pending. No new liveness verification or application claimed today.",
+        "application_date": null,
+        "selected_project_id": "PROJ-AZ-RECON",
+        "folder": "output/applications/5b8921d814b94f76-c2s4n1cd",
+        "verification": "not_verified"
+      }
+    }
+  },
+  {
+    "id": 158,
+    "occurred_at": "2026-09-15T16:03:22+00:00",
+    "action": "progress_updated",
+    "job_id": "10ba01413aa6075f",
+    "details": {
+      "before": {
+        "id": "10ba01413aa6075f",
+        "company": "Engineering Support & Services Limited",
+        "title": "Data Analyst",
+        "location": "Raheen Business Park, Limerick, Ireland; office based; 40 hours weekly",
+        "url": "https://jobsireland.ie/en-US/job-Details?id=2464829",
+        "description": "Full official JobsIreland employer posting read 13 September 2026. JOB-2464829; published19August; closes16September2026; one Limerick position; EUR46,000-50,000;40hours. ESS supports engineering clients with asset performance, maintenance, reliability and operational improvement. Duties: analyse project/operational data, define KPI trackers, build Power BI dashboards and DAX/data models, validate multiple sources, automate reporting, communicate insights, support engineering teams, use SharePoint/Power Apps for collection/workflows, gather requirements and learn client systems. Requires relevant technical bachelor degree (including computer science), engineering-project OR operational-data OR technical/industrial experience, BI/KPI/performance analysis, complex multisource interpretation, clear communication and adaptability. Related postgraduate qualification and industrial-domain understanding desirable. No numeric years threshold. Generic permit/exemption notice does not establish a stamp-specific restriction or sponsorship. Apply control and login/register instructions visible; account-gated application has not been traversed. No information entered.",
+        "status": "prepared",
+        "created_at": "2026-09-13T08:07:28+00:00",
+        "updated_at": "2026-09-14T13:52:10+00:00",
+        "notes": "13 September search, finalised 14 September. Supported fit: Power BI dashboards, operational reporting, multi-source reconciliation and stakeholder delivery. Pending: DAX and Power Apps delivery unconfirmed; industrial context is transferable evidence. MyGovID/account-gated form not inspected. Tailored draft PDF compiled and its two rendered A4 pages visually verified; exactly two registered selected projects. QA fails only unresolved role eligibility. Not released or submitted. Existing Studio revision preserved. ",
+        "application_date": null,
+        "selected_project_id": "PROJ-AZ-RECON",
+        "folder": "output/applications/10ba01413aa6075f-p6u0becs",
+        "verification": "not_verified"
+      },
+      "after": {
+        "id": "10ba01413aa6075f",
+        "company": "Engineering Support & Services Limited",
+        "title": "Data Analyst",
+        "location": "Raheen Business Park, Limerick, Ireland; office based; 40 hours weekly",
+        "url": "https://jobsireland.ie/en-US/job-Details?id=2464829",
+        "description": "Full official JobsIreland employer posting read 13 September 2026. JOB-2464829; published19August; closes16September2026; one Limerick position; EUR46,000-50,000;40hours. ESS supports engineering clients with asset performance, maintenance, reliability and operational improvement. Duties: analyse project/operational data, define KPI trackers, build Power BI dashboards and DAX/data models, validate multiple sources, automate reporting, communicate insights, support engineering teams, use SharePoint/Power Apps for collection/workflows, gather requirements and learn client systems. Requires relevant technical bachelor degree (including computer science), engineering-project OR operational-data OR technical/industrial experience, BI/KPI/performance analysis, complex multisource interpretation, clear communication and adaptability. Related postgraduate qualification and industrial-domain understanding desirable. No numeric years threshold. Generic permit/exemption notice does not establish a stamp-specific restriction or sponsorship. Apply control and login/register instructions visible; account-gated application has not been traversed. No information entered.",
+        "status": "prepared",
+        "created_at": "2026-09-13T08:07:28+00:00",
+        "updated_at": "2026-09-15T16:03:22+00:00",
+        "notes": "13 September search, finalised 14 September. Supported fit: Power BI dashboards, operational reporting, multi-source reconciliation and stakeholder delivery. Pending: DAX and Power Apps delivery unconfirmed; industrial context is transferable evidence. MyGovID/account-gated form not inspected. Tailored draft PDF compiled and its two rendered A4 pages visually verified; exactly two registered selected projects. QA fails only unresolved role eligibility. Not released or submitted. Existing Studio revision preserved.\n\n15 September 2026: official JobsIreland JOB-2464829 full posting and Apply/MyGovID route rechecked; advertised deadline remains 16 September. No form entered. Existing draft uses revision 2026-09-13.1 and needs reconciliation/rebuild against current 2026-09-14.1 before release, alongside the existing eligibility review. DAX and Power Apps examples requested; none inferred.",
+        "application_date": null,
+        "selected_project_id": "PROJ-AZ-RECON",
+        "folder": "output/applications/10ba01413aa6075f-p6u0becs",
+        "verification": "not_verified"
+      }
+    }
+  },
+  {
+    "id": 157,
+    "occurred_at": "2026-09-15T16:03:22+00:00",
+    "action": "search_job_added",
+    "job_id": "7bfa6b3fce1853f0",
+    "details": {
+      "date": "2026-09-15"
+    }
+  },
+  {
+    "id": 156,
+    "occurred_at": "2026-09-15T16:03:22+00:00",
+    "action": "search_job_added",
+    "job_id": "30cb363d12392b54",
+    "details": {
+      "date": "2026-09-15"
+    }
+  },
+  {
+    "id": 155,
+    "occurred_at": "2026-09-15T16:03:22+00:00",
+    "action": "search_job_added",
+    "job_id": "5b8921d814b94f76",
+    "details": {
+      "date": "2026-09-15"
+    }
+  },
+  {
+    "id": 154,
+    "occurred_at": "2026-09-15T16:03:22+00:00",
+    "action": "search_job_added",
+    "job_id": "10ba01413aa6075f",
+    "details": {
+      "date": "2026-09-15"
+    }
+  },
+  {
+    "id": 153,
+    "occurred_at": "2026-09-15T16:03:22+00:00",
+    "action": "search_started",
+    "job_id": null,
+    "details": {
+      "date": "2026-09-15"
+    }
+  },
+  {
+    "id": 152,
+    "occurred_at": "2026-09-15T15:53:56+00:00",
+    "action": "email_sync_failed",
+    "job_id": null,
+    "details": {
+      "error": "Gmail is not connected to Codex. Connect the Gmail plugin, then retry. Your last successful sync and saved email evidence were preserved."
+    }
+  },
+  {
+    "id": 151,
+    "occurred_at": "2026-09-14T23:13:00+00:00",
+    "action": "email_sync_failed",
+    "job_id": null,
+    "details": {
+      "error": "Gmail is not connected in Codex. Connect Gmail, then retry. Your last successful sync and saved email evidence were preserved."
+    }
+  },
+  {
+    "id": 150,
+    "occurred_at": "2026-09-14T23:12:41+00:00",
+    "action": "email_sync_failed",
+    "job_id": null,
+    "details": {
+      "error": "Gmail is not connected in Codex. Connect Gmail, then retry. Your last successful sync and saved email evidence were preserved."
+    }
+  },
+  {
+    "id": 149,
+    "occurred_at": "2026-09-14T23:12:09+00:00",
+    "action": "resume_tailored",
+    "job_id": "3fcb60314c88aa35",
+    "details": {
+      "selected_project_ids": [
+        "PROJ-AZ-RECON",
+        "PROJ-RAG-CHATBOT"
+      ],
+      "supported_requirement_coverage": 55.0,
+      "release_ready": false
+    }
+  },
+  {
+    "id": 148,
+    "occurred_at": "2026-09-14T23:09:53+00:00",
+    "action": "job_description_reverified",
+    "job_id": "3fcb60314c88aa35",
+    "details": {
+      "before": {
+        "verification": "not_verified"
+      },
+      "after": {
+        "verification": "verified",
+        "requisition": "71601",
+        "deadline": "2026-09-24"
+      }
+    }
+  },
+  {
+    "id": 147,
+    "occurred_at": "2026-09-14T23:09:47+00:00",
+    "action": "progress_updated",
+    "job_id": "3fcb60314c88aa35",
+    "details": {
+      "before": {
+        "id": "3fcb60314c88aa35",
+        "company": "Tomorrow's Guides",
+        "title": "BI Developer / BI Analyst",
+        "location": "Hungerford, West Berkshire, England; hybrid; 3 office days weekly",
+        "url": "https://seemehired.com/jobs/71601?embed=1",
+        "description": "Verified against the live SeeMeHired employer posting on 15 September 2026. Tomorrow's Guides operates carehome.co.uk, homecare.co.uk and daynurseries.co.uk. The BI Developer / BI Analyst supports marketing and web analytics, handles complex datasets, and works end to end from upstream ETL through visualisation and reporting. The role includes KPI reporting, ad hoc analysis that answers business questions, stakeholder discovery and consultative solution design. Essential requirements: demonstrable expertise across DAX/Power BI, SQL and Python/PySpark; successful analytical projects involving complicated databases, new data ingestion and complex business logic; strong ad hoc analysis; communication and consultative skills; initiative, bias to action and attention to detail. Desirable: Microsoft Fabric, LLM/AI project experience and presentation skills. The posting says the likely candidate has more than five years of experience in specifically analytical, UK-based roles. Attendance is required three days weekly at the Hungerford office. Full-time; salary circa GBP60,000 depending on experience, with discretionary quarterly bonus. Posted 10 September 2026; closing date 24 September 2026. Telephone interviews are stated for the week commencing 7 September 2026, which predates the listed posting date and is internally inconsistent. The application form is visible, but no information was entered and no application was submitted.",
+        "status": "prepared",
+        "created_at": "2026-09-14T23:02:25+00:00",
+        "updated_at": "2026-09-14T23:02:49+00:00",
+        "notes": "",
+        "application_date": null,
+        "selected_project_id": "PROJ-POWERBI-PORTFOLIO",
+        "folder": "output/applications/3fcb60314c88aa35-i45dcz3e",
+        "verification": "not_verified"
+      },
+      "after": {
+        "id": "3fcb60314c88aa35",
+        "company": "Tomorrow's Guides",
+        "title": "BI Developer / BI Analyst",
+        "location": "Hungerford, West Berkshire, England; hybrid; 3 office days weekly",
+        "url": "https://seemehired.com/jobs/71601?embed=1",
+        "description": "Verified against the live SeeMeHired employer posting on 15 September 2026. Tomorrow's Guides operates carehome.co.uk, homecare.co.uk and daynurseries.co.uk. The BI Developer / BI Analyst supports marketing and web analytics, handles complex datasets, and works end to end from upstream ETL through visualisation and reporting. The role includes KPI reporting, ad hoc analysis that answers business questions, stakeholder discovery and consultative solution design. Essential requirements: demonstrable expertise across DAX/Power BI, SQL and Python/PySpark; successful analytical projects involving complicated databases, new data ingestion and complex business logic; strong ad hoc analysis; communication and consultative skills; initiative, bias to action and attention to detail. Desirable: Microsoft Fabric, LLM/AI project experience and presentation skills. The posting says the likely candidate has more than five years of experience in specifically analytical, UK-based roles. Attendance is required three days weekly at the Hungerford office. Full-time; salary circa GBP60,000 depending on experience, with discretionary quarterly bonus. Posted 10 September 2026; closing date 24 September 2026. Telephone interviews are stated for the week commencing 7 September 2026, which predates the listed posting date and is internally inconsistent. The application form is visible, but no information was entered and no application was submitted.",
+        "status": "prepared",
+        "created_at": "2026-09-14T23:02:25+00:00",
+        "updated_at": "2026-09-14T23:09:47+00:00",
+        "notes": "15 September 2026: live SeeMeHired posting verified. Tailored two-page A4 PDF compiled with selectable text and exactly two registered projects; both pages visually inspected and all candidate claims are grounded. Supported requirement coverage is 55%. Draft is not release-ready because UK work permission and three-day Hungerford attendance are unconfirmed; registered evidence does not establish 5+ years of UK analytical experience, DAX, PySpark, Microsoft Fabric, or a specific ad hoc business-analysis example. No application submitted.",
+        "application_date": null,
+        "selected_project_id": "PROJ-POWERBI-PORTFOLIO",
+        "folder": "output/applications/3fcb60314c88aa35-i45dcz3e",
+        "verification": "not_verified"
+      }
+    }
+  },
+  {
+    "id": 146,
+    "occurred_at": "2026-09-14T23:02:49+00:00",
+    "action": "draft_prepared",
+    "job_id": "3fcb60314c88aa35",
+    "details": {
+      "folder": "output/applications/3fcb60314c88aa35-i45dcz3e",
+      "project_id": "PROJ-POWERBI-PORTFOLIO",
+      "review_required": true
+    }
+  },
+  {
+    "id": 145,
+    "occurred_at": "2026-09-14T23:02:25+00:00",
+    "action": "job_saved",
+    "job_id": "3fcb60314c88aa35",
+    "details": {
+      "company": "Tomorrow's Guides",
+      "title": "BI Developer / BI Analyst",
+      "url": "https://seemehired.com/jobs/71601?embed=1"
+    }
+  },
+  {
+    "id": 144,
+    "occurred_at": "2026-09-14T22:55:33+00:00",
+    "action": "agent_completed",
+    "job_id": null,
+    "details": {
+      "run_id": "3f305b74c5a44b5985822f817c1aff15",
+      "kind": "email"
+    }
+  },
+  {
+    "id": 143,
+    "occurred_at": "2026-09-14T22:55:33+00:00",
+    "action": "email_synced",
+    "job_id": null,
+    "details": {
+      "new_messages": 0
+    }
+  },
+  {
+    "id": 142,
+    "occurred_at": "2026-09-14T22:43:41+00:00",
+    "action": "resume_scored",
+    "job_id": "dc9d3339a6de326c",
+    "details": {
+      "revision": 2,
+      "score": 100,
+      "profile_access": false
+    }
+  },
+  {
+    "id": 141,
+    "occurred_at": "2026-09-14T22:43:40+00:00",
+    "action": "studio_filled_two_pages",
+    "job_id": "dc9d3339a6de326c",
+    "details": {
+      "revision": 2,
+      "body_font_pt": 11.5,
+      "page_fill": [
+        97.9,
+        95.3
+      ],
+      "section_order": [
+        "Professional Summary",
+        "Core Skills",
+        "Professional Experience",
+        "Selected Project",
+        "Education",
+        "Technical Skills",
+        "Certifications"
+      ]
+    }
+  },
+  {
+    "id": 140,
+    "occurred_at": "2026-09-14T22:43:38+00:00",
+    "action": "studio_opened",
+    "job_id": "dc9d3339a6de326c",
+    "details": {
+      "revision": 1
+    }
+  },
+  {
+    "id": 139,
+    "occurred_at": "2026-09-14T22:43:38+00:00",
+    "action": "draft_prepared",
+    "job_id": "dc9d3339a6de326c",
+    "details": {
+      "folder": "output/applications/dc9d3339a6de326c-5davqo_3",
+      "project_id": "PROJ-EU-COMPLIANCE-RAG",
+      "review_required": true
+    }
+  },
+  {
+    "id": 138,
+    "occurred_at": "2026-09-14T20:19:30+00:00",
+    "action": "progress_updated",
+    "job_id": "5ea213ec4c85d4c0",
+    "details": {
+      "before": {
+        "id": "5ea213ec4c85d4c0",
+        "company": "EY",
+        "title": "AI & Data Graduate Programme 2027",
+        "location": "Cork or Dublin; hybrid; 2027 intake",
+        "url": "https://eyglobal.yello.co/jobs/o-mdBAMr_pP3Go7vsz0GaQ?job_board_id=c1riT--B2O-KySgYWsZO1Q",
+        "description": "# EY AI and Data Graduate Programme 2027\n\nSource: https://eyglobal.yello.co/jobs/o-mdBAMr_pP3Go7vsz0GaQ?job_board_id=c1riT--B2O-KySgYWsZO1Q\nSupporting programme page: https://www.ey.com/en_ie/careers/what-you-can-do-here/student-programmes/programmes/graduate-programmes2/consulting-graduate-programme/consulting-career-options#data\nVerified: 14 September 2026\nRequisition: 1737553\nLocation: Cork or Dublin Wilton Park, Ireland\nService line: Consulting\nProgramme: Two years, 2027 intake\nApplication deadline: 21 October 2026\n\n## Opportunity\n\nEY describes its AI and Data practice as helping clients unlock value from data and technology by turning complex information into actionable insights. Work spans multiple industries and includes operational efficiency, compliance, risk management, and strategic decision-making.\n\nGraduates work with experienced practitioners on varied client projects. The programme includes cross-functional collaboration, hands-on training with analytical tools and platforms incorporating AI and GenAI capabilities, work on real-world industry challenges, and collaboration with EY alliance partners.\n\nApplicants choose a preferred client group: all-industry clients across Consumer and Health, Industrials and Energy, Government and Infrastructure, Technology, Media and Telecommunications, and Private; or Global Financial Services clients across banking, wealth and asset management, insurance, fintech and payments, aviation finance, and structured finance.\n\n## Candidate requirements\n\n- Strong analytical mindset and problem-solving skills.\n- Excellent communication and the ability to explain ideas, insights, and recommendations to varied audiences.\n- Adaptability, openness to learning, and comfort in a rapidly changing environment.\n- Curiosity, purpose, and a habit of asking thoughtful questions.\n- Interest in applying AI tools responsibly, recognising suitable use cases, seeking guidance, using feedback, and continuing to develop as technologies evolve.\n- Inclusive collaboration that values different perspectives and builds trust.\n- On track for a 2:1 degree or higher; the general EY graduate page states that equivalent qualifications are accepted.\n- Valid right-to-work status must be in place by the programme start. EY's FAQ says Consulting and Technology graduate programmes are among those that may support sponsorship conditions, but this is not a candidate-specific sponsorship commitment.\n\n## Application context\n\nEY permits one Graduate Programme application. The form also asks candidates to choose second and third programme preferences and a preferred client group. A requisition-specific Yello account or login is required. No account was created, no information was entered, and no application was submitted.\n",
+        "status": "prepared",
+        "created_at": "2026-09-10T22:20:44+00:00",
+        "updated_at": "2026-09-14T20:19:30+00:00",
+        "notes": "Imported historical posting from 2026-09-05. Previously delivered pack: backup/historical/daily-job-search/2026-09-05/005-ey-ai-data-graduate-fadf134d59. Posting must be reverified; old resume is not approved against the current profile. No application was recorded.",
+        "application_date": null,
+        "selected_project_id": "PROJ-AZ-RECON",
+        "folder": "output/applications/5ea213ec4c85d4c0-k6uwqza6",
+        "verification": "verified"
+      },
+      "after": {
+        "id": "5ea213ec4c85d4c0",
+        "company": "EY",
+        "title": "AI & Data Graduate Programme 2027",
+        "location": "Cork or Dublin; hybrid; 2027 intake",
+        "url": "https://eyglobal.yello.co/jobs/o-mdBAMr_pP3Go7vsz0GaQ?job_board_id=c1riT--B2O-KySgYWsZO1Q",
+        "description": "# EY AI and Data Graduate Programme 2027\n\nSource: https://eyglobal.yello.co/jobs/o-mdBAMr_pP3Go7vsz0GaQ?job_board_id=c1riT--B2O-KySgYWsZO1Q\nSupporting programme page: https://www.ey.com/en_ie/careers/what-you-can-do-here/student-programmes/programmes/graduate-programmes2/consulting-graduate-programme/consulting-career-options#data\nVerified: 14 September 2026\nRequisition: 1737553\nLocation: Cork or Dublin Wilton Park, Ireland\nService line: Consulting\nProgramme: Two years, 2027 intake\nApplication deadline: 21 October 2026\n\n## Opportunity\n\nEY describes its AI and Data practice as helping clients unlock value from data and technology by turning complex information into actionable insights. Work spans multiple industries and includes operational efficiency, compliance, risk management, and strategic decision-making.\n\nGraduates work with experienced practitioners on varied client projects. The programme includes cross-functional collaboration, hands-on training with analytical tools and platforms incorporating AI and GenAI capabilities, work on real-world industry challenges, and collaboration with EY alliance partners.\n\nApplicants choose a preferred client group: all-industry clients across Consumer and Health, Industrials and Energy, Government and Infrastructure, Technology, Media and Telecommunications, and Private; or Global Financial Services clients across banking, wealth and asset management, insurance, fintech and payments, aviation finance, and structured finance.\n\n## Candidate requirements\n\n- Strong analytical mindset and problem-solving skills.\n- Excellent communication and the ability to explain ideas, insights, and recommendations to varied audiences.\n- Adaptability, openness to learning, and comfort in a rapidly changing environment.\n- Curiosity, purpose, and a habit of asking thoughtful questions.\n- Interest in applying AI tools responsibly, recognising suitable use cases, seeking guidance, using feedback, and continuing to develop as technologies evolve.\n- Inclusive collaboration that values different perspectives and builds trust.\n- On track for a 2:1 degree or higher; the general EY graduate page states that equivalent qualifications are accepted.\n- Valid right-to-work status must be in place by the programme start. EY's FAQ says Consulting and Technology graduate programmes are among those that may support sponsorship conditions, but this is not a candidate-specific sponsorship commitment.\n\n## Application context\n\nEY permits one Graduate Programme application. The form also asks candidates to choose second and third programme preferences and a preferred client group. A requisition-specific Yello account or login is required. No account was created, no information was entered, and no application was submitted.\n",
+        "status": "prepared",
+        "created_at": "2026-09-10T22:20:44+00:00",
+        "updated_at": "2026-09-14T20:19:30+00:00",
+        "notes": "14 September 2026: official EY 2027 requisition 1737553 reverified for Cork or Dublin Wilton Park; deadline 21 October 2026. Tailored two-page A4 PDF uses PROJ-AZ-RECON and PROJ-EU-COMPLIANCE-RAG. B.Tech profile edit reconciled as user-reported equivalent to 1:1, not independently verified. Automated QA and visual review pass; resume released. Confirm 2027 availability and future right-to-work or sponsorship position before applying. No application submitted.",
+        "application_date": null,
+        "selected_project_id": "PROJ-AZ-RECON",
+        "folder": "output/applications/5ea213ec4c85d4c0-k6uwqza6",
+        "verification": "verified"
+      }
+    }
+  },
+  {
+    "id": 137,
+    "occurred_at": "2026-09-14T20:19:30+00:00",
+    "action": "job_description_reverified",
+    "job_id": "5ea213ec4c85d4c0",
+    "details": {
+      "before": {
+        "verification": "not_verified"
+      },
+      "after": {
+        "verification": "verified",
+        "requisition": "1737553",
+        "deadline": "2026-10-21"
+      }
+    }
+  },
+  {
+    "id": 136,
+    "occurred_at": "2026-09-14T20:17:25+00:00",
+    "action": "resume_scored",
+    "job_id": "5ea213ec4c85d4c0",
+    "details": {
+      "revision": 2,
+      "score": 100,
+      "profile_access": false
+    }
+  },
+  {
+    "id": 135,
+    "occurred_at": "2026-09-14T20:17:25+00:00",
+    "action": "studio_filled_two_pages",
+    "job_id": "5ea213ec4c85d4c0",
+    "details": {
+      "revision": 2,
+      "body_font_pt": 10.94,
+      "page_fill": [
+        97.7,
+        99.1
+      ],
+      "section_order": [
+        "Professional Summary",
+        "Core Skills",
+        "Professional Experience",
+        "Selected Project",
+        "Education",
+        "Technical Skills",
+        "Certifications"
+      ]
+    }
+  },
+  {
+    "id": 134,
+    "occurred_at": "2026-09-14T20:17:21+00:00",
+    "action": "studio_opened",
+    "job_id": "5ea213ec4c85d4c0",
+    "details": {
+      "revision": 1
+    }
+  },
+  {
+    "id": 133,
+    "occurred_at": "2026-09-14T20:11:50+00:00",
+    "action": "draft_prepared",
+    "job_id": "5ea213ec4c85d4c0",
+    "details": {
+      "folder": "output/applications/5ea213ec4c85d4c0-k6uwqza6",
+      "project_id": "PROJ-AZ-RECON",
+      "review_required": true
+    }
+  },
+  {
+    "id": 132,
+    "occurred_at": "2026-09-14T20:11:44+00:00",
+    "action": "profile_evidence_reconciled",
+    "job_id": null,
+    "details": {
+      "entry_ids": [
+        "personal:current_status",
+        "personal:education_summary"
+      ],
+      "candidate_revision": "2026-09-14.1",
+      "summary": "Registered user-reported B.Tech 1:1 equivalence and confirmed unchanged current-status wording"
+    }
+  },
+  {
     "id": 131,
     "occurred_at": "2026-09-14T14:10:57+00:00",
     "action": "agent_completed",

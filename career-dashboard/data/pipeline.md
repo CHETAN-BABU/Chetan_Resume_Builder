@@ -4,6 +4,7 @@ Generated from data/career.db. Do not edit this projection directly.
 
 | Company | Role | Location | Status | Posting |
 |---|---|---|---|---|
+| Tomorrow's Guides | BI Developer / BI Analyst | Hungerford, West Berkshire, England; hybrid; 3 office days weekly | prepared | https://seemehired.com/jobs/71601?embed=1 |
 | Engineering Support & Services Limited | Data Analyst | Raheen Business Park, Limerick, Ireland; office based; 40 hours weekly | prepared | https://jobsireland.ie/en-US/job-Details?id=2464829 |
 | Morgan McKinley | Data Analyst - Contract | Cork, Ireland; hybrid, 2-3 onsite days weekly; 12-month contract | saved | https://morganmckinley.com/jobs/cork/data-analyst-contract/1104845 |
 | Prime Street | Junior Reporting Analyst | Dublin 8, Ireland; in person; Monday-Friday | prepared | https://ie.indeed.com/viewjob?jk=03a4c1873988fa89 |
@@ -17,10 +18,10 @@ Generated from data/career.db. Do not edit this projection directly.
 | Fanatics Betting & Gaming | Data Scientist I | Dublin, Ireland; working arrangement not stated | saved | https://job-boards.greenhouse.io/fanaticsfbg/jobs/4356668009 |
 | Kepak Group | Junior Operations Data Analyst - Boning Hall & Abattoir | Watergrasshill, Cork; on-site; Mon-Fri 07:00-17:00 | saved | https://apply.workable.com/kepak/j/18C12557B9 |
 | Canada Life Group Services | Data Analytics Specialist | Dublin; hybrid; 9-month contract | saved | https://life-careers.com/canadalifeireland/job/Dublin-Data-Analytics-Specialist/1433379633 |
-| EY | AI & Data Graduate Programme 2027 | Cork or Dublin; hybrid; 2027 intake | saved | https://eyglobal.yello.co/jobs/o-mdBAMr_pP3Go7vsz0GaQ?job_board_id=c1riT--B2O-KySgYWsZO1Q |
+| EY | AI & Data Graduate Programme 2027 | Cork or Dublin; hybrid; 2027 intake | prepared | https://eyglobal.yello.co/jobs/o-mdBAMr_pP3Go7vsz0GaQ?job_board_id=c1riT--B2O-KySgYWsZO1Q |
 | AIB | Junior Quantitative Risk Analyst | Dublin; hybrid, three office days weekly | prepared | https://jobs.aib.ie/aib/job/Dublin,-Belfast,-London,-North-Junior-Quantitative-Risk-Analyst-IE/1361371757 |
 | Analytic Partners | Marketing Science Analyst | Dublin; hybrid, three office days weekly | saved | https://jobs.lever.co/analyticpartners/bfc631d9-db28-4f8f-ba13-940c11b294cf |
 | Carraig Donn | Junior Business Performance Analyst | Westport, Co. Mayo; daily on-site; permanent | saved | https://recruitment.cezannehr.com/shared/job/junior-business-performance-analyst-wes-22de4 |
 | One Recruitment | Junior Data Analyst | Dublin, Ireland; confirm office working arrangement | saved | https://www.careers-page.com/one-recruitment/job/Y686863V |
 | CarTrawler | Customer Insights Analyst | Dublin; hybrid, at least 2 office days weekly | saved | https://corporate.cartrawler.com/en-gb/careers/opportunities/ca988278-6968-451b-bc32-0a3b4e3ee55b |
-| Capventis | Graduate Consultant - analytics preference | Ireland / UK advertised; request Dublin analytics placement | saved | https://www.capventis.com/about-us/join-us/graduate-consultant-position |
+| Capventis | Graduate Consultant - analytics preference | Ireland / UK advertised; request Dublin analytics placement | prepared | https://www.capventis.com/about-us/join-us/graduate-consultant-position |

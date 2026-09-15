@@ -14,20 +14,26 @@
     },
     "profile_initialized": true,
     "gmail": {
-      "connected": true,
+      "connected": false,
       "email": "chetanbabu07@gmail.com",
       "last_synced_at": "2026-09-14T13:52:44+00:00",
       "coverage": "Verified with Gmail profile. Searched incoming messages using newer_than:90d on 2026-09-14, excluding spam, trash, sent and drafts. Fully paginated the application/outcome query (2 pages) and supplementary employer/interview/assessment/offer query (3 pages); no remaining page tokens. Read 30 unique relevant messages, below the 60-message cap, including HTML alternatives where needed. No attachments or files read; no email changed. Marketing, recommendations, unrelated search hits and detailed assessment-feedback messages were excluded from evidence review. Coverage is keyword-based, not a guarantee of all job correspondence. No reviewed message confirmed a human interview invitation or employment offer.",
-      "mode": "Connected Gmail via Codex"
+      "mode": "Connected Gmail via Codex",
+      "status": "needs_attention",
+      "last_attempt_at": "2026-09-15T15:53:56+00:00",
+      "last_error": "Gmail is not connected to Codex. Connect the Gmail plugin, then retry. Your last successful sync and saved email evidence were preserved."
     }
   },
   "mail": {
     "connection": {
-      "connected": true,
+      "connected": false,
       "email": "chetanbabu07@gmail.com",
       "last_synced_at": "2026-09-14T13:52:44+00:00",
       "coverage": "Verified with Gmail profile. Searched incoming messages using newer_than:90d on 2026-09-14, excluding spam, trash, sent and drafts. Fully paginated the application/outcome query (2 pages) and supplementary employer/interview/assessment/offer query (3 pages); no remaining page tokens. Read 30 unique relevant messages, below the 60-message cap, including HTML alternatives where needed. No attachments or files read; no email changed. Marketing, recommendations, unrelated search hits and detailed assessment-feedback messages were excluded from evidence review. Coverage is keyword-based, not a guarantee of all job correspondence. No reviewed message confirmed a human interview invitation or employment offer.",
-      "mode": "Connected Gmail via Codex"
+      "mode": "Connected Gmail via Codex",
+      "status": "needs_attention",
+      "last_attempt_at": "2026-09-15T15:53:56+00:00",
+      "last_error": "Gmail is not connected to Codex. Connect the Gmail plugin, then retry. Your last successful sync and saved email evidence were preserved."
     },
     "messages": [
       {
@@ -625,6 +631,45 @@
     ]
   },
   "runs": [
+    {
+      "id": "5a3fce610d99456e8ad02e1656adf9bb",
+      "kind": "email",
+      "job_id": null,
+      "state": "failed",
+      "result": {
+        "stage": "Starting"
+      },
+      "error": "Gmail is not connected to Codex. Connect the Gmail plugin, then retry. Your last successful sync and saved email evidence were preserved.",
+      "created_at": "2026-09-15T15:53:43+00:00",
+      "updated_at": "2026-09-15T15:53:56+00:00"
+    },
+    {
+      "id": "3f305b74c5a44b5985822f817c1aff15",
+      "kind": "email",
+      "job_id": null,
+      "state": "completed",
+      "result": {
+        "stage": "Complete",
+        "summary": "Reviewed 0 job-related messages.",
+        "email": "",
+        "coverage": "Unable to verify the connected account: no connected Gmail profile, search, or read tools are available in this session. The requested last-90-days search could not be performed or paginated. Reviewed 0 messages; the 60-message cap was not reached. No email was changed. Empty results indicate inaccessible coverage, not absence of job-related messages."
+      },
+      "error": null,
+      "created_at": "2026-09-14T22:55:16+00:00",
+      "updated_at": "2026-09-14T22:55:33+00:00"
+    },
+    {
+      "id": "115540bd08ba49d79873ad6d9c03d02a",
+      "kind": "email",
+      "job_id": null,
+      "state": "failed",
+      "result": {
+        "stage": "Starting"
+      },
+      "error": "Agent could not finish. Check Codex sign-in, connected Gmail permissions, or usage and retry. No status was inferred from this failure.",
+      "created_at": "2026-09-14T22:42:57+00:00",
+      "updated_at": "2026-09-14T22:43:01+00:00"
+    },
     {
       "id": "08094e9087bb4741b129a4bbc3c68843",
       "kind": "resume_build",

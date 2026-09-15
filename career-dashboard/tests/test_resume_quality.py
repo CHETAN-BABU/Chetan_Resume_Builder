@@ -63,7 +63,7 @@ class ResumeQualityTests(unittest.TestCase):
         second_id = extract_zero_argument_macros(source_text).get('SecondProjectID')
         evidence_map = directory / "evidence-map.yml"
         evidence_map.write_text(
-            'candidate_revision: "2026-09-13.1"\n'
+            'candidate_revision: "2026-09-14.1"\n'
             'job_id: "001-data-analyst-test"\n'
             "role_eligible: true\n"
             f'job_snapshot_sha256: "{job_hash}"\n'

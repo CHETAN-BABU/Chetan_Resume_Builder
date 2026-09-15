@@ -1,6 +1,42 @@
 # Career workspace state
 
+## Capventis covering letter — 15 September 2026
+
+- Reverified the live official Capventis Graduate Consultant posting, job
+  `dc9d3339a6de326c`; the page still requests a CV and covering note and considers
+  graduates for Data Analytics, Experience Management or Customer Engagement.
+- Drafted an evidence-grounded Data Analytics covering letter at
+  `career-dashboard/output/applications/dc9d3339a6de326c-5davqo_3/cover-letter.md`.
+  It uses current profile revision `2026-09-14.1`, preserves the MSc as in
+  progress, and does not claim Qlik, Qualtrics, CRM or web-development experience.
+- No application was submitted and the job remains `prepared`.
+
 Updated 13 September 2026 after implementing agent orchestration, instruction chat, independent scoring and two-project resumes. See the newest section below for current behavior.
+
+## Simplified Resume Studio and Gmail sync reliability — 15 September 2026
+
+- Resume Studio now presents one clear flow: choose a role, edit Content or
+  Projects, check the side-by-side PDF preview, then use the resume assistant.
+  Save/preview remains the primary action. LaTeX, page filling, Profile sync,
+  copy/download, company research, match details, Profile captures, version
+  restore, optional AI review, AI limits and worker history are all preserved
+  behind clearly labelled secondary controls.
+- The resume assistant now uses plain-language instructions and one free
+  Build & check action. Instruction history, optional free-text interpretation
+  and independent AI PDF review remain available through progressive disclosure.
+- Gmail sync now requires a verified connected account and a completed mailbox
+  search before a run can succeed. Missing connector access is recorded as a
+  visible failure; the last verified account, successful-sync time, coverage and
+  all saved email evidence remain intact. Automatic sync pauses while Gmail
+  needs reconnection instead of repeatedly launching failed workers.
+- Current Gmail state is `needs_attention`: the last verified successful read
+  was 14 September 2026 at 13:52:44 UTC for chetanbabu07@gmail.com. Gmail is not
+  currently installed/connected in Codex; reconnect it and use Retry Gmail sync.
+  No email was sent, changed or newly classified during this UI work.
+- Production frontend build and the focused Gmail/frontend test suites pass.
+  The first full workspace run initially exposed seven pre-existing fixture
+  mismatches after the candidate revision changed to 2026-09-14.1; the fixtures
+  were aligned with the active evidence revision before final verification.
 
 ## Current application
 
@@ -225,3 +261,26 @@ Final follow-up: corrected the new worker display names in the run monitor; rera
 - Workspace validator passed. No application code changed by this daily run. Batch release QA remains failed because drafts/holds are not releasable. Profile/evidence remains2026-09-13.1;84 active entries, no pending edits at preflight.
 
 Next: candidate reviews ESS/Prime drafts and confirms concrete Excel tasks, DAX/Power Apps if used, property interest, permission expiry/future sponsorship and required practical availability. Resolve ESS before16September. User permission is needed to revisit the previously blocked Morgan McKinley empty form inspection. Continue unique live search without padding or silently changing evidence.
+
+## Tomorrow's Guides resume - 15 September 2026
+
+- Added and browser-verified Tomorrow's Guides BI Developer / BI Analyst posting as job `3fcb60314c88aa35`; closes 24 September 2026 and requires three office days weekly in Hungerford. The advertised telephone-interview week predates the posting date and remains an employer-side inconsistency.
+- Prepared an evidence-grounded two-page A4 PDF in `career-dashboard/output/applications/3fcb60314c88aa35-i45dcz3e/`. It uses exactly two registered projects: `PROJ-AZ-RECON` and `PROJ-RAG-CHATBOT`. Both final pages were rendered with Poppler and visually inspected; no clipping, overlap or overflow was found.
+- Company research, requirement mapping and source hashes are complete. Candidate claims, contact details, employment dates and project wording validate against canonical revision `2026-09-14.1`. Supported requirement coverage is 55%.
+- QA fails only the intentional role-eligibility gate. UK work permission and Hungerford attendance are unconfirmed; the profile supports 3+ years combined experience rather than the posting's likely 5+ years in UK analytical roles. DAX, PySpark, Microsoft Fabric and a specific ad hoc business-analysis example are not registered evidence.
+- Job status is `prepared`, verification is `verified`, and the PDF remains a tailored draft rather than a released application artifact. No application, outreach, profile edit or automation change was made.
+
+Next: confirm UK work permission and Hungerford feasibility before applying. If Chetan has real DAX, PySpark, Fabric or ad hoc-analysis evidence, reconcile it into the registry before revising or releasing the resume.
+
+
+## Daily search — 15 September 2026, afternoon continuation
+
+- Completed 33 queries plus full posting/PDF checks across Ireland, Dublin, Cork, Limerick, Galway and remote tracks. Zero newly verified eligible postings, zero new drafts/releases and zero submissions. Exact exclusions and access limitations are in `daily-job-search/2026-09-15/search-coverage.md`. LGMA Grade 6 and LaunchDarkly require five years; LGMA Grade 5 needs policy research; SAP requires undergraduate enrolment; Planet needs Salesforce/payments expertise; Pale Blue Dot needs professional applied ML. Junior Galway alternatives remain unverified.
+- Shared dated run links four prior conditional leads without counting them as new. ESS JOB-2464829 reverified live; closes 16 September. Existing ESS/Prime draft PDFs predate canonical 2026-09-14.1 and need reconciliation/rebuild plus eligibility review before release. Preserved every existing PDF and Studio version. Updated Lidl notes to acknowledge the registered user-reported 1:1 equivalence while retaining documentation and practical gaps.
+- Profile has 84 active entries; canonical revision 2026-09-14.1. MSc remains in progress, combined experience 3+ years, employment end July 2025 and Stamp 1G confirmed. No new profile claims added. Asked for concrete DAX, Power Apps and advanced Excel examples; response pending.
+- Email worker `5a3fce610d99456e8ad02e1656adf9bb` failed because Gmail is disconnected; no callable Gmail tools in this session. Last verified success remains 14 September 13:52:44 UTC. Saved evidence preserved; today’s mailbox outcomes unknown.
+- Existing 09:00 daily schedule confirmed active, unchanged. Planner remains 0/20 today, including 15 carryover; weekly target 30. No new automation, application or outreach. Historical URL CSV preserved (20 rows including separately prepared UK role). No application code changed.
+
+Next: resolve ESS skill/form checks before 16 September; reconcile/rebuild affected drafts when ready; reconnect Gmail and retry sync; continue broad verified discovery without padding. Prior Morgan McKinley form block remains unchanged. Current draft QA is not a release approval.
+
+Verification for the 15 September daily continuation: `validate_workspace.py` passed. `validate_batch.py` correctly remains FAIL for the four pending carryover jobs; no release-ready PDF was claimed. Results saved in the dated `batch-qa.json`.

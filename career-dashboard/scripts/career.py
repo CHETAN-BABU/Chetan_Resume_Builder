@@ -126,6 +126,17 @@ class Workspace(Tracking):
             db.execute(
                 "CREATE TABLE IF NOT EXISTS posting_identities(identity TEXT PRIMARY KEY,job_id TEXT NOT NULL REFERENCES jobs(id))"
             )
+            columns = {row["name"] for row in db.execute("PRAGMA table_info(jobs)")}
+            if "record_source" not in columns:
+                db.execute(
+                    "ALTER TABLE jobs ADD COLUMN record_source TEXT NOT NULL DEFAULT 'posting'"
+                )
+            if "deleted_at" not in columns:
+                db.execute("ALTER TABLE jobs ADD COLUMN deleted_at TEXT")
+            if "deletion_reason" not in columns:
+                db.execute(
+                    "ALTER TABLE jobs ADD COLUMN deletion_reason TEXT NOT NULL DEFAULT ''"
+                )
             for row in db.execute("SELECT id,url FROM jobs").fetchall():
                 db.execute(
                     "INSERT OR IGNORE INTO posting_identities VALUES(?,?)",
@@ -144,11 +155,15 @@ class Workspace(Tracking):
     def evidence(self):
         return read_yaml(self.root / "context/evidence.yml")
 
-    def jobs(self):
+    def jobs(self, include_deleted=False):
         with self.connect() as db:
             return [
                 dict(r)
-                for r in db.execute("SELECT * FROM jobs ORDER BY created_at DESC, id")
+                for r in db.execute(
+                    "SELECT * FROM jobs "
+                    + ("" if include_deleted else "WHERE deleted_at IS NULL ")
+                    + "ORDER BY created_at DESC, id"
+                )
             ]
 
     def get_job(self, job_id):
@@ -201,6 +216,8 @@ class Workspace(Tracking):
 
     def update_job(self, job_id, status, notes=None, application_date=None):
         old = self.get_job(job_id)
+        if old.get("deleted_at"):
+            raise ValueError("Restore this removed role before updating it")
         if status not in STATUSES:
             raise ValueError("Unknown application status")
         with self.connect() as db:
@@ -246,6 +263,54 @@ class Workspace(Tracking):
                 after=dict(
                     db.execute("SELECT * FROM jobs WHERE id=?", (job_id,)).fetchone()
                 ),
+            )
+        self.export_tracking()
+        return self.get_job(job_id)
+
+    def remove_job(self, job_id, reason="Not suitable"):
+        old = self.get_job(job_id)
+        if old.get("deleted_at"):
+            return old
+        if old["status"] not in {"saved", "prepared"}:
+            raise ValueError(
+                "Only saved or prepared roles can be removed. Keep applied, interview, offer, rejected and withdrawn records in application history."
+            )
+        reason = str(reason or "Not suitable").strip()[:500]
+        stamp = now()
+        with self.connect() as db:
+            db.execute("BEGIN IMMEDIATE")
+            db.execute(
+                "UPDATE jobs SET deleted_at=?,deletion_reason=?,updated_at=? WHERE id=?",
+                (stamp, reason, stamp, job_id),
+            )
+            self.record_event(
+                db,
+                "job_removed",
+                job_id,
+                company=old["company"],
+                title=old["title"],
+                reason=reason,
+                recoverable=True,
+            )
+        self.export_tracking()
+        return self.get_job(job_id)
+
+    def restore_job(self, job_id):
+        old = self.get_job(job_id)
+        if not old.get("deleted_at"):
+            return old
+        with self.connect() as db:
+            db.execute("BEGIN IMMEDIATE")
+            db.execute(
+                "UPDATE jobs SET deleted_at=NULL,deletion_reason='',updated_at=? WHERE id=?",
+                (now(), job_id),
+            )
+            self.record_event(
+                db,
+                "job_restored",
+                job_id,
+                company=old["company"],
+                title=old["title"],
             )
         self.export_tracking()
         return self.get_job(job_id)
@@ -392,6 +457,12 @@ class Workspace(Tracking):
                     "Reconcile edited profile entries with the resume evidence registry before preparing a draft."
                 )
         job = self.get_job(job_id)
+        if job.get("deleted_at"):
+            raise ValueError("Restore this removed role before preparing documents")
+        if job.get("record_source") == "gmail":
+            raise ValueError(
+                "Add the full job description and posting URL before preparing a resume"
+            )
         ranked = self.rank_projects(job["title"] + " " + job["description"])
         if not ranked:
             raise ValueError("No resume-ready projects in the registry")

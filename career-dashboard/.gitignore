@@ -8,6 +8,6 @@ __pycache__/
 *.synctex.gz
 dashboard/.env
 data/*.db*
-output/
+
 data/dashboard.log
 data/dashboard.pid

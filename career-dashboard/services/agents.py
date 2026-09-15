@@ -46,6 +46,8 @@ def strings(*keys):
 MAIL_SCHEMA = object_schema(
     {
         **strings("email", "coverage"),
+        "connection_verified": {"type": "boolean"},
+        "search_completed": {"type": "boolean"},
         "messages": {
             "type": "array",
             "items": object_schema(
@@ -401,14 +403,39 @@ class AgentRunner:
                     {k: j[k] for k in ("id", "company", "title", "url")}
                     for j in self.w.jobs()
                 ]
+                prior_mail = self.s.mail()
                 output = self.cached(
                     self.guide("email-reviewer.md")
                     + "\nSAVED JOBS:\n"
-                    + json.dumps(jobs),
+                    + json.dumps(jobs)
+                    + "\nMAIL SYNC CONTEXT:\n"
+                    + json.dumps(
+                        {
+                            "known_message_ids": [
+                                message["id"] for message in prior_mail["messages"]
+                            ],
+                            "previous_coverage": prior_mail["connection"].get(
+                                "coverage", ""
+                            ),
+                            "last_successful_sync": prior_mail["connection"].get(
+                                "last_synced_at"
+                            ),
+                        }
+                    ),
                     MAIL_SCHEMA,
                     cacheable=False, apps=True,
                     web=False,
                 )
+                if not output.get("connection_verified") or not output.get("email", "").strip():
+                    raise ValueError(
+                        "Gmail is not connected to Codex. Connect the Gmail plugin, then retry. "
+                        "Your last successful sync and saved email evidence were preserved."
+                    )
+                if not output.get("search_completed"):
+                    raise ValueError(
+                        "Gmail connected, but the mailbox search did not complete. Retry the sync. "
+                        "Your last successful sync and saved email evidence were preserved."
+                    )
                 self.s.ingest_mail(output)
                 output = {
                     "stage": "Complete",
@@ -546,6 +573,8 @@ class AgentRunner:
             self.w.export_tracking()
             self.s.export_state()
         except Exception as exc:
+            if "row" in locals() and row.get("kind") == "email":
+                self.s.record_mail_sync_failure(str(exc)[:2000])
             self.update(id, "failed", error=str(exc)[:2000])
             self.s.export_state()
 
@@ -553,8 +582,9 @@ class AgentRunner:
         def loop():
             while not self.stop.wait(60):
                 config = self.s.pref("email_schedule", {"enabled": False, "hours": 6})
-                last = self.s.pref("gmail", {}).get("last_synced_at")
-                if not config.get("enabled") or not last:
+                gmail = self.s.pref("gmail", {})
+                last = gmail.get("last_synced_at")
+                if not config.get("enabled") or not last or not gmail.get("connected"):
                     continue
                 from datetime import datetime, timezone
 

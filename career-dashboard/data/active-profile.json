@@ -719,7 +719,7 @@
     "source": "config/profile.yml > candidate > current_status",
     "revision": 2,
     "deleted": 0,
-    "review_state": "user_updated",
+    "review_state": "registered",
     "updated_at": "2026-09-14T14:09:11+00:00"
   },
   {
@@ -764,7 +764,7 @@
     "source": "config/profile.yml > candidate > education_summary",
     "revision": 2,
     "deleted": 0,
-    "review_state": "user_updated",
+    "review_state": "registered",
     "updated_at": "2026-09-14T14:08:41+00:00"
   },
   {

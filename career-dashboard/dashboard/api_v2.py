@@ -58,6 +58,11 @@ class PostingInput(BaseModel):
 class MailResolution(BaseModel):
     job_id: Optional[str] = None
     action: str = "confirm"
+    create_application: bool = False
+
+
+class JobRemoval(BaseModel):
+    reason: str = Field(default="Not suitable", max_length=500)
 
 
 class AgentInput(BaseModel):
@@ -163,6 +168,18 @@ def attach(app, workspace):
     @router.post("/jobs")
     def add_posting(data: PostingInput):
         return service.add_posting(data.model_dump())
+
+    @router.delete("/jobs/{job_id}")
+    def remove_job(job_id: str, data: Optional[JobRemoval] = None):
+        return service.remove_job(job_id, data.reason if data else "Not suitable")
+
+    @router.post("/jobs/{job_id}/restore")
+    def restore_job(job_id: str):
+        return service.restore_job(job_id)
+
+    @router.post("/jobs/{job_id}/cover-letter")
+    def generate_cover_letter(job_id: str):
+        return service.generate_cover_letter(job_id)
 
     @router.get("/mail")
     def mail():

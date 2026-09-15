@@ -255,7 +255,9 @@ function AddJob({
             notify(
               r.duplicate
                 ? "This posting is already saved. Opening its existing record."
-                : "Job saved to your workspace.",
+                : r.upgraded
+                  ? "Full posting added to the application previously tracked from Gmail."
+                  : "Job saved to your workspace.",
             );
           } catch (e) {
             notify((e as Error).message, true);

@@ -64,7 +64,9 @@ class Tracking:
         return next(r for r in self.search_runs() if r['date'] == date)
 
     def track_search_job(self, job_id, date=None):
-        self.get_job(job_id)
+        job = self.get_job(job_id)
+        if job.get('deleted_at'):
+            raise ValueError('Restore this removed role before adding it to a search run')
         date = valid_date(date or today())
         self.start_search(date)
         with self.connect() as db:

@@ -111,6 +111,7 @@ class CareerServices:
             CREATE INDEX IF NOT EXISTS idx_agent_runs_state ON agent_runs(state,created_at);
             CREATE TABLE IF NOT EXISTS posting_identities(identity TEXT PRIMARY KEY,job_id TEXT NOT NULL REFERENCES jobs(id));
             CREATE TABLE IF NOT EXISTS application_evidence(job_id TEXT PRIMARY KEY REFERENCES jobs(id),source TEXT NOT NULL,confirmed_at TEXT NOT NULL,submission_date TEXT,message_id TEXT);
+            CREATE TABLE IF NOT EXISTS cover_letters(job_id TEXT NOT NULL REFERENCES jobs(id),version INTEGER NOT NULL,content TEXT NOT NULL,path TEXT NOT NULL,created_at TEXT NOT NULL,evidence_revision TEXT NOT NULL,PRIMARY KEY(job_id,version));
             """
             )
             for j in self.w.jobs():
@@ -444,6 +445,61 @@ class CareerServices:
             posting_key(clean, values["company"], values.get("requisition_id", "")),
             posting_key(clean),
         }
+        normalize = lambda text: re.sub(r"[^a-z0-9]+", "", text.casefold())
+        email_only = [
+            job
+            for job in self.w.jobs()
+            if job.get("record_source") == "gmail"
+            and normalize(job["company"]) == normalize(values["company"])
+            and normalize(job["title"])
+            == normalize(values.get("title", values.get("role", "")))
+        ]
+        if len(email_only) == 1:
+            job = email_only[0]
+            with self.w.connect() as db:
+                db.execute("BEGIN IMMEDIATE")
+                duplicate = next(
+                    (
+                        found
+                        for key in keys
+                        if (
+                            found := db.execute(
+                                "SELECT job_id FROM posting_identities WHERE identity=? AND job_id<>?",
+                                (key, job["id"]),
+                            ).fetchone()
+                        )
+                    ),
+                    None,
+                )
+                if duplicate:
+                    raise ValueError("This posting is already saved")
+                db.execute(
+                    "UPDATE jobs SET company=?,title=?,location=?,url=?,description=?,record_source='posting+gmail',verification='email_verified',updated_at=? WHERE id=?",
+                    (
+                        values["company"].strip(),
+                        values.get("title", values.get("role", "")).strip(),
+                        values["location"].strip(),
+                        clean,
+                        values["description"].strip(),
+                        self.now(),
+                        job["id"],
+                    ),
+                )
+                for key in keys:
+                    db.execute(
+                        "INSERT OR IGNORE INTO posting_identities VALUES(?,?)",
+                        (key, job["id"]),
+                    )
+                self.w.record_event(
+                    db,
+                    "email_application_posting_added",
+                    job["id"],
+                    company=values["company"],
+                    title=values.get("title", values.get("role", "")),
+                    url=clean,
+                )
+            self.w.export_tracking()
+            return {"job": self.w.get_job(job["id"]), "duplicate": False, "upgraded": True}
         try:
             job = self.w.add_job(
                 values["company"],
@@ -487,6 +543,11 @@ class CareerServices:
 
     def ingest_mail(self, batch):
         # Excerpts only: do not store entire inbox bodies, HTML, attachments or tracking URLs.
+        email = str(batch.get("email", "")).strip()
+        if not email:
+            raise ValueError(
+                "Gmail account verification is required before email evidence can be saved"
+            )
         count = 0
         with self.w.connect() as db:
             for m in batch["messages"]:
@@ -540,16 +601,20 @@ class CareerServices:
                 "gmail",
                 {
                     "connected": True,
-                    "email": batch["email"],
+                    "email": email,
                     "last_synced_at": self.now(),
+                    "last_attempt_at": self.now(),
+                    "status": "ready",
+                    "last_error": "",
                     "coverage": batch.get("coverage", "Job-related messages"),
                     "mode": "Connected Gmail via Codex",
                 },
                 db,
             )
             self.w.record_event(db, "email_synced", new_messages=count)
-        # Automatic updates require an exact, unique saved company AND role match.
-        # Anything ambiguous remains reviewable; no title-only or fuzzy matching.
+        # Automatic updates require exact company AND role evidence. When no saved
+        # posting exists, a high-confidence status email creates a minimal application
+        # record; no posting URL, job description or submission date is invented.
         normalize = lambda text: re.sub(r"[^a-z0-9]+", "", text.casefold())
         for m in self.mail()["messages"]:
             if (
@@ -564,13 +629,112 @@ class CareerServices:
                 if normalize(j["company"]) == normalize(m["company"])
                 and normalize(j["title"]) == normalize(m["role"])
             ]
-            if len(matches) == 1 and m["job_id"] == matches[0]["id"]:
-                self.resolve_mail(m["id"])
+            if len(matches) == 1 and m["job_id"] in {None, matches[0]["id"]}:
+                self.resolve_mail(m["id"], matches[0]["id"])
+            elif (
+                not matches
+                and not m["job_id"]
+                and m["company"].strip()
+                and m["role"].strip()
+            ):
+                self.resolve_mail(m["id"], create_application=True)
         self.w.export_tracking()
         self.export_state()
         return {"imported": count}
 
-    def resolve_mail(self, id, job_id=None, action="confirm"):
+    def record_mail_sync_failure(self, error):
+        """Preserve verified evidence and the last successful timestamp on access failure."""
+        with self.w.connect() as db:
+            row = db.execute(
+                "SELECT value FROM preferences WHERE key='gmail'"
+            ).fetchone()
+            previous = json.loads(row[0]) if row else {}
+            previous_coverage = str(previous.get("coverage", "")).casefold()
+            if not previous.get("email") or any(
+                phrase in previous_coverage
+                for phrase in ("unable to verify", "inaccessible coverage")
+            ):
+                for saved in db.execute(
+                    "SELECT result,updated_at FROM agent_runs WHERE kind='email' AND state='completed' "
+                    "AND result IS NOT NULL ORDER BY created_at DESC"
+                ):
+                    try:
+                        result = json.loads(saved[0])
+                        verified_email = result.get("email", "").strip()
+                    except (AttributeError, json.JSONDecodeError):
+                        continue
+                    if verified_email:
+                        previous["email"] = verified_email
+                        previous["last_synced_at"] = saved[1]
+                        previous["coverage"] = result.get(
+                            "coverage", previous.get("coverage", "")
+                        )
+                        break
+            self.set_pref(
+                "gmail",
+                {
+                    **previous,
+                    "connected": False,
+                    "status": "needs_attention",
+                    "last_attempt_at": self.now(),
+                    "last_error": str(error)[:500],
+                },
+                db,
+            )
+            self.w.record_event(db, "email_sync_failed", error=str(error)[:500])
+
+    def _create_mail_application(self, db, message):
+        company = message["company"].strip()
+        role = message["role"].strip()
+        if not company or not role:
+            raise ValueError("Confirm the exact company and role before tracking it")
+        job_id = hashlib.sha256(("gmail:" + message["id"]).encode()).hexdigest()[:16]
+        url = "https://mail.google.com/mail/u/0/#all/" + message["id"]
+        description = (
+            "Job description not available. This application was tracked from verified Gmail evidence. "
+            "Add the original posting and full description before generating a resume or cover letter."
+        )
+        db.execute(
+            "INSERT INTO jobs(id,company,title,location,url,description,status,created_at,updated_at,application_date,verification,record_source) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
+            (
+                job_id,
+                company,
+                role,
+                "Not recorded",
+                url,
+                description,
+                message["kind"],
+                self.now(),
+                self.now(),
+                message["submission_date"],
+                "email_verified",
+                "gmail",
+            ),
+        )
+        db.execute(
+            "INSERT OR IGNORE INTO posting_identities VALUES(?,?)",
+            (
+                "mail-application:"
+                + re.sub(r"[^a-z0-9]+", "", company.casefold())
+                + ":"
+                + re.sub(r"[^a-z0-9]+", "", role.casefold()),
+                job_id,
+            ),
+        )
+        self.w.record_event(
+            db,
+            "email_application_tracked",
+            job_id,
+            message_id=message["id"],
+            company=company,
+            title=role,
+            submission_date=message["submission_date"],
+        )
+        return job_id
+
+    def resolve_mail(
+        self, id, job_id=None, action="confirm", create_application=False
+    ):
         with self.w.connect() as db:
             db.execute("BEGIN IMMEDIATE")
             m = db.execute("SELECT * FROM mail_evidence WHERE id=?", (id,)).fetchone()
@@ -592,7 +756,19 @@ class CareerServices:
             if m["kind"] in {"reminder", "uncertain"}:
                 raise ValueError("This email does not establish an application status")
             job_id = job_id or m["job_id"]
-            job = self.w.get_job(job_id)
+            if not job_id and create_application:
+                job_id = self._create_mail_application(db, m)
+                job = dict(
+                    db.execute("SELECT * FROM jobs WHERE id=?", (job_id,)).fetchone()
+                )
+            elif job_id:
+                job = self.w.get_job(job_id)
+            else:
+                raise ValueError(
+                    "Choose a saved role or track this verified application from the email"
+                )
+            if job.get("deleted_at"):
+                raise ValueError("Restore the removed role before linking email evidence")
             # A late old confirmation must never regress an interview, offer or rejection.
             status = m["kind"]
             if status == "applied" and job["status"] in {
@@ -622,12 +798,12 @@ class CareerServices:
                 .astimezone(ZoneInfo("Europe/Dublin"))
                 .isoformat()
             )
-            # Rejections confirm prior submission but do not supply its date.
-            if m["kind"] == "applied" or m["submission_date"]:
-                db.execute(
-                    "INSERT INTO application_evidence VALUES(?,?,?,?,?) ON CONFLICT(job_id) DO UPDATE SET confirmed_at=MIN(application_evidence.confirmed_at,excluded.confirmed_at),submission_date=COALESCE(application_evidence.submission_date,excluded.submission_date)",
-                    (job_id, "gmail", received, m["submission_date"], id),
-                )
+            # Every confirmed outcome establishes an application record, but only an
+            # explicitly stated date is stored as the submission date.
+            db.execute(
+                "INSERT INTO application_evidence VALUES(?,?,?,?,?) ON CONFLICT(job_id) DO UPDATE SET confirmed_at=MIN(application_evidence.confirmed_at,excluded.confirmed_at),submission_date=COALESCE(application_evidence.submission_date,excluded.submission_date)",
+                (job_id, "gmail", received, m["submission_date"], id),
+            )
             db.execute(
                 "UPDATE jobs SET status=?,application_date=COALESCE(application_date,?),updated_at=? WHERE id=?",
                 (status, m["submission_date"], self.now(), job_id),
@@ -647,6 +823,252 @@ class CareerServices:
         self.w.export_tracking()
         self.export_state()
         return {"state": "confirmed", "job": self.w.get_job(job_id)}
+
+    def remove_job(self, job_id, reason="Not suitable"):
+        result = self.w.remove_job(job_id, reason)
+        self.export_state()
+        return result
+
+    def restore_job(self, job_id):
+        result = self.w.restore_job(job_id)
+        self.export_state()
+        return result
+
+    def _document_root(self, job):
+        from career import safe_child
+
+        if job.get("folder"):
+            return safe_child(
+                self.w.root / "output",
+                str(Path(job["folder"]).relative_to("output")),
+            )
+        root = self.w.root / "output" / "applications" / (job["id"] + "-documents")
+        root.mkdir(parents=True, exist_ok=True)
+        return root
+
+    def generate_cover_letter(self, job_id):
+        from career import atomic_write
+
+        job = self.w.get_job(job_id)
+        if job.get("deleted_at"):
+            raise ValueError("Restore this removed role before generating documents")
+        if job.get("record_source") == "gmail":
+            raise ValueError(
+                "Add the original posting and full job description before generating a cover letter"
+            )
+        if self.profile_dirty():
+            raise ValueError(
+                "Reconcile pending Profile edits before generating a cover letter"
+            )
+        active_projects = {
+            item["id"]
+            for item in self.knowledge()
+            if item["kind"] == "project" and item["review_state"] == "registered"
+        }
+        ranked = [
+            project
+            for project in self.w.rank_projects(
+                job["title"] + " " + job["description"]
+            )
+            if project["id"] in active_projects
+        ]
+        if len(ranked) < 2:
+            raise ValueError("Two registered evidence examples are required")
+        first, second = ranked[:2]
+        focus = list(dict.fromkeys(first["matched_terms"] + second["matched_terms"]))[:4]
+        focus_text = (
+            " The role's focus on " + ", ".join(focus) + " aligns with evidence from my work and projects."
+            if focus
+            else ""
+        )
+        candidate = self.w.profile()["candidate"]
+        letter = "\n".join(
+            [
+                candidate["full_name"],
+                candidate["location"],
+                candidate["email"],
+                candidate["phone"],
+                "",
+                self.today(),
+                "",
+                "Hiring Team",
+                job["company"],
+                "",
+                f"Re: {job['title']}",
+                "",
+                "Dear Hiring Team,",
+                "",
+                f"I am writing to apply for the {job['title']} role at {job['company']}. I am a Data Analyst and BI Developer with 3+ years of combined professional and internship experience, and I am currently completing an MSc programme in Data Science in Ireland.{focus_text}",
+                "",
+                f"A relevant example is {first['title']}. {first['bullets'][0]} {first['bullets'][1] if len(first['bullets']) > 1 else ''}".strip(),
+                "",
+                f"I can also bring experience from {second['title']}. {second['bullets'][0]}".strip(),
+                "",
+                f"I would welcome the opportunity to discuss how my evidence in analytics, reporting, stakeholder requirements and careful validation could support the {job['title']} team at {job['company']}. Thank you for considering my application.",
+                "",
+                "Yours sincerely,",
+                candidate["full_name"],
+            ]
+        )
+        with self.w.connect() as db:
+            db.execute("BEGIN IMMEDIATE")
+            version = (
+                db.execute(
+                    "SELECT COALESCE(MAX(version),0)+1 FROM cover_letters WHERE job_id=?",
+                    (job_id,),
+                ).fetchone()[0]
+            )
+            root = self._document_root(job)
+            path = root / f"cover-letter-v{version}.md"
+            atomic_write(path, letter + "\n")
+            atomic_write(
+                root / f"cover-letter-v{version}.json",
+                json.dumps(
+                    {
+                        "job_id": job_id,
+                        "company": job["company"],
+                        "title": job["title"],
+                        "candidate_revision": self.w.evidence()[
+                            "candidate_revision"
+                        ],
+                        "evidence_ids": [
+                            "IDENTITY-001",
+                            "CONTACT-EMAIL-001",
+                            "CONTACT-PHONE-001",
+                            "LOCATION-001",
+                            "EXP-TOTAL-001",
+                            "EDU-MSC-001",
+                            first["id"],
+                            second["id"],
+                        ],
+                        "review_required": True,
+                    },
+                    indent=2,
+                    ensure_ascii=False,
+                )
+                + "\n",
+            )
+            relative = str(path.relative_to(self.w.root / "output"))
+            stamp = self.now()
+            db.execute(
+                "INSERT INTO cover_letters VALUES(?,?,?,?,?,?)",
+                (
+                    job_id,
+                    version,
+                    letter,
+                    relative,
+                    stamp,
+                    self.w.evidence()["candidate_revision"],
+                ),
+            )
+            self.w.record_event(
+                db,
+                "cover_letter_generated",
+                job_id,
+                company=job["company"],
+                title=job["title"],
+                version=version,
+                path=relative,
+                review_required=True,
+            )
+        self.w.export_tracking()
+        self.export_state()
+        return {
+            "job_id": job_id,
+            "company": job["company"],
+            "title": job["title"],
+            "version": version,
+            "content": letter,
+            "path": relative,
+            "created_at": stamp,
+            "review_required": True,
+        }
+
+    def documents(self):
+        documents = []
+        with self.w.connect() as db:
+            has_studio = bool(
+                db.execute(
+                    "SELECT 1 FROM sqlite_master WHERE type='table' AND name='studio_drafts'"
+                ).fetchone()
+            )
+            latest_letters = {
+                r["job_id"]: dict(r)
+                for r in db.execute(
+                    "SELECT c.* FROM cover_letters c JOIN (SELECT job_id,MAX(version) version FROM cover_letters GROUP BY job_id) latest ON latest.job_id=c.job_id AND latest.version=c.version"
+                )
+            }
+            studio = (
+                {r["job_id"]: dict(r) for r in db.execute("SELECT * FROM studio_drafts")}
+                if has_studio
+                else {}
+            )
+        for job in self.w.jobs():
+            resumes = []
+            if job.get("folder"):
+                root = self.w.root / job["folder"]
+                original = root / "resume.pdf"
+                if original.exists():
+                    resumes.append(
+                        {
+                            "label": "Prepared resume",
+                            "path": str(original.relative_to(self.w.root / "output")),
+                        }
+                    )
+            draft = studio.get(job["id"])
+            if draft:
+                preview_file = self.w.root / draft["folder"] / "preview.json"
+                if preview_file.exists():
+                    preview = json.loads(preview_file.read_text())
+                    pdf = self.w.root / "output" / preview["path"] / "resume.pdf"
+                    if pdf.exists():
+                        path = str(pdf.relative_to(self.w.root / "output"))
+                        if not any(item["path"] == path for item in resumes):
+                            resumes.insert(
+                                0,
+                                {
+                                    "label": f"Resume Studio v{preview['revision']}",
+                                    "path": path,
+                                },
+                            )
+            letter = latest_letters.get(job["id"])
+            fallback_letter = None
+            if not letter and job.get("folder"):
+                root = self.w.root / job["folder"]
+                candidates = sorted(
+                    root.glob("cover-letter*.md"),
+                    key=lambda path: path.stat().st_mtime,
+                    reverse=True,
+                )
+                if candidates:
+                    fallback_letter = {
+                        "version": 1,
+                        "path": str(
+                            candidates[0].relative_to(self.w.root / "output")
+                        ),
+                        "created_at": datetime.fromtimestamp(
+                            candidates[0].stat().st_mtime, timezone.utc
+                        ).isoformat(timespec="seconds"),
+                    }
+            if resumes or letter or fallback_letter:
+                documents.append(
+                    {
+                        "job_id": job["id"],
+                        "company": job["company"],
+                        "title": job["title"],
+                        "resumes": resumes,
+                        "cover_letter": (
+                            {
+                                "version": letter["version"],
+                                "path": letter["path"],
+                                "created_at": letter["created_at"],
+                            }
+                            if letter
+                            else fallback_letter
+                        ),
+                    }
+                )
+        return documents
 
     def runs(self):
         with self.w.connect() as db:
@@ -669,6 +1091,10 @@ class CareerServices:
             }
         return {
             "jobs": jobs,
+            "removed_jobs": [
+                j for j in self.w.jobs(include_deleted=True) if j.get("deleted_at")
+            ],
+            "documents": self.documents(),
             "goals": self.goals(),
             "mail": self.mail(),
             "runs": self.runs(),

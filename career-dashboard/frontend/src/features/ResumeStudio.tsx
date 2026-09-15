@@ -1,14 +1,41 @@
 import { useEffect, useRef, useState } from "react";
-import { Copy, Download, FileText, RefreshCw, Save } from "lucide-react";
+import {
+  CheckCircle2,
+  Copy,
+  Download,
+  FileText,
+  RefreshCw,
+  Save,
+  Settings2,
+  Sparkles,
+} from "lucide-react";
 import { api, fileUrl } from "../api";
 import { Badge, Field, Modal, ReportView, Running } from "../components/UI";
 import { JobList } from "../components/JobList";
-import { fieldNames, macroSpan, readField, writeField } from "./studioFields";
+import { macroSpan, readField, writeField } from "./studioFields";
 import { AgentControl } from "./AgentControl";
-import type { Summary } from "../types";
+import type { CoverLetter, Summary } from "../types";
 type Draft = {
-  match?: { score: number | null; current: boolean; revision: number; gaps: string[]; limitations: string[]; requirements: {term: string; matched: boolean; jd_excerpt: string; resume_excerpt: string}[] };
-  project_library: {id: string; title: string; rank: number | null; eligible: boolean; review_state: string}[];
+  match?: {
+    score: number | null;
+    current: boolean;
+    revision: number;
+    gaps: string[];
+    limitations: string[];
+    requirements: {
+      term: string;
+      matched: boolean;
+      jd_excerpt: string;
+      resume_excerpt: string;
+    }[];
+  };
+  project_library: {
+    id: string;
+    title: string;
+    rank: number | null;
+    eligible: boolean;
+    review_state: string;
+  }[];
   source: string;
   revision: number;
   file_root: string;
@@ -43,6 +70,19 @@ const labels: Record<string, string> = {
   SelectedProjectBulletTwo: "Project point 2",
   SelectedProjectBulletThree: "Project point 3",
 };
+const contentFields = ["ResumeSummary", "CoreSkills"];
+const projectFields = [
+  "SelectedProjectTitle",
+  "SelectedProjectContext",
+  "SelectedProjectBulletOne",
+  "SelectedProjectBulletTwo",
+  "SelectedProjectBulletThree",
+  "SecondProjectTitle",
+  "SecondProjectContext",
+  "SecondProjectBulletOne",
+  "SecondProjectBulletTwo",
+  "SecondProjectBulletThree",
+];
 export default function ResumeStudio({
   data,
   jobId,
@@ -57,15 +97,20 @@ export default function ResumeStudio({
   refresh: () => Promise<void>;
 }) {
   const job = data.jobs.find((j) => j.id === jobId);
+  const [coverLetter, setCoverLetter] = useState<CoverLetter | null>(null);
+  const [coverBusy, setCoverBusy] = useState(false);
+  const [coverError, setCoverError] = useState("");
   return (
     <>
       <div className="page-title">
         <div>
-          <div className="eyebrow">YOUR NEXT OPPORTUNITY, IN YOUR WORDS</div>
           <h1>Resume Studio</h1>
-          <p>A resume for each role. Your template, your edits.</p>
+          <p>
+            Edit the important content, check the preview, then review the
+            match.
+          </p>
         </div>
-        <Badge>Two A4 pages · Editable draft</Badge>
+        <Badge>Editable two-page draft</Badge>
       </div>
       <div className="studio-job-bar">
         <Field label="Company and role">
@@ -81,11 +126,46 @@ export default function ResumeStudio({
           </select>
         </Field>
         {job && (
-          <button className="secondary" onClick={() => onDetails(job.id)}>
-            Job details & progress
-          </button>
+          <div className="actions">
+            <button
+              className="primary"
+              disabled={coverBusy || job.record_source === "gmail"}
+              title={
+                job.record_source === "gmail"
+                  ? "Add the full job description first"
+                  : `Generate a cover letter for ${job.company}`
+              }
+              onClick={async () => {
+                setCoverBusy(true);
+                setCoverError("");
+                try {
+                  const result = await api<CoverLetter>(
+                    "/v2/jobs/" + job.id + "/cover-letter",
+                    "POST",
+                  );
+                  setCoverLetter(result);
+                  await refresh();
+                } catch (e) {
+                  setCoverError((e as Error).message);
+                } finally {
+                  setCoverBusy(false);
+                }
+              }}
+            >
+              <FileText size={16} />
+              {coverBusy ? "Generating…" : "Cover letter"}
+            </button>
+            <button className="secondary" onClick={() => onDetails(job.id)}>
+              Job details & progress
+            </button>
+          </div>
         )}
       </div>
+      {coverError && (
+        <div className="callout warning" role="alert">
+          {coverError}
+        </div>
+      )}
       {job ? (
         <Editor
           key={job.id}
@@ -99,6 +179,33 @@ export default function ResumeStudio({
           <h2>Choose the role you’re preparing for</h2>
           <JobList jobs={data.jobs} onSelect={onJob} />
         </section>
+      )}
+      {coverLetter && (
+        <Modal
+          title={`${coverLetter.company} · Cover letter`}
+          onClose={() => setCoverLetter(null)}
+        >
+          <div className="callout warning">
+            Draft only. Review it against the job description before sending.
+          </div>
+          <div className="cover-letter-preview">{coverLetter.content}</div>
+          <div className="actions">
+            <button
+              className="secondary"
+              onClick={() => navigator.clipboard.writeText(coverLetter.content)}
+            >
+              Copy letter
+            </button>
+            <a
+              className="primary"
+              href={fileUrl(coverLetter.path)}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open saved file ↗
+            </a>
+          </div>
+        </Modal>
       )}
     </>
   );
@@ -116,7 +223,7 @@ function Editor({
 }) {
   const [draft, setDraft] = useState<Draft>();
   const [source, setSource] = useState("");
-  const [mode, setMode] = useState("edit");
+  const [mode, setMode] = useState("content");
   const [busy, setBusy] = useState("");
   const [error, setError] = useState("");
   const [auto, setAuto] = useState(true);
@@ -271,58 +378,39 @@ function Editor({
   const current = !dirty && !!draft.preview?.current;
   return (
     <>
-      <AgentControl jobId={jobId} revision={draft.revision} locked={!!busy || dirty}
-        onBuilding={active => setBusy(active ? "Orchestrator building and scoring…" : "")}
-        onChanged={async () => { const next = await api<Draft>(base); setDraft(next); setSource(next.source); sessionStorage.removeItem(key); await refresh(); }} />
+      <div className="studio-steps" aria-label="Resume workflow">
+        <span className="active">
+          <b>1</b> Edit content
+        </span>
+        <span className={current ? "complete" : ""}>
+          <b>2</b> Check preview
+        </span>
+        <span>
+          <b>3</b> Review & improve
+        </span>
+      </div>
       <div className="studio-toolbar">
-        <div className="actions">
+        <div className="studio-save-state" role="status">
+          {busy ? (
+            <span className="working-dot" />
+          ) : !dirty ? (
+            <CheckCircle2 size={18} />
+          ) : (
+            <span className="unsaved-dot" />
+          )}
+          <span>
+            <b>{busy || (dirty ? "Unsaved changes" : "All changes saved")}</b>
+            <small>
+              {dirty
+                ? "Kept safely in this browser"
+                : `Version ${draft.revision}`}
+            </small>
+          </span>
+        </div>
+        <div className="actions studio-primary-actions">
           <button className="primary" disabled={!!busy} onClick={() => save()}>
             <Save size={16} />
             Save & preview
-          </button>
-          <button className="secondary" disabled={!!busy} onClick={fillPages}>
-            Fill two pages
-          </button>
-          <button className="secondary" disabled={!!busy || dirty} onClick={async () => {
-            setBusy("Syncing reviewed profile and ranking two projects…"); setError("");
-            try { const d = await api<Draft>(base + "/sync-profile", "POST", {revision: draft.revision}); setDraft(d); setSource(d.source); await refresh(); }
-            catch (e) { setError((e as Error).message); } finally { setBusy(""); }
-          }}>Sync profile & rank 2 projects</button>
-          <label className="check-line">
-            <input
-              type="checkbox"
-              checked={auto}
-              onChange={(e) => setAuto(e.target.checked)}
-            />
-            Auto-save & preview
-          </label>
-        </div>
-        <span role="status" className="small">
-          {busy ||
-            (dirty
-              ? "Unsaved edits · kept in this browser session"
-              : "Saved · version " + draft.revision)}
-        </span>
-        <div className="actions">
-          <button
-            className="secondary"
-            onClick={async () => {
-              try {
-                await navigator.clipboard.writeText(source);
-                setCopyMessage("Template copied");
-              } catch {
-                setCopyMessage(
-                  "Copy unavailable. Download the source instead.",
-                );
-              }
-            }}
-          >
-            <Copy size={15} />
-            Copy template
-          </button>
-          <button className="secondary" onClick={downloadSource}>
-            <Download size={15} />
-            LaTeX
           </button>
           {current && (
             <a
@@ -334,6 +422,68 @@ function Editor({
               Open draft PDF ↗
             </a>
           )}
+          <details className="studio-more-actions">
+            <summary className="secondary">
+              <Settings2 size={16} /> More tools
+            </summary>
+            <div className="studio-action-menu">
+              <button
+                className="text-button"
+                disabled={!!busy}
+                onClick={fillPages}
+              >
+                <Sparkles size={16} /> Fill two pages
+              </button>
+              <button
+                className="text-button"
+                disabled={!!busy || dirty}
+                onClick={async () => {
+                  setBusy("Syncing reviewed profile and ranking two projects…");
+                  setError("");
+                  try {
+                    const d = await api<Draft>(base + "/sync-profile", "POST", {
+                      revision: draft.revision,
+                    });
+                    setDraft(d);
+                    setSource(d.source);
+                    await refresh();
+                  } catch (e) {
+                    setError((e as Error).message);
+                  } finally {
+                    setBusy("");
+                  }
+                }}
+              >
+                <RefreshCw size={16} /> Sync profile & rank projects
+              </button>
+              <button
+                className="text-button"
+                onClick={async () => {
+                  try {
+                    await navigator.clipboard.writeText(source);
+                    setCopyMessage("Template copied");
+                  } catch {
+                    setCopyMessage(
+                      "Copy unavailable. Download the source instead.",
+                    );
+                  }
+                }}
+              >
+                <Copy size={16} /> Copy LaTeX template
+              </button>
+              <button className="text-button" onClick={downloadSource}>
+                <Download size={16} /> Download LaTeX
+              </button>
+              <label className="check-line">
+                <input
+                  type="checkbox"
+                  checked={auto}
+                  onChange={(e) => setAuto(e.target.checked)}
+                />
+                Auto-save & refresh preview
+              </label>
+            </div>
+          </details>
         </div>
       </div>
       {copyMessage && <p role="status">{copyMessage}</p>}
@@ -356,10 +506,16 @@ function Editor({
             </h2>
             <div className="segmented">
               <button
-                className={mode === "edit" ? "selected" : ""}
-                onClick={() => setMode("edit")}
+                className={mode === "content" ? "selected" : ""}
+                onClick={() => setMode("content")}
               >
-                Easy edit
+                Content
+              </button>
+              <button
+                className={mode === "projects" ? "selected" : ""}
+                onClick={() => setMode("projects")}
+              >
+                Projects
               </button>
               <button
                 className={mode === "source" ? "selected" : ""}
@@ -370,16 +526,16 @@ function Editor({
             </div>
           </div>
           <div className="studio-editor-body">
-            <fieldset
-              className="studio-edit-fields"
-              disabled={!!busy}
-            >
+            <fieldset className="studio-edit-fields" disabled={!!busy}>
               {mode === "source" ? (
                 <>
-                  <p className="small">
-                    Edit every section and the layout. Keep the project fields
-                    and skills sections so the tracker can recognize additions.
-                  </p>
+                  <div className="studio-help">
+                    <b>Advanced editing</b>
+                    <span>
+                      Edit every section and the layout. Keep the named fields
+                      so additions can still be tracked.
+                    </span>
+                  </div>
                   <textarea
                     className="source-editor"
                     aria-label="LaTeX resume source"
@@ -389,13 +545,49 @@ function Editor({
                     onChange={(e) => edit(e.target.value)}
                   />
                 </>
-              ) : (
+              ) : mode === "projects" ? (
                 <>
-                  <p className="small">
-                    The default draft selects two ranked evidenced projects for this job
-                    and orders skills by its requirements. Use the advisor below
-                    to refine it. All sections are editable in LaTeX source.
-                  </p>
+                  <div className="studio-help">
+                    <b>Two projects are required</b>
+                    <span>
+                      The best evidenced matches are selected automatically. You
+                      can replace either one.
+                    </span>
+                  </div>
+                  <div className="project-picker-grid">
+                    <Field label="Replace first project">
+                      <select
+                        value=""
+                        disabled={!!busy || dirty}
+                        onChange={(e) =>
+                          save(true, { project_id: e.target.value })
+                        }
+                      >
+                        <option value="">Choose from Profile…</option>
+                        {draft.projects.map((p) => (
+                          <option key={p.id} value={p.id}>
+                            {p.title}
+                          </option>
+                        ))}
+                      </select>
+                    </Field>
+                    <Field label="Replace second project">
+                      <select
+                        value=""
+                        disabled={!!busy || dirty}
+                        onChange={(e) =>
+                          save(true, { second_project_id: e.target.value })
+                        }
+                      >
+                        <option value="">Choose from Profile…</option>
+                        {draft.projects.map((p) => (
+                          <option key={p.id} value={p.id}>
+                            {p.title}
+                          </option>
+                        ))}
+                      </select>
+                    </Field>
+                  </div>
                   <button
                     className="secondary"
                     disabled={!!busy}
@@ -403,33 +595,31 @@ function Editor({
                   >
                     ＋ Add my own project
                   </button>
-                  <Field label="Use an existing project">
-                    <select
-                      value=""
-                      disabled={!!busy || dirty}
-                      onChange={(e) =>
-                        save(true, { project_id: e.target.value })
-                      }
-                    >
-                      <option value="">Choose a registered project…</option>
-                      {draft.projects.map((p) => (
-                        <option key={p.id} value={p.id}>
-                          {p.title}
-                        </option>
+                  <details className="studio-inline-details">
+                    <summary>See ranked project library</summary>
+                    <ol>
+                      {draft.project_library.map((p) => (
+                        <li key={p.id}>
+                          <b>
+                            {p.rank ? `#${p.rank} ` : ""}
+                            {p.title}
+                          </b>
+                          <br />
+                          <small>
+                            {p.id} ·{" "}
+                            {p.eligible
+                              ? "Ready to select"
+                              : p.review_state + " · evidence review needed"}
+                          </small>
+                        </li>
                       ))}
-                    </select>
-                  </Field>
-                  <Field label="Use a second registered project">
-                    <select value="" disabled={!!busy || dirty} onChange={e => save(true, {second_project_id: e.target.value})}>
-                      <option value="">Choose the second project…</option>
-                      {draft.projects.map(p => <option key={p.id} value={p.id}>{p.title}</option>)}
-                    </select>
-                  </Field>
-                  <details><summary>Full project library · ranked for this JD</summary>
-                    <ol>{draft.project_library.map(p => <li key={p.id}><b>{p.rank ? `#${p.rank} ` : ""}{p.title}</b><br/><small>{p.id} · {p.eligible ? "Ready to select" : p.review_state + " · evidence review needed"}</small></li>)}</ol>
-                    <p className="small">Ranks order approved project wording by JD overlap; they are not hiring scores. Both selected projects must be distinct.</p>
+                    </ol>
+                    <p className="small">
+                      Ranks reflect job-description overlap, not hiring
+                      probability. The two projects must be distinct.
+                    </p>
                   </details>
-                  {[...fieldNames, "SecondProjectTitle", "SecondProjectContext", "SecondProjectBulletOne", "SecondProjectBulletTwo", "SecondProjectBulletThree"].map(
+                  {projectFields.map(
                     (name) =>
                       macroSpan(source, name) && (
                         <Field label={labels[name]} key={name}>
@@ -450,10 +640,39 @@ function Editor({
                       ),
                   )}
                   <p className="small">
-                    To add your own project, replace the project name, context
-                    and points above. New skills go in Core skills. Agent 2
-                    saves these additions to Profile automatically.
+                    New projects and skills are captured in Profile for evidence
+                    review when you save.
                   </p>
+                </>
+              ) : (
+                <>
+                  <div className="studio-help">
+                    <b>Start with the story</b>
+                    <span>
+                      Keep the summary specific to this role and put the
+                      strongest matching skills first.
+                    </span>
+                  </div>
+                  {contentFields.map(
+                    (name) =>
+                      macroSpan(source, name) && (
+                        <Field label={labels[name]} key={name}>
+                          <textarea
+                            rows={name === "ResumeSummary" ? 8 : 6}
+                            value={readField(source, name)}
+                            onChange={(e) =>
+                              edit(writeField(source, name, e.target.value))
+                            }
+                          />
+                        </Field>
+                      ),
+                  )}
+                  <button
+                    className="secondary"
+                    onClick={() => setMode("projects")}
+                  >
+                    Continue to projects →
+                  </button>
                 </>
               )}
             </fieldset>
@@ -544,6 +763,21 @@ function Editor({
           </div>
         </section>
       </div>
+      <AgentControl
+        jobId={jobId}
+        revision={draft.revision}
+        locked={!!busy || dirty}
+        onBuilding={(active) =>
+          setBusy(active ? "Building and checking your resume…" : "")
+        }
+        onChanged={async () => {
+          const next = await api<Draft>(base);
+          setDraft(next);
+          setSource(next.source);
+          sessionStorage.removeItem(key);
+          await refresh();
+        }}
+      />
       {addingProject && (
         <NewProject
           onClose={() => setAddingProject(false)}
@@ -589,119 +823,178 @@ function Editor({
               );
             edit(next);
             setAddingProject(false);
-            setMode("edit");
+            setMode("projects");
           }}
         />
       )}
-      {draft.match && <section className="card">
-        <div className="section-head"><div><div className="eyebrow">INDEPENDENT MATCHER · PDF + JD ONLY</div><h2>JD term coverage: {draft.match.score === null ? "Not scored" : `${draft.match.score}/100`}</h2></div><Badge tone={draft.match.current && !dirty ? "green" : "amber"}>{draft.match.current && !dirty ? "Current PDF" : "Stale · rebuild"}</Badge></div>
-        <p>Version {draft.match.revision} · no profile access · zero AI calls. {draft.match.gaps.length ? `Missing terms: ${draft.match.gaps.join(", ")}.` : "No gaps in the detected vocabulary."}</p>
-        <details><summary>Evidence and scoring limits</summary>{draft.match.requirements.map(r => <p key={r.term}><b>{r.matched ? "✓" : "—"} {r.term}</b><br/>JD: {r.jd_excerpt}<br/>PDF: {r.resume_excerpt || "Not found"}</p>)}{draft.match.limitations.map(l => <p className="small" key={l}>{l}</p>)}</details>
-      </section>}
-      <div className="studio-agents">
-        <section className="card">
-          <div className="section-head">
-            <div>
-              <div className="eyebrow">AGENT 1 · INDEPENDENT RESEARCH</div>
-              <h2>What this company wants to see</h2>
-            </div>
-            <Badge>No profile access</Badge>
+      <details className="studio-advanced">
+        <summary>
+          <span>
+            <b>Review details & advanced tools</b>
+            <small>
+              Match breakdown, company research, Profile captures and version
+              history
+            </small>
+          </span>
+        </summary>
+        <div className="studio-advanced-body">
+          {draft.match && (
+            <section className="card">
+              <div className="section-head">
+                <div>
+                  <div className="eyebrow">
+                    INDEPENDENT MATCHER · PDF + JD ONLY
+                  </div>
+                  <h2>
+                    JD term coverage:{" "}
+                    {draft.match.score === null
+                      ? "Not scored"
+                      : `${draft.match.score}/100`}
+                  </h2>
+                </div>
+                <Badge tone={draft.match.current && !dirty ? "green" : "amber"}>
+                  {draft.match.current && !dirty
+                    ? "Current PDF"
+                    : "Stale · rebuild"}
+                </Badge>
+              </div>
+              <p>
+                Version {draft.match.revision} · no profile access · zero AI
+                calls.{" "}
+                {draft.match.gaps.length
+                  ? `Missing terms: ${draft.match.gaps.join(", ")}.`
+                  : "No gaps in the detected vocabulary."}
+              </p>
+              <details>
+                <summary>Evidence and scoring limits</summary>
+                {draft.match.requirements.map((r) => (
+                  <p key={r.term}>
+                    <b>
+                      {r.matched ? "✓" : "—"} {r.term}
+                    </b>
+                    <br />
+                    JD: {r.jd_excerpt}
+                    <br />
+                    PDF: {r.resume_excerpt || "Not found"}
+                  </p>
+                ))}
+                {draft.match.limitations.map((l) => (
+                  <p className="small" key={l}>
+                    {l}
+                  </p>
+                ))}
+              </details>
+            </section>
+          )}
+          <div className="studio-agents">
+            <section className="card">
+              <div className="section-head">
+                <div>
+                  <div className="eyebrow">AGENT 1 · INDEPENDENT RESEARCH</div>
+                  <h2>What this company wants to see</h2>
+                </div>
+                <Badge>No profile access</Badge>
+              </div>
+              <p>
+                Recent company research, resume priorities, suggested projects
+                and skills. Project ideas stay here until you build them and add
+                your evidence.
+              </p>
+              <button
+                className="secondary"
+                disabled={activeRun}
+                onClick={async () => {
+                  try {
+                    await api("/v2/agents/run", "POST", {
+                      kind: "resume_advisor",
+                      job_id: jobId,
+                    });
+                    await refresh();
+                  } catch (e) {
+                    setError((e as Error).message);
+                  }
+                }}
+              >
+                <RefreshCw size={15} />
+                {activeRun
+                  ? "Research in progress…"
+                  : run
+                    ? "Research · reuse cache"
+                    : "Research this company"}
+              </button>
+              {run && <Running run={run} />}
+              {run?.result?.advice && <ReportView report={run.result.advice} />}
+              {run?.result?.research && (
+                <details className="report-section">
+                  <summary>Company research and sources</summary>
+                  <ReportView report={run.result.research} />
+                </details>
+              )}
+            </section>
+            <section className="card">
+              <div className="eyebrow">AGENT 2 · RULE-BASED TRACKER</div>
+              <h2>Keep your experience with you</h2>
+              <p>
+                Runs on each save. Tracks project fields and skills in this
+                template, keeps version history and captures new entries in
+                Profile.
+              </p>
+              {draft.warnings.map((w) => (
+                <p className="tracker-note" key={w}>
+                  {w}
+                </p>
+              ))}
+              <h3>Captured in Profile</h3>
+              {draft.captures.length ? (
+                <ul>
+                  {draft.captures.map((c) => (
+                    <li key={c.id + c.title}>
+                      {c.title}{" "}
+                      <Badge>
+                        {c.deleted
+                          ? "Removed from Profile"
+                          : "Saved for evidence review"}
+                      </Badge>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="muted">
+                  New projects and skills you add will appear here.
+                </p>
+              )}
+              <h3>Version history</h3>
+              <Field label="Restore an earlier version">
+                <select
+                  value={restoring}
+                  onChange={(e) => setRestoring(e.target.value)}
+                >
+                  <option value="">Choose a saved version…</option>
+                  {draft.versions.map((v) => (
+                    <option key={v.revision} value={v.revision}>
+                      Version {v.revision} ·{" "}
+                      {new Date(v.created_at).toLocaleString()}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <button
+                className="secondary"
+                disabled={!!busy || dirty || !restoring}
+                onClick={() =>
+                  save(true, { restore_revision: Number(restoring) })
+                }
+              >
+                Restore as a new version
+              </button>
+              <p className="small">
+                Save your current edits first. Restoring a resume keeps its
+                history and previously captured Profile entries.
+              </p>
+            </section>
           </div>
-          <p>
-            Recent company research, resume priorities, suggested projects and
-            skills. Project ideas stay here until you build them and add your
-            evidence.
-          </p>
-          <button
-            className="secondary"
-            disabled={activeRun}
-            onClick={async () => {
-              try {
-                await api("/v2/agents/run", "POST", {
-                  kind: "resume_advisor",
-                  job_id: jobId,
-                });
-                await refresh();
-              } catch (e) {
-                setError((e as Error).message);
-              }
-            }}
-          >
-            <RefreshCw size={15} />
-            {activeRun
-              ? "Research in progress…"
-              : run
-                ? "Research · reuse cache"
-                : "Research this company"}
-          </button>
-          {run && <Running run={run} />}
-          {run?.result?.advice && <ReportView report={run.result.advice} />}
-          {run?.result?.research && (
-            <details className="report-section">
-              <summary>Company research and sources</summary>
-              <ReportView report={run.result.research} />
-            </details>
-          )}
-        </section>
-        <section className="card">
-          <div className="eyebrow">AGENT 2 · RULE-BASED TRACKER</div>
-          <h2>Keep your experience with you</h2>
-          <p>
-            Runs on each save. Tracks project fields and skills in this
-            template, keeps version history and captures new entries in Profile.
-          </p>
-          {draft.warnings.map((w) => (
-            <p className="tracker-note" key={w}>
-              {w}
-            </p>
-          ))}
-          <h3>Captured in Profile</h3>
-          {draft.captures.length ? (
-            <ul>
-              {draft.captures.map((c) => (
-                <li key={c.id + c.title}>
-                  {c.title}{" "}
-                  <Badge>
-                    {c.deleted
-                      ? "Removed from Profile"
-                      : "Saved for evidence review"}
-                  </Badge>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="muted">
-              New projects and skills you add will appear here.
-            </p>
-          )}
-          <h3>Version history</h3>
-          <Field label="Restore an earlier version">
-            <select
-              value={restoring}
-              onChange={(e) => setRestoring(e.target.value)}
-            >
-              <option value="">Choose a saved version…</option>
-              {draft.versions.map((v) => (
-                <option key={v.revision} value={v.revision}>
-                  Version {v.revision} ·{" "}
-                  {new Date(v.created_at).toLocaleString()}
-                </option>
-              ))}
-            </select>
-          </Field>
-          <button
-            className="secondary"
-            disabled={!!busy || dirty || !restoring}
-            onClick={() => save(true, { restore_revision: Number(restoring) })}
-          >
-            Restore as a new version
-          </button>
-          <p className="small">
-            Save your current edits first. Restoring a resume keeps its history
-            and previously captured Profile entries.
-          </p>
-        </section>
-      </div>
+        </div>
+      </details>
     </>
   );
 }

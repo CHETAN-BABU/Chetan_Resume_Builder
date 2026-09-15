@@ -1,6 +1,6 @@
 # Details still to resolve
 
-Updated 9 September 2026. All supplied information remains available. These questions concern accuracy, not whether to hide information.
+Updated 14 September 2026. All supplied information remains available. These questions concern accuracy, not whether to hide information.
 
 1. Current city and country: the active profile says Ireland; an older draft says Chennai. Ireland remains the resume location until corrected.
 2. Preferred contact: the Irish number is included exactly as supplied (+353-0892401738). The alternate Indian WhatsApp number is preserved in the full profile. Confirm the intended international format and preferred number when convenient.
@@ -10,6 +10,8 @@ Updated 9 September 2026. All supplied information remains available. These ques
 6. Project evidence: dates, ownership/collaboration, repositories, datasets and reproducible outputs are incomplete for some projects. Existing approved project wording remains usable under its recorded conditions.
 7. Recognition and certifications: verify exact award wording and public credential links. Do not invent awards or credential identifiers.
 8. Contribution details: confirm the HUL acceptance/testing terminology and any stronger leadership/ownership or commercial-causality claims before changing the registry.
+
+Resolved 14 September: the active Profile states that the completed B.Tech is equivalent to 1:1. This is registered as user-reported evidence and may be used with that attribution; independent equivalence documentation has not been supplied.
 
 Resolved disclosure preference: on 9 September 2026, Chetan requested “keep all information; no need to hide.” Client names and the supplied Irish phone may appear on the resume. This does not verify conflicting dates, untested results or stronger ownership claims.
 

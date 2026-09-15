@@ -1,7 +1,7 @@
 # Chetan Babu M — Canonical Profile Memory
 
-**Last updated:** 5 September 2026  
-**Candidate revision:** `2026-09-09.1`  
+**Last updated:** 14 September 2026  
+**Candidate revision:** `2026-09-14.1`  
 **Purpose:** Human-readable interpretation of Chetan's approved evidence for resumes, job evaluation, interview preparation, and outreach.
 
 The machine-readable claim and project IDs live in `context/evidence.yml`, which records the actual supporting profile/config/narrative source. Every candidate-facing claim must have an entry there. When sources conflict, use the narrower claim and add the conflict to this file.
@@ -110,7 +110,7 @@ conflict.
 
 **Bachelor of Technology, Computer Science (AI and ML) | SRM Institute of Science and Technology, India | Jun 2019–May 2023**
 
-CGPA reported by Chetan: **9.4/10**. The specialization is education, not evidence of AI-engineering employment.
+CGPA reported by Chetan: **9.4/10**. On 14 September 2026, Chetan updated the active Profile to state that the qualification is **equivalent to 1:1**. Treat the equivalence as user-reported, not independently verified. The specialization is education, not evidence of AI-engineering employment.
 
 ## Academic and candidate projects supplied through 12 August 2026
 

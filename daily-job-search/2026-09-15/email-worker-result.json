@@ -1,0 +1,15 @@
+{
+  "run_id": "5a3fce610d99456e8ad02e1656adf9bb",
+  "status": "failed",
+  "connection": {
+    "connected": false,
+    "email": "chetanbabu07@gmail.com",
+    "last_synced_at": "2026-09-14T13:52:44+00:00",
+    "coverage": "Verified with Gmail profile. Searched incoming messages using newer_than:90d on 2026-09-14, excluding spam, trash, sent and drafts. Fully paginated the application/outcome query (2 pages) and supplementary employer/interview/assessment/offer query (3 pages); no remaining page tokens. Read 30 unique relevant messages, below the 60-message cap, including HTML alternatives where needed. No attachments or files read; no email changed. Marketing, recommendations, unrelated search hits and detailed assessment-feedback messages were excluded from evidence review. Coverage is keyword-based, not a guarantee of all job correspondence. No reviewed message confirmed a human interview invitation or employment offer.",
+    "mode": "Connected Gmail via Codex",
+    "status": "needs_attention",
+    "last_attempt_at": "2026-09-15T15:53:56+00:00",
+    "last_error": "Gmail is not connected to Codex. Connect the Gmail plugin, then retry. Your last successful sync and saved email evidence were preserved."
+  },
+  "pending_saved_evidence": 36
+}

@@ -155,16 +155,22 @@ export default function DailySearch({
               <p className="preserve">
                 {r.notes || "No search notes recorded."}
               </p>
-              {r.jobs.map((j: any) => (
-                <button
-                  className="history-job"
-                  key={j.id}
-                  onClick={() => onJob(j.id)}
-                >
-                  {j.company} · {j.title}
-                  <ArrowUpRight size={16} />
-                </button>
-              ))}
+              {r.jobs.map((j: any) =>
+                j.deleted_at ? (
+                  <div className="history-job muted" key={j.id}>
+                    {j.company} · {j.title} · removed from active list
+                  </div>
+                ) : (
+                  <button
+                    className="history-job"
+                    key={j.id}
+                    onClick={() => onJob(j.id)}
+                  >
+                    {j.company} · {j.title}
+                    <ArrowUpRight size={16} />
+                  </button>
+                ),
+              )}
             </details>
           ))
         ) : (

@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 VALIDATOR = ROOT / "scripts/validate_batch.py"
 RESUME_VALIDATOR = ROOT / "scripts/validate_resume.py"
 RUNNER = ROOT / "scripts/run_resume_batch.py"
-CANDIDATE_REVISION = "2026-09-13.1"
+CANDIDATE_REVISION = "2026-09-14.1"
 REQUIRED_ARTIFACTS = [
     "job-description.md",
     "evaluation.md",
@@ -52,7 +52,7 @@ class BatchQualityTests(unittest.TestCase):
     def test_batch_requires_at_least_two_jobs(self) -> None:
         result = self.run_manifest(
             """
-            candidate_revision: "2026-09-13.1"
+            candidate_revision: "2026-09-14.1"
             jobs:
               - job_id: "one"
                 status: "rejected"
@@ -65,7 +65,7 @@ class BatchQualityTests(unittest.TestCase):
     def test_terminal_policy_rejections_are_valid_batch_outcomes(self) -> None:
         result = self.run_manifest(
             """
-            candidate_revision: "2026-09-13.1"
+            candidate_revision: "2026-09-14.1"
             jobs:
               - job_id: "one"
                 status: "rejected"
@@ -81,7 +81,7 @@ class BatchQualityTests(unittest.TestCase):
     def test_duplicate_job_ids_fail_cross_batch_gate(self) -> None:
         result = self.run_manifest(
             """
-            candidate_revision: "2026-09-13.1"
+            candidate_revision: "2026-09-14.1"
             jobs:
               - job_id: "duplicate"
                 status: "rejected"

@@ -8,11 +8,13 @@ import {
   BriefcaseBusiness,
   MessageCircle,
   Settings2,
+  FileText,
+  RotateCcw,
 } from "lucide-react";
-import { api, safeUrl } from "../api";
+import { api, fileUrl, safeUrl } from "../api";
 import { Badge, Empty, Modal, Field, Running } from "../components/UI";
 import { JobList } from "../components/JobList";
-import type { Summary, Mail, Job } from "../types";
+import type { Summary, Mail, Job, CoverLetter } from "../types";
 type Props = {
   data: Summary;
   refresh: () => Promise<void>;
@@ -33,9 +35,14 @@ export default function Dashboard({
   const [section, setSection] = useState("applications");
   const [busy, setBusy] = useState(false);
   const [schedule, setSchedule] = useState<any>(null);
+  const [coverLetter, setCoverLetter] = useState<CoverLetter | null>(null);
   const running = data.runs.find(
     (r) => r.kind === "email" && ["queued", "running"].includes(r.state),
   );
+  const latestMailRun = data.runs.find((r) => r.kind === "email");
+  const mailNeedsAttention =
+    data.mail.connection.status === "needs_attention" ||
+    latestMailRun?.state === "failed";
   const pending = data.mail.messages.filter((m) => m.state === "pending");
   async function sync() {
     setBusy(true);
@@ -47,6 +54,41 @@ export default function Dashboard({
       notify((e as Error).message, true);
     } finally {
       setBusy(false);
+    }
+  }
+  async function generateCoverLetter(job: Job) {
+    setBusy(true);
+    try {
+      const letter = await api<CoverLetter>(
+        "/v2/jobs/" + job.id + "/cover-letter",
+        "POST",
+      );
+      setCoverLetter(letter);
+      await refresh();
+      notify(
+        `Cover letter generated for ${job.company}. Review it before sending.`,
+      );
+    } catch (e) {
+      notify((e as Error).message, true);
+    } finally {
+      setBusy(false);
+    }
+  }
+  async function removeJob(job: Job) {
+    if (
+      !window.confirm(
+        `Remove ${job.company} · ${job.title} from your active job list? Its history and files will be kept.`,
+      )
+    )
+      return;
+    try {
+      await api("/v2/jobs/" + job.id, "DELETE", {
+        reason: "Marked not suitable by user",
+      });
+      await refresh();
+      notify("Unsuitable role removed. You can restore it from Removed roles.");
+    } catch (e) {
+      notify((e as Error).message, true);
     }
   }
   return (
@@ -109,7 +151,11 @@ export default function Dashboard({
               <MailIcon size={20} /> Gmail connection
             </h2>
             <Badge tone={data.mail.connection.connected ? "green" : "amber"}>
-              {data.mail.connection.connected ? "Connected" : "Not synced"}
+              {data.mail.connection.connected
+                ? "Ready"
+                : mailNeedsAttention
+                  ? "Needs connection"
+                  : "Not connected"}
             </Badge>
           </div>
           <strong>
@@ -121,7 +167,7 @@ export default function Dashboard({
                 new Date(data.mail.connection.last_synced_at).toLocaleString(
                   "en-IE",
                 )
-              : "Sync to find application confirmations and status updates."}
+              : "Connect Gmail, then scan your job-related mail history for applications and status updates."}
           </p>
           <div className="actions">
             <button
@@ -130,7 +176,11 @@ export default function Dashboard({
               onClick={sync}
             >
               <RefreshCw size={16} className={running ? "spin" : ""} />
-              {running ? "Syncing…" : "Sync Gmail"}
+              {running
+                ? "Checking Gmail…"
+                : mailNeedsAttention
+                  ? "Retry Gmail sync"
+                  : "Sync Gmail"}
             </button>
             <button
               className="icon-button"
@@ -151,6 +201,16 @@ export default function Dashboard({
               <summary>Sync coverage</summary>
               <p>{data.mail.connection.coverage}</p>
             </details>
+          )}
+          {mailNeedsAttention && !running && (
+            <div className="mail-sync-alert" role="alert">
+              <b>Gmail needs attention</b>
+              <p>
+                {data.mail.connection.last_error ||
+                  latestMailRun?.error ||
+                  "Connect Gmail in Codex, then retry. Your saved email evidence is unchanged."}
+              </p>
+            </div>
           )}
           {running && (
             <small className="muted">
@@ -175,6 +235,12 @@ export default function Dashboard({
               Email evidence <span>{pending.length} to review</span>
             </button>
             <button
+              className={section === "documents" ? "selected" : ""}
+              onClick={() => setSection("documents")}
+            >
+              Resumes & letters <span>{data.documents.length}</span>
+            </button>
+            <button
               className={section === "activity" ? "selected" : ""}
               onClick={() => setSection("activity")}
             >
@@ -183,7 +249,41 @@ export default function Dashboard({
           </div>
         </div>
         {section === "applications" ? (
-          <JobList jobs={data.jobs} onSelect={onJob} />
+          <>
+            <JobList
+              jobs={data.jobs}
+              onSelect={onJob}
+              onCoverLetter={generateCoverLetter}
+              onRemove={removeJob}
+            />
+            {!!data.removed_jobs.length && (
+              <details className="removed-jobs">
+                <summary>Removed roles · {data.removed_jobs.length}</summary>
+                {data.removed_jobs.map((job) => (
+                  <div className="removed-job" key={job.id}>
+                    <span>
+                      <b>{job.company}</b> · {job.title}
+                      <small>{job.deletion_reason}</small>
+                    </span>
+                    <button
+                      className="secondary"
+                      onClick={async () => {
+                        try {
+                          await api("/v2/jobs/" + job.id + "/restore", "POST");
+                          await refresh();
+                          notify("Role restored to your active list.");
+                        } catch (e) {
+                          notify((e as Error).message, true);
+                        }
+                      }}
+                    >
+                      <RotateCcw size={15} /> Restore
+                    </button>
+                  </div>
+                ))}
+              </details>
+            )}
+          </>
         ) : section === "email" ? (
           <>
             <p className="muted">
@@ -225,6 +325,65 @@ export default function Dashboard({
             ) : (
               <Empty title="Your inbox can fill in the gaps">
                 Run a Gmail sync to see evidence here.
+              </Empty>
+            )}
+          </>
+        ) : section === "documents" ? (
+          <>
+            <p className="muted">
+              Every company’s latest resume and cover letter is collected here.
+              Drafts still need your review before sending.
+            </p>
+            {data.documents.length ? (
+              <div className="document-list">
+                {data.documents.map((item) => (
+                  <div className="document-row" key={item.job_id}>
+                    <FileText size={20} />
+                    <span>
+                      <strong>{item.company}</strong>
+                      <small>{item.title}</small>
+                    </span>
+                    <span className="actions">
+                      {item.resumes.map((resume) => (
+                        <a
+                          className="secondary"
+                          key={resume.path}
+                          href={fileUrl(resume.path)}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {resume.label}
+                        </a>
+                      ))}
+                      {item.cover_letter ? (
+                        <a
+                          className="secondary"
+                          href={fileUrl(item.cover_letter.path)}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Cover letter v{item.cover_letter.version}
+                        </a>
+                      ) : (
+                        <button
+                          className="secondary"
+                          onClick={() => {
+                            const job = data.jobs.find(
+                              (candidate) => candidate.id === item.job_id,
+                            );
+                            if (job) generateCoverLetter(job);
+                          }}
+                        >
+                          Generate cover letter
+                        </button>
+                      )}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <Empty title="Your application documents will appear here">
+                Prepare a resume or generate a company-specific cover letter.
               </Empty>
             )}
           </>
@@ -309,6 +468,33 @@ export default function Dashboard({
           </form>
         </Modal>
       )}
+      {coverLetter && (
+        <Modal
+          title={`${coverLetter.company} · Cover letter`}
+          onClose={() => setCoverLetter(null)}
+        >
+          <div className="callout warning">
+            Draft only. Read it against the job description before sending.
+          </div>
+          <div className="cover-letter-preview">{coverLetter.content}</div>
+          <div className="actions">
+            <button
+              className="secondary"
+              onClick={() => navigator.clipboard.writeText(coverLetter.content)}
+            >
+              Copy letter
+            </button>
+            <a
+              className="primary"
+              href={fileUrl(coverLetter.path)}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open saved file ↗
+            </a>
+          </div>
+        </Modal>
+      )}
     </>
   );
 }
@@ -335,6 +521,7 @@ function MailReview({
       await api("/v2/mail/" + mail.id + "/resolve", "POST", {
         job_id: id || null,
         action,
+        create_application: action === "confirm" && !id,
       });
       await refresh();
       notify(
@@ -390,12 +577,10 @@ function MailReview({
           <div className="actions">
             <button
               className="primary"
-              disabled={
-                busy || !id || ["reminder", "uncertain"].includes(mail.kind)
-              }
+              disabled={busy || ["reminder", "uncertain"].includes(mail.kind)}
               onClick={() => resolve("confirm")}
             >
-              Confirm status update
+              {id ? "Confirm status update" : "Track this application"}
             </button>
             <button
               className="secondary"
@@ -405,6 +590,11 @@ function MailReview({
               Dismiss
             </button>
           </div>
+          <p className="small">
+            If the full posting is available, save it to unlock a tailored
+            resume and cover letter. Otherwise this email can create a minimal
+            application record now.
+          </p>
           <button
             className="text-button"
             onClick={() => {
@@ -412,7 +602,7 @@ function MailReview({
               onAdd();
             }}
           >
-            Job not listed? Save its posting first
+            Add the full posting instead
           </button>
         </>
       )}
