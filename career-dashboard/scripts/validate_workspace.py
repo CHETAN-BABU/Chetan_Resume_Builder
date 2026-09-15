@@ -38,8 +38,8 @@ def warn(message: str) -> None:
     WARNINGS.append(message)
 
 
-def read(relative_path: str) -> str:
-    path = ROOT / relative_path
+def read(relative_path: str, base: Path = None) -> str:
+    path = (base or ROOT) / relative_path
     if not path.is_file():
         fail(f"Missing required file: {relative_path}")
         return ""
@@ -89,9 +89,10 @@ def latex_braces_balanced(source: str) -> bool:
     return depth == 0
 
 
-def validate_skill(relative_dir: str) -> None:
-    skill_dir = ROOT / relative_dir
-    source = read(f"{relative_dir}/SKILL.md")
+def validate_skill(relative_dir: str, ui_metadata: bool = True, base: Path = None) -> None:
+    base = base or ROOT
+    skill_dir = base / relative_dir
+    source = read(f"{relative_dir}/SKILL.md", base)
     match = re.match(r"^---\n(.*?)\n---\n", source, re.DOTALL)
     if not match:
         fail(f"Invalid or missing skill frontmatter: {relative_dir}/SKILL.md")
@@ -104,7 +105,7 @@ def validate_skill(relative_dir: str) -> None:
         fail(f"Skill name/folder mismatch: {name_match.group(1)} != {skill_dir.name}")
     if not re.search(r"^description:\s*\S", frontmatter, re.MULTILINE):
         fail(f"Skill description missing: {relative_dir}/SKILL.md")
-    if not (skill_dir / "agents/openai.yaml").is_file():
+    if ui_metadata and not (skill_dir / "agents/openai.yaml").is_file():
         fail(f"Skill UI metadata missing: {relative_dir}/agents/openai.yaml")
 
 
@@ -427,6 +428,41 @@ def validate_resume() -> None:
         fail("Base resume PDF is stale; recompile it from templates/resume-base.tex")
 
 
+def validate_runtimes() -> None:
+    """The selectable AI runtimes and the Claude workspace files must stay intact."""
+    runtime = read("services/ai_runtime.py")
+    for required in ("class CodexRuntime", "class ClaudeRuntime", "BUILT_IN = [CodexRuntime, ClaudeRuntime]"):
+        if required not in runtime:
+            fail(f"AI runtime registry is missing {required!r}: services/ai_runtime.py")
+    if "MAIL_NEEDS_CODEX" not in runtime:
+        fail("Mailbox work must still be reported as Codex-only: services/ai_runtime.py")
+    agents = read("services/agents.py")
+    if 'shutil.which("codex")' not in agents:
+        fail("The original Codex invocation must remain in services/agents.py")
+    if "self.runtimes" not in agents:
+        fail("services/agents.py must dispatch optional AI work through the runtime registry")
+    read("docs/AI-RUNTIMES.md")
+    read("CLAUDE.md")
+
+    workspace_root = ROOT.parent
+    read("CLAUDE.md", workspace_root)
+    settings = read(".claude/settings.json", workspace_root)
+    try:
+        permissions = json.loads(settings).get("permissions", {})
+    except json.JSONDecodeError as exc:
+        fail(f"Invalid JSON: .claude/settings.json ({exc})")
+        permissions = {}
+    if not any("backup/" in rule for rule in permissions.get("deny", [])):
+        fail("Claude settings must keep preserved backups read-only: .claude/settings.json")
+    validate_skill(".claude/skills/verify-job-url", ui_metadata=False, base=workspace_root)
+    canonical = re.search(r"^description:\s*(.+)$",
+                          read(".agents/skills/verify-job-url/SKILL.md"), re.MULTILINE)
+    mirror = re.search(r"^description:\s*(.+)$",
+                       read(".claude/skills/verify-job-url/SKILL.md", workspace_root), re.MULTILINE)
+    if canonical and mirror and canonical.group(1).strip() != mirror.group(1).strip():
+        fail("The Claude skill mirror has drifted from .agents/skills/verify-job-url/SKILL.md")
+
+
 def validate_paths() -> None:
     for retired in (
         "jobs/ireland/Version1",
@@ -473,6 +509,7 @@ def main() -> int:
     validate_evidence_registry()
     validate_artifact_contract()
     validate_resume()
+    validate_runtimes()
     validate_paths()
 
     for message in WARNINGS:

@@ -1,6 +1,6 @@
 # Career agent system: architecture and end-to-end workflow
 
-Updated 13 September 2026. This document describes the implemented local application, including its limits. Start it with `Start Dashboard.command` in the workspace root, then open Resume Studio and select an exact saved job.
+Updated 15 September 2026. This document describes the implemented local application, including its limits. Start it with `Start Dashboard.command` in the workspace root, then open Resume Studio and select an exact saved job.
 
 ## What the system does
 
@@ -55,7 +55,7 @@ flowchart TD
 | Discovery / email reviewer | Existing scoped discovery/mail inputs | Verified postings / interpreted email evidence | Live calls, budgeted, not cached |
 | Release validator | Source, registry, evidence map, PDF, current previews | Hard pass/fail gates | None |
 
-AI workers run in fresh ephemeral Codex processes in temporary directories, with shell tools disabled. Public and document workers have apps disabled. The existing email worker exposes only its allowed Gmail read tools. The hiring manager receives no profile, chat, notes, email or workspace files. The independent document scorer is a pure function in `services/resume_match.py`; even the optional qualitative reviewer receives only the document/JD payload.
+AI workers run in fresh single-turn processes in temporary directories on the selected runtime, with shell tools disabled. Public and document workers have apps disabled. Codex and Claude are both supported and are chosen in Agent control; see [AI-RUNTIMES.md](AI-RUNTIMES.md). The existing email worker exposes only its allowed Gmail read tools and always runs on Codex, the only runtime with connected mailbox tools. The hiring manager receives no profile, chat, notes, email or workspace files. The independent document scorer is a pure function in `services/resume_match.py`; even the optional qualitative reviewer receives only the document/JD payload.
 
 ## How to use the workflow
 
@@ -106,20 +106,21 @@ Scores store revision, source hash, PDF hash and JD hash. Editing the source or 
 ## Saving AI credits
 
 - Default local limit: **6 AI invocations per Dublin calendar day**, editable from 0 to 50 in Agent control. Set 0 to use free workers and existing cached results only.
-- The limit counts invocation attempts, including failed calls. It is not a measurement of account credits or token consumption. Other Codex tasks are outside this local budget.
+- The limit counts invocation attempts, including failed calls. It is not a measurement of account credits or token consumption. Other tasks you run in Codex or Claude yourself are outside this local budget.
 - Cache lookup happens before budget reservation. Identical inputs can be reused even when the daily budget is exhausted.
-- Cache keys include worker version, full prompt/input context, output schema and invocation options. Changes in JD, profile context, instructions or playbook text cause misses.
+- Cache keys include worker version, full prompt/input context, output schema, invocation options and, for every runtime other than Codex, the runtime itself. Changes in JD, profile context, instructions or playbook text cause misses, and switching runtime neither reuses nor discards another runtime's saved result.
 - Web research expires after seven days. Offline results persist until their inputs/schema/version change. Reuse retains original source dates; it is not represented as fresh research.
 - Company research is shared by research/hiring and resume-advisor flows. A failed later stage does not discard successful cached earlier stages.
 - Discovery and email calls remain live because their underlying state changes; their results still live in run/mail/job history.
-- Only one orchestrator worker executes at a time. Same-kind active runs for the same job are deduplicated. AI budget reservations use a SQLite write transaction before invoking Codex.
+- Only one orchestrator worker executes at a time. Same-kind active runs for the same job are deduplicated. AI budget reservations use a SQLite write transaction before invoking the runtime.
 - There is no automatic AI retry loop. Interrupted queued/running runs become failed on app restart and can be retried explicitly. The saved stages support inexpensive continuation.
 
 ## Storage and implementation map
 
 | Location | Owns |
 |---|---|
-| `services/agents.py` | Orchestrator queue, isolated workers, partial progress, recovery, existing mail schedule |
+| `services/agents.py` | Orchestrator queue, isolated workers, partial progress, recovery, existing mail schedule, unchanged Codex call |
+| `services/ai_runtime.py` | Runtime registry, Codex/Claude selection, capability routing and worker isolation |
 | `services/agent_cache.py` | AI cache, invocation ledger and daily budget |
 | `services/instruction_tracker.py` | Chat grammar, message idempotency and durable outcomes |
 | `services/workspace_v2.py` | Shared Profile, goals, email, preferences and worker registry |
@@ -165,6 +166,6 @@ Pass the current revision, not the example number. The API rejects stale saves a
 
 ## Verification and practical limits
 
-Run `./Check Workspace.command` after changes. Tests use disposable workspaces and mock optional AI; real PDF tests compile and render locally. AI availability still depends on the installed signed-in Codex runtime. No paid live AI calls are necessary to test the deterministic workflow or cache contracts.
+Run `./Check Workspace.command` after changes. Tests use disposable workspaces and mock optional AI; real PDF tests compile and render locally. AI availability still depends on an installed, signed-in runtime; Agent control reports which one is active and what is missing. No paid live AI calls are necessary to test the deterministic workflow or cache contracts.
 
-Current deliberate limits: the rule grammar is finite; optional AI suggestions require sending a supported command; full-page fitting can fail for unsuitable custom content; historical drafts require explicit profile sync; role eligibility and visual release approval are separate. Monitoring is local to this app's workers, not every external Codex task. No application submission, outreach or extra automation is part of this architecture.
+Current deliberate limits: the rule grammar is finite; optional AI suggestions require sending a supported command; full-page fitting can fail for unsuitable custom content; historical drafts require explicit profile sync; role eligibility and visual release approval are separate. Monitoring is local to this app's workers, not every task you run in Codex or Claude yourself. No application submission, outreach or extra automation is part of this architecture.

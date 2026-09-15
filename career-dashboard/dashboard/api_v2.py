@@ -32,6 +32,12 @@ class AIPolicyInput(BaseModel):
     daily_call_limit: int = Field(ge=0, le=50)
 
 
+class RuntimeInput(BaseModel):
+    runtime: str = Field(min_length=1, max_length=40)
+    model: Optional[str] = Field(default=None, max_length=80)
+    max_budget_usd: Optional[float] = Field(default=None, ge=0, le=100)
+
+
 class GoalInput(BaseModel):
     weekly_target: int = Field(ge=1, le=200)
     workdays: list[int]
@@ -239,11 +245,20 @@ def attach(app, workspace):
 
     @router.get('/agent-control')
     def agent_control():
-        return {'budget': runner.cache.stats(), 'runs': service.runs(), 'agents': AGENTS}
+        return {'budget': runner.cache.stats(), 'runs': service.runs(), 'agents': AGENTS,
+                'runtime': runner.runtimes.status()}
 
     @router.put('/agent-control/budget')
     def ai_budget(data: AIPolicyInput):
         return runner.cache.configure(data.daily_call_limit)
+
+    @router.get('/agent-control/runtime')
+    def ai_runtime():
+        return runner.runtimes.status()
+
+    @router.put('/agent-control/runtime')
+    def save_ai_runtime(data: RuntimeInput):
+        return runner.runtimes.configure(**data.model_dump())
 
     @router.get('/instructions')
     def instructions(job_id: Optional[str] = None):

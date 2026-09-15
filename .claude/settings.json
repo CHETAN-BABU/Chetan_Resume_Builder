@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(career-dashboard/.venv/bin/python career-dashboard/scripts/workspace.py:*)",
+      "Bash(career-dashboard/.venv/bin/python career-dashboard/scripts/career.py:*)",
+      "Bash(career-dashboard/.venv/bin/python career-dashboard/scripts/validate_workspace.py)",
+      "Bash(career-dashboard/.venv/bin/python career-dashboard/scripts/check_layout.py)",
+      "Bash(./Check Workspace.command)"
+    ],
+    "deny": [
+      "Edit(backup/**)",
+      "Write(backup/**)",
+      "Edit(career-dashboard/data/career.db)",
+      "Write(career-dashboard/data/career.db)",
+      "Edit(daily-job-search/history.csv)"
+    ]
+  }
+}

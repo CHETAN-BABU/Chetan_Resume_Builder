@@ -13,7 +13,10 @@
     "application_date": null,
     "selected_project_id": "PROJ-AZ-RECON",
     "folder": "output/applications/3fcb60314c88aa35-i45dcz3e",
-    "verification": "verified"
+    "verification": "verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "10ba01413aa6075f",
@@ -29,7 +32,10 @@
     "application_date": null,
     "selected_project_id": "PROJ-AZ-RECON",
     "folder": "output/applications/10ba01413aa6075f-p6u0becs",
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "30cb363d12392b54",
@@ -45,7 +51,10 @@
     "application_date": null,
     "selected_project_id": null,
     "folder": null,
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "5b8921d814b94f76",
@@ -61,7 +70,10 @@
     "application_date": null,
     "selected_project_id": "PROJ-AZ-RECON",
     "folder": "output/applications/5b8921d814b94f76-c2s4n1cd",
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "7bfa6b3fce1853f0",
@@ -77,7 +89,10 @@
     "application_date": null,
     "selected_project_id": null,
     "folder": null,
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "fff05ec16dd35b33",
@@ -93,7 +108,10 @@
     "application_date": null,
     "selected_project_id": "PROJ-BLOGBOARD",
     "folder": "output/applications/fff05ec16dd35b33-wijtws6k",
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "1acf78884105297f",
@@ -109,7 +127,10 @@
     "application_date": null,
     "selected_project_id": "PROJ-AZ-RECON",
     "folder": "output/applications/1acf78884105297f-i4s8l2l7",
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "ba636cae44ecca0a",
@@ -125,7 +146,10 @@
     "application_date": null,
     "selected_project_id": null,
     "folder": null,
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "0d6532dcb60da0d9",
@@ -141,7 +165,10 @@
     "application_date": null,
     "selected_project_id": "PROJ-EU-COMPLIANCE-RAG",
     "folder": "output/applications/0d6532dcb60da0d9-bacmbzwj",
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "1bd41b450a60df21",
@@ -157,7 +184,10 @@
     "application_date": null,
     "selected_project_id": null,
     "folder": null,
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "29066b92161b5a67",
@@ -173,7 +203,10 @@
     "application_date": null,
     "selected_project_id": null,
     "folder": null,
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "3c4577f9828bc63e",
@@ -189,7 +222,10 @@
     "application_date": null,
     "selected_project_id": null,
     "folder": null,
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "43c541b088428376",
@@ -205,7 +241,10 @@
     "application_date": null,
     "selected_project_id": null,
     "folder": null,
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "5e632d94ca072b8b",
@@ -221,7 +260,10 @@
     "application_date": null,
     "selected_project_id": null,
     "folder": null,
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "5ea213ec4c85d4c0",
@@ -237,7 +279,10 @@
     "application_date": null,
     "selected_project_id": "PROJ-AZ-RECON",
     "folder": "output/applications/5ea213ec4c85d4c0-k6uwqza6",
-    "verification": "verified"
+    "verification": "verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "5ef89c929c73c5d8",
@@ -253,7 +298,10 @@
     "application_date": null,
     "selected_project_id": "PROJ-AZ-RECON",
     "folder": "output/applications/5ef89c929c73c5d8-vplk7dqj",
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "7c43594df6e90862",
@@ -269,7 +317,10 @@
     "application_date": null,
     "selected_project_id": null,
     "folder": null,
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "8dc6db1dd3aa0192",
@@ -285,7 +336,10 @@
     "application_date": null,
     "selected_project_id": null,
     "folder": null,
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "ad59414982bccfd7",
@@ -301,7 +355,10 @@
     "application_date": null,
     "selected_project_id": null,
     "folder": null,
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "b3416bbc2dbd2497",
@@ -317,7 +374,10 @@
     "application_date": null,
     "selected_project_id": null,
     "folder": null,
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   },
   {
     "id": "dc9d3339a6de326c",
@@ -333,6 +393,9 @@
     "application_date": null,
     "selected_project_id": "PROJ-EU-COMPLIANCE-RAG",
     "folder": "output/applications/dc9d3339a6de326c-5davqo_3",
-    "verification": "not_verified"
+    "verification": "not_verified",
+    "record_source": "posting",
+    "deleted_at": null,
+    "deletion_reason": ""
   }
 ]

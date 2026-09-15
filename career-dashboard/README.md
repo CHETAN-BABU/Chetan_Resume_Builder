@@ -16,7 +16,7 @@ python3 -m venv .venv
 .venv/bin/python dashboard/run.py
 ```
 
-Use `--port 8001` if port 8000 is occupied, or `--no-browser` to start without opening a browser. The app needs Python 3.9+, and uses Node.js + pnpm to build the React client. The launcher detects the bundled Codex runtime on this Mac. Codex sign-in is required for research/discovery; connected Gmail is required for email sync. No separate API key or hosted site is needed. Tectonic is required for PDF compilation. This Mac uses Swift/PDFKit to inspect and render PDFs; other platforms need pypdf and Poppler (`pdftoppm`).
+Use `--port 8001` if port 8000 is occupied, or `--no-browser` to start without opening a browser. The app needs Python 3.9+, and uses Node.js + pnpm to build the React client; the launcher finds Node.js on `PATH`, through `nvm`/`fnm`/Volta or in the bundled runtime, and serves the existing client build when none is installed. Optional AI work needs one signed-in runtime, Codex or Claude, selected in Agent control; connected Gmail for email sync is available on Codex only. No separate API key or hosted site is needed. Tectonic is required for PDF compilation, which is the only part that fails without it. This Mac uses Swift/PDFKit to inspect and render PDFs; other platforms need pypdf and Poppler (`pdftoppm`).
 
 ## Four tabs
 
@@ -26,11 +26,12 @@ Use `--port 8001` if port 8000 is occupied, or `--no-browser` to start without o
 - **Profile**: editable personal details, skills, experience, education, certifications, projects and facts; original sources; agent inputs and workflow inventory. Removal is soft and preserves its audit history.
 
 Open a saved job to run company research, an independent hiring-manager benchmark,
-and a separate active-profile comparison. Each is a fresh Codex process. The hiring
+and a separate active-profile comparison. Each is a fresh single-turn process on the
+selected AI runtime. The hiring
 worker receives only the JD and public research, with no candidate profile, notes,
 mail or prior conversation. Sources, limits, stages and previous reports are saved.
 Gmail exposes only explicitly allowed read tools; no mail is sent or modified.
-Workers require Codex access and may fail when upstream services or usage are unavailable.
+Workers require a signed-in AI runtime and may fail when upstream services or usage are unavailable.
 Errors remain visible and can be retried; partial research is retained.
 
 ## Daily workflow
@@ -57,14 +58,14 @@ templates/        resume-base.tex and batch/evidence-map examples
 scripts/          career operations, PDF validation and batch commands
 frontend/         React + TypeScript screens and component tests
 dashboard/        FastAPI routes serving the same local app
-services/         goals, profile, posting identity, Gmail evidence and Codex workers
+services/         goals, profile, posting identity, Gmail evidence, AI runtimes and workers
 workflows/        discovery, tailoring, review and interview guidance
 data/             career.db, tracking projections and historical-pack index
 output/           base PDF and isolated application versions
 interview-prep/    Chetan's interview story bank
 tests/            inherited and new regression tests
 docs/             rebuild plan, provenance, migration and verification report
-.agents/          URL-verification skill adapter
+.agents/          URL-verification skill adapter (mirrored for Claude in ../.claude/)
 .github/          agent adapters pointing to Chetan's policy
 ```
 
@@ -118,8 +119,9 @@ and layout integrity checks, the React production build and component tests.
 Frontend dependencies are locked in `frontend/pnpm-lock.yaml`; the approved
 esbuild build script is listed in `frontend/pnpm-workspace.yaml`.
 
-Agent isolation and tool settings follow the [official Codex configuration
-reference](https://developers.openai.com/codex/config-reference/). Gmail's connector
+Codex isolation and tool settings follow the [official Codex configuration
+reference](https://developers.openai.com/codex/config-reference/); the Claude runtime's
+equivalent flags are documented in [docs/AI-RUNTIMES.md](docs/AI-RUNTIMES.md). Gmail's connector
 is disabled by default except for the explicit read-tool allowlist; unrelated apps,
 mail mutation tools, filesystem shell tools and hiring-stage web search are disabled.
 The first unbounded live discovery attempt timed out; bounded passes now cap queries

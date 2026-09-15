@@ -22,6 +22,12 @@
       "status": "needs_attention",
       "last_attempt_at": "2026-09-15T15:53:56+00:00",
       "last_error": "Gmail is not connected to Codex. Connect the Gmail plugin, then retry. Your last successful sync and saved email evidence were preserved."
+    },
+    "ai_runtime": {
+      "runtime": "auto",
+      "claude": {
+        "model": "claude-sonnet-5"
+      }
     }
   },
   "mail": {

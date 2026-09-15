@@ -17,6 +17,13 @@ or “Find suitable jobs”. The chat, dashboard and daily schedule use the same
 SQLite database. Email confirmations keep receipt time separate from actual
 submission dates. Preparing a resume never counts as applying.
 
+Optional AI work (public research, discovery, free-text interpretation and
+document review) runs on a selectable runtime: **Codex** or **Claude**. Choose one
+in Agent control, inside Resume Studio. Everything else — instructions, project
+ranking, page fitting, compilation and the term-coverage score — is deterministic
+Python and needs no model. Mailbox review needs Codex's connected Gmail tools and
+stays on Codex. See `career-dashboard/docs/AI-RUNTIMES.md`.
+
 `career-dashboard/` contains the React frontend, Python API/services, evidence,
 SQLite state and versioned resume artifacts. `daily-job-search/` contains the
 existing schedule’s brief, history and dated run projections. `backup/` preserves

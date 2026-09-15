@@ -26,12 +26,12 @@ AGENTS = [
      'implementation': 'Rules and SQLite; zero AI calls', 'guide': 'services/instruction_tracker.py'},
     {'id': 'resume_match', 'name': 'Independent resume matcher', 'reads': 'Finished PDF text and saved JD only', 'profile_access': False,
      'does': 'Scores document term coverage for free; optional cached AI review explains matches and gaps independently.',
-     'implementation': 'Pure document scorer plus optional isolated Codex process', 'guide': 'services/resume_match.py'},
+     'implementation': 'Pure document scorer plus optional isolated AI runtime process', 'guide': 'services/resume_match.py'},
     {
         "id": "resume_advisor", "name": "Agent 1 · Resume advisor",
         "reads": "Saved JD and recent public company research only", "profile_access": False,
         "does": "Suggests resume priorities, convincing project evidence and skills; proposed projects remain ideas, never candidate claims.",
-        "implementation": "Two isolated Codex processes with dated sources; explicit opt-in; shared persistent stage cache",
+        "implementation": "Two isolated AI runtime processes with dated sources; explicit opt-in; shared persistent stage cache",
         "guide": "workflows/agents/resume-advisor.md",
     },
     {
@@ -47,7 +47,7 @@ AGENTS = [
         "reads": "Saved job description and public company sources",
         "profile_access": False,
         "does": "Investigates the business, role outcomes, team, skills and company projects; cites sources and labels uncertainty.",
-        "implementation": "Independent Codex run with web search",
+        "implementation": "Independent AI runtime run with web search",
         "guide": "workflows/agents/company-researcher.md",
     },
     {
@@ -56,7 +56,7 @@ AGENTS = [
         "reads": "Job description and completed company research only",
         "profile_access": False,
         "does": "Defines expected skills, experience, convincing project evidence and interview preparation. It cannot promise a shortlist.",
-        "implementation": "Fresh isolated Codex run; no profile, files, email or previous conversation",
+        "implementation": "Fresh isolated AI runtime run; no profile, files, email or previous conversation",
         "guide": "workflows/agents/hiring-manager.md",
     },
     {
@@ -65,7 +65,7 @@ AGENTS = [
         "reads": "Your active profile and the independent hiring review",
         "profile_access": True,
         "does": "Separates supported strengths, partial evidence, missing skills and practical next steps.",
-        "implementation": "Separate Codex run after the independent review",
+        "implementation": "Separate AI runtime run after the independent review",
         "guide": "workflows/agents/profile-comparison.md",
     },
     {
@@ -74,7 +74,7 @@ AGENTS = [
         "reads": "Active skills, experience, role preferences and previously seen job IDs",
         "profile_access": True,
         "does": "Finds current suitable postings, verifies full requirements and removes previously seen postings.",
-        "implementation": "Codex with web search; persistent unique posting store",
+        "implementation": "Web-capable AI runtime with web search; persistent unique posting store",
         "guide": "workflows/agents/job-discovery.md",
     },
     {

@@ -284,3 +284,63 @@ Next: confirm UK work permission and Hungerford feasibility before applying. If 
 Next: resolve ESS skill/form checks before 16 September; reconcile/rebuild affected drafts when ready; reconnect Gmail and retry sync; continue broad verified discovery without padding. Prior Morgan McKinley form block remains unchanged. Current draft QA is not a release approval.
 
 Verification for the 15 September daily continuation: `validate_workspace.py` passed. `validate_batch.py` correctly remains FAIL for the four pending carryover jobs; no release-ready PDF was claimed. Results saved in the dated `batch-qa.json`.
+
+
+## Selectable AI runtimes and a startable-anywhere launcher — 15 September 2026
+
+- Optional AI work now runs on a chosen runtime instead of assuming Codex. The
+  new `career-dashboard/services/ai_runtime.py` registry detects what is
+  installed, routes each call by capability and reports what is missing. Codex
+  and Claude are both supported; `career-dashboard/docs/AI-RUNTIMES.md` is the
+  reference.
+- **The Codex path is unchanged.** `AgentRunner.invoke` in `services/agents.py`
+  is byte-for-byte the original Codex invocation, including its flags, Gmail
+  read-tool allowlist and error text. The registry only decides whether to call
+  it. No OpenAI or Codex behaviour, configuration or wording was modified.
+- Claude runs through the Claude Code CLI in headless `--print` mode with the
+  worker's own `--json-schema`. Each call is a fresh, single-turn, non-persisted
+  session with no project settings, MCP servers or skills, a short worker system
+  prompt, and either no tools at all or exactly `WebSearch` + `WebFetch`. A
+  blocked tool, a non-success result or a result missing a required field fails
+  the run rather than saving anything. Verified live end to end through the
+  app's own orchestrator in a disposable workspace: free build/score at zero AI
+  calls, then one Claude document review with `profile_access` false, stored and
+  then reused from cache.
+- Mailbox review stays on Codex. It is the only worker needing connected Gmail
+  read tools, so `apps=True` calls are routed to Codex whatever is selected, and
+  Claude refuses them with a sentence naming Codex. No mailbox integration was
+  built for Claude, by request. Gmail state is untouched by this work.
+- Saved AI results are keyed per runtime for everything except Codex, whose keys
+  keep their original shape so existing saved research stays reusable. Switching
+  runtime neither reuses nor discards another runtime's result.
+- Selection lives in Agent control → AI limit & worker history → **AI runtime**,
+  with an optional per-runtime model. `CAREER_AI_RUNTIME`, `CAREER_CLAUDE_BIN`,
+  `CAREER_CLAUDE_MODEL`, `CAREER_CLAUDE_MAX_USD` and `CAREER_AI_RUNTIME_PLUGINS`
+  are the equivalents outside the UI. `Automatic` picks the first installed
+  runtime, so this Mac still starts on Codex unless told otherwise.
+- `Start Dashboard.command` now starts the whole application on a machine that
+  has neither Codex nor the bundled runtime. Node.js is discovered on `PATH` and
+  through Homebrew, `nvm`, `fnm`, Volta and the bundled runtime; a missing
+  Node.js serves the client build already on disk instead of refusing to start;
+  pnpm is only required when `node_modules` is absent; and the PDF toolchain is
+  optional for start-up (`RESUME_RUNTIME_OPTIONAL=1`), so only resume
+  compilation reports a missing Tectonic. Validators and tests keep the strict
+  behaviour.
+- New `.claude/` workspace at the repository root: `CLAUDE.md` pointing at
+  `AGENTS.md` as the single policy source, `settings.json` keeping preserved
+  backups, `career.db` and the delivered-URL history out of direct edits, and a
+  `verify-job-url` skill entry point that reuses the existing script rather than
+  copying it. `validate_workspace.py` now fails if these files, the runtime
+  registry, the Codex call or the skill mirror's description drift.
+- Rebuilt the stale readable projections from `data/career.db`; the pre-existing
+  `check_layout.py` failure (seven dated run files plus `jobs.json` missing the
+  `deleted_at`, `deletion_reason` and `record_source` columns) is resolved.
+- Verification: `./Check Workspace.command` passes end to end — 118 backend
+  tests (18 new in `tests/test_ai_runtime.py`), workspace validation, layout
+  integrity, the production client build and 8 client tests. The live app was
+  started through `Start Dashboard.command`, served its client and answered
+  every tab's API, and the runtime selector was exercised in the browser.
+
+Next: nothing is required. Consider a runtime for another provider only through
+`CAREER_AI_RUNTIME_PLUGINS`; the registry contract is documented for it. No
+application, outreach, profile claim, schedule or automation changed.

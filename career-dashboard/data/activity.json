@@ -1,5 +1,29 @@
 [
   {
+    "id": 163,
+    "occurred_at": "2026-09-15T19:03:28+00:00",
+    "action": "ai_runtime_updated",
+    "job_id": null,
+    "details": {
+      "runtime": "auto",
+      "claude": {
+        "model": "claude-sonnet-5"
+      }
+    }
+  },
+  {
+    "id": 162,
+    "occurred_at": "2026-09-15T19:03:28+00:00",
+    "action": "ai_runtime_updated",
+    "job_id": null,
+    "details": {
+      "runtime": "claude",
+      "claude": {
+        "model": "claude-sonnet-5"
+      }
+    }
+  },
+  {
     "id": 161,
     "occurred_at": "2026-09-15T16:03:22+00:00",
     "action": "search_notes_updated",

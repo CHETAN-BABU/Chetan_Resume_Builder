@@ -17,7 +17,10 @@
       "application_date": null,
       "selected_project_id": "PROJ-AZ-RECON",
       "folder": "output/applications/10ba01413aa6075f-p6u0becs",
-      "verification": "not_verified"
+      "verification": "not_verified",
+      "record_source": "posting",
+      "deleted_at": null,
+      "deletion_reason": ""
     },
     {
       "id": "7bfa6b3fce1853f0",
@@ -33,7 +36,10 @@
       "application_date": null,
       "selected_project_id": null,
       "folder": null,
-      "verification": "not_verified"
+      "verification": "not_verified",
+      "record_source": "posting",
+      "deleted_at": null,
+      "deletion_reason": ""
     },
     {
       "id": "30cb363d12392b54",
@@ -49,7 +55,10 @@
       "application_date": null,
       "selected_project_id": null,
       "folder": null,
-      "verification": "not_verified"
+      "verification": "not_verified",
+      "record_source": "posting",
+      "deleted_at": null,
+      "deletion_reason": ""
     },
     {
       "id": "5b8921d814b94f76",
@@ -65,7 +74,10 @@
       "application_date": null,
       "selected_project_id": "PROJ-AZ-RECON",
       "folder": "output/applications/5b8921d814b94f76-c2s4n1cd",
-      "verification": "not_verified"
+      "verification": "not_verified",
+      "record_source": "posting",
+      "deleted_at": null,
+      "deletion_reason": ""
     }
   ]
 }

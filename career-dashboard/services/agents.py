@@ -1,4 +1,8 @@
-"""Independent, durable agent jobs using the user's installed Codex runtime."""
+"""Independent, durable agent jobs using the selected local AI runtime.
+
+The Codex path below is unchanged. `services/ai_runtime.py` chooses which runtime
+an optional AI call uses and adds Claude alongside it.
+"""
 
 from __future__ import annotations
 import hashlib, json, os, re, shutil, subprocess, tempfile, threading, time, uuid
@@ -114,14 +118,31 @@ class AgentRunner:
     def __init__(self, services, execute=None):
         self.s = services
         self.w = services.w
-        self.execute = execute or self.invoke
+        from services.ai_runtime import AIRuntimes, DEFAULT_RUNTIME
+
+        # `invoke` below remains the Codex implementation; the registry selects
+        # between it and the other installed runtimes.
+        self.runtimes = AIRuntimes(services, codex_execute=self.invoke)
+        self.default_runtime = DEFAULT_RUNTIME
+        self.execute = execute or self.dispatch
         self.pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix="career-agent")
         self.stop = threading.Event()
         from services.agent_cache import AgentCache
         self.cache = AgentCache(services)
         self.studio = None
 
+    def dispatch(self, prompt, schema, apps=False, web=True, runtime=None):
+        return self.runtimes.invoke(prompt, schema, apps=apps, web=web, runtime=runtime)
+
+    def runtime_for(self, apps=False):
+        return self.runtimes.resolve(apps)
+
     def cached(self, prompt, schema, **options):
+        chosen = self.runtime_for(options.get("apps", False))
+        # Existing Codex cache keys carry no runtime field; keep them reusable.
+        # A different runtime is a different result, so it becomes part of the key.
+        if chosen.id != self.default_runtime:
+            options["runtime"] = chosen.id
         return self.cache.execute(self.execute, prompt, schema, **options)
 
     def recover(self):

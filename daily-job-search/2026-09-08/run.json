@@ -17,7 +17,10 @@
       "application_date": null,
       "selected_project_id": "PROJ-AZ-RECON",
       "folder": "output/applications/5ef89c929c73c5d8-vplk7dqj",
-      "verification": "not_verified"
+      "verification": "not_verified",
+      "record_source": "posting",
+      "deleted_at": null,
+      "deletion_reason": ""
     },
     {
       "id": "3c4577f9828bc63e",
@@ -33,7 +36,10 @@
       "application_date": null,
       "selected_project_id": null,
       "folder": null,
-      "verification": "not_verified"
+      "verification": "not_verified",
+      "record_source": "posting",
+      "deleted_at": null,
+      "deletion_reason": ""
     }
   ]
 }

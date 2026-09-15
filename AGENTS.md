@@ -39,7 +39,15 @@ Do not add a second automation. The existing daily schedule uses this shared dat
 The active client is `career-dashboard/frontend/` (React/TypeScript). FastAPI in
 `dashboard/` serves its build and the shared API on loopback port 8000. `services/`
 contains daily planning, editable profile knowledge, email evidence and separate
-Codex worker runs. Do not revive the archived static client.
+AI worker runs. Do not revive the archived static client.
+
+Optional AI work runs on a selectable runtime. Codex and Claude are both
+supported; choose one in Agent control or with `CAREER_AI_RUNTIME`, and read
+`career-dashboard/docs/AI-RUNTIMES.md` before changing `services/ai_runtime.py`.
+Mailbox review needs Codex's connected Gmail read tools and stays on Codex
+whatever is selected. Do not add a mailbox integration for another runtime
+without being asked. Saved AI results are keyed per runtime, so switching one
+neither reuses nor discards another's result.
 
 Before daily search or profile comparison, read the active knowledge via
 `career-dashboard/.venv/bin/python career-dashboard/scripts/workspace.py profile`.

@@ -12,7 +12,32 @@ type Budget = {
   remaining_calls: number;
   note: string;
 };
-type Control = { budget: Budget; runs: Summary["runs"] };
+type RuntimeOption = {
+  id: string;
+  name: string;
+  available: boolean;
+  web: boolean;
+  mail: boolean;
+  model: string;
+  requirement: string;
+};
+type RuntimeStatus = {
+  selected: string;
+  active: string;
+  active_name: string;
+  active_available: boolean;
+  requirement: string;
+  mail_runtime: string;
+  mail_runtime_name: string;
+  mail_note: string;
+  runtimes: RuntimeOption[];
+  note: string;
+};
+type Control = {
+  budget: Budget;
+  runs: Summary["runs"];
+  runtime: RuntimeStatus;
+};
 export function AgentControl({
   jobId,
   revision,
@@ -30,6 +55,8 @@ export function AgentControl({
   const [messages, setMessages] = useState<Message[]>([]);
   const [message, setMessage] = useState("");
   const [limit, setLimit] = useState<number>();
+  const [runtime, setRuntime] = useState<string>();
+  const [model, setModel] = useState<string>();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [watch, setWatch] = useState<string>();
@@ -296,6 +323,76 @@ export function AgentControl({
             calls used today · {control.budget.cached_results} saved results ·{" "}
             {control.budget.cache_hits} cache hits
           </p>
+          {control.runtime && (
+            <form
+              className="actions"
+              onSubmit={(e) => {
+                e.preventDefault();
+                void perform(async () => {
+                  await api("/v2/agent-control/runtime", "PUT", {
+                    runtime: runtime ?? control.runtime.selected,
+                    model: model ?? null,
+                  });
+                  setModel(undefined);
+                });
+              }}
+            >
+              <Field label="AI runtime">
+                <select
+                  value={runtime ?? control.runtime.selected}
+                  onChange={(e) => setRuntime(e.target.value)}
+                >
+                  <option value="auto">
+                    Automatic (
+                    {control.runtime.active_name || control.runtime.active})
+                  </option>
+                  {control.runtime.runtimes.map((r) => (
+                    <option key={r.id} value={r.id}>
+                      {r.name}
+                      {r.available ? "" : " · not installed"}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <Field label="Model (optional)">
+                <input
+                  maxLength={80}
+                  value={
+                    model ??
+                    control.runtime.runtimes.find(
+                      (r) =>
+                        r.id ===
+                        ((runtime ?? control.runtime.selected) === "auto"
+                          ? control.runtime.active
+                          : (runtime ?? control.runtime.selected)),
+                    )?.model ??
+                    ""
+                  }
+                  placeholder="Runtime default"
+                  onChange={(e) => setModel(e.target.value)}
+                />
+              </Field>
+              <button className="secondary" disabled={busy}>
+                Save runtime
+              </button>
+            </form>
+          )}
+          {control.runtime && (
+            <p className="small">
+              Running on <b>{control.runtime.active_name}</b>.{" "}
+              {control.runtime.note}
+              {control.runtime.mail_note
+                ? " " + control.runtime.mail_note
+                : " Email syncs use " +
+                  control.runtime.mail_runtime_name +
+                  "."}
+            </p>
+          )}
+          {control.runtime && !control.runtime.active_available && (
+            <p role="alert" className="callout warning">
+              {control.runtime.requirement}
+            </p>
+          )}
           <form
             className="actions"
             onSubmit={(e) => {

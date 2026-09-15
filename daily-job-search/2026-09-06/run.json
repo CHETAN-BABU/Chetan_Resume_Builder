@@ -17,7 +17,10 @@
       "application_date": null,
       "selected_project_id": "PROJ-EU-COMPLIANCE-RAG",
       "folder": "output/applications/dc9d3339a6de326c-5davqo_3",
-      "verification": "not_verified"
+      "verification": "not_verified",
+      "record_source": "posting",
+      "deleted_at": null,
+      "deletion_reason": ""
     },
     {
       "id": "ad59414982bccfd7",
@@ -33,7 +36,10 @@
       "application_date": null,
       "selected_project_id": null,
       "folder": null,
-      "verification": "not_verified"
+      "verification": "not_verified",
+      "record_source": "posting",
+      "deleted_at": null,
+      "deletion_reason": ""
     }
   ]
 }
